@@ -66,9 +66,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://natsukagami.github.io"></form>
@@ -119,11 +119,13 @@
 <p>Khi đó, điều kiện đặc biệt biến mất và ta chỉ cần đệ quy xuống với các đoạn <code>L[1]..X[1]</code>, <code>X[1]..R[1]</code>, <code>L[2]..X[2]</code>, …, <code>X[M]..R[M]</code>.</p>
 <h3 id="Cong-thuc-quy-hoach-dong"><a href="#Cong-thuc-quy-hoach-dong" class="headerlink" title="Công thức quy hoạch động"></a>Công thức quy hoạch động</h3><p>Từ các nhận xét trên, ta có công thức quy hoạch động sau:</p>
 <p>Gọi <code>f[l][r]</code> là số cách dựng cây với các đỉnh thuộc đoạn <code>l..r</code>. Hiển nhiên <code>f[i][i] = 1</code>.</p>
-<p>Ta có<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> k = l + <span class="number">1</span>; k &lt;= r; ++k)</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> st = l + <span class="number">1</span>; st &lt;= k; ++st)</div><div class="line">    f[l][r] += f[l][st - <span class="number">1</span>] * f[st][k] * f[k][r];</div></pre></td></tr></table></figure></p>
+<p>Ta có
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> k = l + <span class="number">1</span>; k &lt;= r; ++k)</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> st = l + <span class="number">1</span>; st &lt;= k; ++st)</div><div class="line">    f[l][r] += f[l][st - <span class="number">1</span>] * f[st][k] * f[k][r];</div></pre></td></tr></table></figure></p>
 <p>Việc chọn tập <code>X[]</code> cho <code>[l..r]</code> giống với việc từ đoạn <code>[l..st - 1]</code> đã dựng cây, ta thêm đoạn <code>[st..r]</code> bằng cách nối <code>(l, k)</code> (<code>st &lt;= k &lt;= r</code>) rồi dựng 2 cây như trên. Do đó công thức qhđ này hoàn toàn chính xác. Đáp số sẽ là <code>f[1][N]</code>. Tuy nhiên độ phức tạp là <code>O(N^4)</code>, chưa đủ để thỏa mãn đề bài.</p>
 <h3 id="Toi-uu-xuong-O-N-3"><a href="#Toi-uu-xuong-O-N-3" class="headerlink" title="Tối ưu xuống O(N^3)"></a>Tối ưu xuống <code>O(N^3)</code></h3><p>Việc chọn đoạn yêu cầu 2 bước, xác định <code>X[i]</code> và đoạn <code>st..r</code>. Liệu ta có thể giảm thiểu số cách lựa chọn không?</p>
 <p>Thực chất ta hoàn toàn có thể tách 2 bước này thành 2 công đoạn chọn đoạn, đầu tiên chọn <code>st..X[i]</code> thỏa mãn có cạnh <code>(l, X[i])</code> và chọn đoạn <code>X[i]..r</code>. Như vậy ta có thể chọn 2 đoạn so le, mỗi lần chuyển trạng thái chỉ mất <code>O(N)</code>.</p>
-<p>Ta sửa lại công thức qhđ thành <code>f[i][j][k]</code>, thêm <code>k</code> là bước hiện tại của chúng ta (<code>0</code> - chọn nửa đoạn đầu - hay <code>1</code> - đã chọn xong). Công thức trở thành:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> k = l + <span class="number">1</span>; k &lt;= r; ++k) &#123;</div><div class="line">  <span class="keyword">if</span> (__gcd(l, r) &gt; <span class="number">1</span>) <span class="comment">// có cạnh từ l đến k</span></div><div class="line">    f[l][r][<span class="number">0</span>] += f[l][k - <span class="number">1</span>][<span class="number">1</span>] * f[k][r][<span class="number">1</span>];</div><div class="line">  <span class="keyword">if</span> (__gcd(l, k) &gt; <span class="number">1</span>)</div><div class="line">    f[l][r][<span class="number">1</span>] += f[l][k][<span class="number">0</span>] * f[k][r][<span class="number">1</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Ta sửa lại công thức qhđ thành <code>f[i][j][k]</code>, thêm <code>k</code> là bước hiện tại của chúng ta (<code>0</code> - chọn nửa đoạn đầu - hay <code>1</code> - đã chọn xong). Công thức trở thành:
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> k = l + <span class="number">1</span>; k &lt;= r; ++k) &#123;</div><div class="line">  <span class="keyword">if</span> (__gcd(l, r) &gt; <span class="number">1</span>) <span class="comment">// có cạnh từ l đến k</span></div><div class="line">    f[l][r][<span class="number">0</span>] += f[l][k - <span class="number">1</span>][<span class="number">1</span>] * f[k][r][<span class="number">1</span>];</div><div class="line">  <span class="keyword">if</span> (__gcd(l, k) &gt; <span class="number">1</span>)</div><div class="line">    f[l][r][<span class="number">1</span>] += f[l][k][<span class="number">0</span>] * f[k][r][<span class="number">1</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>Lúc đầu <code>f[i][i][x] = x</code> và đáp số sẽ là <code>f[1][N][1]</code>. Độ phức tạp là <code>O(N^3)</code>.</p>
 <h2 id="LISA-RCC-2017-1st-Qualification-Round-bai-E"><a href="#LISA-RCC-2017-1st-Qualification-Round-bai-E" class="headerlink" title="LISA - RCC 2017 1st Qualification Round, bài E"></a><a href="http://www.russiancodecup.ru/en/tasks/round/61/E/" target="_blank" rel="external">LISA - RCC 2017 1st Qualification Round, bài E</a></h2><h3 id="Tom-tat-de-bai-1"><a href="#Tom-tat-de-bai-1" class="headerlink" title="Tóm tắt đề bài"></a>Tóm tắt đề bài</h3><p>Cho <code>N</code> xâu và <code>Q</code> truy vấn. Mỗi truy vấn gồm 2 số <code>l, r</code> và yêu cầu trả lời số xâu khác nhau có thể tạo được bằng cách ghép 1 tiền tố khác rỗng với 1 hậu tố khác rỗng của xâu nào đó trong khoảng từ <code>l</code> đến <code>r</code>.</p>
 <h4 id="Gioi-han-1"><a href="#Gioi-han-1" class="headerlink" title="Giới hạn"></a>Giới hạn</h4><p><code>1 &lt;= N, Q &lt;= 10^5</code>. Tổng độ dài xâu không quá <code>10^5</code>.</p>
@@ -134,9 +136,11 @@
 </ul>
 <h3 id="Dieu-kien-dem"><a href="#Dieu-kien-dem" class="headerlink" title="Điều kiện đếm"></a>Điều kiện đếm</h3><p>Một trong những kĩ thuật tiêu biểu khi đếm để xử lí lặp là đặt thêm điều kiện cho bài toán sao cho chúng khử đi các trường hợp lặp.</p>
 <p>Giả sử ta có 2 xâu <code>Pre[i]</code> và <code>Suf[j]</code>, ta có <code>X = Pre[i] + Suf[j]</code>. Vậy nếu tồn tại một cặp khác <code>X = Pre[k] + Suf[l]</code> thì ta có tính chất gì?</p>
-<p>Không mất tính tổng quát, giả sử <code>|Pre[i]| &lt; |Pre[k]|</code>. Ta có thể thấy phần <em>thừa ra</em> của <code>Pre[k]</code> chính bằng phần <em>thừa ra</em> của <code>Suf[j]</code>.<br>Như vậy, một cách nghĩ có thể là loại bỏ tất cả việc ghép của các xâu <code>Suf[l]</code> khi đã tồn tại một <em>phần thừa chung</em> như trên.</p>
+<p>Không mất tính tổng quát, giả sử <code>|Pre[i]| &lt; |Pre[k]|</code>. Ta có thể thấy phần <em>thừa ra</em> của <code>Pre[k]</code> chính bằng phần <em>thừa ra</em> của <code>Suf[j]</code>.
+Như vậy, một cách nghĩ có thể là loại bỏ tất cả việc ghép của các xâu <code>Suf[l]</code> khi đã tồn tại một <em>phần thừa chung</em> như trên.</p>
 <p>Bởi vì ta đã lấy ra tất cả tiền tố, nên nếu tồn tại 2 cặp xâu như trên thì sẽ luôn tồn tại <code>X = (Pre[i] + c) + (Suf[j][1..])</code>, trong đó <code>c</code> là chữ cái đầu tiên của <code>Suf[j]</code>, và <code>Pre[i] + c</code> cũng là 1 tiền tố (vì nó là tiền tố của <code>Pre[k]</code>). Như vậy, luôn tồn tại các cặp chỉ lệch nhau 1 kí tự - và ta chỉ cần đặt thêm điều kiện để khử trường hợp lệch 1 kí tự là đủ.</p>
-<h3 id="Ki-tu-thua"><a href="#Ki-tu-thua" class="headerlink" title="Kí tự thừa"></a>Kí tự <em>thừa</em></h3><p>Xét trường hợp <code>X = (Pre[i] + c) + (Suf[j][1..])</code>. Ta có thể thêm vào điều kiện sau:<br>Xét <code>Suf[j]</code>, nếu <code>c + Suf[j]</code> cũng là một hậu tố trong tập, thì ta <strong>không được</strong> ghép <code>Suf[j]</code> với <code>Pre[i&#39;] = Pre[i] + c</code>.</p>
+<h3 id="Ki-tu-thua"><a href="#Ki-tu-thua" class="headerlink" title="Kí tự thừa"></a>Kí tự <em>thừa</em></h3><p>Xét trường hợp <code>X = (Pre[i] + c) + (Suf[j][1..])</code>. Ta có thể thêm vào điều kiện sau:
+Xét <code>Suf[j]</code>, nếu <code>c + Suf[j]</code> cũng là một hậu tố trong tập, thì ta <strong>không được</strong> ghép <code>Suf[j]</code> với <code>Pre[i&#39;] = Pre[i] + c</code>.</p>
 <p>Dễ dàng chứng minh tất cả xâu cần tìm đều tồn tại cách ghép <em>duy nhất</em> thỏa mãn điều kiện.</p>
 <p>Lưu ý <code>Pre[i&#39;]</code> phải là <code>Pre[i] + c</code>, tức phải có ít nhất 2 kí tự.</p>
 <p>Ta gọi các xâu <code>c + Suf[j]</code> không thuộc tập hậu tố là xâu <em>kí tự thừa</em> <code>c</code>.</p>
@@ -163,7 +167,8 @@
 <ul>
 <li><code>(minX - maxX)^2</code></li>
 <li><code>(minY - maxY)^2</code></li>
-<li><code>max(minX^2, maxX^2) + max(minY^2, maxY^2)</code><br>Ý tưởng đầu tiên sẽ là for một biến, giả sử <code>minX</code>, và tham lam các biến còn lại.</li>
+<li><code>max(minX^2, maxX^2) + max(minY^2, maxY^2)</code>
+Ý tưởng đầu tiên sẽ là for một biến, giả sử <code>minX</code>, và tham lam các biến còn lại.</li>
 </ul>
 <p>Khi có <code>minX</code>, ta tính được <code>maxX</code>. Hiển nhiên các điểm có <code>X[i] &lt; minX</code> hoặc <code>X[i] &gt; maxX</code> đều phải chọn sang <code>Y</code>. Ta chỉ cần lấy min và max của các <code>Y[i]</code> đó, so sánh. Bài toán đơn giản?</p>
 <p>Thuật toán sai rồi. Rất có thể <code>maxX^2</code> &gt; <code>minX^2</code> và sẽ làm cho thuật toán bị ảo tưởng.</p>
@@ -176,7 +181,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://natsukagami.github.io/2017/04/18/2017-04-18-Training/" data-id="cj1nlu8z60009kp2bjq2t1jk4" class="article-share-link">Partager</a>
+      <a data-url="http://natsukagami.github.io/2017/04/18/2017-04-18-Training/" data-id="cj1rwucef000lg52bf35nxpjn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apio/">apio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/training/">training</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vietnamese/">vietnamese</a></li></ul>
@@ -188,7 +193,7 @@
 <nav id="article-nav">
   
     <a href="/2017/04/19/2017-04-19-Training/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Récent</strong>
+      <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
           2017/04/19 Training
@@ -198,7 +203,7 @@
   
   
     <a href="/2017/04/16/2017-04-15-Training/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ancien</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">2017/04/15 Training</div>
     </a>
   
@@ -213,7 +218,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Catégories</h3>
+    <h3 class="widget-title">Categories</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Thoughts/">Thoughts</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Training/">Training</a></li></ul>
     </div>
@@ -223,7 +228,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/First-Post/">First Post</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apio/">apio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/english/">english</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/training/">training</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vietnamese/">vietnamese</a></li></ul>
     </div>
@@ -233,7 +238,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/First-Post/" style="font-size: 10px;">First Post</a> <a href="/tags/apio/" style="font-size: 20px;">apio</a> <a href="/tags/english/" style="font-size: 10px;">english</a> <a href="/tags/training/" style="font-size: 20px;">training</a> <a href="/tags/vietnamese/" style="font-size: 15px;">vietnamese</a>
     </div>
@@ -252,7 +257,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -289,7 +294,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 Natsu Kagami<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
