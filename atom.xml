@@ -1,111 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
   <title>Kagami&#39;s Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Some random stuff I write to express my life.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Kagami's Blog">
-<meta property="og:url" content="http://natsukagami.github.io/index.html">
-<meta property="og:site_name" content="Kagami's Blog">
-<meta property="og:description" content="Some random stuff I write to express my life.">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kagami's Blog">
-<meta name="twitter:description" content="Some random stuff I write to express my life.">
-<meta name="twitter:creator" content="@natsukagami">
+  <subtitle>IOI Medalist, osu! lover, I tryhard everything.</subtitle>
+  <link href="/atom.xml" rel="self"/>
   
-    <link rel="alternate" href="/atom.xml" title="Kagami&#39;s Blog" type="application/atom+xml">
+  <link href="http://natsukagami.github.io/"/>
+  <updated>2017-04-23T10:17:42.076Z</updated>
+  <id>http://natsukagami.github.io/</id>
   
-  
-    <link rel="icon" href="/favicon.ico">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
-
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'></script>
-  <script type="text/javascript">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [ ['$','$'] ],
-        displayMath: [ ['$$','$$'] ],
-        processEscape: true
-      }
-    }); 
-  </script>
-</head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Kagami&#39;s Blog</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">IOI Medalist, osu! lover, I tryhard everything.</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://natsukagami.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-2017-04-21-Training" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/04/23/2017-04-21-Training/" class="article-date">
-  <time datetime="2017-04-23T01:11:00.000Z" itemprop="datePublished">2017-04-23</time>
-</a>
+  <author>
+    <name>Natsu Kagami</name>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Training/">Training</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+  </author>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/23/2017-04-21-Training/">2017/04/21 Training</a>
-    </h1>
+  <generator uri="http://hexo.io/">Hexo</generator>
   
-
-      </header>
+  <entry>
+    <title>2017/04/21 Training</title>
+    <link href="http://natsukagami.github.io/2017/04/23/2017-04-21-Training/"/>
+    <id>http://natsukagami.github.io/2017/04/23/2017-04-21-Training/</id>
+    <published>2017-04-23T01:11:00.000Z</published>
+    <updated>2017-04-23T10:17:42.076Z</updated>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Tom-tat-de-bai"><a href="#Tom-tat-de-bai" class="headerlink" title="Tóm tắt đề bài"></a>Tóm tắt đề bài</h1><h2 id="SEQUENCE"><a href="#SEQUENCE" class="headerlink" title="SEQUENCE"></a>SEQUENCE</h2><p>Cho dãy số <code>A[1..N]</code>. Mỗi lần xóa ta sẽ xóa
+    <content type="html"><![CDATA[<h1 id="Tom-tat-de-bai"><a href="#Tom-tat-de-bai" class="headerlink" title="Tóm tắt đề bài"></a>Tóm tắt đề bài</h1><h2 id="SEQUENCE"><a href="#SEQUENCE" class="headerlink" title="SEQUENCE"></a>SEQUENCE</h2><p>Cho dãy số <code>A[1..N]</code>. Mỗi lần xóa ta sẽ xóa
 tất cả các số mang một giá trị <code>x</code> nào đó.
 Hỏi dãy dài nhất có thể tạo ra được mà không
 tồn tại <code>i &lt; j &lt; k</code> thỏa mãn
@@ -287,49 +204,35 @@ từ trái sang phải.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> b[N * K + <span class="number">1</span>]; <span class="comment">// tất cả b[i] của các đường tăng</span></div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; add[K + <span class="number">2</span>], remove[K + <span class="number">2</span>]; <span class="comment">// các mốc thêm xóa</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">addSegment</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> id)</span> </span>&#123;</div><div class="line">  <span class="comment">// thêm đoạn [l..r] = x + b[id]</span></div><div class="line">  add[l].push_back(id);</div><div class="line">  remove[r + <span class="number">1</span>].push_back(id);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">scan</span><span class="params">()</span> </span>&#123;</div><div class="line">  <span class="keyword">int</span> value = <span class="number">0</span>, cnt = <span class="number">0</span>;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= K; ++i) &#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> p: add[i]) &#123;</div><div class="line">      value += b[p] + i - <span class="number">1</span>; <span class="comment">// giá trị của i trước đó</span></div><div class="line">      ++cnt;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> p: remove[i]) &#123;</div><div class="line">      value -= b[p] + i - <span class="number">1</span>;</div><div class="line">      --cnt;</div><div class="line">    &#125;</div><div class="line">    value += cnt;</div><div class="line">    <span class="comment">// value là tổng ở vị trí i</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>Ta có thể thấy độ phức tạp với mỗi <code>n</code> là <code>O(K + số đoạn của n)</code>.
 Vì thế tổng độ phức tạp là <code>O(K^2 + NK)</code>, do có <code>2NK</code> đoạn tất cả.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://natsukagami.github.io/2017/04/23/2017-04-21-Training/" data-id="cj1uk5kqb000evs2b3zcyhou2" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apio/">apio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/thay-Nghia/">thầy Nghĩa</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/training/">training</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vietnamese/">vietnamese</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2017-04-20-Training" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/04/21/2017-04-20-Training/" class="article-date">
-  <time datetime="2017-04-21T11:36:25.000Z" itemprop="datePublished">2017-04-21</time>
-</a>
+]]></content>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Training/">Training</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Tom-tat-de-bai&quot;&gt;&lt;a href=&quot;#Tom-tat-de-bai&quot; class=&quot;headerlink&quot; title=&quot;Tóm tắt đề bài&quot;&gt;&lt;/a&gt;Tóm tắt đề bài&lt;/h1&gt;&lt;h2 id=&quot;SEQUENCE&quot;&gt;&lt;a href
+    
+    </summary>
+    
+      <category term="Training" scheme="http://natsukagami.github.io/categories/Training/"/>
     
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/21/2017-04-20-Training/">2017/04/20 Training</a>
-    </h1>
-  
-
-      </header>
+      <category term="training" scheme="http://natsukagami.github.io/tags/training/"/>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>Lưu ý</strong>: Mình đã tóm tắt đề bài ở trên, ai không muốn bị spoil thì đừng
+      <category term="apio" scheme="http://natsukagami.github.io/tags/apio/"/>
+    
+      <category term="vietnamese" scheme="http://natsukagami.github.io/tags/vietnamese/"/>
+    
+      <category term="thầy Nghĩa" scheme="http://natsukagami.github.io/tags/thay-Nghia/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2017/04/20 Training</title>
+    <link href="http://natsukagami.github.io/2017/04/21/2017-04-20-Training/"/>
+    <id>http://natsukagami.github.io/2017/04/21/2017-04-20-Training/</id>
+    <published>2017-04-21T11:36:25.000Z</published>
+    <updated>2017-04-23T02:12:39.769Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>Lưu ý</strong>: Mình đã tóm tắt đề bài ở trên, ai không muốn bị spoil thì đừng
 kéo xuống lời giải vội.</p>
 <p>Hôm nay có 5 bài của thầy Đông. Do mình không được nghe thầy chữa buổi chiều nên solution là của mình, mặc dù 99% là đúng nhưng không đảm bảo.
 Thực chất bài không phải là khó quá.</p>
@@ -556,49 +459,37 @@ Ta chọn thêm một xâu <code>S[k]</code> mới và chuyển trạng thái sa
 cần quan tâm đến kí tự cuối cùng của <code>T</code>, nên thay vào đó ta có
 thể chỉ lưu <code>i</code> là kí tự cuối cùng.</p>
 <p>Độ phức tạp giảm xuống còn <code>O(26 * |P| * N)</code>, thỏa mãn bài toán.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://natsukagami.github.io/2017/04/21/2017-04-20-Training/" data-id="cj1uk5kq8000bvs2b44fqmzi2" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apio/">apio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/thay-Dong/">thầy Đông</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/training/">training</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vietnamese/">vietnamese</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2017-04-19-Training" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/04/19/2017-04-19-Training/" class="article-date">
-  <time datetime="2017-04-19T08:00:00.000Z" itemprop="datePublished">2017-04-19</time>
-</a>
+]]></content>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Training/">Training</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;Lưu ý&lt;/strong&gt;: Mình đã tóm tắt đề bài ở trên, ai không muốn bị spoil thì đừng
+kéo xuống lời giải vội.&lt;/p&gt;
+&lt;p&gt;Hôm nay có 5 bài củ
+    
+    </summary>
+    
+      <category term="Training" scheme="http://natsukagami.github.io/categories/Training/"/>
     
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/19/2017-04-19-Training/">2017/04/19 Training</a>
-    </h1>
-  
-
-      </header>
+      <category term="training" scheme="http://natsukagami.github.io/tags/training/"/>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Thầy Phương cho 3 bài của <a href="http://orac.amt.edu.au/cgi-bin/train/hub.pl?expand=fario17#fario17" target="_blank" rel="external">FARIO 2017</a>. Bài 1 đã làm rồi, bài 3 là bài approximate nên mình chỉ chữa bài 2.</p>
+      <category term="apio" scheme="http://natsukagami.github.io/tags/apio/"/>
+    
+      <category term="vietnamese" scheme="http://natsukagami.github.io/tags/vietnamese/"/>
+    
+      <category term="thầy Đông" scheme="http://natsukagami.github.io/tags/thay-Dong/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2017/04/19 Training</title>
+    <link href="http://natsukagami.github.io/2017/04/19/2017-04-19-Training/"/>
+    <id>http://natsukagami.github.io/2017/04/19/2017-04-19-Training/</id>
+    <published>2017-04-19T08:00:00.000Z</published>
+    <updated>2017-04-23T02:12:50.352Z</updated>
+    
+    <content type="html"><![CDATA[<p>Thầy Phương cho 3 bài của <a href="http://orac.amt.edu.au/cgi-bin/train/hub.pl?expand=fario17#fario17" target="_blank" rel="external">FARIO 2017</a>. Bài 1 đã làm rồi, bài 3 là bài approximate nên mình chỉ chữa bài 2.</p>
 <h2 id="Pyramid-Cake"><a href="#Pyramid-Cake" class="headerlink" title="Pyramid Cake"></a>Pyramid Cake</h2><h3 id="Tom-tat-de-bai"><a href="#Tom-tat-de-bai" class="headerlink" title="Tóm tắt đề bài"></a>Tóm tắt đề bài</h3><p>Cho một chiếc hộp có đáy chữ nhật <code>M x N</code>, vị trí <code>(i, j)</code> có độ cao là <code>H[i][j]</code>. Ta dựng một chiếc bánh nhiều tần thỏa mãn:</p>
 <ul>
 <li>Các tầng là các hình chữ nhật chứa đỉnh <code>(1,1)</code></li>
@@ -617,49 +508,35 @@ thể chỉ lưu <code>i</code> là kí tự cuối cùng.</p>
 <p>Rất có thể mọi người sẽ nghĩ việc này không đúng vì có thể không điền đc thêm tầng nào - nhưng nếu ta nghĩ theo cách nhìn khác - ta thêm <strong>0</strong> tầng, thì lựa chọn vẫn hợp lí.</p>
 <p>Có thể việc này không tối ưu không? Giả sử, lựa chọn <code>(x, y)</code> (<code>x &lt; i, y &lt; j</code>) là tối ưu. Hiển nhiên nó cũng sẽ tối ưu cho <code>(i, j - 1)</code>. Vậy ta hoàn toàn có thể chọn <code>(i, j - 1)</code> và nó sẽ chứa cả <code>(x, y)</code>, kết quả không đổi.</p>
 <h3 id="Cai-thien-thuat-toan"><a href="#Cai-thien-thuat-toan" class="headerlink" title="Cải thiện thuật toán"></a>Cải thiện thuật toán</h3><p>Ta rút việc chọn tất cả cặp thành chọn một trong hai hình chữ nhật con lớn nhất. Độ phức tạp giảm xuống còn <code>O(N^2)</code>, thỏa mãn bài toán.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://natsukagami.github.io/2017/04/19/2017-04-19-Training/" data-id="cj1uk5kq70009vs2bhuesa8pu" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apio/">apio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/thay-Phuong/">thầy Phương</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/training/">training</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vietnamese/">vietnamese</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2017-04-18-Training" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/04/18/2017-04-18-Training/" class="article-date">
-  <time datetime="2017-04-18T07:22:18.000Z" itemprop="datePublished">2017-04-18</time>
-</a>
+]]></content>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Training/">Training</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
+    <summary type="html">
+    
+      &lt;p&gt;Thầy Phương cho 3 bài của &lt;a href=&quot;http://orac.amt.edu.au/cgi-bin/train/hub.pl?expand=fario17#fario17&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;FAR
+    
+    </summary>
+    
+      <category term="Training" scheme="http://natsukagami.github.io/categories/Training/"/>
     
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/18/2017-04-18-Training/">2017/04/18 Training</a>
-    </h1>
-  
-
-      </header>
+      <category term="training" scheme="http://natsukagami.github.io/tags/training/"/>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Hôm nay Hạnh dạy. Nói chung như mọi lần Hạnh dạy, bài thì hay nhưng có vẻ như Hạnh vẫn tốn rất nhiều thời gian giảng bài. Mình thực sự không muốn nghe cho lắm vì vẫn muốn nghĩ bài một mình, sau đó có reference của Hạnh để improve solution thì vẫn thích hơn.</p>
+      <category term="apio" scheme="http://natsukagami.github.io/tags/apio/"/>
+    
+      <category term="vietnamese" scheme="http://natsukagami.github.io/tags/vietnamese/"/>
+    
+      <category term="thầy Phương" scheme="http://natsukagami.github.io/tags/thay-Phuong/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2017/04/18 Training</title>
+    <link href="http://natsukagami.github.io/2017/04/18/2017-04-18-Training/"/>
+    <id>http://natsukagami.github.io/2017/04/18/2017-04-18-Training/</id>
+    <published>2017-04-18T07:22:18.000Z</published>
+    <updated>2017-04-23T02:12:58.206Z</updated>
+    
+    <content type="html"><![CDATA[<p>Hôm nay Hạnh dạy. Nói chung như mọi lần Hạnh dạy, bài thì hay nhưng có vẻ như Hạnh vẫn tốn rất nhiều thời gian giảng bài. Mình thực sự không muốn nghe cho lắm vì vẫn muốn nghĩ bài một mình, sau đó có reference của Hạnh để improve solution thì vẫn thích hơn.</p>
 <h2 id="Stretching-Streamers-NAIPC-2017-bai-C"><a href="#Stretching-Streamers-NAIPC-2017-bai-C" class="headerlink" title="Stretching Streamers (NAIPC 2017, bài C)"></a><a href="https://naipc17.kattis.com/problems/naipc17.stretchingstreamers" target="_blank" rel="external">Stretching Streamers (NAIPC 2017, bài C)</a></h2><h3 id="Tom-tat-de-bai"><a href="#Tom-tat-de-bai" class="headerlink" title="Tóm tắt đề bài"></a>Tóm tắt đề bài</h3><p>Có <code>N</code> điểm viết trên một đường tròn, điểm thứ <code>i</code> chứa số nguyên dương <code>A[i]</code>. 2 số có cạnh đến nhau khi ước chung lớn nhất lớn hơn 1. Không được chọn 2 cạnh đè lên nhau (trừ khi đè ở đầu mút), đếm số cách dựng cây khung <code>N</code> điểm mod <code>1e9 + 7</code>.</p>
 <h5 id="Gioi-han"><a href="#Gioi-han" class="headerlink" title="Giới hạn"></a>Giới hạn</h5><p><code>3 &lt;= N &lt;= 300</code>, <code>2 &lt;= A[i] &lt;= 10^9</code>.</p>
 <h3 id="Dung-cay-nhu-nao"><a href="#Dung-cay-nhu-nao" class="headerlink" title="Dựng cây như nào?"></a>Dựng cây như nào?</h3><p>Đơn giản ta có thể tóm tắt quá trình dựng cây như sau:</p>
@@ -733,132 +610,110 @@ Xét <code>Suf[j]</code>, nếu <code>c + Suf[j]</code> cũng là một hậu t�
 <p>Xây mất <code>O(N log(N))</code> (sắp xếp) và truy vấn <code>O(1)</code>.</p>
 <h3 id="Lat-leo"><a href="#Lat-leo" class="headerlink" title="Lắt léo"></a>Lắt léo</h3><p>Còn một trường hợp nữa ta chưa xét đến: chọn tất cả theo trục Y. Trường hợp này không khó, check <code>(maxY - minY) ^ 2</code> là xong. Tuy vậy mình không nghĩ ra trước khi nộp :(</p>
 <h3 id="Tong-ket-1"><a href="#Tong-ket-1" class="headerlink" title="Tổng kết"></a>Tổng kết</h3><p>Tóm lại ta cần chặt nhị phân, khi kiểm tra cần chạy con trỏ hoặc lấy lower/upper bound. Việc chạy con trỏ khá lằng nhằng không cần thiết nên mình không code. Độ phức tạp là <code>(O(N * log(N) * log(10^17)))</code> hoặc <code>O(N * log(10^17))</code>.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://natsukagami.github.io/2017/04/18/2017-04-18-Training/" data-id="cj1uk5kq40006vs2bten4w8yq" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/anh-Hanh/">anh Hạnh</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apio/">apio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/training/">training</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vietnamese/">vietnamese</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-  <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
-  </nav>
-</section>
-        
-          <aside id="sidebar">
-  
+]]></content>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Thoughts/">Thoughts</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Training/">Training</a></li></ul>
-    </div>
-  </div>
-
-
-  
+    <summary type="html">
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/First-Post/">First Post</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anh-Hanh/">anh Hạnh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anh-Minh/">anh Minh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apio/">apio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/english/">english</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Nghia/">thầy Nghĩa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Phuong/">thầy Phương</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Dong/">thầy Đông</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/training/">training</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vietnamese/">vietnamese</a></li></ul>
-    </div>
-  </div>
-
-
-  
+      &lt;p&gt;Hôm nay Hạnh dạy. Nói chung như mọi lần Hạnh dạy, bài thì hay nhưng có vẻ như Hạnh vẫn tốn rất nhiều thời gian giảng bài. Mình thực sự kh
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/First-Post/" style="font-size: 10px;">First Post</a> <a href="/tags/anh-Hanh/" style="font-size: 10px;">anh Hạnh</a> <a href="/tags/anh-Minh/" style="font-size: 10px;">anh Minh</a> <a href="/tags/apio/" style="font-size: 20px;">apio</a> <a href="/tags/english/" style="font-size: 10px;">english</a> <a href="/tags/thay-Nghia/" style="font-size: 10px;">thầy Nghĩa</a> <a href="/tags/thay-Phuong/" style="font-size: 10px;">thầy Phương</a> <a href="/tags/thay-Dong/" style="font-size: 10px;">thầy Đông</a> <a href="/tags/training/" style="font-size: 20px;">training</a> <a href="/tags/vietnamese/" style="font-size: 15px;">vietnamese</a>
-    </div>
-  </div>
-
-  
+    </summary>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
-    </div>
-  </div>
-
-
-  
+      <category term="Training" scheme="http://natsukagami.github.io/categories/Training/"/>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2017/04/23/2017-04-21-Training/">2017/04/21 Training</a>
-          </li>
-        
-          <li>
-            <a href="/2017/04/21/2017-04-20-Training/">2017/04/20 Training</a>
-          </li>
-        
-          <li>
-            <a href="/2017/04/19/2017-04-19-Training/">2017/04/19 Training</a>
-          </li>
-        
-          <li>
-            <a href="/2017/04/18/2017-04-18-Training/">2017/04/18 Training</a>
-          </li>
-        
-          <li>
-            <a href="/2017/04/16/2017-04-15-Training/">2017/04/15 Training</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 Natsu Kagami<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
     
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-  </div>
-</body>
-</html>
+      <category term="training" scheme="http://natsukagami.github.io/tags/training/"/>
+    
+      <category term="apio" scheme="http://natsukagami.github.io/tags/apio/"/>
+    
+      <category term="vietnamese" scheme="http://natsukagami.github.io/tags/vietnamese/"/>
+    
+      <category term="anh Hạnh" scheme="http://natsukagami.github.io/tags/anh-Hanh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2017/04/15 Training</title>
+    <link href="http://natsukagami.github.io/2017/04/16/2017-04-15-Training/"/>
+    <id>http://natsukagami.github.io/2017/04/16/2017-04-15-Training/</id>
+    <published>2017-04-16T05:34:00.000Z</published>
+    <updated>2017-04-23T02:13:11.496Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>Warning</strong>: If you want to try solving the problems, skip reading everything but the statements! Also, for hints, read <em>slowly</em> from top to bottom of each problem.</p>
+<p>I didn’t attend the class directly, but did the problems while going on a bus to Ninh Binh. The problems were somewhat exciting to me.</p>
+<h2 id="A-Sorting"><a href="#A-Sorting" class="headerlink" title="A. Sorting"></a>A. Sorting</h2><h3 id="Statements"><a href="#Statements" class="headerlink" title="Statements"></a>Statements</h3><p>You are given a permutation <code>A[1..N]</code>, along with <code>Q</code> queries, each of the form <code>l, r</code> which you should sort the subarray <code>A[l..r]</code> increasingly or decreasingly. After all the queries are processed, print the middle value <code>A[N / 2 + 1]</code>.</p>
+<h4 id="Contraints"><a href="#Contraints" class="headerlink" title="Contraints"></a>Contraints</h4><p><code>1 &lt;= N &lt;= 10^5</code>, <code>1 &lt;= Q &lt;= 10^5</code>, <code>N</code> is odd.</p>
+<h3 id="One-problem-from-the-past"><a href="#One-problem-from-the-past" class="headerlink" title="One problem from the past"></a>One problem from the past</h3><p>The statements reminds me of a past problem I did on Codeforces. I didn’t remember the source, but in short you are given a Latin string with the same sorting queries, and then you have to return the whole string. It was feasible to solve the problem in <code>O(Q * 26 * log(N))</code> time because of the limited alphabet size.</p>
+<p>The main idea is, for each <code>l, r</code> query, count the number of instances of each character in the range. Then we can re-assign the characters’ positions, from the smallest to the largest. To efficiently do range-counting and range-assignments we can maintain 26 <em>interval trees</em>, with lazy update.</p>
+<p>However, the problem I faced yesterday was different: the alphabet size is much bigger. Perhaps a different approach was needed. Or maybe not?</p>
+<h3 id="The-alphabet-size"><a href="#The-alphabet-size" class="headerlink" title="The alphabet size"></a>The alphabet size</h3><p>From the previous problem, we know that the problem can be solved efficiently if the alphabet size was small. “Is there anyway to make the numbers pool smaller?” - that was the first question that came to my mind.</p>
+<p>The above problem somewhat resembles radix sorting, so of course it can also be applied to numbers. However splitting digits is not eligible, as reordering still takes too much time. We need to transform numbers into something that’s both small in size and easy to reassign, maybe not even caring about its original value.</p>
+<p>The problem only asked for <strong>one</strong> element. What if, all we care about is the element itself?</p>
+<h3 id="Relative-ordering"><a href="#Relative-ordering" class="headerlink" title="Relative ordering"></a>Relative ordering</h3><p>It turns out that we don’t actually need to sort the elements. Not entirely.</p>
+<p>Let’s choose a pivot, <code>X</code>. We transform every number larger than <code>X</code> to <code>1</code>, and the rest to <code>0</code>. Sorting becomes wrong now, but the order <em>relative to <code>X</code></em> isn’t: If we sort <code>l, r</code> increasingly, every number that’s smaller than <code>X</code> still stays on the left of those which are larger than <code>X</code>. Therefore, this <em>masked</em> ordering isn’t entirely wrong, because the correct ordering <strong>have the same mask</strong>, and we can assume that the unlerlying original values are on the correct positions. Of course, we don’t need to care about it.</p>
+<p>Of course, since the numbers are binary now, performing the above algorithm becomes a breeze.</p>
+<p>After all the sortings, we get the middle number’s mask. It doesn’t give us the answer immediately, but it does leave a hint: If the number is <strong>1</strong> then the answer is <strong>larger than <code>X</code></strong>, and vice versa.</p>
+<h3 id="Binary-Search"><a href="#Binary-Search" class="headerlink" title="Binary Search"></a>Binary Search</h3><p>To effectively use the previous hint, we can perform <em>binary search</em> on the value of <code>A[N / 2 + 1]</code>, checking whether it’s larger than the middle value, and shorten the range according to the answer.
+That is also the final missing piece to solve the problem, giving us an <code>O(log(N) * Q * log(N))</code> algorithm.</p>
+<h2 id="B-Zigzag"><a href="#B-Zigzag" class="headerlink" title="B. Zigzag"></a>B. Zigzag</h2><h3 id="Statements-1"><a href="#Statements-1" class="headerlink" title="Statements"></a>Statements</h3><p>You are given an array <code>A[1..N]</code> of distinct numbers. There are also <code>Q</code> queries, each of the form <code>x y</code> that asks you to change the <code>x</code>-th number to <code>y</code>. It is guaranteed that after each query the array always contains dintinct numbers. After each query you have to return the largest alternating subsequence of the array.</p>
+<h4 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h4><p><code>1 &lt;= N &lt;= 10^6</code>, <code>1 &lt;= A[i] &lt;= 10^9</code></p>
+<h3 id="Alternating-Subsequence"><a href="#Alternating-Subsequence" class="headerlink" title="Alternating Subsequence"></a>Alternating Subsequence</h3><p>The first thing to do is analyzing the <strong>longest alternating subsequence</strong> problem. It turns out that it is not as difficult as it sounds, in fact it can be greedily built from an array with distinct numbers.</p>
+<p>One nice observation from the problem: If there exists such <code>i</code> that <code>A[i - 1] &lt;= A[i] &lt;= A[i + 1]</code>, then there always exists an optimal subsequence without <code>A[i]</code>. Why? Since they’re consecutive numbers, <code>A[i - 1]</code> is always better than <code>A[i]</code> as a “lower” number, and <code>A[i + 1]</code> is always better than <code>A[i]</code> as an “upper” numbber. Therefore, it is safe to just remove <code>A[i]</code> from the array without losing the optimal sequence.</p>
+<p>Now let’s continuously remove such numbers from the array until there is no such one. Which means, for each <code>i</code>, it is either <code>A[i - 1] &lt;= A[i] &amp;&amp; A[i] &gt;= A[i + 1]</code> or <code>A[i - 1] &gt;= A[i] &amp;&amp; A[i] &lt;= A[i + 1]</code>. Wait… Isn’t <code>A[..]</code> now already an alternating sequence? More than that, <code>A[..]</code> is an <strong>optimal</strong> longest alternating subsequence of the original array.</p>
+<p>Dive a little deeper, we will find out that each <code>A[i]</code> can be a part of the new array <strong>if and only if</strong> has the same above atrribute on the original array. <em>Unless</em> it’s the first or last number of the array, in such case it’s always included.</p>
+<h3 id="Testing-an-element"><a href="#Testing-an-element" class="headerlink" title="Testing an element"></a>Testing an element</h3><p>With the above observations, we can deduce whether an element will appear in our optimal subsequence:</p>
+<ul>
+<li>It’s the first or last element, <em>or</em></li>
+<li>Either it’s both smaller or both bigger than its neighboring elements.</li>
+</ul>
+<p>Using these conditions we can check each element in <code>O(1)</code>. To answer the length of the optimal subsequence one only has to count how many elements satisfies the above conditions.</p>
+<h3 id="Processing-queries"><a href="#Processing-queries" class="headerlink" title="Processing queries"></a>Processing queries</h3><p>If we change one number, how is each element’s satisfiability affected? It turns out, only 3 of them are affected at most: the element itself, and its neighboring elements.</p>
+<p>It is now easy to process each query in <code>O(1)</code>: just change the element and re-check every affected elements.</p>
+<p>That concludes our <code>O(N + M)</code> algorithm.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;Warning&lt;/strong&gt;: If you want to try solving the problems, skip reading everything but the statements! Also, for hints, read &lt;em&gt;
+    
+    </summary>
+    
+      <category term="Training" scheme="http://natsukagami.github.io/categories/Training/"/>
+    
+    
+      <category term="training" scheme="http://natsukagami.github.io/tags/training/"/>
+    
+      <category term="apio" scheme="http://natsukagami.github.io/tags/apio/"/>
+    
+      <category term="english" scheme="http://natsukagami.github.io/tags/english/"/>
+    
+      <category term="anh Minh" scheme="http://natsukagami.github.io/tags/anh-Minh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>First Post</title>
+    <link href="http://natsukagami.github.io/2016/10/10/First-Post/"/>
+    <id>http://natsukagami.github.io/2016/10/10/First-Post/</id>
+    <published>2016-10-10T06:10:19.000Z</published>
+    <updated>2016-10-10T06:10:19.757Z</updated>
+    
+    <content type="html"><![CDATA[<p>I started a blog, yay! 
+The purpose of this blog will be for me to express random thoughts, coding experiences and to show everyone my work. 
+That’s all. Thank you for reading my first post!</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I started a blog, yay! 
+The purpose of this blog will be for me to express random thoughts, coding experiences and to show everyone my wo
+    
+    </summary>
+    
+      <category term="Thoughts" scheme="http://natsukagami.github.io/categories/Thoughts/"/>
+    
+    
+      <category term="First Post" scheme="http://natsukagami.github.io/tags/First-Post/"/>
+    
+  </entry>
+  
+</feed>
