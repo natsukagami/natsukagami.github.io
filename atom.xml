@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://natsukagami.github.io/"/>
-  <updated>2017-04-24T14:47:33.062Z</updated>
+  <updated>2017-04-24T14:48:08.458Z</updated>
   <id>http://natsukagami.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://natsukagami.github.io/2017/04/24/2017-04-24-Training/"/>
     <id>http://natsukagami.github.io/2017/04/24/2017-04-24-Training/</id>
     <published>2017-04-24T10:20:00.000Z</published>
-    <updated>2017-04-24T14:47:33.062Z</updated>
+    <updated>2017-04-24T14:48:08.458Z</updated>
     
     <content type="html"><![CDATA[<p>Hôm nay bài khá lằng nhằng, mình sẽ cố gắng chữa thật nhiều bước.</p>
 <h1 id="Tom-tat-de-bai"><a href="#Tom-tat-de-bai" class="headerlink" title="Tóm tắt đề bài"></a>Tóm tắt đề bài</h1><h2 id="Heap-on-Trees-NAIPC-2017-bai-D"><a href="#Heap-on-Trees-NAIPC-2017-bai-D" class="headerlink" title="Heap on Trees, NAIPC 2017, bài D"></a><a href="https://naipc17.kattis.com/problems/heapstrees" target="_blank" rel="external">Heap on Trees, NAIPC 2017, bài D</a></h2><p>Cho một cây $N$ đỉnh, mỗi nút có một số $A_i$.
