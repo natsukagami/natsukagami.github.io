@@ -15,7 +15,7 @@ Tìm tập con các nút lớn nhất thỏa mãn nếu">
 <meta property="og:description" content="Hôm nay bài khá lằng nhằng, mình sẽ cố gắng chữa thật nhiều bước.
 Tóm tắt đề bàiHeap on Trees, NAIPC 2017, bài DCho một cây $N$ đỉnh, mỗi nút có một số $A_i$.
 Tìm tập con các nút lớn nhất thỏa mãn nếu">
-<meta property="og:updated_time" content="2017-04-24T14:55:02.615Z">
+<meta property="og:updated_time" content="2017-04-24T14:56:07.321Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2017/04/24 Training">
 <meta name="twitter:description" content="Hôm nay bài khá lằng nhằng, mình sẽ cố gắng chữa thật nhiều bước.
@@ -239,7 +239,12 @@ nên tổng bộ nhớ không quá $O(N\log{N})$.</p>
 <p>Ngoài ra để đảm bảo điều này ta cũng cần thực
 hiện xóa nút để giải phóng bộ nhớ. Ta có thể
 thực hiện điều này sau khi chuyển xong.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">clear</span><span class="params">(node &amp;*v)</span> </span>&#123;</div><div class="line">  <span class="keyword">if</span> (v == <span class="literal">NULL</span>) <span class="keyword">return</span>;</div><div class="line">  clear(v-&gt;l); clear(v-&gt;r);</div><div class="line">  <span class="keyword">delete</span> v;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code class="cpp"><span class="function"><span class="keyword">void</span> <span class="title">clear</span><span class="params">(node &amp;*v)</span> </span>{
+  <span class="keyword">if</span> (v == <span class="literal">NULL</span>) <span class="keyword">return</span>;
+  clear(v-&gt;l); clear(v-&gt;r);
+  <span class="keyword">delete</span> v;
+}
+</code></pre>
 <h2 id="Pieces-of-Parentheses"><a href="#Pieces-of-Parentheses" class="headerlink" title="Pieces of Parentheses"></a>Pieces of Parentheses</h2><h3 id="Thu-tu-quy-hoach-dong"><a href="#Thu-tu-quy-hoach-dong" class="headerlink" title="Thứ tự quy hoạch động"></a>Thứ tự quy hoạch động</h3><p>Thông thường để giải các bài ngoặc ta sẽ sử dụng
 quy hoạch động. Tuy nhiên, theo đề bài thì ta
 phải chọn một tập con có thứ tự, tức ta không
