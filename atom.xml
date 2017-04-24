@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://natsukagami.github.io/"/>
-  <updated>2017-04-24T14:39:43.298Z</updated>
+  <updated>2017-04-24T14:47:33.062Z</updated>
   <id>http://natsukagami.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://natsukagami.github.io/2017/04/24/2017-04-24-Training/"/>
     <id>http://natsukagami.github.io/2017/04/24/2017-04-24-Training/</id>
     <published>2017-04-24T10:20:00.000Z</published>
-    <updated>2017-04-24T14:39:43.298Z</updated>
+    <updated>2017-04-24T14:47:33.062Z</updated>
     
     <content type="html"><![CDATA[<p>Hôm nay bài khá lằng nhằng, mình sẽ cố gắng chữa thật nhiều bước.</p>
 <h1 id="Tom-tat-de-bai"><a href="#Tom-tat-de-bai" class="headerlink" title="Tóm tắt đề bài"></a>Tóm tắt đề bài</h1><h2 id="Heap-on-Trees-NAIPC-2017-bai-D"><a href="#Heap-on-Trees-NAIPC-2017-bai-D" class="headerlink" title="Heap on Trees, NAIPC 2017, bài D"></a><a href="https://naipc17.kattis.com/problems/heapstrees" target="_blank" rel="external">Heap on Trees, NAIPC 2017, bài D</a></h2><p>Cho một cây $N$ đỉnh, mỗi nút có một số $A_i$.
@@ -236,10 +236,11 @@ lam để tìm cặp ghép. Thuật toán như sau:</p>
 có $L_x \le C_i$ vào queue.</li>
 <li>Tim phần tử trong queue có $R_x$ nhỏ nhất mà $\ge C_i$.
 Nếu có, ghép và xóa khỏi queue. Nếu không, không tồn tại
-cặp ghép đầy đủ.<h3 id="Tao-ra-tap-sai"><a href="#Tao-ra-tap-sai" class="headerlink" title="Tạo ra tập sai"></a>Tạo ra tập sai</h3>Thay vì đi tìm $K$ nhỏ nhất sao cho mọi tập đều ghép
-được, ta sẽ đi tìm $K’$ lớn nhất mà tồn tại 1 tập
-không ghép được. Đáp số sẽ là $K’ + 1$.</li>
+cặp ghép đầy đủ.</li>
 </ul>
+<h3 id="Tao-ra-tap-sai"><a href="#Tao-ra-tap-sai" class="headerlink" title="Tạo ra tập sai"></a>Tạo ra tập sai</h3><p>Thay vì đi tìm $K$ nhỏ nhất sao cho mọi tập đều ghép
+được, ta sẽ đi tìm $K’$ lớn nhất mà tồn tại 1 tập
+không ghép được. Đáp số sẽ là $K’ + 1$.</p>
 <h3 id="Vi-tri-fail"><a href="#Vi-tri-fail" class="headerlink" title="Vị trí fail"></a>Vị trí fail</h3><p>Dựa theo thuật toán tham lam, ta nhận thấy chỉ
 cần ở 1 bước mà queue rỗng thì thuật toán sẽ
 fail. Như vậy, khi xác định được vị trí fail

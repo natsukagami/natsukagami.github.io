@@ -15,7 +15,7 @@ Tìm tập con các nút lớn nhất thỏa mãn nếu">
 <meta property="og:description" content="Hôm nay bài khá lằng nhằng, mình sẽ cố gắng chữa thật nhiều bước.
 Tóm tắt đề bàiHeap on Trees, NAIPC 2017, bài DCho một cây $N$ đỉnh, mỗi nút có một số $A_i$.
 Tìm tập con các nút lớn nhất thỏa mãn nếu">
-<meta property="og:updated_time" content="2017-04-24T14:39:43.298Z">
+<meta property="og:updated_time" content="2017-04-24T14:47:33.062Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2017/04/24 Training">
 <meta name="twitter:description" content="Hôm nay bài khá lằng nhằng, mình sẽ cố gắng chữa thật nhiều bước.
@@ -324,10 +324,11 @@ lam để tìm cặp ghép. Thuật toán như sau:</p>
 có $L_x \le C_i$ vào queue.</li>
 <li>Tim phần tử trong queue có $R_x$ nhỏ nhất mà $\ge C_i$.
 Nếu có, ghép và xóa khỏi queue. Nếu không, không tồn tại
-cặp ghép đầy đủ.<h3 id="Tao-ra-tap-sai"><a href="#Tao-ra-tap-sai" class="headerlink" title="Tạo ra tập sai"></a>Tạo ra tập sai</h3>Thay vì đi tìm $K$ nhỏ nhất sao cho mọi tập đều ghép
-được, ta sẽ đi tìm $K’$ lớn nhất mà tồn tại 1 tập
-không ghép được. Đáp số sẽ là $K’ + 1$.</li>
+cặp ghép đầy đủ.</li>
 </ul>
+<h3 id="Tao-ra-tap-sai"><a href="#Tao-ra-tap-sai" class="headerlink" title="Tạo ra tập sai"></a>Tạo ra tập sai</h3><p>Thay vì đi tìm $K$ nhỏ nhất sao cho mọi tập đều ghép
+được, ta sẽ đi tìm $K’$ lớn nhất mà tồn tại 1 tập
+không ghép được. Đáp số sẽ là $K’ + 1$.</p>
 <h3 id="Vi-tri-fail"><a href="#Vi-tri-fail" class="headerlink" title="Vị trí fail"></a>Vị trí fail</h3><p>Dựa theo thuật toán tham lam, ta nhận thấy chỉ
 cần ở 1 bước mà queue rỗng thì thuật toán sẽ
 fail. Như vậy, khi xác định được vị trí fail
