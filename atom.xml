@@ -86,7 +86,7 @@ với mọi $1 \le i \le N$.</p>
     <link href="http://natsukagami.github.io/2017/04/24/2017-04-24-Training/"/>
     <id>http://natsukagami.github.io/2017/04/24/2017-04-24-Training/</id>
     <published>2017-04-24T10:20:00.000Z</published>
-    <updated>2017-04-25T16:34:44.216Z</updated>
+    <updated>2017-04-25T16:43:39.981Z</updated>
     
     <content type="html"><![CDATA[<p>Hôm nay bài khá lằng nhằng, mình sẽ cố gắng chữa thật nhiều bước.</p>
 <h1 id="Tom-tat-de-bai"><a href="#Tom-tat-de-bai" class="headerlink" title="Tóm tắt đề bài"></a>Tóm tắt đề bài</h1><h2 id="Heap-on-Trees-NAIPC-2017-bai-D"><a href="#Heap-on-Trees-NAIPC-2017-bai-D" class="headerlink" title="Heap on Trees, NAIPC 2017, bài D"></a><a href="https://naipc17.kattis.com/problems/heapstrees" target="_blank" rel="external">Heap on Trees, NAIPC 2017, bài D</a></h2><p>Cho một cây $N$ đỉnh, mỗi nút có một số $A_i$.
@@ -118,8 +118,11 @@ $j$.
 Dễ dàng nhận thấy để tính $F[v][j]$, ta lần
 lượt tính tổng $F[u][j]$ với $u$ là con của $v$.
 Ngoài ra nếu $A[v] \le j$ ta có một cách chọn
-là $A[v]$ cùng với tổng các $F[u][A[v]]$.
-$$ F[v][j] = \max(\sum\limits_{u \in child[v]}{F[u][j]}, (A[v] \le j) \times (1 + \sum\limits_{u \in child[v]}{F[u][A[v]]}))$$
+là $A[v]$ cùng với tổng các $F[u][A[v] - 1]$.
+$$ F[v][j] = \max(\sum\limits_{u \in child[v]}
+  {F[u][j]}, (A[v] \le j) \times
+  (1 + \sum\limits_
+    {u \in child[v]}{F[u][A[v] - 1]}))$$
 Đáp số chính là $F[root][inf]$.</p>
 <p>Sau khi nén số, ta có hàm quy hoạch động $O(n^2)$.
 Ta sẽ tập trung vào cải tiến hàm quy hoạch động

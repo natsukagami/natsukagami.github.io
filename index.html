@@ -214,8 +214,11 @@ $j$.
 Dễ dàng nhận thấy để tính $F[v][j]$, ta lần
 lượt tính tổng $F[u][j]$ với $u$ là con của $v$.
 Ngoài ra nếu $A[v] \le j$ ta có một cách chọn
-là $A[v]$ cùng với tổng các $F[u][A[v]]$.
-$$ F[v][j] = \max(\sum\limits_{u \in child[v]}{F[u][j]}, (A[v] \le j) \times (1 + \sum\limits_{u \in child[v]}{F[u][A[v]]}))$$
+là $A[v]$ cùng với tổng các $F[u][A[v] - 1]$.
+$$ F[v][j] = \max(\sum\limits_{u \in child[v]}
+  {F[u][j]}, (A[v] \le j) \times
+  (1 + \sum\limits_
+    {u \in child[v]}{F[u][A[v] - 1]}))$$
 Đáp số chính là $F[root][inf]$.</p>
 <p>Sau khi nén số, ta có hàm quy hoạch động $O(n^2)$.
 Ta sẽ tập trung vào cải tiến hàm quy hoạch động
