@@ -15,7 +15,7 @@ Tìm tập con các nút lớn nhất thỏa mãn nếu">
 <meta property="og:description" content="Hôm nay bài khá lằng nhằng, mình sẽ cố gắng chữa thật nhiều bước.
 Tóm tắt đề bàiHeap on Trees, NAIPC 2017, bài DCho một cây $N$ đỉnh, mỗi nút có một số $A_i$.
 Tìm tập con các nút lớn nhất thỏa mãn nếu">
-<meta property="og:updated_time" content="2017-04-24T14:56:07.321Z">
+<meta property="og:updated_time" content="2017-04-25T16:34:44.216Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2017/04/24 Training">
 <meta name="twitter:description" content="Hôm nay bài khá lằng nhằng, mình sẽ cố gắng chữa thật nhiều bước.
@@ -139,9 +139,9 @@ chọn ở cây con gốc $v$ với giới hạn các số là
 $j$.
 Dễ dàng nhận thấy để tính $F[v][j]$, ta lần
 lượt tính tổng $F[u][j]$ với $u$ là con của $v$.
-Ngoài ra nếu $A[v] \le j$, ta cộng thêm 1 vào
-đáp số.
-$$ F[v][j] = \sum\limits_{u \in child[v]}{F[u][j]} + (A[v] \le j)$$
+Ngoài ra nếu $A[v] \le j$ ta có một cách chọn
+là $A[v]$ cùng với tổng các $F[u][A[v]]$.
+$$ F[v][j] = \max(\sum\limits_{u \in child[v]}{F[u][j]}, (A[v] \le j) \times (1 + \sum\limits_{u \in child[v]}{F[u][A[v]]}))$$
 Đáp số chính là $F[root][inf]$.</p>
 <p>Sau khi nén số, ta có hàm quy hoạch động $O(n^2)$.
 Ta sẽ tập trung vào cải tiến hàm quy hoạch động
@@ -239,12 +239,7 @@ nên tổng bộ nhớ không quá $O(N\log{N})$.</p>
 <p>Ngoài ra để đảm bảo điều này ta cũng cần thực
 hiện xóa nút để giải phóng bộ nhớ. Ta có thể
 thực hiện điều này sau khi chuyển xong.</p>
-<pre><code class="cpp"><span class="function"><span class="keyword">void</span> <span class="title">clear</span><span class="params">(node &amp;*v)</span> </span>{
-  <span class="keyword">if</span> (v == <span class="literal">NULL</span>) <span class="keyword">return</span>;
-  clear(v-&gt;l); clear(v-&gt;r);
-  <span class="keyword">delete</span> v;
-}
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">clear</span><span class="params">(node &amp;*v)</span> </span>&#123;</div><div class="line">  <span class="keyword">if</span> (v == <span class="literal">NULL</span>) <span class="keyword">return</span>;</div><div class="line">  clear(v-&gt;l); clear(v-&gt;r);</div><div class="line">  <span class="keyword">delete</span> v;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="Pieces-of-Parentheses"><a href="#Pieces-of-Parentheses" class="headerlink" title="Pieces of Parentheses"></a>Pieces of Parentheses</h2><h3 id="Thu-tu-quy-hoach-dong"><a href="#Thu-tu-quy-hoach-dong" class="headerlink" title="Thứ tự quy hoạch động"></a>Thứ tự quy hoạch động</h3><p>Thông thường để giải các bài ngoặc ta sẽ sử dụng
 quy hoạch động. Tuy nhiên, theo đề bài thì ta
 phải chọn một tập con có thứ tự, tức ta không
@@ -369,6 +364,15 @@ bị xóa nhỏ nhất.
     
 <nav id="article-nav">
   
+    <a href="/2017/04/25/2017-04-25-Training/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Mới hơn</strong>
+      <div class="article-nav-title">
+        
+          2017/04/25 Training
+        
+      </div>
+    </a>
+  
   
     <a href="/2017/04/23/2017-04-21-Training/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Cũ hơn</strong>
@@ -408,7 +412,7 @@ bị xóa nhỏ nhất.
   <div class="widget-wrap">
     <h3 class="widget-title">Tập hợp nhãn</h3>
     <div class="widget tagcloud">
-      <a href="/tags/First-Post/" style="font-size: 10px;">First Post</a> <a href="/tags/anh-Hanh/" style="font-size: 13.33px;">anh Hạnh</a> <a href="/tags/anh-Minh/" style="font-size: 10px;">anh Minh</a> <a href="/tags/apio/" style="font-size: 20px;">apio</a> <a href="/tags/english/" style="font-size: 10px;">english</a> <a href="/tags/thay-Nghia/" style="font-size: 10px;">thầy Nghĩa</a> <a href="/tags/thay-Phuong/" style="font-size: 10px;">thầy Phương</a> <a href="/tags/thay-Dong/" style="font-size: 10px;">thầy Đông</a> <a href="/tags/training/" style="font-size: 20px;">training</a> <a href="/tags/vietnamese/" style="font-size: 16.67px;">vietnamese</a>
+      <a href="/tags/First-Post/" style="font-size: 10px;">First Post</a> <a href="/tags/anh-Hanh/" style="font-size: 13.33px;">anh Hạnh</a> <a href="/tags/anh-Minh/" style="font-size: 13.33px;">anh Minh</a> <a href="/tags/apio/" style="font-size: 20px;">apio</a> <a href="/tags/english/" style="font-size: 10px;">english</a> <a href="/tags/thay-Nghia/" style="font-size: 10px;">thầy Nghĩa</a> <a href="/tags/thay-Phuong/" style="font-size: 10px;">thầy Phương</a> <a href="/tags/thay-Dong/" style="font-size: 10px;">thầy Đông</a> <a href="/tags/training/" style="font-size: 20px;">training</a> <a href="/tags/vietnamese/" style="font-size: 16.67px;">vietnamese</a>
     </div>
   </div>
 
@@ -430,6 +434,10 @@ bị xóa nhỏ nhất.
       <ul>
         
           <li>
+            <a href="/2017/04/25/2017-04-25-Training/">2017/04/25 Training</a>
+          </li>
+        
+          <li>
             <a href="/2017/04/24/2017-04-24-Training/">2017/04/24 Training</a>
           </li>
         
@@ -443,10 +451,6 @@ bị xóa nhỏ nhất.
         
           <li>
             <a href="/2017/04/19/2017-04-19-Training/">2017/04/19 Training</a>
-          </li>
-        
-          <li>
-            <a href="/2017/04/18/2017-04-18-Training/">2017/04/18 Training</a>
           </li>
         
       </ul>
