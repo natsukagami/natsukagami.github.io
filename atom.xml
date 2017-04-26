@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://natsukagami.github.io/"/>
-  <updated>2017-04-26T17:15:44.474Z</updated>
+  <updated>2017-04-26T17:17:54.066Z</updated>
   <id>http://natsukagami.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://natsukagami.github.io/2017/04/25/2017-04-25-Training/"/>
     <id>http://natsukagami.github.io/2017/04/25/2017-04-25-Training/</id>
     <published>2017-04-25T13:00:00.000Z</published>
-    <updated>2017-04-26T17:15:44.474Z</updated>
+    <updated>2017-04-26T17:17:54.066Z</updated>
     
     <content type="html"><![CDATA[<p>Hôm nay có khá nhiều bài trí tuệ.</p>
 <h1 id="Tom-tat-de-bai"><a href="#Tom-tat-de-bai" class="headerlink" title="Tóm tắt đề bài"></a>Tóm tắt đề bài</h1><h2 id="wash"><a href="#wash" class="headerlink" title="wash"></a>wash</h2><p>Cho $N$ máy giặt và $M$ máy sấy chạy song song,
@@ -152,7 +152,7 @@ bến trái nó nhân với tổng trọng số những
 điểm bên phải.</p>
 <h3 id="Don-ve-2-ben"><a href="#Don-ve-2-ben" class="headerlink" title="Dồn về 2 bên"></a>Dồn về 2 bên</h3><p>Giả sử ta đã có thứ tự các số $A[i]$, vậy
 đặt chúng vào đâu thì hợp lí nhất?</p>
-<p>Dựa theo công thức phía trên, ta có:</p>
+<p>Dựa theo công thức phía trên, ta có: </p>
 <ul>
 <li>Tổng các $(x_{i + 1} - x_i)$ không quá $M$.
 Vì ta cần tối đa hóa nên ta coi tổng là
