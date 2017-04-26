@@ -19,7 +19,7 @@ Tóm tắt đề bàiwashCho $N$ máy giặt và $M$ máy sấy chạy song song
 thời gian giặt là $A[1..N]$, sấy là $B[1..M]$ cho
 từng máy. Tìm thời gian nhỏ nhất để giặt xong
 $L$">
-<meta property="og:updated_time" content="2017-04-25T16:27:20.030Z">
+<meta property="og:updated_time" content="2017-04-26T17:15:44.474Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2017/04/25 Training">
 <meta name="twitter:description" content="Hôm nay có khá nhiều bài trí tuệ.
@@ -153,6 +153,222 @@ $P_i$ nếu $R[i]$ là số lớn nhất thỏa mãn:</p>
 $P$ độ dài $N$ có bán kính của $P_i$ là $R[i]$
 với mọi $1 \le i \le N$.</p>
 <h4 id="Gioi-han-3"><a href="#Gioi-han-3" class="headerlink" title="Giới hạn"></a>Giới hạn</h4><p>$1 \le N \le 1000$.</p>
+<h1 id="Loi-giai"><a href="#Loi-giai" class="headerlink" title="Lời giải"></a>Lời giải</h1><h2 id="wash-1"><a href="#wash-1" class="headerlink" title="wash"></a>wash</h2><h3 id="Tham-lam-tren-mot-may"><a href="#Tham-lam-tren-mot-may" class="headerlink" title="Tham lam trên một máy"></a>Tham lam trên một máy</h3><p>Giả sử bài toán chỉ có một loại máy (máy giặt
+chẳng hạn, phơi thôi sấy làm gì tốn điện), ta
+có thể sử dụng thuật toán tham lam: Với mỗi
+bước ta chọn máy giặt mà có <strong>thời điểm hoàn
+thành đồ tiếp theo</strong> (không phải đồ máy đó
+đang giặt - nếu có) là nhỏ nhất.</p>
+<p>Không khó để chứng minh thuật toán này là tối
+ưu. Việc cài đặt cũng không khó khăn, chỉ
+cần sử dụng 1 <code>priority_queue</code>.</p>
+<p>Độ phức tạp là $O(L \log N)$.</p>
+<p>Mạnh hơn thế, thuật toán này cho ta không
+chỉ đáp án tối ưu, mà từng phần tử cũng tối
+ưu: <strong>Không thể giặt đồ thứ $i$ xong
+trước thời điểm $T[i]$.</strong></p>
+<h3 id="Chat-nhi-phan-ket-qua"><a href="#Chat-nhi-phan-ket-qua" class="headerlink" title="Chặt nhị phân kết quả"></a>Chặt nhị phân kết quả</h3><p>Theo tính chất bài toán, ta có thể chặt nhị
+phân kết quả. Bài toán trở thành kiểm tra,
+liệu trong thời gian $X$ có thể giặt và
+sấy $L$ quần áo không?</p>
+<p>Để kiểm tra, đầu tiên ta sẽ tham lam theo thuật
+toán trên để có tập thời gian giặt xong của
+từng đồ, $T[i]$.</p>
+<p>Sau đó, ta “lật ngược” trục trời gian lại,
+xuất phát từ thời điểm $L$ và thực hiện tính
+tập thời gian sấy $V[i]$, <em>cũng bằng thuật
+tham lam trên</em>. Tại sao thuật tham lam vẫn
+đúng? Tại vì, với mỗi máy, ta chỉ cần đảo
+ngược thứ tự sấy các đồ của máy đó là tổng
+thời gian vẫn không đổi, các đồ được sấy
+đúng thứ tự xuôi trục thời gian.</p>
+<p>Việc cuối cùng là dựng lên cặp ghép $T[i]$ - $V[i]$
+sao cho $i$ ghép với $j$ thì $T[i] + V[j] &lt; X$.
+Ta có thể tưởng tượng là giặt mất $T[i]$,
+đợi đến $X - V[j]$ rồi sấy mất $V[j]$.</p>
+<p>Hiển nhiên cách ghép tối ưu nhất là ghép $T[i]$
+nhỏ nhất với $V[j]$ lớn nhất, nhỏ nhì với lớn
+nhì và vân vân…</p>
+<p>Ta có thuật toán $O(L \log N \log 10^{15})$,
+chưa đủ mạnh.</p>
+<h3 id="Khu-chat-nhi-phan"><a href="#Khu-chat-nhi-phan" class="headerlink" title="Khử chặt nhị phân"></a>Khử chặt nhị phân</h3><p>Ta nhận thấy việc tính mảng $T[i]$ và $V[i]$
+không liên quan đến việc chặt nhị phân, vì
+thế thực chất việc chặt nhị phân của ta
+chỉ là tìm giá trị max của việc ghép cặp.</p>
+<p>Như vậy, không cần chặt nhị phân, ta chỉ
+cần tìm 2 mảng trên, thực hiện ghép cặp
+rồi tìm giá trị max.</p>
+<p>Độ phức tạp là $O(L \log N)$.</p>
+<h2 id="mars-1"><a href="#mars-1" class="headerlink" title="mars"></a>mars</h2><h3 id="Luong"><a href="#Luong" class="headerlink" title="Luồng"></a>Luồng</h3><p>Ta có thể để ý, đề bài gồm một số đầu vào,
+một số đầu ra và yêu cầu kiểm tra xem
+có thể truyền từ đầu vào sang đầu ra không.
+Đây chính là đặc điểm của bài toán luồng
+cực đại - vì thế đây là bài luồng cơ bản.</p>
+<p>Ngoài ra, giới hạn nhỏ của đề bài cũng
+ủng hộ ý tưởng luồng.</p>
+<h3 id="Dung-luong-nhu-the-nao"><a href="#Dung-luong-nhu-the-nao" class="headerlink" title="Dựng luồng như thế nào?"></a>Dựng luồng như thế nào?</h3><ul>
+<li>Với mỗi ngày ta chỉ có thể giữ lại $C_i$
+đơn vị ở nhà kho $i$ =&gt; Ta sẽ cần phải
+dựng đỉnh quản lí $V[i][j]$ quản lí nhà
+kho $i$ trong ngày $j$, từ $V[i][j]$ đi
+đến $V[i][j + 1]$ với capacity $C_i$.</li>
+<li>Trong ngày $i$ chỉ được chuyển $D_i$
+đơn vị =&gt; Ta dựng đỉnh $Q[i]$ quản lí
+lượng chuyển ra trong ngày $i$. Từ $Q[i]$
+đến đích có capacity $D_i$, từ các
+$V[i][j]$ đến $Q[j]$ có capacity vô tận.</li>
+<li>Kho $j$ ngày $i$ tăng thêm $A[i][j]$ đơn
+vị =&gt; từ nguồn vào $V[i][j]$ có capacity
+$A[i][j]$.</li>
+<li>Chuyển vào trước khi chuyển ra:
+để xử lí phần này ta cần tách $V[i][j]$
+thành $V_in[i][j]$ và $V_out[i][j]$,
+từ $V_out[i][j - 1]$ vào $V_in[i][j]$
+như trên, $V_out[i][j]$ vào $Q[j]$ như
+trên và $V_in[i][j]$ vào $V_out[i][j]$
+có capacity $C_i$.</li>
+</ul>
+<p>Sau đó ta tìm luồng cực đại và kiểm tra
+nó có bằng tổng $A[i][j]$ không.</p>
+<p>Độ phức tạp là <code>O(luồng 2000 đỉnh 2000 cạnh)</code>.</p>
+<h2 id="government-1"><a href="#government-1" class="headerlink" title="government"></a>government</h2><h3 id="Bien-doi-cong-thuc"><a href="#Bien-doi-cong-thuc" class="headerlink" title="Biến đổi công thức"></a>Biến đổi công thức</h3><p>Ta có thể hiểu công thức chính là khoảng cách
+có trọng số của từng cặp. Sử dụng công thức
+này có điểm bất lợi là có quá nhiều biến.
+Ta sẽ biến đổi công thức một chút.</p>
+<p>Giả sử các điểm $1..N$ đã được xếp từ trái
+sang phải, đáp số sẽ là
+$$ \sum\limits_{i = 1}^{N - 1}(x_{i + 1} - x_i)
+(\sum\limits_{j = 1}^i A[j])
+(\sum\limits_{k = i + 1}^N A[k])$$</p>
+<p>Với mỗi đoạn liên tiếp, số lần nó bị tính
+vào đáp số sẽ là tổng trọng số những điểm
+bến trái nó nhân với tổng trọng số những
+điểm bên phải.</p>
+<h3 id="Don-ve-2-ben"><a href="#Don-ve-2-ben" class="headerlink" title="Dồn về 2 bên"></a>Dồn về 2 bên</h3><p>Giả sử ta đã có thứ tự các số $A[i]$, vậy
+đặt chúng vào đâu thì hợp lí nhất?</p>
+<p>Dựa theo công thức phía trên, ta có:</p>
+<ul>
+<li>Tổng các $(x_{i + 1} - x_i)$ không quá $M$.
+Vì ta cần tối đa hóa nên ta coi tổng là
+$M$ luôn.</li>
+<li>Vị trí có phần tích $A[i]$ lớn nhất là
+khi tổng bên trái và bên phải gần nhau nhất.
+Gọi vị trí này là $(x_{l + 1} - x_l)$.</li>
+</ul>
+<p>Từ đây ta suy ra luôn có thể tối đa hóa đáp
+án bằng cách tối đa hóa đoạn $l$, tức cho
+$(x_{l + 1} - x_l) = M - N + 1$ và các đoạn
+còn lại là 1. Nói cách khác, ta sẽ dồn tập
+điểm về 2 bên sao cho tổng trọng số của
+chúng gần nhau nhất, tức $l$ lớn nhất
+thỏa mãn tổng $A[1..l - 1]$ bé hơn nửa tổng.</p>
+<h3 id="Thu-tu-cua-tung-ben"><a href="#Thu-tu-cua-tung-ben" class="headerlink" title="Thứ tự của từng bên"></a>Thứ tự của từng bên</h3><p>Giả sử ta biết tập con của từng bên, làm
+sao để tìm thứ tự sắp xếp của chúng?</p>
+<p>Xét tập bên trái $A[1..k]$.
+Dễ dàng nhìn
+thấy phần đáp số của các đoạn trong tập
+chính là
+$$A[1] \times (S - A[1]) +
+(A[1] + A[2]) \times (S - A[1] - A[2]) + … +
+(A[1] + … + A[k - 1]) \times (S + A[k])$$</p>
+<p>Ta nhận thấy $A[1]$, $A[1] + A[2]$, …
+đều sẽ nhỏ hơn số hạng còn lại tương ứng
+(theo nhận xét phía trên), vì vậy để
+tổng các tích này max, thì $A[1]$, $A[1] + A[2]$,
+…, $A[1] + … + A[k - 1]$ đều phải
+lớn nhất có thể. Vậy dãy $A[1..K]$ phải được
+sắp xếp giảm dần.</p>
+<p>Tương tự ta sẽ chứng minh được dãy bên phải
+phải được sắp xếp <strong>tăng</strong> dần.</p>
+<h3 id="Quy-hoach-dong"><a href="#Quy-hoach-dong" class="headerlink" title="Quy hoạch động"></a>Quy hoạch động</h3><p>Khi đã biết sắp xếp các phần tử, ta đã có
+thứ tự quy hoạch động: ta sẽ thêm dần các
+phần tử vào bên trái hoặc bên phải, theo
+thứ tự $A[i]$ giảm dần.</p>
+<p>Để có thể vận dụng công thức tính phần giữa,
+trong hàm qhđ ta cần lưu lại tổng của 1 bên.</p>
+<p>Ta có $f[i][j]$ là tổng đáp số của 2 tập, sao
+cho tập bên trái có tổng là $j$, cả 2 tập
+gồm các phần tử từ 1 đến $i$, lớn nhất.
+Ta chuyển trạng thái từ $f[i][j]$ bằng cách
+chọn $i + 1$ vào tập trái hay phải:</p>
+<ul>
+<li>Sang trái: chuyển sang $f[i + 1][j + A[i + 1]]$,
+tổng tăng thêm $j \times (S - j)$.</li>
+<li>Sang phải: chuyển sang $f[i + 1][j]$, tổng
+tăng thêm: $(S[i] - j) * (S - S[i] + j)$, với
+$S[i]$ là tổng $A[1..i]$.</li>
+</ul>
+<p>Đáp số sẽ là
+$$ \max\limits_{i = 0}^{S}(f[N][i] + (M - N + 1)
+\times i \times (S - i))$$</p>
+<p>Độ phức tạp là $O(N^2 * A[i])$.</p>
+<h2 id="permutation-1"><a href="#permutation-1" class="headerlink" title="permutation"></a>permutation</h2><h3 id="Vi-tri-dat-so-N"><a href="#Vi-tri-dat-so-N" class="headerlink" title="Vị trí đặt số $N$"></a>Vị trí đặt số $N$</h3><p>Xét dãy $R_i$. Ta nhận thấy số $N$ có thể đặt
+ở $i$ khi và chỉ khi:</p>
+<ul>
+<li>$R_i$ phủ đến 1 hoặc đến $N$.</li>
+<li>Không có $R_j$ nào phủ $i$.</li>
+</ul>
+<p>Giả sử ta có một vị trí thỏa mãn $x$. Nếu
+đặt $x$ ở $N$, ta nhận thấy không có $j &lt; x$
+nào mà $R_j$ phủ qua $x$, cũng như không
+có $j &gt; x$ nào thỏa mãn. Vì thế $R[1..x - 1]$
+và $R[x + 1..N]$ trở thành 2 bài toán riêng
+biệt.</p>
+<p>Ta có thể giải riêng 2 bài toán này, nhân
+số cách với nhau, cùng với số cách chọn
+$x - 1$ số trong $N - 1$ số cho tập bên trái
+(và các số còn lại trong tập bên phải),
+tức $C^{x - 1}_{N - 1}$.</p>
+<h3 id="Quy-hoach-dong-1"><a href="#Quy-hoach-dong-1" class="headerlink" title="Quy hoạch động"></a>Quy hoạch động</h3><p>Gọi $f[i][j]$ là số cách điền các số hoán vị
+thỏa mãn $R[i..j]$. Ta có:</p>
+<ul>
+<li>$x$ được gọi là thỏa mãn $i..j$ nếu:<ul>
+<li>$i \le x \le j$</li>
+<li>$R_x$ phủ $i$ hoặc phủ $j$</li>
+<li>Không tồn tại $i \le k \le j$, $k \neq x$
+mà $R_k$ phủ $x$.</li>
+</ul>
+</li>
+<li>Ta định nghĩa đoạn đúng:<ul>
+<li>$R[1..N]$ là đoạn đúng nếu không có
+2 cặp nào phủ nhau.</li>
+<li>Đoạn rỗng là đoạn đúng.</li>
+<li>Nếu $R[i..j]$ đúng và $x$ thỏa mãn
+$i..j$ thì $R[i..x-1]$ và $R[x+1..j]$
+là đoạn đúng.</li>
+</ul>
+</li>
+<li>$f[i][j] = 1$ nếu $R[i..j]$ là đoạn đúng
+và $i = j$ hoặc $i = j + 1$.</li>
+<li>$f[i][j] = \sum\limits_{x \text{ t/m } i..j}
+f[i][x - 1] \times f[x + 1][j] \times C^{x - 1}_{N - 1}$</li>
+</ul>
+<p>Đáp số là $f[1][N]$. Độ phức tạp là $O(N^3)$,
+do với mỗi đoạn ta cần tìm $x$ thỏa mãn.</p>
+<p>Ta sẽ tối ưu việc lựa chọn này.</p>
+<h3 id="So-luong-x-thoa-man"><a href="#So-luong-x-thoa-man" class="headerlink" title="Số lượng $x$ thỏa mãn"></a>Số lượng $x$ thỏa mãn</h3><p>Xét đoạn $i..j$. Gọi $L[i][j]$ là $k \le j$ lớn
+nhất thỏa mãn $R[k]$ phủ $i$, $R[i][j]$
+là $k \ge i$ nhỏ nhất thỏa mãn $R[k]$ phủ $j$.
+Hiển nhiên $L[i][j]$ phủ tất cả các số
+phủ $i$ đứng trước nó, $R[i][j]$ phủ tất
+cả các số phủ $j$ đứng sau nó. Vậy chỉ có
+$L[i][j]$ hoặc $R[i][j]$ có thể thỏa mãn.</p>
+<p>Ta có thể tính được 2 mảng này trong
+$O(N^2)$, việc còn lại là kiểm tra tính
+thỏa mãn của 2 phần tử này.</p>
+<h3 id="Kiem-tra-thoa-man"><a href="#Kiem-tra-thoa-man" class="headerlink" title="Kiểm tra thỏa mãn"></a>Kiểm tra thỏa mãn</h3><p>Ta còn điều kiện thỏa mãn: Không có phần
+tử nào cùng đoạn phủ nó. Ta có thể dựng mảng
+tính như sau:</p>
+<ul>
+<li>$S[i][j] = 1$ nếu $i$ phủ $j$ và 0 nếu không.</li>
+<li>Ta có thể for trâu từng số và đánh dấu, tổng
+độ phức tạp sẽ là $O(N^2 \log N)$ do tính chất
+của bán kính.</li>
+<li>Khi kiểm tra ta cần tính tổng $S[x][i..j]$.
+Ta có thể sử dụng mảng tổng dồn để lấy tổng
+trong $O(1)$.</li>
+</ul>
+<p>Như vậy ta có thuật toán $O(N^2 \log N)$.</p>
 
       
     </div>
