@@ -79,6 +79,290 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2017-04-24-Training" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/24/2017-04-24-Training/" class="article-date">
+  <time datetime="2017-04-24T10:20:00.000Z" itemprop="datePublished">2017-04-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Training/">Training</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/24/2017-04-24-Training/">2017/04/24 Training</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Hôm nay bài khá lằng nhằng, mình sẽ cố gắng chữa thật nhiều bước.</p>
+<h1 id="Tom-tat-de-bai"><a href="#Tom-tat-de-bai" class="headerlink" title="Tóm tắt đề bài"></a>Tóm tắt đề bài</h1><h2 id="Heap-on-Trees-NAIPC-2017-bai-D"><a href="#Heap-on-Trees-NAIPC-2017-bai-D" class="headerlink" title="Heap on Trees, NAIPC 2017, bài D"></a><a href="https://naipc17.kattis.com/problems/heapstrees" target="_blank" rel="external">Heap on Trees, NAIPC 2017, bài D</a></h2><p>Cho một cây $N$ đỉnh, mỗi nút có một số $A_i$.
+Tìm tập con các nút lớn nhất thỏa mãn nếu $i$ là tổ tiên của $j$ và $i$, $j$ đều được chọn thì $A_i &gt; A_j$.</p>
+<h4 id="Gioi-han"><a href="#Gioi-han" class="headerlink" title="Giới hạn"></a>Giới hạn</h4><p>$1 \le N \le 10^5$, $1 \le A_i \le 10^9$</p>
+<h2 id="Pieces-of-Parentheses-NAIPC-2017-bai-A"><a href="#Pieces-of-Parentheses-NAIPC-2017-bai-A" class="headerlink" title="Pieces of Parentheses, NAIPC 2017, bài A"></a><a href="https://naipc17.kattis.com/problems/piecesofparentheses" target="_blank" rel="external">Pieces of Parentheses, NAIPC 2017, bài A</a></h2><p>Cho $N$ dãy ngoặc (không nhất thiết đúng), chọn
+ra một tập con các dãy ngoặc sao cho có thể ghép
+lại thành dãy ngoặc đúng dài nhất.</p>
+<h4 id="Gioi-han-1"><a href="#Gioi-han-1" class="headerlink" title="Giới hạn"></a>Giới hạn</h4><p>$1 \le N \le 300$, $1 \le |S_i| \le 300$</p>
+<h2 id="Problem-Buyer-CCPC-2016-2017-Finals-bai-E"><a href="#Problem-Buyer-CCPC-2016-2017-Finals-bai-E" class="headerlink" title="Problem Buyer, CCPC 2016-2017 Finals, bài E"></a><a href="http://codeforces.com/gym/101206/attachments/download/5010/ccpc-20162017-finals-en.pdf" target="_blank" rel="external">Problem Buyer, CCPC 2016-2017 Finals, bài E</a></h2><p>Trên trục tọa độ cho $N$ điểm $C_i$ và $M$ đoạn
+thẳng $[A_i, B_i]$. Tìm $K$ nhỏ nhất sao cho với
+mọi tập con độ lớn $K$ của tập đoạn thẳng ta luôn
+tìm được cặp ghép hoàn hảo của tập điểm với đoạn
+thỏa mãn:</p>
+<ul>
+<li>Mỗi điểm ghép với đúng 1 đoạn thẳng</li>
+<li>Mỗi đoạn thẳng ghép với tối đa 1 điểm</li>
+<li>Nếu $C_i$ ghép với $[A_j, B_j]$ thì
+$A_j \le C_i \le B_j$.</li>
+</ul>
+<h4 id="Gioi-han-2"><a href="#Gioi-han-2" class="headerlink" title="Giới hạn"></a>Giới hạn</h4><p>$1 \le N, M \le 10^5$,
+$1 \le A_i \le B_i \le 10^9$,
+$1 \le C_i \le 10^9$.</p>
+<h1 id="Loi-giai"><a href="#Loi-giai" class="headerlink" title="Lời giải"></a>Lời giải</h1><h2 id="Heap-on-Trees"><a href="#Heap-on-Trees" class="headerlink" title="Heap on Trees"></a>Heap on Trees</h2><h3 id="Xac-dinh-phuong-huong"><a href="#Xac-dinh-phuong-huong" class="headerlink" title="Xác định phương hướng"></a>Xác định phương hướng</h3><p>Ta bắt đầu với một hàm quy hoạch động “trâu”
+chưa cần thiết thỏa mãn giới hạn.
+Gọi $F[v][j]$ là số đỉnh lớn nhất ta có thể
+chọn ở cây con gốc $v$ với giới hạn các số là
+$j$.
+Dễ dàng nhận thấy để tính $F[v][j]$, ta lần
+lượt tính tổng $F[u][j]$ với $u$ là con của $v$.
+Ngoài ra nếu $A[v] \le j$ ta có một cách chọn
+là $A[v]$ cùng với tổng các $F[u][A[v] - 1]$.
+$$ F[v][j] = \max(\sum\limits_{u \in child[v]}
+  {F[u][j]}, (A[v] \le j) \times
+  (1 + \sum\limits_
+    {u \in child[v]}{F[u][A[v] - 1]}))$$
+Đáp số chính là $F[root][inf]$.</p>
+<p>Sau khi nén số, ta có hàm quy hoạch động $O(n^2)$.
+Ta sẽ tập trung vào cải tiến hàm quy hoạch động
+này.</p>
+<h3 id="So-gia-tri-khac-nhau"><a href="#So-gia-tri-khac-nhau" class="headerlink" title="Số giá trị khác nhau"></a>Số giá trị khác nhau</h3><p>Xét một lá $v$. Hiển nhiên $F[v][j]$ chỉ có 2
+giá trị khác nhau với mọi $j$: <strong>0</strong> khi $A[v]
+&lt; j$ và <strong>1</strong> nếu ngược lại.</p>
+<p>Khi cộng 2 hàm có 2 miền giá trị, ta sẽ
+được một hàm có 3 miền giá trị. Tổng quát hơn,
+khi cộng 2 hàm có $x$ và $y$ miền giá trị,
+ta được một hàm có $x + y - 1$ miền giá trị.</p>
+<p>Nếu ta coi $F$ mỗi lá là một hàm có 2 miền giá trị,
+thì một cây con gốc $v$ sẽ có $F$ là một hàm có
+$size[v] + 1$ miền giá trị, với $size[v]$ là kích
+cỡ của cây con gốc $v$.</p>
+<p>Ngoài ra, xét các vị trí thay đổi giá trị của
+các hàm. Ta nhận thấy khi cộng 2 hàm có $x$ và $y$
+miền giá trị, ta nhận được một hàm có $x + y - 1$
+miền giá trị, trong đó các mốc chính là các mốc
+thay đổi giá trị của 1 trong 2 hàm số hạng.
+Như vậy, trong hàm $F[v]$, các điểm mốc chính là
+các giá trị $A[u]$ với $u$ là nút trong cây con
+gốc $v$.</p>
+<p>Như vậy, từ một đỉnh $v$, ta có thể dựng hàm $F[u]$
+với $u = parent[v]$ bằng cách “gộp” giá trị hàm
+$F[v]$ vào $F[u]$.</p>
+<h3 id="Gop-ham"><a href="#Gop-ham" class="headerlink" title="Gộp hàm"></a>Gộp hàm</h3><p>Giả sử ta có $F[v]$ với $k$ mốc giá trị $X_1, X_2,
+…, X_k$, ta phải gộp vào hàm $F[u]$ ($u$ là
+cha của $v$). Theo đúng công thức quy hoạch động,
+giá trị của $F[v][X_i]$ sẽ được cộng vào các
+$F[u][p]$ thỏa mãn $X_i \le p &lt; X_{i + 1}$, hay
+$X_i \le p \le N$ nếu $i = k$.</p>
+<p>Tất nhiên, hàm $F[u]$ cũng sẽ có các mốc $Y_1, Y_2,
+…, Y_l$ ($X \subseteq Y$). Nếu coi $F[u]$ như
+một IT, ta có thể update bằng cách:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> left = lower_bound(Y.begin(), Y.end(), X[i]) - Y.begin();</div><div class="line"><span class="keyword">int</span> right = lower_bound(Y.begin(), Y.end(), X[i + <span class="number">1</span>]) - <span class="number">1</span> - Y.begin();</div><div class="line">F[u].add(left, right, F[v][X[i]]); <span class="comment">// Thêm F[v][X[i]] vào đoạn [left..right]</span></div></pre></td></tr></table></figure>
+<p>Sau đó ta cần cập nhật trường hợp chọn $u$.
+Tất nhiên khi chọn $u$, tổng đáp số của cây con
+gốc $u$ sẽ là $ans = (\max\limits_{i = 1}^{i &lt; A[u]}{F[u][i]}) + 1$.
+Ta cần gán <code>f[u][i] = max(f[u][i], ans)</code> với mọi
+$i \ge A[u]$. Tuy nhiên, do $F[u]$ là hàm tăng,
+thực chất ta chỉ cần cộng <strong>1</strong> vào các vị trí từ
+$A[u]$ đến trước vị trí $x$ có $F[u][x] = ans$.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> ans = F[u].get(A[u] - <span class="number">1</span>); <span class="comment">// hàm tăng</span></div><div class="line"><span class="keyword">int</span> right = F[u].lower_bound(ans) - <span class="number">1</span>;</div><div class="line">F[u].add(A[u], right, <span class="number">1</span>);</div></pre></td></tr></table></figure>
+<p>Các bước gộp hàm đã hoàn chỉnh. Tuy nhiên,
+độ phức tạp vẫn chưa thay đổi. Ta cần một
+bước tiếp theo: thuật toán gộp set (hay gộp
+IT).</p>
+<h3 id="Thuat-toan-tap-lon-be"><a href="#Thuat-toan-tap-lon-be" class="headerlink" title="Thuật toán tập lớn - bé"></a>Thuật toán tập lớn - bé</h3><p>Xét bài toán: Cho $N$ tập hợp, lúc đầu mỗi tập
+hợp có 1 phần tử. Để chuyển các
+phần tử từ tập hợp $A$ sang tập hợp $B$, ta mất
+chi phí $|A|$. Xử lí các truy vấn ghép tập hợp.</p>
+<p>Cách giải bài toán rất đơn giản: với mỗi truy
+vấn ta chỉ cần chuyển tất cả phần tử từ tập
+nhỏ hơn vào tập lớn hơn, và tổng chi phí sẽ là
+$O(N\log{N})$. Tại sao?</p>
+<p>Gọi $s(p)$ là độ lớn của tập hợp chứa phần tử
+$p$. Mỗi lần ta chuyển phần tử $p$ từ tập $X$
+sang tập $Y$ ($|X| \le |Y|$), $s(p)$ tăng ít
+nhất gấp đôi. Tuy vậy, $s(p)$ không thể vượt
+quá $N$ do chỉ có tổng cộng $N$ phần tử. Vì
+thế $p$ không thể bị chuyển quá $\log{N}$ lần.
+Mỗi phần tử không bị chuyển quá $\log{N}$
+lần, nên tổng chi phí vận chuyển không thể
+quá $N\log{N}$.</p>
+<h3 id="Ap-dung-vao-bai-toan-ban-dau"><a href="#Ap-dung-vao-bai-toan-ban-dau" class="headerlink" title="Áp dụng vào bài toán ban đầu"></a>Áp dụng vào bài toán ban đầu</h3><p>Để ý khi ta gộp $F[v]$ vào $F[u]$, chi phí
+là $size[v] \times \log{N}$ và $size[u]$
+tăng thêm $size[v]$, giống với việc gộp set.
+Vì vậy ta có thể cải tiến thuật toán như sau.
+Giả sử ta đã tính xong mọi $F[v]$ với $v$ là
+con của $u$:</p>
+<ul>
+<li>Gán $F[u] = F[v_1]$ (đây là phép gán con trỏ $O(1)$).</li>
+<li>Với mỗi $v$ tiếp theo:<ul>
+<li>Nếu $size[u] &lt; size[v_i]$, tráo $F[u]$ và $F[v_i]$
+(phép tráo con trỏ $O(1)$).  </li>
+<li>Cập nhật $F[v_i]$ vào $F[u]$.</li>
+</ul>
+</li>
+<li>Cập nhật đáp số khi chọn $u$ như trên.</li>
+</ul>
+<p>Ta sẽ có thuật toán $O(N\log^2{N})$. Tuy vậy, do
+vẫn sử dụng IT nên bộ nhớ của ta vẫn có thể lên
+đến $O(N^2)$.</p>
+<h3 id="IT-bo-nho-dong"><a href="#IT-bo-nho-dong" class="headerlink" title="IT bộ nhớ động"></a>IT bộ nhớ động</h3><p>Việc biết trước kích thước tối đa và vị trí các
+phần tử của IT cho phép ta dựng lên cây IT
+chỉ với $\min(2N, \log{N} * size)$ nút. Việc
+dựng nên IT này khá đơn giản, ta chỉ cần
+thay vì sử dụng $2i$ và $2i + 1$ là con của $i$,
+ta lưu 2 con trỏ chỉ đến 2 nút trái và phải,
+và chỉ cấp phát bộ nhớ nếu cập nhật đến.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">struct</span> node &#123;</div><div class="line">  <span class="keyword">int</span> val, sum; <span class="comment">// dữ liệu của IT</span></div><div class="line">  node *l, *r; <span class="comment">// 2 con của IT*</span></div><div class="line">  node() &#123; l = r = <span class="literal">NULL</span>; val = sum = <span class="number">0</span>; &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> mid ((l + r) &gt;&gt; 1)</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(node &amp;*v, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> i, <span class="keyword">int</span> j, <span class="keyword">int</span> val)</span> </span>&#123;</div><div class="line">  <span class="keyword">if</span> (l &gt; j || r &lt; i) <span class="keyword">return</span>; <span class="comment">// không dùng</span></div><div class="line">  <span class="keyword">if</span> (v == <span class="literal">NULL</span>) v = <span class="keyword">new</span> node(); <span class="comment">// chưa có v, cấp phát</span></div><div class="line">  <span class="keyword">if</span> (i &lt;= l &amp;&amp; r &lt;= j) &#123;</div><div class="line">    v-&gt;val += val; v-&gt;sum += val;</div><div class="line">    <span class="keyword">return</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="comment">// gọi đến bản gốc của con trỏ, chỉnh sửa trực tiếp</span></div><div class="line">  update(v-&gt;l, l, mid, i, j, val);</div><div class="line">  update(v-&gt;r, mid + <span class="number">1</span>, r, i, j, val);</div><div class="line">  v-&gt;val = <span class="number">0</span>;</div><div class="line">  <span class="keyword">if</span> (v-&gt;l != <span class="literal">NULL</span>) v-&gt;val = max(v-&gt;l-&gt;val + v-&gt;sum, v-&gt;val);</div><div class="line">  <span class="keyword">if</span> (v-&gt;r != <span class="literal">NULL</span>) v-&gt;val = max(v-&gt;r-&gt;val + v-&gt;sum, v-&gt;val);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">get</span><span class="params">(node *v, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> pos)</span> </span>&#123;</div><div class="line">  <span class="keyword">if</span> (v == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// chưa cấp phát, chứng tỏ không có giá trị gì</span></div><div class="line">  <span class="keyword">if</span> (l &gt; pos || r &lt; pos) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">  <span class="keyword">if</span> (l == r) <span class="keyword">return</span> v-&gt;val;</div><div class="line">  <span class="keyword">return</span> max(get(v-&gt;l, l, mid, pos), get(v-&gt;r, mid + <span class="number">1</span>, r, pos)) + v-&gt;sum;</div><div class="line">&#125;</div><div class="line"><span class="meta">#<span class="meta-keyword">undef</span> mid</span></div></pre></td></tr></table></figure>
+<p>Do luôn chỉ có tổng cộng $N$ mốc trên tất cả IT
+nên tổng bộ nhớ không quá $O(N\log{N})$.</p>
+<p>Ngoài ra để đảm bảo điều này ta cũng cần thực
+hiện xóa nút để giải phóng bộ nhớ. Ta có thể
+thực hiện điều này sau khi chuyển xong.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">clear</span><span class="params">(node &amp;*v)</span> </span>&#123;</div><div class="line">  <span class="keyword">if</span> (v == <span class="literal">NULL</span>) <span class="keyword">return</span>;</div><div class="line">  clear(v-&gt;l); clear(v-&gt;r);</div><div class="line">  <span class="keyword">delete</span> v;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Pieces-of-Parentheses"><a href="#Pieces-of-Parentheses" class="headerlink" title="Pieces of Parentheses"></a>Pieces of Parentheses</h2><h3 id="Thu-tu-quy-hoach-dong"><a href="#Thu-tu-quy-hoach-dong" class="headerlink" title="Thứ tự quy hoạch động"></a>Thứ tự quy hoạch động</h3><p>Thông thường để giải các bài ngoặc ta sẽ sử dụng
+quy hoạch động. Tuy nhiên, theo đề bài thì ta
+phải chọn một tập con có thứ tự, tức ta không
+có một thứ tự gốc để dựng hàm quy hoạch động.</p>
+<p>Ý tưởng của ta sẽ là đi tìm một thứ tự để chạy
+phép qhđ.</p>
+<h3 id="Bieu-dien-day-ngoac"><a href="#Bieu-dien-day-ngoac" class="headerlink" title="Biểu diễn dãy ngoặc"></a>Biểu diễn dãy ngoặc</h3><p>Điều kiện một dãy ngoặc đúng là</p>
+<ul>
+<li>Số mở ngoặc bằng số đóng ngoặc</li>
+<li>Tại mọi thời điểm, số mở ngoặc không ít hơn
+số đóng ngoặc. Nói cách khác, nếu thay <code>(</code>
+thành 1 và <code>)</code> thành -1 thì tổng dồn luôn
+không âm.</li>
+</ul>
+<p>Như vậy, thực chất với mỗi dãy ngoặc con, ta
+chỉ cần lưu lại 3 thông số: độ dài, vị trí
+có tổng dồn nhỏ nhất và tổng dồn cuối.
+Ta gọi 3 giá trị này là $S_i$, $A_i$ và $B_i$.</p>
+<p>Để tạo ra dãy ngoặc đúng từ các dãy ngoặc con
+thì:</p>
+<ul>
+<li>$\sum\limits_{i = 1}^{k}B[i] = 0$</li>
+<li>Với mọi $i$, $(\sum\limits_{j = 1}^{j &lt; i}
+B[j]) + A[i] \ge 0$</li>
+<li>Tổng $S_i$ là lớn nhất có thể.</li>
+</ul>
+<h3 id="Phan-loai-day-ngoac"><a href="#Phan-loai-day-ngoac" class="headerlink" title="Phân loại dãy ngoặc"></a>Phân loại dãy ngoặc</h3><p>Để đơn giản hóa việc sắp xếp thứ tự, ta có
+thể nghĩ đến việc phân loại các dãy ngoặc.
+Trong bài này ta sẽ phân thành 3 loại:</p>
+<ul>
+<li>$A[i] \ge 0$. Hiển nhiên $B[i] \ge 0$.
+Với các loại dãy ngoặc này đặt ở vị trí nào
+cũng thỏa mãn, vì vậy ta luôn đặt chúng ở
+đầu để tối đa hóa tổng $B[j]$. Thứ tự từng
+thành phần là không quan trọng.</li>
+<li>$A[i] &lt; 0$ và $B[i] \ge 0$. Hiển nhiên
+$A[i]$ càng nhỏ càng nên đặt phía sau, bởi
+càng đứng sau thì tổng $B[j]$ càng lớn,
+càng dễ thỏa mãn $A[i]$. Ta đặt các dãy ngoặc
+loại này sau loại trên, sắp xếp các phần tử
+theo thứ tự $A[i]$ giảm dần.</li>
+<li>$A[i] &lt; 0$ và $B[i] &lt; 0$. Đây là loại phức
+tạp nhất, ta sẽ cần một nhận xét để sắp xếp
+loại ngoặc này. Hiện giờ ta chỉ biết ta sẽ
+xếp chúng sau cùng.</li>
+</ul>
+<h3 id="A-i-lt-0-va-B-i-lt-0"><a href="#A-i-lt-0-va-B-i-lt-0" class="headerlink" title="$A[i] &lt; 0$ và $B[i] &lt; 0$"></a>$A[i] &lt; 0$ và $B[i] &lt; 0$</h3><p>Giả sử ta có một dãy ngoặc đúng chứa $i$ và
+$i + 1$ là 2 phần tử loại 3 liên tiếp trong
+dãy. Điều kiện sau là thỏa mãn:</p>
+<ul>
+<li>$S + A[i] \ge 0$, với $S$ là tổng các $B[j]$
+đứng trước.</li>
+<li>$S + B[i] + A[i + 1] \ge 0$.</li>
+</ul>
+<p>Từ đây ta có thể suy ra $S + A[i + 1] \ge 0$
+do $B[i] &lt; 0$.</p>
+<p>Nếu $B[i + 1] + A[i] \ge B[i] + A[i + 1]$, ta
+hoàn toàn có thể đổi chỗ $i$ và $i + 1$ bởi
+khi đó $S + B[i + 1] + A[i] \ge S + B[i] + A[i + 1] \ge 0$,
+cả 2 điều kiện đều thỏa mãn.</p>
+<p>Từ đó ta chứng minh được đáp án luôn tồn tại
+sao cho với mọi cặp $i, j$ loại 3 ta đều có
+$B[j] + A[i] \le B[i] + A[j]$, hay nói cách
+khác, $A[i] - B[i] \le A[j] - B[j]$.</p>
+<p>Như vậy, ta có thể sắp xếp các dãy ngoặc loại
+3 theo thứ tự $A[i] - B[i]$ tăng dần mà vẫn
+đảm bảo tìm được đáp án tối ưu.</p>
+<h3 id="Cong-thuc-qhd"><a href="#Cong-thuc-qhd" class="headerlink" title="Công thức qhđ"></a>Công thức qhđ</h3><p>Khi đã có thứ tự, ta dựng công thức qhđ đơn
+giản: gọi $f[i][j]$ là dãy ngoặc dài nhất
+ghép được từ các đoạn từ 1 đến $i$ mà có
+bậc là $j$. Ta chuyển trạng thái như sau:</p>
+<ul>
+<li>Không thêm đoạn $i + 1$, chuyển đến $f[i + 1][j]$.</li>
+<li>Thêm đoạn $i + 1$, điều kiện là $j + A[i + 1] \ge 0$,
+chuyển trạng thái đến $f[i + 1][j + B[i + 1]]$, tăng
+thêm $S[i + 1]$ đơn vị.</li>
+</ul>
+<p>Ban đầu $f[0][0] = 0$, đáp số là $f[N][0]$.</p>
+<p>Độ phức tạp là $O(N^2 * |S|)$, thỏa mãn bài toán.</p>
+<h2 id="Problem-Buyer"><a href="#Problem-Buyer" class="headerlink" title="Problem Buyer"></a>Problem Buyer</h2><h3 id="Thuat-toan-tham-lam"><a href="#Thuat-toan-tham-lam" class="headerlink" title="Thuật toán tham lam"></a>Thuật toán tham lam</h3><p>Trước tiên ta cần phải biết thuật toán tham
+lam để tìm cặp ghép. Thuật toán như sau:</p>
+<ul>
+<li>Sắp xếp $C_i$ tăng dần.</li>
+<li>Giữ một <code>priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt; &gt;</code></li>
+<li>Duyệt từ 1 đến $N$, khi đến $i$ ta thêm hết các đoạn
+có $L_x \le C_i$ vào queue.</li>
+<li>Tim phần tử trong queue có $R_x$ nhỏ nhất mà $\ge C_i$.
+Nếu có, ghép và xóa khỏi queue. Nếu không, không tồn tại
+cặp ghép đầy đủ.</li>
+</ul>
+<h3 id="Tao-ra-tap-sai"><a href="#Tao-ra-tap-sai" class="headerlink" title="Tạo ra tập sai"></a>Tạo ra tập sai</h3><p>Thay vì đi tìm $K$ nhỏ nhất sao cho mọi tập đều ghép
+được, ta sẽ đi tìm $K’$ lớn nhất mà tồn tại 1 tập
+không ghép được. Đáp số sẽ là $K’ + 1$.</p>
+<h3 id="Vi-tri-fail"><a href="#Vi-tri-fail" class="headerlink" title="Vị trí fail"></a>Vị trí fail</h3><p>Dựa theo thuật toán tham lam, ta nhận thấy chỉ
+cần ở 1 bước mà queue rỗng thì thuật toán sẽ
+fail. Như vậy, khi xác định được vị trí fail
+ta có thể dựng dãy bằng cách lấy tất cả các
+phần tử trừ các phần tử đứng trong queue hiện
+tại khi mô phỏng thuật toán.</p>
+<p>Dễ dàng chứng minh đấy là cách tối ưu nhất để
+làm một bước $i$ xác định nào đó fail. Như
+vậy, thuật toán của ta chỉ là mô phỏng lại
+thuật tham lam, mỗi bước ta xác định số
+phần tử phải xóa đi để bước đó fail (chính là
+số phần tử trong queue lúc đó), và tìm vị
+trí cần xóa ít phần tử nhất.</p>
+<p>Đáp số sẽ là $N - x$ với $x$ là số phần tử
+bị xóa nhỏ nhất.
+Độ phức tạp là $O(N \log{N})$.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://natsukagami.github.io/2017/04/24/2017-04-24-Training/" data-id="cj1z8w5rt000gb32bb5nm8xs8" class="article-share-link">Chia sẻ</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/anh-Hanh/">anh Hạnh</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apio/">apio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/training/">training</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vietnamese/">vietnamese</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2017-04-21-Training" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/04/23/2017-04-21-Training/" class="article-date">
@@ -633,122 +917,6 @@ thể chỉ lưu <code>i</code> là kí tự cuối cùng.</p>
 
 
   
-    <article id="post-2017-04-18-Training" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/04/18/2017-04-18-Training/" class="article-date">
-  <time datetime="2017-04-18T07:22:18.000Z" itemprop="datePublished">2017-04-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Training/">Training</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/18/2017-04-18-Training/">2017/04/18 Training</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Hôm nay Hạnh dạy. Nói chung như mọi lần Hạnh dạy, bài thì hay nhưng có vẻ như Hạnh vẫn tốn rất nhiều thời gian giảng bài. Mình thực sự không muốn nghe cho lắm vì vẫn muốn nghĩ bài một mình, sau đó có reference của Hạnh để improve solution thì vẫn thích hơn.</p>
-<h2 id="Stretching-Streamers-NAIPC-2017-bai-C"><a href="#Stretching-Streamers-NAIPC-2017-bai-C" class="headerlink" title="Stretching Streamers (NAIPC 2017, bài C)"></a><a href="https://naipc17.kattis.com/problems/naipc17.stretchingstreamers" target="_blank" rel="external">Stretching Streamers (NAIPC 2017, bài C)</a></h2><h3 id="Tom-tat-de-bai"><a href="#Tom-tat-de-bai" class="headerlink" title="Tóm tắt đề bài"></a>Tóm tắt đề bài</h3><p>Có <code>N</code> điểm viết trên một đường tròn, điểm thứ <code>i</code> chứa số nguyên dương <code>A[i]</code>. 2 số có cạnh đến nhau khi ước chung lớn nhất lớn hơn 1. Không được chọn 2 cạnh đè lên nhau (trừ khi đè ở đầu mút), đếm số cách dựng cây khung <code>N</code> điểm mod <code>1e9 + 7</code>.</p>
-<h5 id="Gioi-han"><a href="#Gioi-han" class="headerlink" title="Giới hạn"></a>Giới hạn</h5><p><code>3 &lt;= N &lt;= 300</code>, <code>2 &lt;= A[i] &lt;= 10^9</code>.</p>
-<h3 id="Dung-cay-nhu-nao"><a href="#Dung-cay-nhu-nao" class="headerlink" title="Dựng cây như nào?"></a>Dựng cây như nào?</h3><p>Đơn giản ta có thể tóm tắt quá trình dựng cây như sau:</p>
-<ul>
-<li>Đầu tiên chọn đỉnh <code>1</code> làm gốc.</li>
-<li>Từ đỉnh <code>1</code> chọn một tập đỉnh <code>X[1..M]</code> là con của đỉnh <code>1</code>. Hiển nhiên 1 phải có cạnh đến tất cả các đỉnh trong tập.</li>
-<li>Mỗi đỉnh <code>X[i]</code> quản lí 1 đoạn <code>L[i] &lt;= X[i] &lt;= R[i]</code> sao cho <code>L[1] = 2</code>; <code>R[i] + 1 = L[i + 1]</code> và <code>R[M] = N</code>. (1)</li>
-<li><p>Ta dựng cây cho mỗi đoạn <code>L[i]..R[i]</code>, với điều kiện không có cạnh <code>(x, y)</code> với <code>x &lt;= X[i] &lt;= y</code>. Để tính cái này ta làm tương đương, đệ quy xuống.</p>
-<p>Tại sao lại có (1)? Đơn giản vì không thể tồn tại cạnh sao cho 2 đỉnh nằm 2 bên của một <code>X[i]</code> nào đó, vì chúng sẽ cắt qua cạnh <code>(1, X[i])</code>.</p>
-</li>
-</ul>
-<h3 id="Bien-doi-doan-L-i-R-i"><a href="#Bien-doi-doan-L-i-R-i" class="headerlink" title="Biến đổi đoạn L[i]..R[i]."></a>Biến đổi đoạn <code>L[i]..R[i]</code>.</h3><p>Do có điều kiện không có cạnh <code>(x, y)</code> mà <code>x &lt;= X[i] &lt;= y</code> nên ta có thể chia đoạn <code>L[i]..R[i]</code> thành 2 đoạn <code>L[i]..X[i]</code> và <code>X[i]..R[i]</code> độc lập mà vẫn không thay đổi kết quả bài toán.</p>
-<p>Khi đó, điều kiện đặc biệt biến mất và ta chỉ cần đệ quy xuống với các đoạn <code>L[1]..X[1]</code>, <code>X[1]..R[1]</code>, <code>L[2]..X[2]</code>, …, <code>X[M]..R[M]</code>.</p>
-<h3 id="Cong-thuc-quy-hoach-dong"><a href="#Cong-thuc-quy-hoach-dong" class="headerlink" title="Công thức quy hoạch động"></a>Công thức quy hoạch động</h3><p>Từ các nhận xét trên, ta có công thức quy hoạch động sau:</p>
-<p>Gọi <code>f[l][r]</code> là số cách dựng cây với các đỉnh thuộc đoạn <code>l..r</code>. Hiển nhiên <code>f[i][i] = 1</code>.</p>
-<p>Ta có
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> k = l + <span class="number">1</span>; k &lt;= r; ++k)</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> st = l + <span class="number">1</span>; st &lt;= k; ++st)</div><div class="line">    f[l][r] += f[l][st - <span class="number">1</span>] * f[st][k] * f[k][r];</div></pre></td></tr></table></figure></p>
-<p>Việc chọn tập <code>X[]</code> cho <code>[l..r]</code> giống với việc từ đoạn <code>[l..st - 1]</code> đã dựng cây, ta thêm đoạn <code>[st..r]</code> bằng cách nối <code>(l, k)</code> (<code>st &lt;= k &lt;= r</code>) rồi dựng 2 cây như trên. Do đó công thức qhđ này hoàn toàn chính xác. Đáp số sẽ là <code>f[1][N]</code>. Tuy nhiên độ phức tạp là <code>O(N^4)</code>, chưa đủ để thỏa mãn đề bài.</p>
-<h3 id="Toi-uu-xuong-O-N-3"><a href="#Toi-uu-xuong-O-N-3" class="headerlink" title="Tối ưu xuống O(N^3)"></a>Tối ưu xuống <code>O(N^3)</code></h3><p>Việc chọn đoạn yêu cầu 2 bước, xác định <code>X[i]</code> và đoạn <code>st..r</code>. Liệu ta có thể giảm thiểu số cách lựa chọn không?</p>
-<p>Thực chất ta hoàn toàn có thể tách 2 bước này thành 2 công đoạn chọn đoạn, đầu tiên chọn <code>st..X[i]</code> thỏa mãn có cạnh <code>(l, X[i])</code> và chọn đoạn <code>X[i]..r</code>. Như vậy ta có thể chọn 2 đoạn so le, mỗi lần chuyển trạng thái chỉ mất <code>O(N)</code>.</p>
-<p>Ta sửa lại công thức qhđ thành <code>f[i][j][k]</code>, thêm <code>k</code> là bước hiện tại của chúng ta (<code>0</code> - chọn nửa đoạn đầu - hay <code>1</code> - đã chọn xong). Công thức trở thành:
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> k = l + <span class="number">1</span>; k &lt;= r; ++k) &#123;</div><div class="line">  <span class="keyword">if</span> (__gcd(l, r) &gt; <span class="number">1</span>) <span class="comment">// có cạnh từ l đến k</span></div><div class="line">    f[l][r][<span class="number">0</span>] += f[l][k - <span class="number">1</span>][<span class="number">1</span>] * f[k][r][<span class="number">1</span>];</div><div class="line">  <span class="keyword">if</span> (__gcd(l, k) &gt; <span class="number">1</span>)</div><div class="line">    f[l][r][<span class="number">1</span>] += f[l][k][<span class="number">0</span>] * f[k][r][<span class="number">1</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>Lúc đầu <code>f[i][i][x] = x</code> và đáp số sẽ là <code>f[1][N][1]</code>. Độ phức tạp là <code>O(N^3)</code>.</p>
-<h2 id="LISA-RCC-2017-1st-Qualification-Round-bai-E"><a href="#LISA-RCC-2017-1st-Qualification-Round-bai-E" class="headerlink" title="LISA - RCC 2017 1st Qualification Round, bài E"></a><a href="http://www.russiancodecup.ru/en/tasks/round/61/E/" target="_blank" rel="external">LISA - RCC 2017 1st Qualification Round, bài E</a></h2><h3 id="Tom-tat-de-bai-1"><a href="#Tom-tat-de-bai-1" class="headerlink" title="Tóm tắt đề bài"></a>Tóm tắt đề bài</h3><p>Cho <code>N</code> xâu và <code>Q</code> truy vấn. Mỗi truy vấn gồm 2 số <code>l, r</code> và yêu cầu trả lời số xâu khác nhau có thể tạo được bằng cách ghép 1 tiền tố khác rỗng với 1 hậu tố khác rỗng của xâu nào đó trong khoảng từ <code>l</code> đến <code>r</code>.</p>
-<h4 id="Gioi-han-1"><a href="#Gioi-han-1" class="headerlink" title="Giới hạn"></a>Giới hạn</h4><p><code>1 &lt;= N, Q &lt;= 10^5</code>. Tổng độ dài xâu không quá <code>10^5</code>.</p>
-<h3 id="Ghep-tien-to-va-hau-to"><a href="#Ghep-tien-to-va-hau-to" class="headerlink" title="Ghép tiền tố và hậu tố"></a>Ghép tiền tố và hậu tố</h3><p>Ta có thể thấy ngay nếu không có điều kiện “khác nhau”, đáp số chỉ là <code>(số tiền tố trong đoạn) * (số hậu tố trong đoạn)</code>. Tuy nhiên có 2 vấn đề sau xảy ra khi ta cần tìm những xâu khác nhau:</p>
-<ul>
-<li>Có thể tồn tại cặp tiền tố giống nhau - đây là phần dễ.</li>
-<li>Tồn tại 2 cặp tiền tố - hậu tố khác nhau nhưng cho ra xâu ghép giống nhau.</li>
-</ul>
-<h3 id="Dieu-kien-dem"><a href="#Dieu-kien-dem" class="headerlink" title="Điều kiện đếm"></a>Điều kiện đếm</h3><p>Một trong những kĩ thuật tiêu biểu khi đếm để xử lí lặp là đặt thêm điều kiện cho bài toán sao cho chúng khử đi các trường hợp lặp.</p>
-<p>Giả sử ta có 2 xâu <code>Pre[i]</code> và <code>Suf[j]</code>, ta có <code>X = Pre[i] + Suf[j]</code>. Vậy nếu tồn tại một cặp khác <code>X = Pre[k] + Suf[l]</code> thì ta có tính chất gì?</p>
-<p>Không mất tính tổng quát, giả sử <code>|Pre[i]| &lt; |Pre[k]|</code>. Ta có thể thấy phần <em>thừa ra</em> của <code>Pre[k]</code> chính bằng phần <em>thừa ra</em> của <code>Suf[j]</code>.
-Như vậy, một cách nghĩ có thể là loại bỏ tất cả việc ghép của các xâu <code>Suf[l]</code> khi đã tồn tại một <em>phần thừa chung</em> như trên.</p>
-<p>Bởi vì ta đã lấy ra tất cả tiền tố, nên nếu tồn tại 2 cặp xâu như trên thì sẽ luôn tồn tại <code>X = (Pre[i] + c) + (Suf[j][1..])</code>, trong đó <code>c</code> là chữ cái đầu tiên của <code>Suf[j]</code>, và <code>Pre[i] + c</code> cũng là 1 tiền tố (vì nó là tiền tố của <code>Pre[k]</code>). Như vậy, luôn tồn tại các cặp chỉ lệch nhau 1 kí tự - và ta chỉ cần đặt thêm điều kiện để khử trường hợp lệch 1 kí tự là đủ.</p>
-<h3 id="Ki-tu-thua"><a href="#Ki-tu-thua" class="headerlink" title="Kí tự thừa"></a>Kí tự <em>thừa</em></h3><p>Xét trường hợp <code>X = (Pre[i] + c) + (Suf[j][1..])</code>. Ta có thể thêm vào điều kiện sau:
-Xét <code>Suf[j]</code>, nếu <code>c + Suf[j]</code> cũng là một hậu tố trong tập, thì ta <strong>không được</strong> ghép <code>Suf[j]</code> với <code>Pre[i&#39;] = Pre[i] + c</code>.</p>
-<p>Dễ dàng chứng minh tất cả xâu cần tìm đều tồn tại cách ghép <em>duy nhất</em> thỏa mãn điều kiện.</p>
-<p>Lưu ý <code>Pre[i&#39;]</code> phải là <code>Pre[i] + c</code>, tức phải có ít nhất 2 kí tự.</p>
-<p>Ta gọi các xâu <code>c + Suf[j]</code> không thuộc tập hậu tố là xâu <em>kí tự thừa</em> <code>c</code>.</p>
-<h3 id="Dem-nhu-the-nao"><a href="#Dem-nhu-the-nao" class="headerlink" title="Đếm như thế nào?"></a>Đếm như thế nào?</h3><p>Với điều kiện trên, lời giải của ta sẽ gồm các bước:</p>
-<ul>
-<li>Đếm số tiền tố khác nhau kết thúc ở <code>c</code>.</li>
-<li>Đếm số xâu <em>kí tự thừa</em> <code>c</code>, nhân với số tiền tố đã tìm được ở trên.</li>
-<li>Với mỗi hậu tố, kiểm tra xem liệu ta có thể tạo được hậu tố bằng cách ghép 1 kí tự đầu tiên từ 1 tiền tố nào đó với các kí tự còn lại của hậu tố. Vốn dĩ việc này là cần thiết bởi vì đây là trường hợp duy nhất mà 1 xâu có thể được tạo từ một hậu tố không có kí tự thừa, và không được xét ở trường hợp trên.</li>
-</ul>
-<h3 id="So-tien-to-khac-nhau"><a href="#So-tien-to-khac-nhau" class="headerlink" title="Số tiền tố khác nhau"></a>Số tiền tố khác nhau</h3><p>Trước tiên ta sort lại các truy vấn theo <code>R[i]</code> và xử lí offline.</p>
-<p>Lần lượt thêm các tiền tố vào Trie (chống lặp), đồng thời lưu lại với mỗi nút lần cuối cùng nó xuất hiện.</p>
-<p>Giả sử ta đang ở truy vấn <code>L[i], R[i]</code> và đã thêm tất cả các tiền tố của <code>S[i]..S[R[i]]</code>. Không khó để nhìn ra số lượng tiền tố khác nhau chính là số nút mà lần xuất hiện cuối cùng <code>&gt;= L[i]</code>. Ta có thể dùng IT hoặc BIT làm công cụ đếm phân phối số nút xuất hiện ở từng thời điểm và tính tổng nhanh.</p>
-<p>Để có thể tính số tiền tố xuất hiện mà kết thúc với kí tự <code>c</code> cụ thể, ta có thể dùng 26 IT / BIT thay vì 1, với mỗi loại tiền tố ta có 1 cây đếm phân phối riêng.</p>
-<p>Độ phức tạp mỗi truy vấn là <code>O(26 * log(N))</code>.</p>
-<h3 id="So-hau-to-voi-ki-tu-thua"><a href="#So-hau-to-voi-ki-tu-thua" class="headerlink" title="Số hậu tố với kí tự thừa"></a>Số hậu tố với <em>kí tự thừa</em></h3><p>Trước tiên, vì bản chất xâu thừa chính là <code>c + Suf[i]</code> nên sẽ có <code>(số tiền tố khác nhau)</code> xâu như vậy (với 1 kí tự <code>c</code>). Tuy nhiên ta phải trừ đi các xâu cũng là hậu tố - chính là số hậu tố bắt đầu với <code>c</code> mà có trên 1 kí tự. Để đếm số lượng xâu bị tính thừa ta có thể lật ngược xâu, biến hậu tố thành tiền tố và đếm như phần trên.</p>
-<p>Phần này ta cũng làm <code>O(26 * log(N))</code> mỗi truy vấn.</p>
-<h3 id="Cac-hau-to-cong-them"><a href="#Cac-hau-to-cong-them" class="headerlink" title="Các hậu tố cộng thêm"></a>Các hậu tố cộng thêm</h3><p>Phần này khá đơn giản, với mỗi hậu tố bắt đầu với kí tự <code>c</code> ta có thể kiểm tra có tồn lại hậu tố <code>Pre[i] = c</code> nào không. Ta có thể làm kèm với thao tác đếm ở trên.</p>
-<h3 id="Tong-ket"><a href="#Tong-ket" class="headerlink" title="Tổng kết"></a>Tổng kết</h3><p>Với <code>Q</code> truy vấn, độ phức tạp sẽ là <code>O(Q * 26 * log(N))</code>, nên cẩn thận 1 chút ở phần cài đặt nếu không có thể sẽ bị TLE vì cài ẩu.</p>
-<h2 id="Electric-Charges-AIM-Tech-Round-Div-1"><a href="#Electric-Charges-AIM-Tech-Round-Div-1" class="headerlink" title="Electric Charges - AIM Tech Round (Div. 1)"></a><a href="http://codeforces.com/contest/623/problem/C" target="_blank" rel="external">Electric Charges - AIM Tech Round (Div. 1)</a></h2><h3 id="Tom-tat-de-bai-2"><a href="#Tom-tat-de-bai-2" class="headerlink" title="Tóm tắt đề bài"></a>Tóm tắt đề bài</h3><p>Cho <code>N</code> điểm trên mặt phẳng. Gióng chúng xuống trục Ox hoặc Oy sao cho khoảng cách giữa 2 điểm gióng xuống xa nhất là nhỏ nhất có thể.</p>
-<h4 id="Gioi-han-2"><a href="#Gioi-han-2" class="headerlink" title="Giới hạn"></a>Giới hạn</h4><p><code>1 &lt;= N &lt;= 10^5</code>, <code>-10^8 &lt;= X[i], Y[i] &lt;= 10^8</code></p>
-<h3 id="Chat-nhi-phan"><a href="#Chat-nhi-phan" class="headerlink" title="Chặt nhị phân"></a>Chặt nhị phân</h3><p>Trong bài này ta sử dụng chặt nhị phân, một cách thông dụng để giải các bài min-của-max. Bài toán trở thành: tìm một cách xếp sao cho khoảng cách không quá <code>X</code>?</p>
-<h3 id="2-SAT"><a href="#2-SAT" class="headerlink" title="2-SAT??"></a>2-SAT??</h3><p>Tuấn nghĩ ra thuật 2-SAT… Có thể AC nhũng chẳng hay chút nào :D Hiển nhiên một bài C div 1 không thể tốn nhiều thời gian code như thế… Đây không phải round của amd.</p>
-<h3 id="Chon-mot-moc"><a href="#Chon-mot-moc" class="headerlink" title="Chọn một mốc"></a>Chọn một mốc</h3><p>Tóm lại ta phải tối ưu max của 3 cái sau:</p>
-<ul>
-<li><code>(minX - maxX)^2</code></li>
-<li><code>(minY - maxY)^2</code></li>
-<li><code>max(minX^2, maxX^2) + max(minY^2, maxY^2)</code>
-Ý tưởng đầu tiên sẽ là for một biến, giả sử <code>minX</code>, và tham lam các biến còn lại.</li>
-</ul>
-<p>Khi có <code>minX</code>, ta tính được <code>maxX</code>. Hiển nhiên các điểm có <code>X[i] &lt; minX</code> hoặc <code>X[i] &gt; maxX</code> đều phải chọn sang <code>Y</code>. Ta chỉ cần lấy min và max của các <code>Y[i]</code> đó, so sánh. Bài toán đơn giản?</p>
-<p>Thuật toán sai rồi. Rất có thể <code>maxX^2</code> &gt; <code>minX^2</code> và sẽ làm cho thuật toán bị ảo tưởng.</p>
-<h3 id="Chon-mot-diem"><a href="#Chon-mot-diem" class="headerlink" title="Chọn một điểm"></a>Chọn một điểm</h3><p>Thay vì chọn 1 mốc như <code>minX</code>, ta chọn một điểm và coi nó là <code>minX</code>, đồng thời là điểm có <code>abs(X[i])</code> lớn nhất được chọn làm <code>X</code>. Khi đó ta có thể yên tâm bốc các điểm nằm ngoài khoảng giới hạn đó là <code>Y</code> và chỉ cần kiểm tra các khoảng cách còn lại.</p>
-<h3 id="Tinh-cac-Y-nhu-nao"><a href="#Tinh-cac-Y-nhu-nao" class="headerlink" title="Tính các Y như nào?"></a>Tính các <code>Y</code> như nào?</h3><p>Tóm lại ta cần tính nhanh minY và maxY ở khoảng các điểm có <code>X &lt; L</code> và <code>X &gt; R</code> với <code>L, R</code> bất kì. Ta có thể sort lại các điểm theo tọa độ của <code>X</code>, sau đó xây các mảng dồn min, max để lấy nhanh prefix và suffix.</p>
-<p>Xây mất <code>O(N log(N))</code> (sắp xếp) và truy vấn <code>O(1)</code>.</p>
-<h3 id="Lat-leo"><a href="#Lat-leo" class="headerlink" title="Lắt léo"></a>Lắt léo</h3><p>Còn một trường hợp nữa ta chưa xét đến: chọn tất cả theo trục Y. Trường hợp này không khó, check <code>(maxY - minY) ^ 2</code> là xong. Tuy vậy mình không nghĩ ra trước khi nộp :(</p>
-<h3 id="Tong-ket-1"><a href="#Tong-ket-1" class="headerlink" title="Tổng kết"></a>Tổng kết</h3><p>Tóm lại ta cần chặt nhị phân, khi kiểm tra cần chạy con trỏ hoặc lấy lower/upper bound. Việc chạy con trỏ khá lằng nhằng không cần thiết nên mình không code. Độ phức tạp là <code>(O(N * log(N) * log(10^17)))</code> hoặc <code>O(N * log(10^17))</code>.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://natsukagami.github.io/2017/04/18/2017-04-18-Training/" data-id="cj1z8w5rn0009b32b2w1rdq8k" class="article-share-link">Chia sẻ</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/anh-Hanh/">anh Hạnh</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apio/">apio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/training/">training</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vietnamese/">vietnamese</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -772,7 +940,7 @@ Xét <code>Suf[j]</code>, nếu <code>c + Suf[j]</code> cũng là một hậu t�
   <div class="widget-wrap">
     <h3 class="widget-title">Các nhãn</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/First-Post/">First Post</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anh-Hanh/">anh Hạnh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anh-Khue/">anh Khuê</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anh-Minh/">anh Minh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apio/">apio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/editorial/">editorial</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/english/">english</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hsgso/">hsgso</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Hoang/">thầy Hoàng</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Nghia/">thầy Nghĩa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Phuong/">thầy Phương</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Dong/">thầy Đông</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/training/">training</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vietnamese/">vietnamese</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/First-Post/">First Post</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Training/">Training</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anh-Hanh/">anh Hạnh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anh-Khue/">anh Khuê</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anh-Minh/">anh Minh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apio/">apio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/editorial/">editorial</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/english/">english</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hsgso/">hsgso</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Hoang/">thầy Hoàng</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Nghia/">thầy Nghĩa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Phuong/">thầy Phương</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Dong/">thầy Đông</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/training/">training</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vietnamese/">vietnamese</a></li></ul>
     </div>
   </div>
 
@@ -782,7 +950,7 @@ Xét <code>Suf[j]</code>, nếu <code>c + Suf[j]</code> cũng là một hậu t�
   <div class="widget-wrap">
     <h3 class="widget-title">Tập hợp nhãn</h3>
     <div class="widget tagcloud">
-      <a href="/tags/First-Post/" style="font-size: 10px;">First Post</a> <a href="/tags/anh-Hanh/" style="font-size: 15px;">anh Hạnh</a> <a href="/tags/anh-Khue/" style="font-size: 10px;">anh Khuê</a> <a href="/tags/anh-Minh/" style="font-size: 15px;">anh Minh</a> <a href="/tags/apio/" style="font-size: 20px;">apio</a> <a href="/tags/editorial/" style="font-size: 10px;">editorial</a> <a href="/tags/english/" style="font-size: 10px;">english</a> <a href="/tags/hsgso/" style="font-size: 10px;">hsgso</a> <a href="/tags/thay-Hoang/" style="font-size: 10px;">thầy Hoàng</a> <a href="/tags/thay-Nghia/" style="font-size: 10px;">thầy Nghĩa</a> <a href="/tags/thay-Phuong/" style="font-size: 10px;">thầy Phương</a> <a href="/tags/thay-Dong/" style="font-size: 10px;">thầy Đông</a> <a href="/tags/training/" style="font-size: 20px;">training</a> <a href="/tags/vietnamese/" style="font-size: 20px;">vietnamese</a>
+      <a href="/tags/First-Post/" style="font-size: 10px;">First Post</a> <a href="/tags/Training/" style="font-size: 10px;">Training</a> <a href="/tags/anh-Hanh/" style="font-size: 13.33px;">anh Hạnh</a> <a href="/tags/anh-Khue/" style="font-size: 10px;">anh Khuê</a> <a href="/tags/anh-Minh/" style="font-size: 13.33px;">anh Minh</a> <a href="/tags/apio/" style="font-size: 20px;">apio</a> <a href="/tags/editorial/" style="font-size: 10px;">editorial</a> <a href="/tags/english/" style="font-size: 10px;">english</a> <a href="/tags/hsgso/" style="font-size: 10px;">hsgso</a> <a href="/tags/thay-Hoang/" style="font-size: 10px;">thầy Hoàng</a> <a href="/tags/thay-Nghia/" style="font-size: 10px;">thầy Nghĩa</a> <a href="/tags/thay-Phuong/" style="font-size: 13.33px;">thầy Phương</a> <a href="/tags/thay-Dong/" style="font-size: 10px;">thầy Đông</a> <a href="/tags/training/" style="font-size: 16.67px;">training</a> <a href="/tags/vietnamese/" style="font-size: 20px;">vietnamese</a>
     </div>
   </div>
 
@@ -804,6 +972,10 @@ Xét <code>Suf[j]</code>, nếu <code>c + Suf[j]</code> cũng là một hậu t�
       <ul>
         
           <li>
+            <a href="/2017/05/03/2017-05-03-Training/">2017-05-03 Training</a>
+          </li>
+        
+          <li>
             <a href="/2017/05/01/HSGSO-2016-Editorial/">HSGSO 2016 Editorial</a>
           </li>
         
@@ -817,10 +989,6 @@ Xét <code>Suf[j]</code>, nếu <code>c + Suf[j]</code> cũng là một hậu t�
         
           <li>
             <a href="/2017/04/24/2017-04-24-Training/">2017/04/24 Training</a>
-          </li>
-        
-          <li>
-            <a href="/2017/04/23/2017-04-21-Training/">2017/04/21 Training</a>
           </li>
         
       </ul>
