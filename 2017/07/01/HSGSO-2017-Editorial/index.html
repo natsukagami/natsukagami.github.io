@@ -21,7 +21,7 @@ Phần chữa bài được thực hiện bởi mì">
 <meta property="og:image" content="http://natsukagami.github.io/images/score_string.png">
 <meta property="og:image" content="http://natsukagami.github.io/images/score_p2grp.png">
 <meta property="og:image" content="http://natsukagami.github.io/images/score_turtles.png">
-<meta property="og:updated_time" content="2017-06-27T16:35:49.542Z">
+<meta property="og:updated_time" content="2017-10-07T12:05:03.067Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HSGSO 2017 Editorial">
 <meta name="twitter:description" content="Đây chắc là một trong những bài viết được chờ đợi nhất sau kì thi HSGSO 2017 vừa rồi. Ngoài chữa bài, mình sẽ đưa ra một số thống kê về đề và lượng người giải được!
@@ -138,7 +138,7 @@ Phần chữa bài được thực hiện bởi mì">
 <li><strong>Subtask 2</strong> ($S \le 500, K \le 18$): Do giới hạn của $K$, đáp số là một số không quá giới hạn <code>long long</code>, vì vậy ta có thể thực hiện đơn giản phép quy hoạch động.
 Gọi $f[i][j]$ là số lớn nhất có thể tạo được nếu ta sử dụng các đoạn từ 1 đến $i$ và lấy tổng cộng $j$ chữ số.
 Hiển nhiên $f[0][0] = 0$. Ta có:
-$$f[i][j] = \sum\limits_{k=0}^{\min(M_i, j)} f[i - 1][j - k] \times 10^k + \overline{A_{i,1}A_{i,2}…A_{i,k}}$$
+$$f[i][j] = \sum\limits_{k=0}^{\min(M<em>i, j)} f[i - 1][j - k] \times 10^k + \overline{A</em>{i,1}A<em>{i,2}…A</em>{i,k}}$$
 Đáp số chính là $f[N][K]$. Lưu ý độ phức tạp của thuật toán này chỉ là $O(SK)$ chứ không phải $O(N^2K)$.</li>
 </ul>
 <h3 id="Tham-lam-1-chu-so"><a href="#Tham-lam-1-chu-so" class="headerlink" title="Tham lam 1 chữ số"></a>Tham lam 1 chữ số</h3><p>Subtask 3 có một giới hạn khá lạ: Mỗi đoạn có độ dài đều là 1. Như vậy, việc chọn một đoạn chỉ đơn giản là lấy hoặc không. Ta có thể ra một thuật toán tham lam cho subtask này.</p>
@@ -168,7 +168,7 @@ Giả sử ta đã có $i$ chữ số $x_1, x_2, …, x_i$ ($x_i$ ở dãy $j$),
 <li>Nó phải thuộc dãy $p \ge j$. Hiển nhiên ta không thể lấy lại một dãy trước đó.</li>
 <li>Sau nó phải có ít nhất $K - i - 1$ chữ số (từ nó về cuối dãy, và tổng tất cả dãy phía sau).</li>
 <li>$p = j$ và nó là chữ số đứng sau $x_i$, <em>hoặc</em></li>
-<li>$p &gt; j$, $x_{i - k} = A[p][q - 1 - k]$ với mọi $0 \le k &lt; q - 1$. Khi chọn lựa chọn này, ta xóa tất cả $x_{i - q + 2}..x_i$ và thêm vào $A[p][1..q]$.</li>
+<li>$p &gt; j$, $x<em>{i - k} = A[p][q - 1 - k]$ với mọi $0 \le k &lt; q - 1$. Khi chọn lựa chọn này, ta xóa tất cả $x</em>{i - q + 2}..x_i$ và thêm vào $A[p][1..q]$.</li>
 </ul>
 <p>Dễ dàng chứng minh ở mỗi bước, ta đều lấy được chữ số lớn nhất có thể lấy được khi có prefix dựng từ bước trước đó (do vậy, nếu prefix tối ưu thì theo phép so sánh số, dãy mới là tối ưu). Do ở bước đầu (prefix rỗng), lựa chọn là tối ưu, nên theo quy nạp thuật toán tham là tối ưu.</p>
 <p>Ta có thể cài thuật toán này trong độ phức tạp $O(SK)$.</p>
@@ -384,7 +384,7 @@ Như vậy, thuật toán của bài này thực ra rất đơn giản, tìm v�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://natsukagami.github.io/2017/07/01/HSGSO-2017-Editorial/" data-id="cj4e7v6fv0000xw2b99khbdzc" class="article-share-link">Chia sẻ</a>
+      <a data-url="http://natsukagami.github.io/2017/07/01/HSGSO-2017-Editorial/" data-id="cj95n7knp0014qyoesk0vtk3p" class="article-share-link">Chia sẻ</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/editorial/">editorial</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hsgso/">hsgso</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vietnamese/">vietnamese</a></li></ul>

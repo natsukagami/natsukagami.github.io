@@ -433,16 +433,16 @@ cực đại vẫn không thay đổi.</p>
 ghép là các đỉnh cần tìm. Ta sẽ chỉ xét đến
 các đỉnh thuộc cặp ghép.</p>
 <p>Giả sử $v_0$ là một đỉnh không được ghép.
-Xét đường tăng $v_0, v_1,…, v_{2k}$. Hiển
+Xét đường tăng $v_0, v<em>1,…, v</em>{2k}$. Hiển
 nhiên độ dài đường tăng phải chẵn, nếu không
 ta có thể tăng số cặp ghép, không thỏa mãn
 tính chất cặp ghép cực đại.</p>
 <p>Ta nhận thấy, nếu xóa đi 1 trong các đỉnh
-$v_2, v_4, …,v_{2k}$, ta sẽ tách đường tăng
+$v_2, v<em>4, …,v</em>{2k}$, ta sẽ tách đường tăng
 hiện tại ra thành 1 đường tăng lẻ, đồng thời số cặp ghép giảm đi 1.
 Tuy nhiến, do tồn tại đường tăng lẻ nên ta
 có thể đảo lại, làm tăng số cặp ghép về như
-cũ. Vì vậy $v_2, v_4, …, v_{2k}$ đều là
+cũ. Vì vậy $v_2, v<em>4, …, v</em>{2k}$ đều là
 các đỉnh cần tìm.</p>
 <p>Nếu một đỉnh $x$ khi xóa đi không tạo ra
 đường tăng lẻ nào (nhưng làm giảm số cặp ghép),
@@ -483,7 +483,7 @@ lại không lớn hơn max hiện tại</li>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://natsukagami.github.io/2017/04/28/2017-04-28-Training/" data-id="cj21sa4po00008t2bvndb6m8v" class="article-share-link">Chia sẻ</a>
+      <a data-url="http://natsukagami.github.io/2017/04/28/2017-04-28-Training/" data-id="cj95n7knk000uqyoe46bwui9f" class="article-share-link">Chia sẻ</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/anh-Khue/">anh Khuê</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apio/">apio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/thay-Hoang/">thầy Hoàng</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/training/">training</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vietnamese/">vietnamese</a></li></ul>
@@ -542,7 +542,7 @@ $1 \le C[i], A[i][j], d[i] \le 10^6$</p>
 Tìm cách đặt các điểm vào các tọa độ nguyên
 của đoạn thẳng $[1..M]$ (mỗi tọa độ chứa
 không quá 1 điểm) để tối đa hóa:
-$$\sum\limits_{i = 1}^N \sum\limits_{j = i + 1}
+$$\sum\limits<em>{i = 1}^N \sum\limits</em>{j = i + 1}
 ^N |x_i - x_j| \times A[i] \times A[j]$$</p>
 <p>Với $x_i$ là tọa độ điểm $i$.</p>
 <h4 id="Gioi-han-2"><a href="#Gioi-han-2" class="headerlink" title="Giới hạn"></a>Giới hạn</h4><p>$1 \le M \le 10^6$, $1 \le N \le 1000$,
@@ -642,8 +642,8 @@ này có điểm bất lợi là có quá nhiều biến.
 Ta sẽ biến đổi công thức một chút.</p>
 <p>Giả sử các điểm $1..N$ đã được xếp từ trái
 sang phải, đáp số sẽ là
-$$ \sum\limits_{i = 1}^{N - 1}(x_{i + 1} - x_i)
-(\sum\limits_{j = 1}^i A[j])
+$$ \sum\limits<em>{i = 1}^{N - 1}(x</em>{i + 1} - x<em>i)
+(\sum\limits</em>{j = 1}^i A[j])
 (\sum\limits_{k = i + 1}^N A[k])$$</p>
 <p>Với mỗi đoạn liên tiếp, số lần nó bị tính
 vào đáp số sẽ là tổng trọng số những điểm
@@ -745,8 +745,8 @@ là đoạn đúng.</li>
 </li>
 <li>$f[i][j] = 1$ nếu $R[i..j]$ là đoạn đúng
 và $i = j$ hoặc $i = j + 1$.</li>
-<li>$f[i][j] = \sum\limits_{x \text{ t/m } i..j}
-f[i][x - 1] \times f[x + 1][j] \times C^{x - 1}_{N - 1}$</li>
+<li>$f[i][j] = \sum\limits<em>{x \text{ t/m } i..j}
+f[i][x - 1] \times f[x + 1][j] \times C^{x - 1}</em>{N - 1}$</li>
 </ul>
 <p>Đáp số là $f[1][N]$. Độ phức tạp là $O(N^3)$,
 do với mỗi đoạn ta cần tìm $x$ thỏa mãn.</p>
@@ -778,7 +778,7 @@ trong $O(1)$.</li>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://natsukagami.github.io/2017/04/25/2017-04-25-Training/" data-id="cj1z8w5rv000lb32bscdonn6k" class="article-share-link">Chia sẻ</a>
+      <a data-url="http://natsukagami.github.io/2017/04/25/2017-04-25-Training/" data-id="cj95n7kng000lqyoefr4mlp5s" class="article-share-link">Chia sẻ</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/anh-Minh/">anh Minh</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apio/">apio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/training/">training</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vietnamese/">vietnamese</a></li></ul>
@@ -847,9 +847,9 @@ Dễ dàng nhận thấy để tính $F[v][j]$, ta lần
 lượt tính tổng $F[u][j]$ với $u$ là con của $v$.
 Ngoài ra nếu $A[v] \le j$ ta có một cách chọn
 là $A[v]$ cùng với tổng các $F[u][A[v] - 1]$.
-$$ F[v][j] = \max(\sum\limits_{u \in child[v]}
+$$ F[v][j] = \max(\sum\limits<em>{u \in child[v]}
   {F[u][j]}, (A[v] \le j) \times
-  (1 + \sum\limits_
+  (1 + \sum\limits</em>
     {u \in child[v]}{F[u][A[v] - 1]}))$$
 Đáp số chính là $F[root][inf]$.</p>
 <p>Sau khi nén số, ta có hàm quy hoạch động $O(n^2)$.
@@ -881,7 +881,7 @@ $F[v]$ vào $F[u]$.</p>
 …, X_k$, ta phải gộp vào hàm $F[u]$ ($u$ là
 cha của $v$). Theo đúng công thức quy hoạch động,
 giá trị của $F[v][X_i]$ sẽ được cộng vào các
-$F[u][p]$ thỏa mãn $X_i \le p &lt; X_{i + 1}$, hay
+$F[u][p]$ thỏa mãn $X<em>i \le p &lt; X</em>{i + 1}$, hay
 $X_i \le p \le N$ nếu $i = k$.</p>
 <p>Tất nhiên, hàm $F[u]$ cũng sẽ có các mốc $Y_1, Y_2,
 …, Y_l$ ($X \subseteq Y$). Nếu coi $F[u]$ như
@@ -1062,7 +1062,7 @@ bị xóa nhỏ nhất.
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://natsukagami.github.io/2017/04/24/2017-04-24-Training/" data-id="cj1z8w5rt000gb32bb5nm8xs8" class="article-share-link">Chia sẻ</a>
+      <a data-url="http://natsukagami.github.io/2017/04/24/2017-04-24-Training/" data-id="cj95n7kne000gqyoeh61tkz11" class="article-share-link">Chia sẻ</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/anh-Hanh/">anh Hạnh</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apio/">apio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/training/">training</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vietnamese/">vietnamese</a></li></ul>
@@ -1286,7 +1286,7 @@ Vì thế tổng độ phức tạp là <code>O(K^2 + NK)</code>, do có <code>2
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://natsukagami.github.io/2017/04/23/2017-04-21-Training/" data-id="cj1z8w5rr000eb32br0h5f978" class="article-share-link">Chia sẻ</a>
+      <a data-url="http://natsukagami.github.io/2017/04/23/2017-04-21-Training/" data-id="cj95n7knd000eqyoek010h6qd" class="article-share-link">Chia sẻ</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apio/">apio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/thay-Nghia/">thầy Nghĩa</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/training/">training</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vietnamese/">vietnamese</a></li></ul>

@@ -19,7 +19,7 @@ Tóm tắt đề bàiwashCho $N$ máy giặt và $M$ máy sấy chạy song song
 thời gian giặt là $A[1..N]$, sấy là $B[1..M]$ cho
 từng máy. Tìm thời gian nhỏ nhất để giặt xong
 $L$">
-<meta property="og:updated_time" content="2017-04-26T17:17:54.066Z">
+<meta property="og:updated_time" content="2017-10-07T12:05:03.012Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2017/04/25 Training">
 <meta name="twitter:description" content="Hôm nay có khá nhiều bài trí tuệ.
@@ -137,7 +137,7 @@ $1 \le C[i], A[i][j], d[i] \le 10^6$</p>
 Tìm cách đặt các điểm vào các tọa độ nguyên
 của đoạn thẳng $[1..M]$ (mỗi tọa độ chứa
 không quá 1 điểm) để tối đa hóa:
-$$\sum\limits_{i = 1}^N \sum\limits_{j = i + 1}
+$$\sum\limits<em>{i = 1}^N \sum\limits</em>{j = i + 1}
 ^N |x_i - x_j| \times A[i] \times A[j]$$</p>
 <p>Với $x_i$ là tọa độ điểm $i$.</p>
 <h4 id="Gioi-han-2"><a href="#Gioi-han-2" class="headerlink" title="Giới hạn"></a>Giới hạn</h4><p>$1 \le M \le 10^6$, $1 \le N \le 1000$,
@@ -237,8 +237,8 @@ này có điểm bất lợi là có quá nhiều biến.
 Ta sẽ biến đổi công thức một chút.</p>
 <p>Giả sử các điểm $1..N$ đã được xếp từ trái
 sang phải, đáp số sẽ là
-$$ \sum\limits_{i = 1}^{N - 1}(x_{i + 1} - x_i)
-(\sum\limits_{j = 1}^i A[j])
+$$ \sum\limits<em>{i = 1}^{N - 1}(x</em>{i + 1} - x<em>i)
+(\sum\limits</em>{j = 1}^i A[j])
 (\sum\limits_{k = i + 1}^N A[k])$$</p>
 <p>Với mỗi đoạn liên tiếp, số lần nó bị tính
 vào đáp số sẽ là tổng trọng số những điểm
@@ -340,8 +340,8 @@ là đoạn đúng.</li>
 </li>
 <li>$f[i][j] = 1$ nếu $R[i..j]$ là đoạn đúng
 và $i = j$ hoặc $i = j + 1$.</li>
-<li>$f[i][j] = \sum\limits_{x \text{ t/m } i..j}
-f[i][x - 1] \times f[x + 1][j] \times C^{x - 1}_{N - 1}$</li>
+<li>$f[i][j] = \sum\limits<em>{x \text{ t/m } i..j}
+f[i][x - 1] \times f[x + 1][j] \times C^{x - 1}</em>{N - 1}$</li>
 </ul>
 <p>Đáp số là $f[1][N]$. Độ phức tạp là $O(N^3)$,
 do với mỗi đoạn ta cần tìm $x$ thỏa mãn.</p>
@@ -373,7 +373,7 @@ trong $O(1)$.</li>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://natsukagami.github.io/2017/04/25/2017-04-25-Training/" data-id="cj1z8w5rv000lb32bscdonn6k" class="article-share-link">Chia sẻ</a>
+      <a data-url="http://natsukagami.github.io/2017/04/25/2017-04-25-Training/" data-id="cj95n7kng000lqyoefr4mlp5s" class="article-share-link">Chia sẻ</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/anh-Minh/">anh Minh</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apio/">apio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/training/">training</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vietnamese/">vietnamese</a></li></ul>

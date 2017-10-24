@@ -20,7 +20,7 @@ Tóm tắt đề bàiballmachineCho một cây $N$ đỉnh có gốc, mỗi đ�
 con nếu có thể. Nếu có nhiều nút con thỏa mãn,
 ch">
 <meta property="og:image" content="http://natsukagami.github.io/../images/ballmachine_tree.png">
-<meta property="og:updated_time" content="2017-05-03T15:15:21.012Z">
+<meta property="og:updated_time" content="2017-10-07T12:05:03.013Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2017-05-03 Training">
 <meta name="twitter:description" content="Hôm nay bài không phải là khó.
@@ -227,8 +227,8 @@ một kí tự khác nằm giữa 2 kí tự giống nhau.</p>
 <p>Như vậy, điều kiện không tồn tại xâu con đối
 xứng rất đơn giản:</p>
 <ul>
-<li>Không tồn tại $d_i = d_{i + 1}$, <em>và</em></li>
-<li>Không tồn tại $d_i = d_{i + 2}$</li>
+<li>Không tồn tại $d<em>i = d</em>{i + 1}$, <em>và</em></li>
+<li>Không tồn tại $d<em>i = d</em>{i + 2}$</li>
 </ul>
 <p>Với $d_i$ là chữ số thứ $i$ của số cần tìm.</p>
 <h3 id="Quy-hoach-dong"><a href="#Quy-hoach-dong" class="headerlink" title="Quy hoạch động"></a>Quy hoạch động</h3><p>Để đơn giản hóa việc đếm trong đoạn $[A..B]$
@@ -313,16 +313,16 @@ không đổi. Vì vậy, từ một nghiệm ta có thể tạo
 ra vô số nghiệm khác.</p>
 <p>Như vậy, ta chỉ giải trường hợp độ dài lẻ.
 Ta tính tổng sau:</p>
-<p>$$P = B_1 + B_2 + … + B_{2k + 1}$$
-$$ = (A_{2k + 1} + A_1) + (A_1 + A_2) +
-… + (A_{2k} + A_{2k + 1})$$
-$$ = 2(A_1 + A_2 + … + A_{2k + 1})$$</p>
+<p>$$P = B_1 + B<em>2 + … + B</em>{2k + 1}$$
+$$ = (A_{2k + 1} + A_1) + (A_1 + A<em>2) +
+… + (A</em>{2k} + A_{2k + 1})$$
+$$ = 2(A_1 + A<em>2 + … + A</em>{2k + 1})$$</p>
 <p>Và</p>
-<p>$$ Q = B_2 + B_4 + … + B_{2k} $$
-$$ = (A_1 + A_2) + (A_3 + A_4) + … +
-(A_{2k - 1} + A_{2k}) $$</p>
-<p>Dễ dàng nhận thấy $A_{2k + 1} = P / 2 - Q$.
-Khi đã có $A_{2k + 1}$, ta có thể tính được
+<p>$$ Q = B_2 + B<em>4 + … + B</em>{2k} $$
+$$ = (A_1 + A_2) + (A_3 + A<em>4) + … +
+(A</em>{2k - 1} + A_{2k}) $$</p>
+<p>Dễ dàng nhận thấy $A<em>{2k + 1} = P / 2 - Q$.
+Khi đã có $A</em>{2k + 1}$, ta có thể tính được
 tất cả các số còn lại với độ phức tạp là $O(N)$.</p>
 <p>Như vậy tổng cộng thuật toán của ta là $O(N)$.</p>
 <h2 id="brunhilda-1"><a href="#brunhilda-1" class="headerlink" title="brunhilda"></a>brunhilda</h2><h3 id="Quy-hoach-dong-1"><a href="#Quy-hoach-dong-1" class="headerlink" title="Quy hoạch động"></a>Quy hoạch động</h3><p>Gọi $f[i]$ là số bước nhỏ nhất để đưa $i$
@@ -363,7 +363,7 @@ deque khi phần tử đầu tiên có bộ đếm về 0.</p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://natsukagami.github.io/2017/05/03/2017-05-03-Training/" data-id="cj290jo6y0000e12bm62f09qp" class="article-share-link">Chia sẻ</a>
+      <a data-url="http://natsukagami.github.io/2017/05/03/2017-05-03-Training/" data-id="cj95n7knh000nqyoeopsl54xq" class="article-share-link">Chia sẻ</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Training/">Training</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apio/">apio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/thay-Phuong/">thầy Phương</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vietnamese/">vietnamese</a></li></ul>
