@@ -79,6 +79,275 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2017-04-20-Training" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/21/2017-04-20-Training/" class="article-date">
+  <time datetime="2017-04-21T11:36:25.000Z" itemprop="datePublished">2017-04-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Training/">Training</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/21/2017-04-20-Training/">2017/04/20 Training</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>Lưu ý</strong>: Mình đã tóm tắt đề bài ở trên, ai không muốn bị spoil thì đừng
+kéo xuống lời giải vội.</p>
+<p>Hôm nay có 5 bài của thầy Đông. Do mình không được nghe thầy chữa buổi chiều nên solution là của mình, mặc dù 99% là đúng nhưng không đảm bảo.
+Thực chất bài không phải là khó quá.</p>
+<h1 id="Tom-tat-de-bai"><a href="#Tom-tat-de-bai" class="headerlink" title="Tóm tắt đề bài"></a>Tóm tắt đề bài</h1><h2 id="ACM"><a href="#ACM" class="headerlink" title="ACM"></a>ACM</h2><p>Có <code>N</code> đội, mỗi đội có 11 chỉ số <code>A[i][1..11]</code>. Chọn 3 đội sao cho <code>sum[i = 1..11][max(A[x, y, z][i])]</code> (tổng của max chỉ số từng loại của 3 đội) là lớn nhất.</p>
+<h4 id="Gioi-han"><a href="#Gioi-han" class="headerlink" title="Giới hạn"></a>Giới hạn</h4><p><code>1 &lt;= N &lt;= 30000</code></p>
+<h2 id="DOMINO-Bai-toan-thu-nhat"><a href="#DOMINO-Bai-toan-thu-nhat" class="headerlink" title="DOMINO (Bài toán thứ nhất)"></a>DOMINO (Bài toán thứ nhất)</h2><p>Cho một bảng <code>M x N</code> với <code>K</code> ô cấm.
+Điền 0 hoặc 1 vào các ô không bị cấm sao cho
+với ô <code>(i, j)</code>:</p>
+<ul>
+<li>Nếu <code>i + j</code> lẻ, thì ô <code>(i, j)</code> không nhỏ
+hơn các ô không bị cấm xung quanh.</li>
+<li>Nếu <code>i + j</code> chẵn, thì <code>(i, j)</code> không lớn
+hơn các ô không bị cấm xung quanh.</li>
+</ul>
+<h4 id="Gioi-han-1"><a href="#Gioi-han-1" class="headerlink" title="Giới hạn"></a>Giới hạn</h4><p><code>1 &lt;= M, N &lt;= 16</code></p>
+<h2 id="DOMINO-Bai-toan-thu-hai"><a href="#DOMINO-Bai-toan-thu-hai" class="headerlink" title="DOMINO (Bài toán thứ hai)"></a>DOMINO (Bài toán thứ hai)</h2><p>Lần này không có ô cấm. Điều kiện như bài toán thứ nhất.</p>
+<h4 id="Gioi-han-2"><a href="#Gioi-han-2" class="headerlink" title="Giới hạn"></a>Giới hạn</h4><p><code>1 &lt;= N &lt;= 8</code>, <code>1 &lt;= M &lt;= 10^6</code></p>
+<h2 id="GAMES"><a href="#GAMES" class="headerlink" title="GAMES"></a>GAMES</h2><p>Cho một dãy bit <code>N</code> phần tử chưa xác định
+ và <code>M</code> điều kiện có dạng
+xor của <code>A[l..r]</code> là 0 hay 1. Tìm vị trí <code>x</code> đầu tiên
+mà điều kiện <code>x</code> mâu thuẫn với các điều kiện trên.</p>
+<h4 id="Gioi-han-3"><a href="#Gioi-han-3" class="headerlink" title="Giới hạn"></a>Giới hạn</h4><p><code>1 &lt;= N &lt;= 10^9</code>, <code>1 &lt;= M &lt;= 10^5</code></p>
+<h2 id="HANOI"><a href="#HANOI" class="headerlink" title="HANOI"></a>HANOI</h2><p>Cho thuật toán giải bài toán tháp Hà Nội:
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">HanoiTower</span><span class="params">(height, From, Temp, To)</span>:</span></div><div class="line">  <span class="keyword">if</span> height == <span class="number">1</span>:</div><div class="line">    <span class="comment"># Move one from `From` to `To`</span></div><div class="line">    <span class="keyword">return</span></div><div class="line">  HanoiTower(height - <span class="number">1</span>, From, To, Temp)</div><div class="line">  HanoiTower(<span class="number">1</span>, From, Temp, To)</div><div class="line">  HanoiTower(height - <span class="number">1</span>, Temp, From, To)</div><div class="line"></div><div class="line"><span class="comment"># Call the function</span></div><div class="line">HanoiTower(N, <span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>)</div></pre></td></tr></table></figure></p>
+<ul>
+<li>Tìm trạng thái của 3 tháp sau <code>P</code> lần gọi hàm.</li>
+<li>Cho trạng thái của 3 tháp, tính số bước đã gọi hàm
+<code>P</code>, hoặc in <code>-1</code> nếu không tồn tại trạng thái đó khi giải.</li>
+</ul>
+<h4 id="Gioi-han-4"><a href="#Gioi-han-4" class="headerlink" title="Giới hạn"></a>Giới hạn</h4><p><code>1 &lt;= N &lt;= 100</code>. Lưu ý <code>P</code> có thể là số lớn.</p>
+<h2 id="WG"><a href="#WG" class="headerlink" title="WG"></a>WG</h2><p>Cho một xâu <code>P</code> và một tập xâu <code>S[1..N]</code>. Dựng xâu <code>T</code> như sau:</p>
+<ul>
+<li>Đầu tiên chọn một xâu trong tập <code>S[]</code> và thêm vào <code>T</code></li>
+<li>Sau đó, tìm xâu <code>S[i]</code> bất kì thỏa mãn <code>S[0] == T.back()</code> rồi thêm <code>S[i][1..]</code> vào.</li>
+</ul>
+<p>Hỏi xâu <code>T</code> ngắn nhất chứa dãy con không liên tiếp <code>P</code> là gì?</p>
+<h4 id="Gioi-han-5"><a href="#Gioi-han-5" class="headerlink" title="Giới hạn"></a>Giới hạn</h4><p><code>1 &lt;= |P| &lt;= 250, 1 &lt;= |S[i]| &lt;= 10, 1 &lt;= N &lt;= 1000</code></p>
+<h1 id="Loi-giai"><a href="#Loi-giai" class="headerlink" title="Lời giải"></a>Lời giải</h1><h2 id="ACM-1"><a href="#ACM-1" class="headerlink" title="ACM"></a>ACM</h2><h3 id="Tom-tat-de-bai-1"><a href="#Tom-tat-de-bai-1" class="headerlink" title="Tóm tắt đề bài"></a>Tóm tắt đề bài</h3><p>Có <code>N</code> đội, mỗi đội có 11 chỉ số <code>A[i][1..11]</code>. Chọn 3 đội sao cho <code>sum[i = 1..11][max(A[x, y, z][i])]</code> (tổng của max chỉ số từng loại của 3 đội) là lớn nhất.</p>
+<h4 id="Gioi-han-6"><a href="#Gioi-han-6" class="headerlink" title="Giới hạn"></a>Giới hạn</h4><p><code>1 &lt;= N &lt;= 30000</code></p>
+<h3 id="“Phuc-tap-hoa”-bai-toan"><a href="#“Phuc-tap-hoa”-bai-toan" class="headerlink" title="“Phức tạp hóa” bài toán"></a>“Phức tạp hóa” bài toán</h3><p>Rất khó để thực hiện việc chọn
+nếu mình sử dụng việc lấy max của
+từng chỉ số. Vì thế ta có thể
+thay đổi bài toán thành <strong>chọn 3 đội
+rồi mỗi chỉ số lấy của một đội</strong>.
+Ta có thể thấy khi có quản lí đơn giản hơn:
+chỉ cần mỗi đội một bitmask lựa chọn chỉ số.</p>
+<p>Hiển nhiên khi đã xét tất cả trường hợp
+thì trường hợp tốt nhất luôn là lấy max.</p>
+<h3 id="Ghep-bitmask"><a href="#Ghep-bitmask" class="headerlink" title="Ghép bitmask"></a>Ghép bitmask</h3><p>Giả sử ta đã chọn 3 đội <code>i</code>, <code>j</code> và <code>k</code>.
+Ta sẽ gán lần lượt 3 mask <code>x</code>, <code>y</code>, <code>z</code> cho 3 đội
+này. Các mask sẽ thỏa mãn:</p>
+<ul>
+<li>Đôi một rời rạc (<code>x &amp; y == 0</code>, <code>y &amp; z == 0</code>, <code>z &amp; x == 0</code>)</li>
+<li>Ghép lại thì có đầy đủ (<code>x | y | z == (1 &lt;&lt; 11) - 1</code>)</li>
+<li>Tổng chỉ số tương ứng lớn nhất.</li>
+</ul>
+<p>Ta có thể thấy, thực chất ta không cần quan tâm
+các đội được chọn là đội nào.
+Với mask <code>x</code> được chọn trước, ta chỉ cần tính xem
+trong các đội thì đội nào có tổng tương ứng mask <code>x</code>
+là lớn nhất.
+Việc 2 mask <code>x</code> và <code>y</code> bị chọn trùng đội không quan trọng:
+Ta có thể coi như khi đó có 1 người được chọn với mask <code>0</code>.</p>
+<p>Ta có thể tính trước <code>max[x]</code> với mask <code>x</code> trong <code>O(N * 2^11)</code>.</p>
+<h3 id="Chon-3-phan-tu"><a href="#Chon-3-phan-tu" class="headerlink" title="Chọn 3 phần tử"></a>Chọn 3 phần tử</h3><p>Trước tiên, ta có thể thấy nếu chỉ chọn 2 phần tử, ta
+có thể for tất cả cặp mask, kiểm tra trong <code>O((2^11)^2)</code>.
+Hiển nhiên do 2 mask đều chỉ có 11 bit nên khi <code>or</code> lại với
+nhau (ghép bộ) thì mask mới vẫn chỉ có 11 bit. Vậy để chọn
+3 phần tử, ta có thể tiếp tục ghép cặp tập đã or với tập <code>max[x]</code>.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> two[<span class="number">1</span> &lt;&lt; <span class="number">11</span>];</div><div class="line"><span class="keyword">int</span> three[<span class="number">1</span> &lt;&lt; <span class="number">11</span>];</div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; (<span class="number">1</span> &lt;&lt; <span class="number">11</span>); ++i) &#123;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; (<span class="number">1</span> &lt;&lt; <span class="number">11</span>); ++j) &#123;</div><div class="line">    <span class="keyword">if</span> (!(i &amp; j)) <span class="comment">// không có phần tử trùng</span></div><div class="line">      two[i | j] = max(two[i | j], max[i] + max[j]);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; (<span class="number">1</span> &lt;&lt; <span class="number">11</span>); ++i) &#123;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; (<span class="number">1</span> &lt;&lt; <span class="number">11</span>); ++j) &#123;</div><div class="line">    <span class="keyword">if</span> (!(i &amp; j)) <span class="comment">// không có phần tử trùng</span></div><div class="line">      three[i | j] = max(three[i | j], two[i] + max[j]);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Đáp số chính là <code>three[(1 &lt;&lt; 11) - 1]</code>.
+Độ phức tạp sẽ là <code>O((2 ^ 11) ^ 2)</code>.</p>
+<h2 id="DOMINO-Bai-toan-thu-nhat-1"><a href="#DOMINO-Bai-toan-thu-nhat-1" class="headerlink" title="DOMINO (Bài toán thứ nhất)"></a>DOMINO (Bài toán thứ nhất)</h2><h3 id="Tom-tat-de-bai-2"><a href="#Tom-tat-de-bai-2" class="headerlink" title="Tóm tắt đề bài"></a>Tóm tắt đề bài</h3><p>Cho một bảng <code>M x N</code> với <code>K</code> ô cấm.
+Điền 0 hoặc 1 vào các ô không bị cấm sao cho
+với ô <code>(i, j)</code>:</p>
+<ul>
+<li>Nếu <code>i + j</code> lẻ, thì ô <code>(i, j)</code> không nhỏ
+hơn các ô không bị cấm xung quanh.</li>
+<li>Nếu <code>i + j</code> chẵn, thì <code>(i, j)</code> không lớn
+hơn các ô không bị cấm xung quanh.</li>
+</ul>
+<h4 id="Gioi-han-7"><a href="#Gioi-han-7" class="headerlink" title="Giới hạn"></a>Giới hạn</h4><p><code>1 &lt;= M, N &lt;= 16</code></p>
+<h3 id="Quy-hoach-dong"><a href="#Quy-hoach-dong" class="headerlink" title="Quy hoạch động"></a>Quy hoạch động</h3><p>Thực chất đây là một bài toán quy hoạch
+động bitmask cơ bản. Nhận xét rằng với mỗi ô
+ta chỉ cần để ý bit ô bên trái và bên trên nó để
+có thể xét điều kiện thỏa mãn.</p>
+<p>Khi quy hoạch động ta đi từng ô theo từng cột,
+trên xuống dưới trái qua phải.
+Gọi <code>f[i][j][mask]</code> là số cách lát kể từ
+ô <code>(i, j)</code> đến cuối cùng, với <code>mask</code> là trạng thái
+<code>N</code> ô cuối cùng đã đến trước <code>(i, j)</code> (tức các ô <code>(i - 1, j)</code>,
+<code>(i - 1, j + 1)</code>, …, <code>(i, j - 1)</code>). Xem hính dưới:</p>
+<p><img src="/images/20170420_domino.png" alt="Bài Domino"></p>
+<p>Hình thể hiện trạng thái khi đã đến ô <code>(i, j)</code>. Ô màu xanh lá
+là các ô đã lát, ô màu vàng thể hiện mask đang bị quản lí bởi
+bit tương ứng trong mask, ô màu xanh dương thể hiện ô sắp điền,
+ô màu đỏ thể hiện các ô chưa lát.</p>
+<p>Để chuyển trạng thái ta xác định bit của ô <code>(i, j)</code>, nếu nó thỏa mãn
+điều kiện với ô trái và trên thì gọi đến trạng thái tiếp theo (<code>f[i][j + 1][mask mới]</code>
+hoặc <code>f[i + 1][1][mask mới]</code> nếu đó là ô cuối của cột).</p>
+<h4 id="Chuyen-mask-nhu-nao"><a href="#Chuyen-mask-nhu-nao" class="headerlink" title="Chuyển mask như nào?"></a>Chuyển mask như nào?</h4><p>Ta để ý trên hình, bit <code>3</code>, kể từ ô tiếp theo, không cần biết đến nữa.
+Ta có thể xóa bit này và đẩy lên, cho bit của <code>(i, j)</code> vào cuối. Như
+vậy trạng thái của mình luôn có <code>N</code> bit.</p>
+<p>Độ phức tạp là <code>O(N * M * 2^N)</code>.</p>
+<h3 id="Cai-dat-nhu-nao"><a href="#Cai-dat-nhu-nao" class="headerlink" title="Cài đặt như nào?"></a>Cài đặt như nào?</h3><p>Nên gọi đệ quy có nhớ.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> f[<span class="number">20</span>][<span class="number">20</span>][<span class="number">1</span> &lt;&lt; <span class="number">16</span>];</div><div class="line"><span class="keyword">bool</span> visited[<span class="number">20</span>][<span class="number">20</span>][<span class="number">1</span> &lt;&lt; <span class="number">16</span>];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">cal</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j, <span class="keyword">int</span> mask)</span> </span>&#123;</div><div class="line">  <span class="keyword">if</span> (i &gt; M) <span class="keyword">return</span> <span class="number">1</span>; <span class="comment">// trường hợp biên</span></div><div class="line">  <span class="keyword">if</span> (visited[i][j][mask]) <span class="comment">// đã tính</span></div><div class="line">    <span class="keyword">return</span> f[i][j][mask];</div><div class="line">  visited[i][j][mask] = <span class="number">1</span>;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> ch = <span class="number">0</span>; ch &lt; <span class="number">2</span>; ++ch) &#123;</div><div class="line">    <span class="keyword">if</span> (<span class="comment">/*kiểm tra điều kiện đặt bit ch ở (i, j)*/</span>) &#123;</div><div class="line">      f[i][j][mask] += cal(i + (j == N), j % N + <span class="number">1</span>, (mask &lt;&lt; <span class="number">1</span>) &amp; ((<span class="number">1</span> &lt;&lt; N) - <span class="number">1</span>) + ch);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> f[i][j][mask];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// x &amp; ((1 &lt;&lt; N) - 1) để lấy x % (1 &lt;&lt; N), N bit cuối của x.</span></div><div class="line"><span class="comment">// (x &lt;&lt; 1) == x * 2, đẩy các bit sang phải 1 đơn vị.</span></div><div class="line"></div><div class="line"><span class="keyword">int</span> ans = cal(<span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>);</div></pre></td></tr></table></figure>
+<h2 id="DOMINO-Bai-toan-thu-hai-1"><a href="#DOMINO-Bai-toan-thu-hai-1" class="headerlink" title="DOMINO (Bài toán thứ hai)"></a>DOMINO (Bài toán thứ hai)</h2><p>Lần này không có ô cấm. Điều kiện như bài toán thứ nhất.</p>
+<h4 id="Gioi-han-8"><a href="#Gioi-han-8" class="headerlink" title="Giới hạn"></a>Giới hạn</h4><p><code>1 &lt;= N &lt;= 8</code>, <code>1 &lt;= M &lt;= 10^6</code></p>
+<h3 id="Nhan-ma-tran"><a href="#Nhan-ma-tran" class="headerlink" title="Nhân ma trận"></a>Nhân ma trận</h3><p>Lần này không có ô cấm, nên với mỗi hàng ta chỉ cần quan
+tâm mask của nó là gì. Từ đây ta có thể nghĩ đến việc nhân
+ma trận.</p>
+<p>Giới hạn <code>N</code> nhỏ, <code>M</code> lớn cũng mang đến cho ta gợi ý này.</p>
+<h3 id="So-trang-thai"><a href="#So-trang-thai" class="headerlink" title="Số trạng thái"></a>Số trạng thái</h3><p><code>O((2 ^ N)^3 * log(M))</code> chưa thể thỏa mãn bài toán.
+Ta phân tích thêm một chút: với mỗi cột, ta có thể loại ra
+các trạng thái không thỏa mãn các điều kiện giữa 2 ô liên tiếp
+trên cùng cột.</p>
+<p>Việc thử nghiệm cho thấy với <code>N = 8</code> cũng chỉ có <strong>55</strong> trạng thái,
+có thể nhân ma trận.</p>
+<h3 id="Dieu-kien-theo-i-j"><a href="#Dieu-kien-theo-i-j" class="headerlink" title="Điều kiện theo i + j"></a>Điều kiện theo <code>i + j</code></h3><p>Khi chuyển từ cột <code>2i</code> sang cột <code>2i + 1</code>,
+điều kiện bị thay đổi: thứ tự các ô trong
+cột đang từ <em>lẻ, chẵn, lẻ, …</em> thành <em>chẵn, lẻ, chẵn,…</em>
+Điều này làm cho việc chuyển trạng thái không thể
+thực hiện đơn thuần.</p>
+<p>Ta có thể sửa điều này bằng cách thêm 1 bit cho
+trạng thái của cột, chỉ xem đây là trạng thái cho cột lẻ
+hay chẵn.</p>
+<p>Bảng chuyển đổi của mình sẽ chỉ cho phép chuyển từ cột
+lẻ sang chẵn và ngược lại.</p>
+<p>Để đơn giản từ giờ ta gọi số trạng thái là <code>P</code> (<code>P &lt;= 110</code>).</p>
+<h3 id="Ma-tran-goc-va-dap-so"><a href="#Ma-tran-goc-va-dap-so" class="headerlink" title="Ma trận gốc và đáp số"></a>Ma trận gốc và đáp số</h3><p>Hiển nhiên ta trận gốc là một ma trận <code>1 x P</code>, trong đó
+các ô thể hiện trạng thái cột lẻ sẽ là <code>1</code>. Ta nhân ma trận
+gốc với bảng chuyển đổi đã lũy thừa <code>M - 1</code>, nhận được ma
+trận đáp số <code>1 x P</code>. Đáp án chính là tổng các phần tử trong
+ma trận.</p>
+<p>Độ phức tạp là <code>O(P ^ 3 * log(M))</code>.</p>
+<h2 id="GAMES-1"><a href="#GAMES-1" class="headerlink" title="GAMES"></a>GAMES</h2><h3 id="Tom-tat-de-bai-3"><a href="#Tom-tat-de-bai-3" class="headerlink" title="Tóm tắt đề bài"></a>Tóm tắt đề bài</h3><p>Cho một dãy bit <code>N</code> phần tử chưa xác định
+ và <code>M</code> điều kiện có dạng
+xor của <code>A[l..r]</code> là 0 hay 1. Tìm vị trí <code>x</code> đầu tiên
+mà điều kiện <code>x</code> mâu thuẫn với các điều kiện trên.</p>
+<h4 id="Gioi-han-9"><a href="#Gioi-han-9" class="headerlink" title="Giới hạn"></a>Giới hạn</h4><p><code>1 &lt;= N &lt;= 10^9</code>, <code>1 &lt;= M &lt;= 10^5</code></p>
+<h3 id="Chat-nhi-phan"><a href="#Chat-nhi-phan" class="headerlink" title="Chặt nhị phân"></a>Chặt nhị phân</h3><p>Để tìm vị trí đầu tiên mâu thuẫn, ta chặt nhị phân <code>x</code>
+để tìm vị trí xa nhất mà vẫn tồn tại một dãy thỏa mãn
+các điều kiện từ 1 đến <code>x</code>.</p>
+<p>Bài toán trở thành kiểm tra xem có một dãy tồn tại không.</p>
+<h3 id="Tinh-chat-mang-don"><a href="#Tinh-chat-mang-don" class="headerlink" title="Tính chất mảng dồn"></a>Tính chất mảng dồn</h3><p>Nếu ta xét mảng dồn <code>S[1..N]</code>, thì điều kiện tổng xor
+<code>l..r</code> bằng 0 hay 1 tương đương với <code>S[l - 1]</code> với <code>S[r]</code>
+bằng nhau hay khác nhau.</p>
+<p>Ngoài ra, <code>S[i]</code> có thể nhận được bất kí giá trị nào
+không phụ thuộc vào <code>S[i - 1]</code> nên ta có thể thoải mái
+gán một giá trị bất kì, nhưng chỉ <strong>một</strong> mà thôi.</p>
+<p>Bài toán trở thành, liệu có thể gán dãy <code>S[1..N]</code> thỏa
+mãn các điều kiện các nhau không?</p>
+<h3 id="2-gia-tri-cho-1-bien"><a href="#2-gia-tri-cho-1-bien" class="headerlink" title="2 giá trị cho 1 biến"></a>2 giá trị cho 1 biến</h3><p>Ta có thể coi mảng <code>S[]</code> như một đồ thị <code>N</code> đỉnh. Gộp
+các đỉnh cùng giá trị, ta thấy việc gán giá trị 0-1 cho
+các đỉnh còn lại giống như tô màu 2 phía.</p>
+<p>Như vậy, ta có thể kiểm tra xem đồ thị có phải 2 phía không.</p>
+<p>Độ phức tạp sẽ là <code>O(M + N)</code>.</p>
+<h3 id="Giam-so-luong-dinh"><a href="#Giam-so-luong-dinh" class="headerlink" title="Giảm số lượng đỉnh"></a>Giảm số lượng đỉnh</h3><p>Có tận <code>10^9</code> đỉnh, tuy nhiên chỉ có <code>10^5</code> cạnh. Vì thế
+chỉ có tối đa <code>2 * 10^5</code> đỉnh có bậc khác 0, ta chỉ cần
+quan tâm tới các đỉnh này.</p>
+<p>Độ phức tạp chỉ còn <code>O(M)</code>, mang lại thuật toán <code>O(M * log(M))</code>.</p>
+<h2 id="HANOI-1"><a href="#HANOI-1" class="headerlink" title="HANOI"></a>HANOI</h2><h3 id="Tom-tat-de-bai-4"><a href="#Tom-tat-de-bai-4" class="headerlink" title="Tóm tắt đề bài"></a>Tóm tắt đề bài</h3><p>Cho thuật toán giải bài toán tháp Hà Nội:
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">HanoiTower</span><span class="params">(height, From, Temp, To)</span>:</span></div><div class="line">  <span class="keyword">if</span> height == <span class="number">1</span>:</div><div class="line">    <span class="comment"># Move one from `From` to `To`</span></div><div class="line">    <span class="keyword">return</span></div><div class="line">  HanoiTower(height - <span class="number">1</span>, From, To, Temp)</div><div class="line">  HanoiTower(<span class="number">1</span>, From, Temp, To)</div><div class="line">  HanoiTower(height - <span class="number">1</span>, Temp, From, To)</div><div class="line"></div><div class="line"><span class="comment"># Call the function</span></div><div class="line">HanoiTower(N, <span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>)</div></pre></td></tr></table></figure></p>
+<ul>
+<li>Tìm trạng thái của 3 tháp sau <code>P</code> lần gọi hàm.</li>
+<li>Cho trạng thái của 3 tháp, tính số bước đã gọi hàm
+<code>P</code>, hoặc in <code>-1</code> nếu không tồn tại trạng thái đó khi giải.</li>
+</ul>
+<h4 id="Gioi-han-10"><a href="#Gioi-han-10" class="headerlink" title="Giới hạn"></a>Giới hạn</h4><p><code>1 &lt;= N &lt;= 100</code>. Lưu ý <code>P</code> có thể là số lớn.</p>
+<h3 id="Cac-buoc-cua-thuat-toan"><a href="#Cac-buoc-cua-thuat-toan" class="headerlink" title="Các bước của thuật toán"></a>Các bước của thuật toán</h3><p>Ta có thể tóm tắt thuật toán trong 3 bước:</p>
+<ul>
+<li>Chuyển tháp <code>N - 1</code> từ A sang B dùng C làm đệm</li>
+<li>Chuyển đĩa <code>N</code> từ A sang C</li>
+<li>Chuyển tháp <code>N - 1</code> từ B sang C dùng A làm đệm</li>
+</ul>
+<p>Từ thuật toán, ta có thể xác định mình đang ở bước nào
+bằng cách xét vị trí của đĩa <code>N</code>.</p>
+<ul>
+<li>Nếu <code>N</code> còn ở <code>A</code> thì ta ở bước 1.</li>
+<li>Nếu không ta ở bước 2 hoặc 3.</li>
+</ul>
+<p>Sau khi xác định được vị trí của <code>N</code>, ta có thể bỏ nó đi
+và đệ quy xuống bước dưới, coi như ta đang giải bài toán
+chuyển tháp <code>N - 1</code>.</p>
+<h3 id="Tim-trang-thai-tu-P"><a href="#Tim-trang-thai-tu-P" class="headerlink" title="Tìm trạng thái từ P"></a>Tìm trạng thái từ <code>P</code></h3><p>Ta biết để chuyển tháp <code>x</code> sẽ mất <code>2^x - 1</code> bước,
+nên khi xét vị trí đĩa <code>N</code> ta có thể xác định xem ta
+đang ở bước mấy của việc chuyển tháp <code>N</code>:</p>
+<ul>
+<li>Nếu <code>P &lt; 2^x</code> thì ta đang ở bước 1.</li>
+<li>Nếu <code>P = 2^x</code> thì ta đang ở bước 2.</li>
+<li>Nếu <code>P &gt; 2^x</code> thì ta đang ở lượt <code>P - 2^x</code> của bước 3.</li>
+</ul>
+<p>Tùy theo bước ta xác định vị trí của đĩa <code>N</code> rồi đệ
+quy xuống bước tương ứng. Độ phức tạp là <code>O(N)</code>.
+Code khá giống bò trên BST.</p>
+<h3 id="Tim-P-tu-trang-thai"><a href="#Tim-P-tu-trang-thai" class="headerlink" title="Tìm P từ trạng thái"></a>Tìm <code>P</code> từ trạng thái</h3><p>Việc tìm <code>P</code> không khác gì tìm trạng thái. Khi xét tháp
+<code>N</code>, ta kiểm tra xem mình ở bước nào tùy theo vị trí của
+đĩa <code>N</code>:</p>
+<ul>
+<li>Nếu <code>N</code> ở A, thì ta ở bước 1. Đệ quy vào bước 1.</li>
+<li>Nếu <code>N</code> ở C, ta ở bước 2 hoặc 3. Cộng <code>P</code> thêm <code>2^x</code> (cho
+bước 1+2) rồi đệ quy vào 3.</li>
+</ul>
+<p>Độ phức tạp cũng là <code>O(N)</code>.</p>
+<h2 id="WG-1"><a href="#WG-1" class="headerlink" title="WG"></a>WG</h2><h3 id="Tom-tat-de-bai-5"><a href="#Tom-tat-de-bai-5" class="headerlink" title="Tóm tắt đề bài"></a>Tóm tắt đề bài</h3><p>Cho một xâu <code>P</code> và một tập xâu <code>S[1..N]</code>. Dựng xâu <code>T</code> như sau:</p>
+<ul>
+<li>Đầu tiên chọn một xâu trong tập <code>S[]</code> và thêm vào <code>T</code></li>
+<li>Sau đó, tìm xâu <code>S[i]</code> bất kì thỏa mãn <code>S[0] == T.back()</code> rồi thêm <code>S[i][1..]</code> vào.</li>
+</ul>
+<p>Hỏi xâu <code>T</code> ngắn nhất chứa dãy con không liên tiếp <code>P</code> là gì?</p>
+<h4 id="Gioi-han-11"><a href="#Gioi-han-11" class="headerlink" title="Giới hạn"></a>Giới hạn</h4><p><code>1 &lt;= |P| &lt;= 250, 1 &lt;= |S[i]| &lt;= 10, 1 &lt;= N &lt;= 1000</code></p>
+<h3 id="Tham-lam-dung-xau"><a href="#Tham-lam-dung-xau" class="headerlink" title="Tham lam dựng xâu"></a>Tham lam dựng xâu</h3><p>Khi đã có xâu <code>T</code> có thể lấy ra được dãy con là prefix <code>x</code> của <code>P</code>,
+ta có thể xác định số lượng kí tự ghép thêm khi thêm xâu <code>S[i]</code>
+bằng cách đi từ trái sang phải, tham lam kí tự tiếp theo cần ghép.</p>
+<p>Từ đó ta tính trước được mảng <code>nx[i][j]</code>, khi thêm xâu <code>i</code> với <code>j</code>
+kí tự đã ghép thì trạng thái mới là bao nhiêu. Độ phức tạp sẽ là
+<code>O(N * |P| * |S[i]|)</code>.</p>
+<h3 id="Quy-hoach-dong-1"><a href="#Quy-hoach-dong-1" class="headerlink" title="Quy hoạch động"></a>Quy hoạch động</h3><p>Ta có thể quy hoạch động <code>f[i][j]</code> là độ dài xâu <code>T</code> ngắn nhất sao
+cho xâu cuối cùng là <code>i</code> và đã ghép được <code>j</code> kí tự đầu tiên của <code>P</code>.
+Ta chọn thêm một xâu <code>S[k]</code> mới và chuyển trạng thái sang <code>f[k][nx[k][j]]</code>.
+Điều kiện là <code>S[i].back() == S[k][0]</code> và <code>nx[k][j] != j</code>.</p>
+<p>Độ phức tạp sẽ là <code>O(N^2 * |P|)</code>, chưa thỏa mãn bài toán.</p>
+<h3 id="Ki-tu-cuoi"><a href="#Ki-tu-cuoi" class="headerlink" title="Kí tự cuối"></a>Kí tự cuối</h3><p>Thực chất ta không cần lưu chiều <code>i</code> là xâu cuối cùng, vì ta chỉ
+cần quan tâm đến kí tự cuối cùng của <code>T</code>, nên thay vào đó ta có
+thể chỉ lưu <code>i</code> là kí tự cuối cùng.</p>
+<p>Độ phức tạp giảm xuống còn <code>O(26 * |P| * N)</code>, thỏa mãn bài toán.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://natsukagami.github.io/2017/04/21/2017-04-20-Training/" data-id="cj1z8w5ro000bb32bhi55x7gc" class="article-share-link">Chia sẻ</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apio/">apio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/thay-Dong/">thầy Đông</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/training/">training</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vietnamese/">vietnamese</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2017-04-19-Training" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/04/19/2017-04-19-Training/" class="article-date">
@@ -329,55 +598,10 @@ That is also the final missing piece to solve the problem, giving us an <code>O(
 
 
   
-    <article id="post-First-Post" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/10/First-Post/" class="article-date">
-  <time datetime="2016-10-10T06:10:19.000Z" itemprop="datePublished">2016-10-10</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Thoughts/">Thoughts</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/10/First-Post/">First Post</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>I started a blog, yay! 
-The purpose of this blog will be for me to express random thoughts, coding experiences and to show everyone my work. 
-That’s all. Thank you for reading my first post!</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://natsukagami.github.io/2016/10/10/First-Post/" data-id="cj1z8w5s0000nb32btn41uesc" class="article-share-link">Chia sẻ</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/First-Post/">First Post</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">__('next') &raquo;</a>
   </nav>
 </section>
         
@@ -387,7 +611,7 @@ That’s all. Thank you for reading my first post!</p>
   <div class="widget-wrap">
     <h3 class="widget-title">Các chủ đề</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Editorials/">Editorials</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Thoughts/">Thoughts</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Training/">Training</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Editorials/">Editorials</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Thoughts/">Thoughts</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Training/">Training</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Writing/">Writing</a></li></ul>
     </div>
   </div>
 
@@ -397,7 +621,7 @@ That’s all. Thank you for reading my first post!</p>
   <div class="widget-wrap">
     <h3 class="widget-title">Các nhãn</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/First-Post/">First Post</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Training/">Training</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anh-Hanh/">anh Hạnh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anh-Khue/">anh Khuê</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anh-Minh/">anh Minh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apio/">apio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/editorial/">editorial</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/english/">english</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hsgso/">hsgso</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Hoang/">thầy Hoàng</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Nghia/">thầy Nghĩa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Phuong/">thầy Phương</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Dong/">thầy Đông</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/training/">training</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vietnamese/">vietnamese</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/First-Post/">First Post</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Training/">Training</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anh-Hanh/">anh Hạnh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anh-Khue/">anh Khuê</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anh-Minh/">anh Minh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apio/">apio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/editorial/">editorial</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/english/">english</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hsgso/">hsgso</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/random/">random</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/story/">story</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Hoang/">thầy Hoàng</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Nghia/">thầy Nghĩa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Phuong/">thầy Phương</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Dong/">thầy Đông</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/training/">training</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vietnamese/">vietnamese</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/writing/">writing</a></li></ul>
     </div>
   </div>
 
@@ -407,7 +631,7 @@ That’s all. Thank you for reading my first post!</p>
   <div class="widget-wrap">
     <h3 class="widget-title">Tập hợp nhãn</h3>
     <div class="widget tagcloud">
-      <a href="/tags/First-Post/" style="font-size: 10px;">First Post</a> <a href="/tags/Training/" style="font-size: 10px;">Training</a> <a href="/tags/anh-Hanh/" style="font-size: 12.5px;">anh Hạnh</a> <a href="/tags/anh-Khue/" style="font-size: 10px;">anh Khuê</a> <a href="/tags/anh-Minh/" style="font-size: 12.5px;">anh Minh</a> <a href="/tags/apio/" style="font-size: 17.5px;">apio</a> <a href="/tags/editorial/" style="font-size: 12.5px;">editorial</a> <a href="/tags/english/" style="font-size: 10px;">english</a> <a href="/tags/hsgso/" style="font-size: 12.5px;">hsgso</a> <a href="/tags/thay-Hoang/" style="font-size: 10px;">thầy Hoàng</a> <a href="/tags/thay-Nghia/" style="font-size: 10px;">thầy Nghĩa</a> <a href="/tags/thay-Phuong/" style="font-size: 12.5px;">thầy Phương</a> <a href="/tags/thay-Dong/" style="font-size: 10px;">thầy Đông</a> <a href="/tags/training/" style="font-size: 15px;">training</a> <a href="/tags/vietnamese/" style="font-size: 20px;">vietnamese</a>
+      <a href="/tags/First-Post/" style="font-size: 10px;">First Post</a> <a href="/tags/Training/" style="font-size: 10px;">Training</a> <a href="/tags/anh-Hanh/" style="font-size: 12.5px;">anh Hạnh</a> <a href="/tags/anh-Khue/" style="font-size: 10px;">anh Khuê</a> <a href="/tags/anh-Minh/" style="font-size: 12.5px;">anh Minh</a> <a href="/tags/apio/" style="font-size: 17.5px;">apio</a> <a href="/tags/editorial/" style="font-size: 12.5px;">editorial</a> <a href="/tags/english/" style="font-size: 12.5px;">english</a> <a href="/tags/hsgso/" style="font-size: 12.5px;">hsgso</a> <a href="/tags/random/" style="font-size: 10px;">random</a> <a href="/tags/story/" style="font-size: 10px;">story</a> <a href="/tags/thay-Hoang/" style="font-size: 10px;">thầy Hoàng</a> <a href="/tags/thay-Nghia/" style="font-size: 10px;">thầy Nghĩa</a> <a href="/tags/thay-Phuong/" style="font-size: 12.5px;">thầy Phương</a> <a href="/tags/thay-Dong/" style="font-size: 10px;">thầy Đông</a> <a href="/tags/training/" style="font-size: 15px;">training</a> <a href="/tags/vietnamese/" style="font-size: 20px;">vietnamese</a> <a href="/tags/writing/" style="font-size: 10px;">writing</a>
     </div>
   </div>
 
@@ -416,7 +640,7 @@ That’s all. Thank you for reading my first post!</p>
   <div class="widget-wrap">
     <h3 class="widget-title">Lưu trữ</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">tháng 7 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">tháng 5 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">tháng 4 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">tháng 10 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">tháng 10 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">tháng 7 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">tháng 5 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">tháng 4 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">tháng 10 2016</a></li></ul>
     </div>
   </div>
 
@@ -427,6 +651,10 @@ That’s all. Thank you for reading my first post!</p>
     <h3 class="widget-title">Các bài gần đây</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/10/24/Random-Rain/">[Random] Rain</a>
+          </li>
         
           <li>
             <a href="/2017/07/01/HSGSO-2017-Editorial/">HSGSO 2017 Editorial</a>
@@ -442,10 +670,6 @@ That’s all. Thank you for reading my first post!</p>
         
           <li>
             <a href="/2017/04/28/2017-04-28-Training/">2017/04/28 Training</a>
-          </li>
-        
-          <li>
-            <a href="/2017/04/25/2017-04-25-Training/">2017/04/25 Training</a>
           </li>
         
       </ul>
