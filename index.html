@@ -66,9 +66,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://natsukagami.github.io"></form>
@@ -128,7 +128,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://natsukagami.github.io/2017/10/24/Random-Rain/" data-id="cja0ugmcp000zuooesyh4dcvi" class="article-share-link">Share</a>
+      <a data-url="http://natsukagami.github.io/2017/10/24/Random-Rain/" data-id="cja0uxlja001uwmoew0ti34ls" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/english/">english</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/random/">random</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/story/">story</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/writing/">writing</a></li></ul>
@@ -188,7 +188,7 @@
 <li><strong>Subtask 2</strong> ($S \le 500, K \le 18$): Do giới hạn của $K$, đáp số là một số không quá giới hạn <code>long long</code>, vì vậy ta có thể thực hiện đơn giản phép quy hoạch động.
 Gọi $f[i][j]$ là số lớn nhất có thể tạo được nếu ta sử dụng các đoạn từ 1 đến $i$ và lấy tổng cộng $j$ chữ số.
 Hiển nhiên $f[0][0] = 0$. Ta có:
-$$f[i][j] = \sum\limits_{k=0}^{\min(M<em>i, j)} f[i - 1][j - k] \times 10^k + \overline{A</em>{i,1}A<em>{i,2}…A</em>{i,k}}$$
+$$f[i][j] = \sum\limits_{k=0}^{\min(M_i, j)} f[i - 1][j - k] \times 10^k + \overline{A_{i,1}A_{i,2}…A_{i,k}}$$
 Đáp số chính là $f[N][K]$. Lưu ý độ phức tạp của thuật toán này chỉ là $O(SK)$ chứ không phải $O(N^2K)$.</li>
 </ul>
 <h3 id="Tham-lam-1-chu-so"><a href="#Tham-lam-1-chu-so" class="headerlink" title="Tham lam 1 chữ số"></a>Tham lam 1 chữ số</h3><p>Subtask 3 có một giới hạn khá lạ: Mỗi đoạn có độ dài đều là 1. Như vậy, việc chọn một đoạn chỉ đơn giản là lấy hoặc không. Ta có thể ra một thuật toán tham lam cho subtask này.</p>
@@ -218,7 +218,7 @@ Giả sử ta đã có $i$ chữ số $x_1, x_2, …, x_i$ ($x_i$ ở dãy $j$),
 <li>Nó phải thuộc dãy $p \ge j$. Hiển nhiên ta không thể lấy lại một dãy trước đó.</li>
 <li>Sau nó phải có ít nhất $K - i - 1$ chữ số (từ nó về cuối dãy, và tổng tất cả dãy phía sau).</li>
 <li>$p = j$ và nó là chữ số đứng sau $x_i$, <em>hoặc</em></li>
-<li>$p &gt; j$, $x<em>{i - k} = A[p][q - 1 - k]$ với mọi $0 \le k &lt; q - 1$. Khi chọn lựa chọn này, ta xóa tất cả $x</em>{i - q + 2}..x_i$ và thêm vào $A[p][1..q]$.</li>
+<li>$p &gt; j$, $x_{i - k} = A[p][q - 1 - k]$ với mọi $0 \le k &lt; q - 1$. Khi chọn lựa chọn này, ta xóa tất cả $x_{i - q + 2}..x_i$ và thêm vào $A[p][1..q]$.</li>
 </ul>
 <p>Dễ dàng chứng minh ở mỗi bước, ta đều lấy được chữ số lớn nhất có thể lấy được khi có prefix dựng từ bước trước đó (do vậy, nếu prefix tối ưu thì theo phép so sánh số, dãy mới là tối ưu). Do ở bước đầu (prefix rỗng), lựa chọn là tối ưu, nên theo quy nạp thuật toán tham là tối ưu.</p>
 <p>Ta có thể cài thuật toán này trong độ phức tạp $O(SK)$.</p>
@@ -434,7 +434,7 @@ Như vậy, thuật toán của bài này thực ra rất đơn giản, tìm v�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://natsukagami.github.io/2017/07/01/HSGSO-2017-Editorial/" data-id="cja0ugmcq0011uooe5zkxt4s1" class="article-share-link">Share</a>
+      <a data-url="http://natsukagami.github.io/2017/07/01/HSGSO-2017-Editorial/" data-id="cja0uxljg0029wmoeuflcrn5i" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/editorial/">editorial</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hsgso/">hsgso</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vietnamese/">vietnamese</a></li></ul>
@@ -581,8 +581,8 @@ một kí tự khác nằm giữa 2 kí tự giống nhau.</p>
 <p>Như vậy, điều kiện không tồn tại xâu con đối
 xứng rất đơn giản:</p>
 <ul>
-<li>Không tồn tại $d<em>i = d</em>{i + 1}$, <em>và</em></li>
-<li>Không tồn tại $d<em>i = d</em>{i + 2}$</li>
+<li>Không tồn tại $d_i = d_{i + 1}$, <em>và</em></li>
+<li>Không tồn tại $d_i = d_{i + 2}$</li>
 </ul>
 <p>Với $d_i$ là chữ số thứ $i$ của số cần tìm.</p>
 <h3 id="Quy-hoach-dong"><a href="#Quy-hoach-dong" class="headerlink" title="Quy hoạch động"></a>Quy hoạch động</h3><p>Để đơn giản hóa việc đếm trong đoạn $[A..B]$
@@ -667,16 +667,16 @@ không đổi. Vì vậy, từ một nghiệm ta có thể tạo
 ra vô số nghiệm khác.</p>
 <p>Như vậy, ta chỉ giải trường hợp độ dài lẻ.
 Ta tính tổng sau:</p>
-<p>$$P = B_1 + B<em>2 + … + B</em>{2k + 1}$$
-$$ = (A_{2k + 1} + A_1) + (A_1 + A<em>2) +
-… + (A</em>{2k} + A_{2k + 1})$$
-$$ = 2(A_1 + A<em>2 + … + A</em>{2k + 1})$$</p>
+<p>$$P = B_1 + B_2 + … + B_{2k + 1}$$
+$$ = (A_{2k + 1} + A_1) + (A_1 + A_2) +
+… + (A_{2k} + A_{2k + 1})$$
+$$ = 2(A_1 + A_2 + … + A_{2k + 1})$$</p>
 <p>Và</p>
-<p>$$ Q = B_2 + B<em>4 + … + B</em>{2k} $$
-$$ = (A_1 + A_2) + (A_3 + A<em>4) + … +
-(A</em>{2k - 1} + A_{2k}) $$</p>
-<p>Dễ dàng nhận thấy $A<em>{2k + 1} = P / 2 - Q$.
-Khi đã có $A</em>{2k + 1}$, ta có thể tính được
+<p>$$ Q = B_2 + B_4 + … + B_{2k} $$
+$$ = (A_1 + A_2) + (A_3 + A_4) + … +
+(A_{2k - 1} + A_{2k}) $$</p>
+<p>Dễ dàng nhận thấy $A_{2k + 1} = P / 2 - Q$.
+Khi đã có $A_{2k + 1}$, ta có thể tính được
 tất cả các số còn lại với độ phức tạp là $O(N)$.</p>
 <p>Như vậy tổng cộng thuật toán của ta là $O(N)$.</p>
 <h2 id="brunhilda-1"><a href="#brunhilda-1" class="headerlink" title="brunhilda"></a>brunhilda</h2><h3 id="Quy-hoach-dong-1"><a href="#Quy-hoach-dong-1" class="headerlink" title="Quy hoạch động"></a>Quy hoạch động</h3><p>Gọi $f[i]$ là số bước nhỏ nhất để đưa $i$
@@ -717,7 +717,7 @@ deque khi phần tử đầu tiên có bộ đếm về 0.</p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://natsukagami.github.io/2017/05/03/2017-05-03-Training/" data-id="cja0ugmcl000ruooeu58s3z7n" class="article-share-link">Share</a>
+      <a data-url="http://natsukagami.github.io/2017/05/03/2017-05-03-Training/" data-id="cja0uxlj7001rwmoez5y8wh96" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Training/">Training</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apio/">apio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/thay-Phuong/">thầy Phương</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vietnamese/">vietnamese</a></li></ul>
@@ -1176,7 +1176,7 @@ nguồn (ảo), nên độ phức tạp chỉ là $O(NM2^{10})$.</p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://natsukagami.github.io/2017/05/01/HSGSO-2016-Editorial/" data-id="cja0ugmco000vuooeoaz5bn7g" class="article-share-link">Share</a>
+      <a data-url="http://natsukagami.github.io/2017/05/01/HSGSO-2016-Editorial/" data-id="cja0uxlje0026wmoe9j9an7tr" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/editorial/">editorial</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hsgso/">hsgso</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vietnamese/">vietnamese</a></li></ul>
@@ -1199,7 +1199,7 @@ nguồn (ảo), nên độ phức tạp chỉ là $O(NM2^{10})$.</p>
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">Catégories</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Editorials/">Editorials</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Thoughts/">Thoughts</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Training/">Training</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Writing/">Writing</a></li></ul>
     </div>
@@ -1209,7 +1209,7 @@ nguồn (ảo), nên độ phức tạp chỉ là $O(NM2^{10})$.</p>
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/First-Post/">First Post</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Training/">Training</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anh-Hanh/">anh Hạnh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anh-Khue/">anh Khuê</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anh-Minh/">anh Minh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apio/">apio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/editorial/">editorial</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/english/">english</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hsgso/">hsgso</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/random/">random</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/story/">story</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Hoang/">thầy Hoàng</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Nghia/">thầy Nghĩa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Phuong/">thầy Phương</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Dong/">thầy Đông</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/training/">training</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vietnamese/">vietnamese</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/writing/">writing</a></li></ul>
     </div>
@@ -1219,7 +1219,7 @@ nguồn (ảo), nên độ phức tạp chỉ là $O(NM2^{10})$.</p>
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
       <a href="/tags/First-Post/" style="font-size: 10px;">First Post</a> <a href="/tags/Training/" style="font-size: 10px;">Training</a> <a href="/tags/anh-Hanh/" style="font-size: 12.5px;">anh Hạnh</a> <a href="/tags/anh-Khue/" style="font-size: 10px;">anh Khuê</a> <a href="/tags/anh-Minh/" style="font-size: 12.5px;">anh Minh</a> <a href="/tags/apio/" style="font-size: 17.5px;">apio</a> <a href="/tags/editorial/" style="font-size: 12.5px;">editorial</a> <a href="/tags/english/" style="font-size: 12.5px;">english</a> <a href="/tags/hsgso/" style="font-size: 12.5px;">hsgso</a> <a href="/tags/random/" style="font-size: 10px;">random</a> <a href="/tags/story/" style="font-size: 10px;">story</a> <a href="/tags/thay-Hoang/" style="font-size: 10px;">thầy Hoàng</a> <a href="/tags/thay-Nghia/" style="font-size: 10px;">thầy Nghĩa</a> <a href="/tags/thay-Phuong/" style="font-size: 12.5px;">thầy Phương</a> <a href="/tags/thay-Dong/" style="font-size: 10px;">thầy Đông</a> <a href="/tags/training/" style="font-size: 15px;">training</a> <a href="/tags/vietnamese/" style="font-size: 20px;">vietnamese</a> <a href="/tags/writing/" style="font-size: 10px;">writing</a>
     </div>
@@ -1238,7 +1238,7 @@ nguồn (ảo), nên độ phức tạp chỉ là $O(NM2^{10})$.</p>
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -1275,7 +1275,7 @@ nguồn (ảo), nên độ phức tạp chỉ là $O(NM2^{10})$.</p>
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 Natsu Kagami<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
