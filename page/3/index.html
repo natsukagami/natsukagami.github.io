@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <title>Kagami&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Some random stuff I write to express my life.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Kagami's Blog">
+<meta property="og:title" content="Kagami&#39;s Blog">
 <meta property="og:url" content="http://blog.nkagami.me/page/3/index.html">
-<meta property="og:site_name" content="Kagami's Blog">
+<meta property="og:site_name" content="Kagami&#39;s Blog">
 <meta property="og:description" content="Some random stuff I write to express my life.">
+<meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kagami's Blog">
+<meta name="twitter:title" content="Kagami&#39;s Blog">
 <meta name="twitter:description" content="Some random stuff I write to express my life.">
 <meta name="twitter:creator" content="@natsukagami">
   
@@ -27,7 +28,7 @@
   <link rel="stylesheet" href="/css/style.css">
   
 
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
   <script type="text/javascript">
     MathJax.Hub.Config({
       tex2jax: {
@@ -38,7 +39,7 @@
     }); 
   </script>
 </head>
-
+</html>
 <body>
   <div id="container">
     <div id="wrap">
@@ -66,12 +67,12 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Tìm kiếm"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.nkagami.me"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.nkagami.me"></form>
       </div>
     </div>
   </div>
@@ -79,7 +80,231 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-2017-04-20-Training" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2017-04-21-Training" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/22/2017-04-21-Training/" class="article-date">
+  <time datetime="2017-04-23T01:11:00.000Z" itemprop="datePublished">2017-04-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Training/">Training</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/22/2017-04-21-Training/">2017/04/21 Training</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Tom-tat-de-bai"><a href="#Tom-tat-de-bai" class="headerlink" title="Tóm tắt đề bài"></a>Tóm tắt đề bài</h1><h2 id="SEQUENCE"><a href="#SEQUENCE" class="headerlink" title="SEQUENCE"></a>SEQUENCE</h2><p>Cho dãy số <code>A[1..N]</code>. Mỗi lần xóa ta sẽ xóa
+tất cả các số mang một giá trị <code>x</code> nào đó.
+Hỏi dãy dài nhất có thể tạo ra được mà không
+tồn tại <code>i &lt; j &lt; k</code> thỏa mãn
+<code>A[i] == A[k] &amp;&amp; A[i] != A[j]</code>?</p>
+<h4 id="Gioi-han"><a href="#Gioi-han" class="headerlink" title="Giới hạn"></a>Giới hạn</h4><p><code>1 &lt;= N &lt;= 10^5</code>, <code>1 &lt;= A[i] &lt;= 100</code></p>
+<h2 id="AVTOGAME"><a href="#AVTOGAME" class="headerlink" title="AVTOGAME"></a>AVTOGAME</h2><p>Cho xâu <code>S</code>. Mỗi bước ta có thể chọn một đoạn
+<code>l &lt; r</code> sao cho <code>S[l] == S[r]</code> và xóa đoạn đó
+khỏi xâu. Hỏi xâu ngắn nhất và dài nhất có thể
+tạo được (mà không thể xóa được tiếp) là bao
+nhiêu?</p>
+<h4 id="Gioi-han-1"><a href="#Gioi-han-1" class="headerlink" title="Giới hạn"></a>Giới hạn</h4><p>10 test, <code>1 &lt;= |S| &lt;= 100</code>, <code>&#39;a&#39; &lt;= S[i] &lt;= &#39;p&#39;</code></p>
+<h2 id="DISKGAME"><a href="#DISKGAME" class="headerlink" title="DISKGAME"></a>DISKGAME</h2><p>Cho một đĩa gồm <code>N</code> tầng xoay, mỗi tầng có <code>K</code>
+nấc xoay như hình dưới.</p>
+<p><img src="/images/diskgame_exp.png" alt="Một đĩa có 3 tầng, mỗi tầng có 8 nấc"></p>
+<p>Mỗi bước ta được xoay 1 tầng sang trái hoặc phải
+1 nấc. Hỏi số bước nhỏ nhất để tạo ra 1 cột có
+các số bằng nhau là bao nhiêu?</p>
+<p><img src="/images/diskgame_sol.png" alt="Một cách giải hình trên"></p>
+<h4 id="Gioi-han-2"><a href="#Gioi-han-2" class="headerlink" title="Giới hạn"></a>Giới hạn</h4><p><code>1 &lt;= N, K &lt;= 2000</code></p>
+<h1 id="Loi-giai"><a href="#Loi-giai" class="headerlink" title="Lời giải"></a>Lời giải</h1><h2 id="SEQUENCE-1"><a href="#SEQUENCE-1" class="headerlink" title="SEQUENCE"></a>SEQUENCE</h2><h3 id="Dieu-kien-cua-day-so"><a href="#Dieu-kien-cua-day-so" class="headerlink" title="Điều kiện của dãy số"></a>Điều kiện của dãy số</h3><p>Ta có thể thấy, 2 số <code>x</code> và <code>y</code> không được cùng
+tồn tại trong đáp án nếu số <code>x</code> bị “kẹp giữa” số
+<code>y</code> hoặc ngược lại. Ta cũng có thể dễ dàng
+chứng minh một dãy không tồn tại cặp <code>x, y</code>
+nào như vậy là một dãy thỏa mãn.</p>
+<h4 id="Vi-du"><a href="#Vi-du" class="headerlink" title="Ví dụ"></a>Ví dụ</h4><p><code>1, 2, 1, 3, 1, 4</code> không thỏa mãn vì số <code>2</code> bị
+kẹp giữa 2 lần số <code>1</code>.</p>
+<p>Bài toán của ta trở thành đi tìm một dãy không
+có 2 số nào “kẹp” nhau.</p>
+<h3 id="Dau-va-duoi"><a href="#Dau-va-duoi" class="headerlink" title="Đầu và đuôi"></a>Đầu và đuôi</h3><p>Xét ví dụ ở trên, ta có thể thấy <code>2</code> bị kẹp
+giữa bởi 2 số <code>1</code> ở vị trí 1 và 3. Ta cũng có
+thể nói <code>2</code> bị kẹp giữa bởi 2 số <code>1</code> ở 1 và 5.</p>
+<p>Giả sử <code>x</code> kẹp giữa <code>y</code> ở 2 vị trí <code>a &lt;= b</code>,
+ta cũng có thể nói <code>x</code> kẹp ở 2 vị trí <code>first[x] &lt;= a</code>
+và <code>b &lt;= last[x]</code> (2 lần xuất hiện đầu và cuối
+của <code>x</code>). Như vậy điều kiện để <code>x</code> kẹp giữa <code>y</code>
+chỉ là tồn tại <code>y</code> nằm giữa 2 vị trí xa nhau nhất
+chứa <code>x</code>.</p>
+<p>Đi xa hơn, ta có thể thấy xét trên trục 1 chiều,
+tồn tại cặp <code>x</code>, <code>y</code> kẹp nhau khi và chỉ khi 2 đoạn
+<code>(first[x], last[x])</code> và <code>(first[y], last[y])</code>
+giao nhau.</p>
+<h3 id="Quy-hoach-dong"><a href="#Quy-hoach-dong" class="headerlink" title="Quy hoạch động"></a>Quy hoạch động</h3><p>Như vậy, ta chỉ cần tìm 1 tập số sao cho tập
+<code>(first[x], last[x])</code> của các số không giao nhau.
+Đây là bài toán quy hoạch động cơ bản, có thể thực
+hiện quy hoạch động trong
+<code>O(N + M)</code> với <code>M</code> là số phần tử khác nhau.</p>
+<p>Gọi <code>f[i]</code> là số đoạn thẳng nhiều nhất ta có
+thể chọn trong khoảng <code>1..i</code>. Từ đây, ta có 2
+lựa chọn:</p>
+<ul>
+<li>Thêm khoảng không, cập nhật <code>f[i]</code> cho <code>f[i + 1]</code>.</li>
+<li>Thêm một đoạn <code>(i + 1..j)</code>. Ta duyệt tất cả các
+đoạn thẳng có đầu mút trái là <code>i + 1</code> và cập nhật
+<code>f[i] + 1</code> cho <code>f[j]</code>.</li>
+</ul>
+<p>Đáp số là <code>f[N]</code>.</p>
+<h2 id="AVTOGAME-1"><a href="#AVTOGAME-1" class="headerlink" title="AVTOGAME"></a>AVTOGAME</h2><h3 id="Co-the-xoa-1-doan"><a href="#Co-the-xoa-1-doan" class="headerlink" title="Có thể xóa 1 đoạn?"></a>Có thể xóa 1 đoạn?</h3><p>Hiển nhiên các đoạn ta xóa sẽ không giao nhau,
+nên chỉ có 2 khả năng xảy ra để xóa đoạn <code>[a &lt; b]</code>:</p>
+<ul>
+<li>Nếu <code>S[a] == S[b]</code> ta xóa cả đoạn trong 1 bước.</li>
+<li>Chọn 1 vị trí <code>a &lt; k &lt; b - 1</code>, xóa đoạn <code>a..k</code>
+rồi xóa đoạn <code>k+1..b</code>.</li>
+</ul>
+<p>Dựa vào nhận xét này, ta dễ dàng dựng nên mảng
+<code>canErase[l][r]</code> (có thể xóa đoạn <code>l..r</code> không?)
+trong <code>O(N^3)</code>:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> l = <span class="number">1</span>; l &lt;= N; ++l) &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> r = l + <span class="number">1</span>; r &lt;= N; ++r) &#123;</span><br><span class="line">    <span class="keyword">if</span> (S[l] == S[r]) canErase[l][r] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> k = l + <span class="number">1</span>; k + <span class="number">1</span> &lt; r; ++k) &#123;</span><br><span class="line">      canErase[l][r] = canErase[l][r] || (canErase[l][k] &amp;&amp; canErase[k + <span class="number">1</span>][r]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Chi-phi-xoa-het-nho-nhat"><a href="#Chi-phi-xoa-het-nho-nhat" class="headerlink" title="Chi phí xóa hết nhỏ nhất"></a>Chi phí xóa hết nhỏ nhất</h3><p>Thay vì giải bài toán xâu ngắn nhất còn lại,
+ta sẽ thay đổi bài toán bằng cách cho phép một
+kiểu xóa nữa: xóa <strong>1 kí tự</strong> với chi phí 1.
+Sau đó ta đi tìm chi phí nhỏ nhất để xóa
+cả dãy. Ta có thể thấy tính chất các bước
+xóa rời nhau không thay đổi.</p>
+<p>Hiển nhiên chi phí sẽ bằng đáp án, vì ta không
+bao giờ xóa đơn lẻ 2 kí tự giống nhau.</p>
+<p>Để giải được bài toán này, ta cải tiến thuật
+toán kiểm tra tính xóa được phía trên, thành
+chi phí nhỏ nhất để xóa đoạn <code>l..r</code>. Hiển
+nhiên <code>cost[i][i] = 1</code> vì chỉ có 1 kí tự. Với
+đoạn <code>l..r</code> ta có 2 cách xóa:</p>
+<ul>
+<li>Nếu <code>S[l] == S[r]</code> ta xóa cả đoạn với chi
+phí 0.</li>
+<li>Chọn <code>l &lt;= k &lt; r</code> rồi xóa 2 đoạn <code>l..k</code> và
+<code>k + 1..r</code> với tổng chi phí
+<code>cost[l][k] + cost[k + 1][r]</code>.</li>
+</ul>
+<p>Đáp số là <code>cost[1][N]</code>, độ phức tạp là <code>O(N^3)</code>.</p>
+<h3 id="Cac-ki-tu-con-lai"><a href="#Cac-ki-tu-con-lai" class="headerlink" title="Các kí tự còn lại"></a>Các kí tự còn lại</h3><p>Để giải được bài toán dãy còn lại dài nhất,
+ta cần phải thấy tính chất của dãy còn lại.
+Tính chất khá đơn giản: không tồn tại 2 kí
+tự giống nhau trong xâu. Như vậy, ta cần
+nhặt ra 1 tập kí tự khác nhau sao cho các phần
+ở giữa có thể xóa được.</p>
+<p>Điều kiện chỉ có 16 kí tự khác nhau cho ta
+một gợi ý: sử dụng bitmask để quản lí các
+kí tự đã lấy.</p>
+<h3 id="Quy-hoach-dong-1"><a href="#Quy-hoach-dong-1" class="headerlink" title="Quy hoạch động"></a>Quy hoạch động</h3><p>Gọi <code>bool f[i][mask]</code> là tính khả thi của
+việc chọn ra tập kí tự thỏa mãn <code>mask</code> trong đoạn
+<code>1..i</code> và xóa hết các kí tự còn lại, trong đó
+kí tự cuối ta chọn chính là <code>S[i]</code>. Ta có 2 lựa
+chọn:</p>
+<ul>
+<li>Chọn cả kí tự <code>S[i - 1]</code>, với điều kiện
+<code>S[i - 1] != S[i]</code> và <code>mask</code> có <code>S[i - 1]</code>. Ta
+lùi về trạng thái <code>f[i - 1][mask ^ S[i]]</code>.</li>
+<li>Chọn một vị trí <code>j &lt; i</code> và lấy kí tự này là
+kí tự đứng ngay trước <code>S[i]</code>. Điều kiện là
+<code>S[j] != S[i]</code>, <code>mask</code> có <code>S[j]</code> và <code>j + 1..i - 1</code>
+xóa được. Ta lùi về trạng thái <code>f[j][mask ^ S[i]]</code>.</li>
+</ul>
+<p>Độ phức tạp sẽ là <code>O(N^2 * 2^16)</code>, chưa thể
+thỏa mãn bài toán. Ta cần một chút cải tiến để
+xóa bớt <code>N</code>.</p>
+<h3 id="Nhay-chon-va-xoa"><a href="#Nhay-chon-va-xoa" class="headerlink" title="Nhảy, chọn và xóa"></a>Nhảy, chọn và xóa</h3><p>Ta sẽ chỉnh sửa hàm quy hoạch động một chút: xóa
+bỏ điều kiện <code>S[i]</code> là kí tự cuối cùng chọn.
+Thay vào đó, ta “nhảy” từng bước, chọn hoặc sử
+dụng duy nhất một phép xóa. Cụ thể, từ trạng thái
+<code>f[i][mask]</code>, ta có:</p>
+<ul>
+<li><code>S[i]</code> là kí tự được chọn. Điều kiện là <code>mask</code>
+chứa <code>S[i]</code>. Lùi về <code>f[i - 1][mask ^ S[i]]</code>.</li>
+<li><code>S[i]</code> là kí tự cuối cùng bị xóa. Vậy ta cần
+một vị trí <code>j &lt; i</code> sao cho <code>S[i] == S[j]</code>, và lùi
+về <code>f[j - 1][mask]</code>.</li>
+</ul>
+<p>Thoáng qua, vẫn là <code>O(N^2 * 2^16)</code>. Làm sao để
+cải tiến? Ta thấy, trong trường hợp 2, điều kiện
+duy nhất là <code>S[j] == S[i]</code>, mà chỉ có 16 loại kí tự,
+vậy ta hoàn toàn có thể lưu lại tất cả các trường
+hợp <code>f[j - 1][mask]</code> với mỗi lọai <code>S[j]</code> khác nhau.</p>
+<p>Gọi <code>g[i][mask]</code> là tổng kết tất cả các trường hợp
+<code>f[j][mask]</code> thỏa mãn <code>S[j + 1] == i</code>. Ta có thể
+vừa đi vừa cập nhật <code>g[S[i + 1]][mask]</code>, đồng thời
+trong trường hợp 2 ta chỉ cần lấy giá trị của
+<code>g[S[i]][mask]</code> trong <code>O(1)</code>.</p>
+<p>Độ phức tạp giảm xuống còn <code>O(N * 2^16)</code>,
+thỏa mãn bài toán.</p>
+<h2 id="DISKGAME-1"><a href="#DISKGAME-1" class="headerlink" title="DISKGAME"></a>DISKGAME</h2><h3 id="Chi-phi-xoay-cua-1-dia"><a href="#Chi-phi-xoay-cua-1-dia" class="headerlink" title="Chi phí xoay của 1 đĩa"></a>Chi phí xoay của 1 đĩa</h3><p>Hãy phân tích chi phí xoay của 1 đĩa để có
+số <code>n</code> ở vị trí <code>p</code>. Hiển nhiên chi phí là
+<code>min(|x - p|)</code> với <code>x</code> là các vị trí xuất hiện
+của <code>n</code> trong đĩa.</p>
+<p>Thực chất ta chỉ cần xét đến 2 vị trí gần nhất
+bên trái và bên phải của <code>p</code>. Ta tạm gọi là
+<code>x</code> và <code>y</code> (để đơn giản ta coi <code>x &lt;= p &lt;= y</code>).
+Chi phí sẽ là <code>min(p - x, y - p)</code>. Dễ dàng nhận
+thấy <code>p - x</code> là hàm tăng 1 đơn vị, <code>y - p</code> là
+hàm giảm 1 đơn vị với <code>x &lt;= p &lt;= y</code>. min của
+2 hàm này sẽ là “núi” góc 45 độ có chóp ở trung
+điểm của <code>x</code> và <code>y</code> (hoặc có chóp ngang nếu trung
+điểm không nguyên).</p>
+<p>Nếu ta xét tất cả các cặp vị trí liên tiếp của
+số, thì chi phí sẽ là nhiều “ngọn núi” như vậy.</p>
+<p>Ta có thể thấy chi phí là một hàm như hình dưới,
+cho dãy <code>1 2 3 1 2 3 5 1 5</code> với <code>n = 1</code>. Lưu ý
+đoạn <code>8, 9, 1</code> cũng là 1 “ngọn núi”, vì thực chất
+đĩa là hình tròn.</p>
+<p><img src="/images/diskgame_func.png" alt="Hàm chi phí"></p>
+<p>Ta có thể cắt hàm thành các đường chéo tăng và
+giảm 45 độ để đơn giản hóa việc tính toán chi
+phí cho tất cả các đĩa.</p>
+<p>Tổng cộng 1 đĩa sẽ bị cắt thành <code>2K</code> đường chéo.</p>
+<h3 id="Tinh-tong-chi-phi-cho-moi-dia"><a href="#Tinh-tong-chi-phi-cho-moi-dia" class="headerlink" title="Tính tổng chi phí cho mọi đĩa"></a>Tính tổng chi phí cho mọi đĩa</h3><p>Với mỗi vị trí <code>p</code> và một số <code>n</code>, ta cần tính
+tổng chi phí xoay với mọi đĩa trong <code>O(1)</code>.
+Biết chúng là tổng các đường chéo, làm sao
+để tính nhanh?</p>
+<p>Ta sẽ vận dụng tính chất chúng đều có dạng <code>x + b</code>
+hoặc <code>-x + b</code> và sử dụng đường quét để tính
+với mỗi <code>n</code>.</p>
+<p>Ta thấy, khi có <code>k</code> đoạn <code>x + b[i]</code>, chi phí là
+<code>kx + sum(b[i])</code> với bước tăng là <code>k</code>.
+Vì vậy thực chất với mỗi vị
+trí ta chỉ cần biết số đoạn tăng và tổng phần
+hằng số của chúng. Ta hoàn toàn có thể làm
+điều này khi quét bằng cách xét 2 đầu mút đầu
+(thêm đoạn) và cuối (xóa đoạn) sau đó xử lí
+từ trái sang phải.</p>
+<p>Điều tương tự cũng đúng với hàm giảm.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> b[N * K + <span class="number">1</span>]; <span class="comment">// tất cả b[i] của các đường tăng</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; add[K + <span class="number">2</span>], remove[K + <span class="number">2</span>]; <span class="comment">// các mốc thêm xóa</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addSegment</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// thêm đoạn [l..r] = x + b[id]</span></span><br><span class="line">  add[l].push_back(id);</span><br><span class="line">  remove[r + <span class="number">1</span>].push_back(id);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">scan</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> value = <span class="number">0</span>, cnt = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= K; ++i) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> p: add[i]) &#123;</span><br><span class="line">      value += b[p] + i - <span class="number">1</span>; <span class="comment">// giá trị của i trước đó</span></span><br><span class="line">      ++cnt;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> p: remove[i]) &#123;</span><br><span class="line">      value -= b[p] + i - <span class="number">1</span>;</span><br><span class="line">      --cnt;</span><br><span class="line">    &#125;</span><br><span class="line">    value += cnt;</span><br><span class="line">    <span class="comment">// value là tổng ở vị trí i</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Ta có thể thấy độ phức tạp với mỗi <code>n</code> là <code>O(K + số đoạn của n)</code>.
+Vì thế tổng độ phức tạp là <code>O(K^2 + NK)</code>, do có <code>2NK</code> đoạn tất cả.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.nkagami.me/2017/04/22/2017-04-21-Training/" data-id="cjrl6wl3q001gq0lqhm5j1vgj" class="article-share-link">Chia sẻ</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apio/">apio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/thay-Nghia/">thầy Nghĩa</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/training/">training</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vietnamese/">vietnamese</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2017-04-20-Training" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/04/21/2017-04-20-Training/" class="article-date">
   <time datetime="2017-04-21T11:36:25.000Z" itemprop="datePublished">2017-04-21</time>
@@ -129,7 +354,7 @@ xor của <code>A[l..r]</code> là 0 hay 1. Tìm vị trí <code>x</code> đầu
 mà điều kiện <code>x</code> mâu thuẫn với các điều kiện trên.</p>
 <h4 id="Gioi-han-3"><a href="#Gioi-han-3" class="headerlink" title="Giới hạn"></a>Giới hạn</h4><p><code>1 &lt;= N &lt;= 10^9</code>, <code>1 &lt;= M &lt;= 10^5</code></p>
 <h2 id="HANOI"><a href="#HANOI" class="headerlink" title="HANOI"></a>HANOI</h2><p>Cho thuật toán giải bài toán tháp Hà Nội:
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">HanoiTower</span><span class="params">(height, From, Temp, To)</span>:</span></div><div class="line">  <span class="keyword">if</span> height == <span class="number">1</span>:</div><div class="line">    <span class="comment"># Move one from `From` to `To`</span></div><div class="line">    <span class="keyword">return</span></div><div class="line">  HanoiTower(height - <span class="number">1</span>, From, To, Temp)</div><div class="line">  HanoiTower(<span class="number">1</span>, From, Temp, To)</div><div class="line">  HanoiTower(height - <span class="number">1</span>, Temp, From, To)</div><div class="line"></div><div class="line"><span class="comment"># Call the function</span></div><div class="line">HanoiTower(N, <span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>)</div></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">HanoiTower</span><span class="params">(height, From, Temp, To)</span>:</span></span><br><span class="line">  <span class="keyword">if</span> height == <span class="number">1</span>:</span><br><span class="line">    <span class="comment"># Move one from `From` to `To`</span></span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">  HanoiTower(height - <span class="number">1</span>, From, To, Temp)</span><br><span class="line">  HanoiTower(<span class="number">1</span>, From, Temp, To)</span><br><span class="line">  HanoiTower(height - <span class="number">1</span>, Temp, From, To)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Call the function</span></span><br><span class="line">HanoiTower(N, <span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>)</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>Tìm trạng thái của 3 tháp sau <code>P</code> lần gọi hàm.</li>
 <li>Cho trạng thái của 3 tháp, tính số bước đã gọi hàm
@@ -175,7 +400,7 @@ có thể for tất cả cặp mask, kiểm tra trong <code>O((2^11)^2)</code>.
 Hiển nhiên do 2 mask đều chỉ có 11 bit nên khi <code>or</code> lại với
 nhau (ghép bộ) thì mask mới vẫn chỉ có 11 bit. Vậy để chọn
 3 phần tử, ta có thể tiếp tục ghép cặp tập đã or với tập <code>max[x]</code>.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> two[<span class="number">1</span> &lt;&lt; <span class="number">11</span>];</div><div class="line"><span class="keyword">int</span> three[<span class="number">1</span> &lt;&lt; <span class="number">11</span>];</div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; (<span class="number">1</span> &lt;&lt; <span class="number">11</span>); ++i) &#123;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; (<span class="number">1</span> &lt;&lt; <span class="number">11</span>); ++j) &#123;</div><div class="line">    <span class="keyword">if</span> (!(i &amp; j)) <span class="comment">// không có phần tử trùng</span></div><div class="line">      two[i | j] = max(two[i | j], max[i] + max[j]);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; (<span class="number">1</span> &lt;&lt; <span class="number">11</span>); ++i) &#123;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; (<span class="number">1</span> &lt;&lt; <span class="number">11</span>); ++j) &#123;</div><div class="line">    <span class="keyword">if</span> (!(i &amp; j)) <span class="comment">// không có phần tử trùng</span></div><div class="line">      three[i | j] = max(three[i | j], two[i] + max[j]);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> two[<span class="number">1</span> &lt;&lt; <span class="number">11</span>];</span><br><span class="line"><span class="keyword">int</span> three[<span class="number">1</span> &lt;&lt; <span class="number">11</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; (<span class="number">1</span> &lt;&lt; <span class="number">11</span>); ++i) &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; (<span class="number">1</span> &lt;&lt; <span class="number">11</span>); ++j) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!(i &amp; j)) <span class="comment">// không có phần tử trùng</span></span><br><span class="line">      two[i | j] = max(two[i | j], max[i] + max[j]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; (<span class="number">1</span> &lt;&lt; <span class="number">11</span>); ++i) &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; (<span class="number">1</span> &lt;&lt; <span class="number">11</span>); ++j) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!(i &amp; j)) <span class="comment">// không có phần tử trùng</span></span><br><span class="line">      three[i | j] = max(three[i | j], two[i] + max[j]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Đáp số chính là <code>three[(1 &lt;&lt; 11) - 1]</code>.
 Độ phức tạp sẽ là <code>O((2 ^ 11) ^ 2)</code>.</p>
 <h2 id="DOMINO-Bai-toan-thu-nhat-1"><a href="#DOMINO-Bai-toan-thu-nhat-1" class="headerlink" title="DOMINO (Bài toán thứ nhất)"></a>DOMINO (Bài toán thứ nhất)</h2><h3 id="Tom-tat-de-bai-2"><a href="#Tom-tat-de-bai-2" class="headerlink" title="Tóm tắt đề bài"></a>Tóm tắt đề bài</h3><p>Cho một bảng <code>M x N</code> với <code>K</code> ô cấm.
@@ -211,7 +436,7 @@ Ta có thể xóa bit này và đẩy lên, cho bit của <code>(i, j)</code> v�
 vậy trạng thái của mình luôn có <code>N</code> bit.</p>
 <p>Độ phức tạp là <code>O(N * M * 2^N)</code>.</p>
 <h3 id="Cai-dat-nhu-nao"><a href="#Cai-dat-nhu-nao" class="headerlink" title="Cài đặt như nào?"></a>Cài đặt như nào?</h3><p>Nên gọi đệ quy có nhớ.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> f[<span class="number">20</span>][<span class="number">20</span>][<span class="number">1</span> &lt;&lt; <span class="number">16</span>];</div><div class="line"><span class="keyword">bool</span> visited[<span class="number">20</span>][<span class="number">20</span>][<span class="number">1</span> &lt;&lt; <span class="number">16</span>];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">cal</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j, <span class="keyword">int</span> mask)</span> </span>&#123;</div><div class="line">  <span class="keyword">if</span> (i &gt; M) <span class="keyword">return</span> <span class="number">1</span>; <span class="comment">// trường hợp biên</span></div><div class="line">  <span class="keyword">if</span> (visited[i][j][mask]) <span class="comment">// đã tính</span></div><div class="line">    <span class="keyword">return</span> f[i][j][mask];</div><div class="line">  visited[i][j][mask] = <span class="number">1</span>;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> ch = <span class="number">0</span>; ch &lt; <span class="number">2</span>; ++ch) &#123;</div><div class="line">    <span class="keyword">if</span> (<span class="comment">/*kiểm tra điều kiện đặt bit ch ở (i, j)*/</span>) &#123;</div><div class="line">      f[i][j][mask] += cal(i + (j == N), j % N + <span class="number">1</span>, (mask &lt;&lt; <span class="number">1</span>) &amp; ((<span class="number">1</span> &lt;&lt; N) - <span class="number">1</span>) + ch);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> f[i][j][mask];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// x &amp; ((1 &lt;&lt; N) - 1) để lấy x % (1 &lt;&lt; N), N bit cuối của x.</span></div><div class="line"><span class="comment">// (x &lt;&lt; 1) == x * 2, đẩy các bit sang phải 1 đơn vị.</span></div><div class="line"></div><div class="line"><span class="keyword">int</span> ans = cal(<span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> f[<span class="number">20</span>][<span class="number">20</span>][<span class="number">1</span> &lt;&lt; <span class="number">16</span>];</span><br><span class="line"><span class="keyword">bool</span> visited[<span class="number">20</span>][<span class="number">20</span>][<span class="number">1</span> &lt;&lt; <span class="number">16</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cal</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j, <span class="keyword">int</span> mask)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (i &gt; M) <span class="keyword">return</span> <span class="number">1</span>; <span class="comment">// trường hợp biên</span></span><br><span class="line">  <span class="keyword">if</span> (visited[i][j][mask]) <span class="comment">// đã tính</span></span><br><span class="line">    <span class="keyword">return</span> f[i][j][mask];</span><br><span class="line">  visited[i][j][mask] = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> ch = <span class="number">0</span>; ch &lt; <span class="number">2</span>; ++ch) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="comment">/*kiểm tra điều kiện đặt bit ch ở (i, j)*/</span>) &#123;</span><br><span class="line">      f[i][j][mask] += cal(i + (j == N), j % N + <span class="number">1</span>, (mask &lt;&lt; <span class="number">1</span>) &amp; ((<span class="number">1</span> &lt;&lt; N) - <span class="number">1</span>) + ch);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> f[i][j][mask];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// x &amp; ((1 &lt;&lt; N) - 1) để lấy x % (1 &lt;&lt; N), N bit cuối của x.</span></span><br><span class="line"><span class="comment">// (x &lt;&lt; 1) == x * 2, đẩy các bit sang phải 1 đơn vị.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> ans = cal(<span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>);</span><br></pre></td></tr></table></figure>
 <h2 id="DOMINO-Bai-toan-thu-hai-1"><a href="#DOMINO-Bai-toan-thu-hai-1" class="headerlink" title="DOMINO (Bài toán thứ hai)"></a>DOMINO (Bài toán thứ hai)</h2><p>Lần này không có ô cấm. Điều kiện như bài toán thứ nhất.</p>
 <h4 id="Gioi-han-8"><a href="#Gioi-han-8" class="headerlink" title="Giới hạn"></a>Giới hạn</h4><p><code>1 &lt;= N &lt;= 8</code>, <code>1 &lt;= M &lt;= 10^6</code></p>
 <h3 id="Nhan-ma-tran"><a href="#Nhan-ma-tran" class="headerlink" title="Nhân ma trận"></a>Nhân ma trận</h3><p>Lần này không có ô cấm, nên với mỗi hàng ta chỉ cần quan
@@ -268,7 +493,7 @@ chỉ có tối đa <code>2 * 10^5</code> đỉnh có bậc khác 0, ta chỉ c�
 quan tâm tới các đỉnh này.</p>
 <p>Độ phức tạp chỉ còn <code>O(M)</code>, mang lại thuật toán <code>O(M * log(M))</code>.</p>
 <h2 id="HANOI-1"><a href="#HANOI-1" class="headerlink" title="HANOI"></a>HANOI</h2><h3 id="Tom-tat-de-bai-4"><a href="#Tom-tat-de-bai-4" class="headerlink" title="Tóm tắt đề bài"></a>Tóm tắt đề bài</h3><p>Cho thuật toán giải bài toán tháp Hà Nội:
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">HanoiTower</span><span class="params">(height, From, Temp, To)</span>:</span></div><div class="line">  <span class="keyword">if</span> height == <span class="number">1</span>:</div><div class="line">    <span class="comment"># Move one from `From` to `To`</span></div><div class="line">    <span class="keyword">return</span></div><div class="line">  HanoiTower(height - <span class="number">1</span>, From, To, Temp)</div><div class="line">  HanoiTower(<span class="number">1</span>, From, Temp, To)</div><div class="line">  HanoiTower(height - <span class="number">1</span>, Temp, From, To)</div><div class="line"></div><div class="line"><span class="comment"># Call the function</span></div><div class="line">HanoiTower(N, <span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>)</div></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">HanoiTower</span><span class="params">(height, From, Temp, To)</span>:</span></span><br><span class="line">  <span class="keyword">if</span> height == <span class="number">1</span>:</span><br><span class="line">    <span class="comment"># Move one from `From` to `To`</span></span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">  HanoiTower(height - <span class="number">1</span>, From, To, Temp)</span><br><span class="line">  HanoiTower(<span class="number">1</span>, From, Temp, To)</span><br><span class="line">  HanoiTower(height - <span class="number">1</span>, Temp, From, To)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Call the function</span></span><br><span class="line">HanoiTower(N, <span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>)</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>Tìm trạng thái của 3 tháp sau <code>P</code> lần gọi hàm.</li>
 <li>Cho trạng thái của 3 tháp, tính số bước đã gọi hàm
@@ -336,7 +561,7 @@ thể chỉ lưu <code>i</code> là kí tự cuối cùng.</p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nkagami.me/2017/04/21/2017-04-20-Training/" data-id="cja0uxlie0009wmoe0qmqhsa9" class="article-share-link">Share</a>
+      <a data-url="http://blog.nkagami.me/2017/04/21/2017-04-20-Training/" data-id="cjrl6wl3s001iq0lqhbt810y4" class="article-share-link">Chia sẻ</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apio/">apio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/thay-Dong/">thầy Đông</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/training/">training</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vietnamese/">vietnamese</a></li></ul>
@@ -348,7 +573,7 @@ thể chỉ lưu <code>i</code> là kí tự cuối cùng.</p>
 
 
   
-    <article id="post-2017-04-19-Training" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2017-04-19-Training" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/04/19/2017-04-19-Training/" class="article-date">
   <time datetime="2017-04-19T08:00:00.000Z" itemprop="datePublished">2017-04-19</time>
@@ -374,7 +599,7 @@ thể chỉ lưu <code>i</code> là kí tự cuối cùng.</p>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Thầy Phương cho 3 bài của <a href="http://orac.amt.edu.au/cgi-bin/train/hub.pl?expand=fario17#fario17" target="_blank" rel="external">FARIO 2017</a>. Bài 1 đã làm rồi, bài 3 là bài approximate nên mình chỉ chữa bài 2.</p>
+        <p>Thầy Phương cho 3 bài của <a href="http://orac.amt.edu.au/cgi-bin/train/hub.pl?expand=fario17#fario17" target="_blank" rel="noopener">FARIO 2017</a>. Bài 1 đã làm rồi, bài 3 là bài approximate nên mình chỉ chữa bài 2.</p>
 <h2 id="Pyramid-Cake"><a href="#Pyramid-Cake" class="headerlink" title="Pyramid Cake"></a>Pyramid Cake</h2><h3 id="Tom-tat-de-bai"><a href="#Tom-tat-de-bai" class="headerlink" title="Tóm tắt đề bài"></a>Tóm tắt đề bài</h3><p>Cho một chiếc hộp có đáy chữ nhật <code>M x N</code>, vị trí <code>(i, j)</code> có độ cao là <code>H[i][j]</code>. Ta dựng một chiếc bánh nhiều tần thỏa mãn:</p>
 <ul>
 <li>Các tầng là các hình chữ nhật chứa đỉnh <code>(1,1)</code></li>
@@ -386,7 +611,7 @@ thể chỉ lưu <code>i</code> là kí tự cuối cùng.</p>
 <p>Tại sao ta chỉ cần quan tâm số tầng mà không phải độ cao? Hiển nhiên, với tầng <code>(i, j)</code> ta biết độ cao của tầng đó (nếu tính cả các tầng dưới nó) sẽ là <code>M[i][j] = min(H[i&#39;][j&#39;])</code> với <code>i&#39; &lt;= i, j&#39; &lt;= j</code>.</p>
 <p>Khi nén tầng như vậy, ta có thể coi như tầng sau luôn nhỏ hơn tầng dưới, làm cho tập trạng thái không có chu trình và ta có thể quy hoạch động được.</p>
 <p>Gọi <code>f[i][j]</code> là diện tích lớn nhất của hình có tầng dưới cùng là <code>(i, j)</code>. Hiển nhiên ta sẽ đặt tầng dưới cùng độ dày <code>M[i][j]</code>. Sau đó, ta chọn một tầng nhỏ hơn để qhđ:</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> cur = M[i][j] * i * j; <span class="comment">// Diện tích phần đáy</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= i; ++k)</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> l = <span class="number">1</span>; l &lt;= j; ++l)</div><div class="line">		<span class="keyword">if</span> (k != i || l != j)</div><div class="line">			f[i][j] = max(f[i][j], cur + f[k][l] - M[i][j] * k * l);</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> cur = M[i][j] * i * j; <span class="comment">// Diện tích phần đáy</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= i; ++k)</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> l = <span class="number">1</span>; l &lt;= j; ++l)</span><br><span class="line">		<span class="keyword">if</span> (k != i || l != j)</span><br><span class="line">			f[i][j] = max(f[i][j], cur + f[k][l] - M[i][j] * k * l);</span><br></pre></td></tr></table></figure>
 <p>Tại sao ta trừ đi <code>M[i][j] * k * l</code>? Bởi phần diện tích này đã được tính vào đáy của hình dưới cùng.</p>
 <p>Đáp số sẽ là <code>max(f[i][j])</code>, độ phức tạp là <code>O(N^4)</code>, chưa đủ để giải quyết bài toán.</p>
 <h3 id="Thu-tat-ca"><a href="#Thu-tat-ca" class="headerlink" title="Thử tất cả?"></a>Thử tất cả?</h3><p>Ta có thể thấy, mỗi hình chữ nhật con đều nhỏ hơn đáy ban đầu ít nhất 1 hàng hoặc 1 cột. Vậy tại sao mình không chọn 1 trong 2 hình to nhất (<code>(i, j - 1)</code> và <code>(i - 1, j)</code>) để làm đáy tiếp theo?</p>
@@ -397,7 +622,7 @@ thể chỉ lưu <code>i</code> là kí tự cuối cùng.</p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nkagami.me/2017/04/19/2017-04-19-Training/" data-id="cja0uxlib0005wmoedq8rbasq" class="article-share-link">Share</a>
+      <a data-url="http://blog.nkagami.me/2017/04/19/2017-04-19-Training/" data-id="cjrl6wl2y0001q0lq5d3yc6k6" class="article-share-link">Chia sẻ</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apio/">apio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/thay-Phuong/">thầy Phương</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/training/">training</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vietnamese/">vietnamese</a></li></ul>
@@ -409,7 +634,7 @@ thể chỉ lưu <code>i</code> là kí tự cuối cùng.</p>
 
 
   
-    <article id="post-2017-04-18-Training" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2017-04-18-Training" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/04/18/2017-04-18-Training/" class="article-date">
   <time datetime="2017-04-18T07:22:18.000Z" itemprop="datePublished">2017-04-18</time>
@@ -436,7 +661,7 @@ thể chỉ lưu <code>i</code> là kí tự cuối cùng.</p>
     <div class="article-entry" itemprop="articleBody">
       
         <p>Hôm nay Hạnh dạy. Nói chung như mọi lần Hạnh dạy, bài thì hay nhưng có vẻ như Hạnh vẫn tốn rất nhiều thời gian giảng bài. Mình thực sự không muốn nghe cho lắm vì vẫn muốn nghĩ bài một mình, sau đó có reference của Hạnh để improve solution thì vẫn thích hơn.</p>
-<h2 id="Stretching-Streamers-NAIPC-2017-bai-C"><a href="#Stretching-Streamers-NAIPC-2017-bai-C" class="headerlink" title="Stretching Streamers (NAIPC 2017, bài C)"></a><a href="https://naipc17.kattis.com/problems/naipc17.stretchingstreamers" target="_blank" rel="external">Stretching Streamers (NAIPC 2017, bài C)</a></h2><h3 id="Tom-tat-de-bai"><a href="#Tom-tat-de-bai" class="headerlink" title="Tóm tắt đề bài"></a>Tóm tắt đề bài</h3><p>Có <code>N</code> điểm viết trên một đường tròn, điểm thứ <code>i</code> chứa số nguyên dương <code>A[i]</code>. 2 số có cạnh đến nhau khi ước chung lớn nhất lớn hơn 1. Không được chọn 2 cạnh đè lên nhau (trừ khi đè ở đầu mút), đếm số cách dựng cây khung <code>N</code> điểm mod <code>1e9 + 7</code>.</p>
+<h2 id="Stretching-Streamers-NAIPC-2017-bai-C"><a href="#Stretching-Streamers-NAIPC-2017-bai-C" class="headerlink" title="Stretching Streamers (NAIPC 2017, bài C)"></a><a href="https://naipc17.kattis.com/problems/naipc17.stretchingstreamers" target="_blank" rel="noopener">Stretching Streamers (NAIPC 2017, bài C)</a></h2><h3 id="Tom-tat-de-bai"><a href="#Tom-tat-de-bai" class="headerlink" title="Tóm tắt đề bài"></a>Tóm tắt đề bài</h3><p>Có <code>N</code> điểm viết trên một đường tròn, điểm thứ <code>i</code> chứa số nguyên dương <code>A[i]</code>. 2 số có cạnh đến nhau khi ước chung lớn nhất lớn hơn 1. Không được chọn 2 cạnh đè lên nhau (trừ khi đè ở đầu mút), đếm số cách dựng cây khung <code>N</code> điểm mod <code>1e9 + 7</code>.</p>
 <h5 id="Gioi-han"><a href="#Gioi-han" class="headerlink" title="Giới hạn"></a>Giới hạn</h5><p><code>3 &lt;= N &lt;= 300</code>, <code>2 &lt;= A[i] &lt;= 10^9</code>.</p>
 <h3 id="Dung-cay-nhu-nao"><a href="#Dung-cay-nhu-nao" class="headerlink" title="Dựng cây như nào?"></a>Dựng cây như nào?</h3><p>Đơn giản ta có thể tóm tắt quá trình dựng cây như sau:</p>
 <ul>
@@ -452,14 +677,14 @@ thể chỉ lưu <code>i</code> là kí tự cuối cùng.</p>
 <h3 id="Cong-thuc-quy-hoach-dong"><a href="#Cong-thuc-quy-hoach-dong" class="headerlink" title="Công thức quy hoạch động"></a>Công thức quy hoạch động</h3><p>Từ các nhận xét trên, ta có công thức quy hoạch động sau:</p>
 <p>Gọi <code>f[l][r]</code> là số cách dựng cây với các đỉnh thuộc đoạn <code>l..r</code>. Hiển nhiên <code>f[i][i] = 1</code>.</p>
 <p>Ta có
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> k = l + <span class="number">1</span>; k &lt;= r; ++k)</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> st = l + <span class="number">1</span>; st &lt;= k; ++st)</div><div class="line">    f[l][r] += f[l][st - <span class="number">1</span>] * f[st][k] * f[k][r];</div></pre></td></tr></table></figure></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> k = l + <span class="number">1</span>; k &lt;= r; ++k)</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> st = l + <span class="number">1</span>; st &lt;= k; ++st)</span><br><span class="line">    f[l][r] += f[l][st - <span class="number">1</span>] * f[st][k] * f[k][r];</span><br></pre></td></tr></table></figure></p>
 <p>Việc chọn tập <code>X[]</code> cho <code>[l..r]</code> giống với việc từ đoạn <code>[l..st - 1]</code> đã dựng cây, ta thêm đoạn <code>[st..r]</code> bằng cách nối <code>(l, k)</code> (<code>st &lt;= k &lt;= r</code>) rồi dựng 2 cây như trên. Do đó công thức qhđ này hoàn toàn chính xác. Đáp số sẽ là <code>f[1][N]</code>. Tuy nhiên độ phức tạp là <code>O(N^4)</code>, chưa đủ để thỏa mãn đề bài.</p>
 <h3 id="Toi-uu-xuong-O-N-3"><a href="#Toi-uu-xuong-O-N-3" class="headerlink" title="Tối ưu xuống O(N^3)"></a>Tối ưu xuống <code>O(N^3)</code></h3><p>Việc chọn đoạn yêu cầu 2 bước, xác định <code>X[i]</code> và đoạn <code>st..r</code>. Liệu ta có thể giảm thiểu số cách lựa chọn không?</p>
 <p>Thực chất ta hoàn toàn có thể tách 2 bước này thành 2 công đoạn chọn đoạn, đầu tiên chọn <code>st..X[i]</code> thỏa mãn có cạnh <code>(l, X[i])</code> và chọn đoạn <code>X[i]..r</code>. Như vậy ta có thể chọn 2 đoạn so le, mỗi lần chuyển trạng thái chỉ mất <code>O(N)</code>.</p>
 <p>Ta sửa lại công thức qhđ thành <code>f[i][j][k]</code>, thêm <code>k</code> là bước hiện tại của chúng ta (<code>0</code> - chọn nửa đoạn đầu - hay <code>1</code> - đã chọn xong). Công thức trở thành:
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> k = l + <span class="number">1</span>; k &lt;= r; ++k) &#123;</div><div class="line">  <span class="keyword">if</span> (__gcd(l, r) &gt; <span class="number">1</span>) <span class="comment">// có cạnh từ l đến k</span></div><div class="line">    f[l][r][<span class="number">0</span>] += f[l][k - <span class="number">1</span>][<span class="number">1</span>] * f[k][r][<span class="number">1</span>];</div><div class="line">  <span class="keyword">if</span> (__gcd(l, k) &gt; <span class="number">1</span>)</div><div class="line">    f[l][r][<span class="number">1</span>] += f[l][k][<span class="number">0</span>] * f[k][r][<span class="number">1</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> k = l + <span class="number">1</span>; k &lt;= r; ++k) &#123;</span><br><span class="line">  <span class="keyword">if</span> (__gcd(l, r) &gt; <span class="number">1</span>) <span class="comment">// có cạnh từ l đến k</span></span><br><span class="line">    f[l][r][<span class="number">0</span>] += f[l][k - <span class="number">1</span>][<span class="number">1</span>] * f[k][r][<span class="number">1</span>];</span><br><span class="line">  <span class="keyword">if</span> (__gcd(l, k) &gt; <span class="number">1</span>)</span><br><span class="line">    f[l][r][<span class="number">1</span>] += f[l][k][<span class="number">0</span>] * f[k][r][<span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>Lúc đầu <code>f[i][i][x] = x</code> và đáp số sẽ là <code>f[1][N][1]</code>. Độ phức tạp là <code>O(N^3)</code>.</p>
-<h2 id="LISA-RCC-2017-1st-Qualification-Round-bai-E"><a href="#LISA-RCC-2017-1st-Qualification-Round-bai-E" class="headerlink" title="LISA - RCC 2017 1st Qualification Round, bài E"></a><a href="http://www.russiancodecup.ru/en/tasks/round/61/E/" target="_blank" rel="external">LISA - RCC 2017 1st Qualification Round, bài E</a></h2><h3 id="Tom-tat-de-bai-1"><a href="#Tom-tat-de-bai-1" class="headerlink" title="Tóm tắt đề bài"></a>Tóm tắt đề bài</h3><p>Cho <code>N</code> xâu và <code>Q</code> truy vấn. Mỗi truy vấn gồm 2 số <code>l, r</code> và yêu cầu trả lời số xâu khác nhau có thể tạo được bằng cách ghép 1 tiền tố khác rỗng với 1 hậu tố khác rỗng của xâu nào đó trong khoảng từ <code>l</code> đến <code>r</code>.</p>
+<h2 id="LISA-RCC-2017-1st-Qualification-Round-bai-E"><a href="#LISA-RCC-2017-1st-Qualification-Round-bai-E" class="headerlink" title="LISA - RCC 2017 1st Qualification Round, bài E"></a><a href="http://www.russiancodecup.ru/en/tasks/round/61/E/" target="_blank" rel="noopener">LISA - RCC 2017 1st Qualification Round, bài E</a></h2><h3 id="Tom-tat-de-bai-1"><a href="#Tom-tat-de-bai-1" class="headerlink" title="Tóm tắt đề bài"></a>Tóm tắt đề bài</h3><p>Cho <code>N</code> xâu và <code>Q</code> truy vấn. Mỗi truy vấn gồm 2 số <code>l, r</code> và yêu cầu trả lời số xâu khác nhau có thể tạo được bằng cách ghép 1 tiền tố khác rỗng với 1 hậu tố khác rỗng của xâu nào đó trong khoảng từ <code>l</code> đến <code>r</code>.</p>
 <h4 id="Gioi-han-1"><a href="#Gioi-han-1" class="headerlink" title="Giới hạn"></a>Giới hạn</h4><p><code>1 &lt;= N, Q &lt;= 10^5</code>. Tổng độ dài xâu không quá <code>10^5</code>.</p>
 <h3 id="Ghep-tien-to-va-hau-to"><a href="#Ghep-tien-to-va-hau-to" class="headerlink" title="Ghép tiền tố và hậu tố"></a>Ghép tiền tố và hậu tố</h3><p>Ta có thể thấy ngay nếu không có điều kiện “khác nhau”, đáp số chỉ là <code>(số tiền tố trong đoạn) * (số hậu tố trong đoạn)</code>. Tuy nhiên có 2 vấn đề sau xảy ra khi ta cần tìm những xâu khác nhau:</p>
 <ul>
@@ -491,7 +716,7 @@ Xét <code>Suf[j]</code>, nếu <code>c + Suf[j]</code> cũng là một hậu t�
 <p>Phần này ta cũng làm <code>O(26 * log(N))</code> mỗi truy vấn.</p>
 <h3 id="Cac-hau-to-cong-them"><a href="#Cac-hau-to-cong-them" class="headerlink" title="Các hậu tố cộng thêm"></a>Các hậu tố cộng thêm</h3><p>Phần này khá đơn giản, với mỗi hậu tố bắt đầu với kí tự <code>c</code> ta có thể kiểm tra có tồn lại hậu tố <code>Pre[i] = c</code> nào không. Ta có thể làm kèm với thao tác đếm ở trên.</p>
 <h3 id="Tong-ket"><a href="#Tong-ket" class="headerlink" title="Tổng kết"></a>Tổng kết</h3><p>Với <code>Q</code> truy vấn, độ phức tạp sẽ là <code>O(Q * 26 * log(N))</code>, nên cẩn thận 1 chút ở phần cài đặt nếu không có thể sẽ bị TLE vì cài ẩu.</p>
-<h2 id="Electric-Charges-AIM-Tech-Round-Div-1"><a href="#Electric-Charges-AIM-Tech-Round-Div-1" class="headerlink" title="Electric Charges - AIM Tech Round (Div. 1)"></a><a href="http://codeforces.com/contest/623/problem/C" target="_blank" rel="external">Electric Charges - AIM Tech Round (Div. 1)</a></h2><h3 id="Tom-tat-de-bai-2"><a href="#Tom-tat-de-bai-2" class="headerlink" title="Tóm tắt đề bài"></a>Tóm tắt đề bài</h3><p>Cho <code>N</code> điểm trên mặt phẳng. Gióng chúng xuống trục Ox hoặc Oy sao cho khoảng cách giữa 2 điểm gióng xuống xa nhất là nhỏ nhất có thể.</p>
+<h2 id="Electric-Charges-AIM-Tech-Round-Div-1"><a href="#Electric-Charges-AIM-Tech-Round-Div-1" class="headerlink" title="Electric Charges - AIM Tech Round (Div. 1)"></a><a href="http://codeforces.com/contest/623/problem/C" target="_blank" rel="noopener">Electric Charges - AIM Tech Round (Div. 1)</a></h2><h3 id="Tom-tat-de-bai-2"><a href="#Tom-tat-de-bai-2" class="headerlink" title="Tóm tắt đề bài"></a>Tóm tắt đề bài</h3><p>Cho <code>N</code> điểm trên mặt phẳng. Gióng chúng xuống trục Ox hoặc Oy sao cho khoảng cách giữa 2 điểm gióng xuống xa nhất là nhỏ nhất có thể.</p>
 <h4 id="Gioi-han-2"><a href="#Gioi-han-2" class="headerlink" title="Giới hạn"></a>Giới hạn</h4><p><code>1 &lt;= N &lt;= 10^5</code>, <code>-10^8 &lt;= X[i], Y[i] &lt;= 10^8</code></p>
 <h3 id="Chat-nhi-phan"><a href="#Chat-nhi-phan" class="headerlink" title="Chặt nhị phân"></a>Chặt nhị phân</h3><p>Trong bài này ta sử dụng chặt nhị phân, một cách thông dụng để giải các bài min-của-max. Bài toán trở thành: tìm một cách xếp sao cho khoảng cách không quá <code>X</code>?</p>
 <h3 id="2-SAT"><a href="#2-SAT" class="headerlink" title="2-SAT??"></a>2-SAT??</h3><p>Tuấn nghĩ ra thuật 2-SAT… Có thể AC nhũng chẳng hay chút nào :D Hiển nhiên một bài C div 1 không thể tốn nhiều thời gian code như thế… Đây không phải round của amd.</p>
@@ -513,83 +738,10 @@ Xét <code>Suf[j]</code>, nếu <code>c + Suf[j]</code> cũng là một hậu t�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nkagami.me/2017/04/18/2017-04-18-Training/" data-id="cja0uxlif000bwmoe5nvjbp34" class="article-share-link">Share</a>
+      <a data-url="http://blog.nkagami.me/2017/04/18/2017-04-18-Training/" data-id="cjrl6wl3p001fq0lq9gd75g37" class="article-share-link">Chia sẻ</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/anh-Hanh/">anh Hạnh</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apio/">apio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/training/">training</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vietnamese/">vietnamese</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2017-04-15-Training" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/04/16/2017-04-15-Training/" class="article-date">
-  <time datetime="2017-04-16T05:34:00.000Z" itemprop="datePublished">2017-04-16</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Training/">Training</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/16/2017-04-15-Training/">2017/04/15 Training</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>Warning</strong>: If you want to try solving the problems, skip reading everything but the statements! Also, for hints, read <em>slowly</em> from top to bottom of each problem.</p>
-<p>I didn’t attend the class directly, but did the problems while going on a bus to Ninh Binh. The problems were somewhat exciting to me.</p>
-<h2 id="A-Sorting"><a href="#A-Sorting" class="headerlink" title="A. Sorting"></a>A. Sorting</h2><h3 id="Statements"><a href="#Statements" class="headerlink" title="Statements"></a>Statements</h3><p>You are given a permutation <code>A[1..N]</code>, along with <code>Q</code> queries, each of the form <code>l, r</code> which you should sort the subarray <code>A[l..r]</code> increasingly or decreasingly. After all the queries are processed, print the middle value <code>A[N / 2 + 1]</code>.</p>
-<h4 id="Contraints"><a href="#Contraints" class="headerlink" title="Contraints"></a>Contraints</h4><p><code>1 &lt;= N &lt;= 10^5</code>, <code>1 &lt;= Q &lt;= 10^5</code>, <code>N</code> is odd.</p>
-<h3 id="One-problem-from-the-past"><a href="#One-problem-from-the-past" class="headerlink" title="One problem from the past"></a>One problem from the past</h3><p>The statements reminds me of a past problem I did on Codeforces. I didn’t remember the source, but in short you are given a Latin string with the same sorting queries, and then you have to return the whole string. It was feasible to solve the problem in <code>O(Q * 26 * log(N))</code> time because of the limited alphabet size.</p>
-<p>The main idea is, for each <code>l, r</code> query, count the number of instances of each character in the range. Then we can re-assign the characters’ positions, from the smallest to the largest. To efficiently do range-counting and range-assignments we can maintain 26 <em>interval trees</em>, with lazy update.</p>
-<p>However, the problem I faced yesterday was different: the alphabet size is much bigger. Perhaps a different approach was needed. Or maybe not?</p>
-<h3 id="The-alphabet-size"><a href="#The-alphabet-size" class="headerlink" title="The alphabet size"></a>The alphabet size</h3><p>From the previous problem, we know that the problem can be solved efficiently if the alphabet size was small. “Is there anyway to make the numbers pool smaller?” - that was the first question that came to my mind.</p>
-<p>The above problem somewhat resembles radix sorting, so of course it can also be applied to numbers. However splitting digits is not eligible, as reordering still takes too much time. We need to transform numbers into something that’s both small in size and easy to reassign, maybe not even caring about its original value.</p>
-<p>The problem only asked for <strong>one</strong> element. What if, all we care about is the element itself?</p>
-<h3 id="Relative-ordering"><a href="#Relative-ordering" class="headerlink" title="Relative ordering"></a>Relative ordering</h3><p>It turns out that we don’t actually need to sort the elements. Not entirely.</p>
-<p>Let’s choose a pivot, <code>X</code>. We transform every number larger than <code>X</code> to <code>1</code>, and the rest to <code>0</code>. Sorting becomes wrong now, but the order <em>relative to <code>X</code></em> isn’t: If we sort <code>l, r</code> increasingly, every number that’s smaller than <code>X</code> still stays on the left of those which are larger than <code>X</code>. Therefore, this <em>masked</em> ordering isn’t entirely wrong, because the correct ordering <strong>have the same mask</strong>, and we can assume that the unlerlying original values are on the correct positions. Of course, we don’t need to care about it.</p>
-<p>Of course, since the numbers are binary now, performing the above algorithm becomes a breeze.</p>
-<p>After all the sortings, we get the middle number’s mask. It doesn’t give us the answer immediately, but it does leave a hint: If the number is <strong>1</strong> then the answer is <strong>larger than <code>X</code></strong>, and vice versa.</p>
-<h3 id="Binary-Search"><a href="#Binary-Search" class="headerlink" title="Binary Search"></a>Binary Search</h3><p>To effectively use the previous hint, we can perform <em>binary search</em> on the value of <code>A[N / 2 + 1]</code>, checking whether it’s larger than the middle value, and shorten the range according to the answer.
-That is also the final missing piece to solve the problem, giving us an <code>O(log(N) * Q * log(N))</code> algorithm.</p>
-<h2 id="B-Zigzag"><a href="#B-Zigzag" class="headerlink" title="B. Zigzag"></a>B. Zigzag</h2><h3 id="Statements-1"><a href="#Statements-1" class="headerlink" title="Statements"></a>Statements</h3><p>You are given an array <code>A[1..N]</code> of distinct numbers. There are also <code>Q</code> queries, each of the form <code>x y</code> that asks you to change the <code>x</code>-th number to <code>y</code>. It is guaranteed that after each query the array always contains dintinct numbers. After each query you have to return the largest alternating subsequence of the array.</p>
-<h4 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h4><p><code>1 &lt;= N &lt;= 10^6</code>, <code>1 &lt;= A[i] &lt;= 10^9</code></p>
-<h3 id="Alternating-Subsequence"><a href="#Alternating-Subsequence" class="headerlink" title="Alternating Subsequence"></a>Alternating Subsequence</h3><p>The first thing to do is analyzing the <strong>longest alternating subsequence</strong> problem. It turns out that it is not as difficult as it sounds, in fact it can be greedily built from an array with distinct numbers.</p>
-<p>One nice observation from the problem: If there exists such <code>i</code> that <code>A[i - 1] &lt;= A[i] &lt;= A[i + 1]</code>, then there always exists an optimal subsequence without <code>A[i]</code>. Why? Since they’re consecutive numbers, <code>A[i - 1]</code> is always better than <code>A[i]</code> as a “lower” number, and <code>A[i + 1]</code> is always better than <code>A[i]</code> as an “upper” numbber. Therefore, it is safe to just remove <code>A[i]</code> from the array without losing the optimal sequence.</p>
-<p>Now let’s continuously remove such numbers from the array until there is no such one. Which means, for each <code>i</code>, it is either <code>A[i - 1] &lt;= A[i] &amp;&amp; A[i] &gt;= A[i + 1]</code> or <code>A[i - 1] &gt;= A[i] &amp;&amp; A[i] &lt;= A[i + 1]</code>. Wait… Isn’t <code>A[..]</code> now already an alternating sequence? More than that, <code>A[..]</code> is an <strong>optimal</strong> longest alternating subsequence of the original array.</p>
-<p>Dive a little deeper, we will find out that each <code>A[i]</code> can be a part of the new array <strong>if and only if</strong> has the same above atrribute on the original array. <em>Unless</em> it’s the first or last number of the array, in such case it’s always included.</p>
-<h3 id="Testing-an-element"><a href="#Testing-an-element" class="headerlink" title="Testing an element"></a>Testing an element</h3><p>With the above observations, we can deduce whether an element will appear in our optimal subsequence:</p>
-<ul>
-<li>It’s the first or last element, <em>or</em></li>
-<li>Either it’s both smaller or both bigger than its neighboring elements.</li>
-</ul>
-<p>Using these conditions we can check each element in <code>O(1)</code>. To answer the length of the optimal subsequence one only has to count how many elements satisfies the above conditions.</p>
-<h3 id="Processing-queries"><a href="#Processing-queries" class="headerlink" title="Processing queries"></a>Processing queries</h3><p>If we change one number, how is each element’s satisfiability affected? It turns out, only 3 of them are affected at most: the element itself, and its neighboring elements.</p>
-<p>It is now easy to process each query in <code>O(1)</code>: just change the element and re-check every affected elements.</p>
-<p>That concludes our <code>O(N + M)</code> algorithm.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nkagami.me/2017/04/16/2017-04-15-Training/" data-id="cja0uxlic0006wmoei8ei1czb" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/anh-Minh/">anh Minh</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apio/">apio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/english/">english</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/training/">training</a></li></ul>
 
     </footer>
   </div>
@@ -609,9 +761,9 @@ That is also the final missing piece to solve the problem, giving us an <code>O(
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">Các chủ đề</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Editorials/">Editorials</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Thoughts/">Thoughts</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Training/">Training</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Writing/">Writing</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Editorials/">Editorials</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random/">Random</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Thoughts/">Thoughts</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Training/">Training</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Writing/">Writing</a></li></ul>
     </div>
   </div>
 
@@ -619,9 +771,9 @@ That is also the final missing piece to solve the problem, giving us an <code>O(
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Các nhãn</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/First-Post/">First Post</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Training/">Training</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anh-Hanh/">anh Hạnh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anh-Khue/">anh Khuê</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anh-Minh/">anh Minh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apio/">apio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/editorial/">editorial</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/english/">english</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hsgso/">hsgso</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/random/">random</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/story/">story</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Hoang/">thầy Hoàng</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Nghia/">thầy Nghĩa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Phuong/">thầy Phương</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Dong/">thầy Đông</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/training/">training</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vietnamese/">vietnamese</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/writing/">writing</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/First-Post/">First Post</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Training/">Training</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anh-Hanh/">anh Hạnh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anh-Khue/">anh Khuê</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anh-Minh/">anh Minh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apio/">apio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/brainstorm/">brainstorm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/editorial/">editorial</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/english/">english</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hsgso/">hsgso</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/random/">random</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/story/">story</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Hoang/">thầy Hoàng</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Nghia/">thầy Nghĩa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Phuong/">thầy Phương</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Dong/">thầy Đông</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/training/">training</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vietnamese/">vietnamese</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/writing/">writing</a></li></ul>
     </div>
   </div>
 
@@ -629,18 +781,18 @@ That is also the final missing piece to solve the problem, giving us an <code>O(
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Tập hợp nhãn</h3>
     <div class="widget tagcloud">
-      <a href="/tags/First-Post/" style="font-size: 10px;">First Post</a> <a href="/tags/Training/" style="font-size: 10px;">Training</a> <a href="/tags/anh-Hanh/" style="font-size: 12.5px;">anh Hạnh</a> <a href="/tags/anh-Khue/" style="font-size: 10px;">anh Khuê</a> <a href="/tags/anh-Minh/" style="font-size: 12.5px;">anh Minh</a> <a href="/tags/apio/" style="font-size: 17.5px;">apio</a> <a href="/tags/editorial/" style="font-size: 12.5px;">editorial</a> <a href="/tags/english/" style="font-size: 12.5px;">english</a> <a href="/tags/hsgso/" style="font-size: 12.5px;">hsgso</a> <a href="/tags/random/" style="font-size: 10px;">random</a> <a href="/tags/story/" style="font-size: 10px;">story</a> <a href="/tags/thay-Hoang/" style="font-size: 10px;">thầy Hoàng</a> <a href="/tags/thay-Nghia/" style="font-size: 10px;">thầy Nghĩa</a> <a href="/tags/thay-Phuong/" style="font-size: 12.5px;">thầy Phương</a> <a href="/tags/thay-Dong/" style="font-size: 10px;">thầy Đông</a> <a href="/tags/training/" style="font-size: 15px;">training</a> <a href="/tags/vietnamese/" style="font-size: 20px;">vietnamese</a> <a href="/tags/writing/" style="font-size: 10px;">writing</a>
+      <a href="/tags/First-Post/" style="font-size: 10px;">First Post</a> <a href="/tags/Training/" style="font-size: 10px;">Training</a> <a href="/tags/anh-Hanh/" style="font-size: 12.5px;">anh Hạnh</a> <a href="/tags/anh-Khue/" style="font-size: 10px;">anh Khuê</a> <a href="/tags/anh-Minh/" style="font-size: 12.5px;">anh Minh</a> <a href="/tags/apio/" style="font-size: 17.5px;">apio</a> <a href="/tags/brainstorm/" style="font-size: 10px;">brainstorm</a> <a href="/tags/editorial/" style="font-size: 12.5px;">editorial</a> <a href="/tags/english/" style="font-size: 12.5px;">english</a> <a href="/tags/hsgso/" style="font-size: 12.5px;">hsgso</a> <a href="/tags/random/" style="font-size: 10px;">random</a> <a href="/tags/story/" style="font-size: 10px;">story</a> <a href="/tags/thay-Hoang/" style="font-size: 10px;">thầy Hoàng</a> <a href="/tags/thay-Nghia/" style="font-size: 10px;">thầy Nghĩa</a> <a href="/tags/thay-Phuong/" style="font-size: 12.5px;">thầy Phương</a> <a href="/tags/thay-Dong/" style="font-size: 10px;">thầy Đông</a> <a href="/tags/training/" style="font-size: 15px;">training</a> <a href="/tags/vietnamese/" style="font-size: 20px;">vietnamese</a> <a href="/tags/writing/" style="font-size: 10px;">writing</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Lưu trữ</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
     </div>
   </div>
 
@@ -648,12 +800,16 @@ That is also the final missing piece to solve the problem, giving us an <code>O(
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Các bài gần đây</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2017/10/24/Random-Rain/">[Random] Rain</a>
+            <a href="/2018/09/07/2018-09-07-Brainstorm/">2018-09-07 Brainstorm</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/23/Random-Rain/">[Random] Rain</a>
           </li>
         
           <li>
@@ -668,10 +824,6 @@ That is also the final missing piece to solve the problem, giving us an <code>O(
             <a href="/2017/05/01/HSGSO-2016-Editorial/">HSGSO 2016 Editorial</a>
           </li>
         
-          <li>
-            <a href="/2017/04/28/2017-04-28-Training/">2017/04/28 Training</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -684,8 +836,8 @@ That is also the final missing piece to solve the problem, giving us an <code>O(
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 Natsu Kagami<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      &copy; 2019 Natsu Kagami<br>
+      Được tạo ra bởi <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

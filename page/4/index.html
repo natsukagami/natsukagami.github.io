@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <title>Kagami&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Some random stuff I write to express my life.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Kagami's Blog">
+<meta property="og:title" content="Kagami&#39;s Blog">
 <meta property="og:url" content="http://blog.nkagami.me/page/4/index.html">
-<meta property="og:site_name" content="Kagami's Blog">
+<meta property="og:site_name" content="Kagami&#39;s Blog">
 <meta property="og:description" content="Some random stuff I write to express my life.">
+<meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kagami's Blog">
+<meta name="twitter:title" content="Kagami&#39;s Blog">
 <meta name="twitter:description" content="Some random stuff I write to express my life.">
 <meta name="twitter:creator" content="@natsukagami">
   
@@ -27,7 +28,7 @@
   <link rel="stylesheet" href="/css/style.css">
   
 
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
   <script type="text/javascript">
     MathJax.Hub.Config({
       tex2jax: {
@@ -38,7 +39,7 @@
     }); 
   </script>
 </head>
-
+</html>
 <body>
   <div id="container">
     <div id="wrap">
@@ -66,12 +67,12 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Tìm kiếm"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.nkagami.me"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.nkagami.me"></form>
       </div>
     </div>
   </div>
@@ -79,7 +80,80 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-First-Post" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2017-04-15-Training" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/16/2017-04-15-Training/" class="article-date">
+  <time datetime="2017-04-16T05:34:00.000Z" itemprop="datePublished">2017-04-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Training/">Training</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/16/2017-04-15-Training/">2017/04/15 Training</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>Warning</strong>: If you want to try solving the problems, skip reading everything but the statements! Also, for hints, read <em>slowly</em> from top to bottom of each problem.</p>
+<p>I didn’t attend the class directly, but did the problems while going on a bus to Ninh Binh. The problems were somewhat exciting to me.</p>
+<h2 id="A-Sorting"><a href="#A-Sorting" class="headerlink" title="A. Sorting"></a>A. Sorting</h2><h3 id="Statements"><a href="#Statements" class="headerlink" title="Statements"></a>Statements</h3><p>You are given a permutation <code>A[1..N]</code>, along with <code>Q</code> queries, each of the form <code>l, r</code> which you should sort the subarray <code>A[l..r]</code> increasingly or decreasingly. After all the queries are processed, print the middle value <code>A[N / 2 + 1]</code>.</p>
+<h4 id="Contraints"><a href="#Contraints" class="headerlink" title="Contraints"></a>Contraints</h4><p><code>1 &lt;= N &lt;= 10^5</code>, <code>1 &lt;= Q &lt;= 10^5</code>, <code>N</code> is odd.</p>
+<h3 id="One-problem-from-the-past"><a href="#One-problem-from-the-past" class="headerlink" title="One problem from the past"></a>One problem from the past</h3><p>The statements reminds me of a past problem I did on Codeforces. I didn’t remember the source, but in short you are given a Latin string with the same sorting queries, and then you have to return the whole string. It was feasible to solve the problem in <code>O(Q * 26 * log(N))</code> time because of the limited alphabet size.</p>
+<p>The main idea is, for each <code>l, r</code> query, count the number of instances of each character in the range. Then we can re-assign the characters’ positions, from the smallest to the largest. To efficiently do range-counting and range-assignments we can maintain 26 <em>interval trees</em>, with lazy update.</p>
+<p>However, the problem I faced yesterday was different: the alphabet size is much bigger. Perhaps a different approach was needed. Or maybe not?</p>
+<h3 id="The-alphabet-size"><a href="#The-alphabet-size" class="headerlink" title="The alphabet size"></a>The alphabet size</h3><p>From the previous problem, we know that the problem can be solved efficiently if the alphabet size was small. “Is there anyway to make the numbers pool smaller?” - that was the first question that came to my mind.</p>
+<p>The above problem somewhat resembles radix sorting, so of course it can also be applied to numbers. However splitting digits is not eligible, as reordering still takes too much time. We need to transform numbers into something that’s both small in size and easy to reassign, maybe not even caring about its original value.</p>
+<p>The problem only asked for <strong>one</strong> element. What if, all we care about is the element itself?</p>
+<h3 id="Relative-ordering"><a href="#Relative-ordering" class="headerlink" title="Relative ordering"></a>Relative ordering</h3><p>It turns out that we don’t actually need to sort the elements. Not entirely.</p>
+<p>Let’s choose a pivot, <code>X</code>. We transform every number larger than <code>X</code> to <code>1</code>, and the rest to <code>0</code>. Sorting becomes wrong now, but the order <em>relative to <code>X</code></em> isn’t: If we sort <code>l, r</code> increasingly, every number that’s smaller than <code>X</code> still stays on the left of those which are larger than <code>X</code>. Therefore, this <em>masked</em> ordering isn’t entirely wrong, because the correct ordering <strong>have the same mask</strong>, and we can assume that the unlerlying original values are on the correct positions. Of course, we don’t need to care about it.</p>
+<p>Of course, since the numbers are binary now, performing the above algorithm becomes a breeze.</p>
+<p>After all the sortings, we get the middle number’s mask. It doesn’t give us the answer immediately, but it does leave a hint: If the number is <strong>1</strong> then the answer is <strong>larger than <code>X</code></strong>, and vice versa.</p>
+<h3 id="Binary-Search"><a href="#Binary-Search" class="headerlink" title="Binary Search"></a>Binary Search</h3><p>To effectively use the previous hint, we can perform <em>binary search</em> on the value of <code>A[N / 2 + 1]</code>, checking whether it’s larger than the middle value, and shorten the range according to the answer.
+That is also the final missing piece to solve the problem, giving us an <code>O(log(N) * Q * log(N))</code> algorithm.</p>
+<h2 id="B-Zigzag"><a href="#B-Zigzag" class="headerlink" title="B. Zigzag"></a>B. Zigzag</h2><h3 id="Statements-1"><a href="#Statements-1" class="headerlink" title="Statements"></a>Statements</h3><p>You are given an array <code>A[1..N]</code> of distinct numbers. There are also <code>Q</code> queries, each of the form <code>x y</code> that asks you to change the <code>x</code>-th number to <code>y</code>. It is guaranteed that after each query the array always contains dintinct numbers. After each query you have to return the largest alternating subsequence of the array.</p>
+<h4 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h4><p><code>1 &lt;= N &lt;= 10^6</code>, <code>1 &lt;= A[i] &lt;= 10^9</code></p>
+<h3 id="Alternating-Subsequence"><a href="#Alternating-Subsequence" class="headerlink" title="Alternating Subsequence"></a>Alternating Subsequence</h3><p>The first thing to do is analyzing the <strong>longest alternating subsequence</strong> problem. It turns out that it is not as difficult as it sounds, in fact it can be greedily built from an array with distinct numbers.</p>
+<p>One nice observation from the problem: If there exists such <code>i</code> that <code>A[i - 1] &lt;= A[i] &lt;= A[i + 1]</code>, then there always exists an optimal subsequence without <code>A[i]</code>. Why? Since they’re consecutive numbers, <code>A[i - 1]</code> is always better than <code>A[i]</code> as a “lower” number, and <code>A[i + 1]</code> is always better than <code>A[i]</code> as an “upper” numbber. Therefore, it is safe to just remove <code>A[i]</code> from the array without losing the optimal sequence.</p>
+<p>Now let’s continuously remove such numbers from the array until there is no such one. Which means, for each <code>i</code>, it is either <code>A[i - 1] &lt;= A[i] &amp;&amp; A[i] &gt;= A[i + 1]</code> or <code>A[i - 1] &gt;= A[i] &amp;&amp; A[i] &lt;= A[i + 1]</code>. Wait… Isn’t <code>A[..]</code> now already an alternating sequence? More than that, <code>A[..]</code> is an <strong>optimal</strong> longest alternating subsequence of the original array.</p>
+<p>Dive a little deeper, we will find out that each <code>A[i]</code> can be a part of the new array <strong>if and only if</strong> has the same above atrribute on the original array. <em>Unless</em> it’s the first or last number of the array, in such case it’s always included.</p>
+<h3 id="Testing-an-element"><a href="#Testing-an-element" class="headerlink" title="Testing an element"></a>Testing an element</h3><p>With the above observations, we can deduce whether an element will appear in our optimal subsequence:</p>
+<ul>
+<li>It’s the first or last element, <em>or</em></li>
+<li>Either it’s both smaller or both bigger than its neighboring elements.</li>
+</ul>
+<p>Using these conditions we can check each element in <code>O(1)</code>. To answer the length of the optimal subsequence one only has to count how many elements satisfies the above conditions.</p>
+<h3 id="Processing-queries"><a href="#Processing-queries" class="headerlink" title="Processing queries"></a>Processing queries</h3><p>If we change one number, how is each element’s satisfiability affected? It turns out, only 3 of them are affected at most: the element itself, and its neighboring elements.</p>
+<p>It is now easy to process each query in <code>O(1)</code>: just change the element and re-check every affected elements.</p>
+<p>That concludes our <code>O(N + M)</code> algorithm.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.nkagami.me/2017/04/16/2017-04-15-Training/" data-id="cjrl6wl2u0000q0lqp7ed4xhw" class="article-share-link">Chia sẻ</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/anh-Minh/">anh Minh</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apio/">apio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/english/">english</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/training/">training</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-First-Post" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/10/10/First-Post/" class="article-date">
   <time datetime="2016-10-10T06:10:19.000Z" itemprop="datePublished">2016-10-10</time>
@@ -112,7 +186,7 @@ That’s all. Thank you for reading my first post!</p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nkagami.me/2016/10/10/First-Post/" data-id="cja0uxlj4001nwmoes0g2b08p" class="article-share-link">Share</a>
+      <a data-url="http://blog.nkagami.me/2016/10/10/First-Post/" data-id="cjrl6wl320004q0lqbzb7aftc" class="article-share-link">Chia sẻ</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/First-Post/">First Post</a></li></ul>
@@ -135,9 +209,9 @@ That’s all. Thank you for reading my first post!</p>
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">Các chủ đề</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Editorials/">Editorials</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Thoughts/">Thoughts</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Training/">Training</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Writing/">Writing</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Editorials/">Editorials</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random/">Random</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Thoughts/">Thoughts</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Training/">Training</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Writing/">Writing</a></li></ul>
     </div>
   </div>
 
@@ -145,9 +219,9 @@ That’s all. Thank you for reading my first post!</p>
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Các nhãn</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/First-Post/">First Post</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Training/">Training</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anh-Hanh/">anh Hạnh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anh-Khue/">anh Khuê</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anh-Minh/">anh Minh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apio/">apio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/editorial/">editorial</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/english/">english</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hsgso/">hsgso</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/random/">random</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/story/">story</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Hoang/">thầy Hoàng</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Nghia/">thầy Nghĩa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Phuong/">thầy Phương</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Dong/">thầy Đông</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/training/">training</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vietnamese/">vietnamese</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/writing/">writing</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/First-Post/">First Post</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Training/">Training</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anh-Hanh/">anh Hạnh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anh-Khue/">anh Khuê</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anh-Minh/">anh Minh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apio/">apio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/brainstorm/">brainstorm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/editorial/">editorial</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/english/">english</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hsgso/">hsgso</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/random/">random</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/story/">story</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Hoang/">thầy Hoàng</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Nghia/">thầy Nghĩa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Phuong/">thầy Phương</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thay-Dong/">thầy Đông</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/training/">training</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vietnamese/">vietnamese</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/writing/">writing</a></li></ul>
     </div>
   </div>
 
@@ -155,18 +229,18 @@ That’s all. Thank you for reading my first post!</p>
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Tập hợp nhãn</h3>
     <div class="widget tagcloud">
-      <a href="/tags/First-Post/" style="font-size: 10px;">First Post</a> <a href="/tags/Training/" style="font-size: 10px;">Training</a> <a href="/tags/anh-Hanh/" style="font-size: 12.5px;">anh Hạnh</a> <a href="/tags/anh-Khue/" style="font-size: 10px;">anh Khuê</a> <a href="/tags/anh-Minh/" style="font-size: 12.5px;">anh Minh</a> <a href="/tags/apio/" style="font-size: 17.5px;">apio</a> <a href="/tags/editorial/" style="font-size: 12.5px;">editorial</a> <a href="/tags/english/" style="font-size: 12.5px;">english</a> <a href="/tags/hsgso/" style="font-size: 12.5px;">hsgso</a> <a href="/tags/random/" style="font-size: 10px;">random</a> <a href="/tags/story/" style="font-size: 10px;">story</a> <a href="/tags/thay-Hoang/" style="font-size: 10px;">thầy Hoàng</a> <a href="/tags/thay-Nghia/" style="font-size: 10px;">thầy Nghĩa</a> <a href="/tags/thay-Phuong/" style="font-size: 12.5px;">thầy Phương</a> <a href="/tags/thay-Dong/" style="font-size: 10px;">thầy Đông</a> <a href="/tags/training/" style="font-size: 15px;">training</a> <a href="/tags/vietnamese/" style="font-size: 20px;">vietnamese</a> <a href="/tags/writing/" style="font-size: 10px;">writing</a>
+      <a href="/tags/First-Post/" style="font-size: 10px;">First Post</a> <a href="/tags/Training/" style="font-size: 10px;">Training</a> <a href="/tags/anh-Hanh/" style="font-size: 12.5px;">anh Hạnh</a> <a href="/tags/anh-Khue/" style="font-size: 10px;">anh Khuê</a> <a href="/tags/anh-Minh/" style="font-size: 12.5px;">anh Minh</a> <a href="/tags/apio/" style="font-size: 17.5px;">apio</a> <a href="/tags/brainstorm/" style="font-size: 10px;">brainstorm</a> <a href="/tags/editorial/" style="font-size: 12.5px;">editorial</a> <a href="/tags/english/" style="font-size: 12.5px;">english</a> <a href="/tags/hsgso/" style="font-size: 12.5px;">hsgso</a> <a href="/tags/random/" style="font-size: 10px;">random</a> <a href="/tags/story/" style="font-size: 10px;">story</a> <a href="/tags/thay-Hoang/" style="font-size: 10px;">thầy Hoàng</a> <a href="/tags/thay-Nghia/" style="font-size: 10px;">thầy Nghĩa</a> <a href="/tags/thay-Phuong/" style="font-size: 12.5px;">thầy Phương</a> <a href="/tags/thay-Dong/" style="font-size: 10px;">thầy Đông</a> <a href="/tags/training/" style="font-size: 15px;">training</a> <a href="/tags/vietnamese/" style="font-size: 20px;">vietnamese</a> <a href="/tags/writing/" style="font-size: 10px;">writing</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Lưu trữ</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
     </div>
   </div>
 
@@ -174,12 +248,16 @@ That’s all. Thank you for reading my first post!</p>
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Các bài gần đây</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2017/10/24/Random-Rain/">[Random] Rain</a>
+            <a href="/2018/09/07/2018-09-07-Brainstorm/">2018-09-07 Brainstorm</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/23/Random-Rain/">[Random] Rain</a>
           </li>
         
           <li>
@@ -194,10 +272,6 @@ That’s all. Thank you for reading my first post!</p>
             <a href="/2017/05/01/HSGSO-2016-Editorial/">HSGSO 2016 Editorial</a>
           </li>
         
-          <li>
-            <a href="/2017/04/28/2017-04-28-Training/">2017/04/28 Training</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -210,8 +284,8 @@ That’s all. Thank you for reading my first post!</p>
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 Natsu Kagami<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      &copy; 2019 Natsu Kagami<br>
+      Được tạo ra bởi <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
