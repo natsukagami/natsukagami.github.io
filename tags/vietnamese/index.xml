@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vietnamese on Kagami Notes</title>
+    <link>https://blog.nkagami.me/tags/vietnamese/</link>
+    <description>Recent content in vietnamese on Kagami Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Jul 2017 17:00:00 +0700</lastBuildDate>
+    
+	<atom:link href="https://blog.nkagami.me/tags/vietnamese/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HSGSO 2017 Editorial</title>
+      <link>https://blog.nkagami.me/posts/hsgso-2017-editorial/</link>
+      <pubDate>Sat, 01 Jul 2017 17:00:00 +0700</pubDate>
+      
+      <guid>https://blog.nkagami.me/posts/hsgso-2017-editorial/</guid>
+      <description>Đây chắc là một trong những bài viết được chờ đợi nhất sau kì thi HSGSO 2017 vừa rồi. Ngoài chữa bài, mình sẽ đưa ra một số thống kê về đề và lượng người giải được!
+Phần chữa bài được thực hiện bởi mình và bạn Nguyễn Đinh Quang Minh. Nếu có câu hỏi gì bạn có thể hỏi mình hoặc Minh qua facebook.
+Đề bài Các bạn có thể tải về đề bài tại đây.</description>
+    </item>
+    
+    <item>
+      <title>2017-05-03 Training</title>
+      <link>https://blog.nkagami.me/posts/training/2017-05-03-training/</link>
+      <pubDate>Wed, 03 May 2017 21:00:00 +0700</pubDate>
+      
+      <guid>https://blog.nkagami.me/posts/training/2017-05-03-training/</guid>
+      <description>Hôm nay bài không phải là khó.
+Tóm tắt đề bài ballmachine Cho một cây \(N\) đỉnh có gốc, mỗi đỉnh chứa tối đa 1 quả bóng. Quả bóng từ cha sẽ rơi xuống nút con nếu có thể. Nếu có nhiều nút con thỏa mãn, chọn nút con có cây con chứa nút có số thứ tự nhỏ nhất. Thực hiện \(Q\) truy vấn 1 trong 2 loại:
+ Lần lượt cho \(k\) quả bóng vào đỉnh gốc.</description>
+    </item>
+    
+    <item>
+      <title>HSGSO 2016 Editorial</title>
+      <link>https://blog.nkagami.me/posts/hsgso-2016-editorial/</link>
+      <pubDate>Mon, 01 May 2017 17:00:00 +0700</pubDate>
+      
+      <guid>https://blog.nkagami.me/posts/hsgso-2016-editorial/</guid>
+      <description>Trong năm vừa rồi có kha khá nhiều bạn hỏi mình cũng như các bạn khác trong BTC HSGSO 2016 (môn Tin) về solution của contest. Vì hồi đó không có thời gian (thực ra là lười) nên bọn mình chưa có dịp chữa bài. Lần này mình quyết định làm cho chót.
+Đề bài Các bạn có thể tải đề bài gốc tại đây.
+Lời giải Mục lục  color domino gift letter-o paren polylines socket zigzag  color Author: Nguyễn Đinh Quang Minh</description>
+    </item>
+    
+    <item>
+      <title>2017/04/28 Training</title>
+      <link>https://blog.nkagami.me/posts/training/2017-04-28-training/</link>
+      <pubDate>Fri, 28 Apr 2017 20:00:00 +0700</pubDate>
+      
+      <guid>https://blog.nkagami.me/posts/training/2017-04-28-training/</guid>
+      <description>Hôm nay có hai phần: bài thầy Hoàng và bài anh Khuê. Cả 2 đều cần một sự tay to nhất định.
+Tóm tắt đề bài select (thầy Hoàng) Cho dãy \(S\) gồm các kí tự d và x. 2 người lần lượt chơi, mỗi lượt bốc 1 kí tự, kí tự này phải đứng cạnh 1 vị trí đã bị chọn trước đó (trừ nước đầu tiên được chọn thoải mái).</description>
+    </item>
+    
+    <item>
+      <title>2017/04/25 Training</title>
+      <link>https://blog.nkagami.me/posts/training/2017-04-25-training/</link>
+      <pubDate>Tue, 25 Apr 2017 20:00:00 +0700</pubDate>
+      
+      <guid>https://blog.nkagami.me/posts/training/2017-04-25-training/</guid>
+      <description>Hôm nay có khá nhiều bài trí tuệ.
+Tóm tắt đề bài wash Cho \(N\) máy giặt và \(M\) máy sấy chạy song song, thời gian giặt là \(A[1..N]\), sấy là \(B[1..M]\) cho từng máy. Tìm thời gian nhỏ nhất để giặt xong \(L\) quần áo.
+Giới hạn \(1 \le N, M \le 10^5\), \(1 \le L \le 10^6\), \(1 \le A[i], B[i] \le 10^9\).
+mars Cho \(N\) nhà kho với sức chứa \(C[1.</description>
+    </item>
+    
+    <item>
+      <title>2017/04/24 Training</title>
+      <link>https://blog.nkagami.me/posts/training/2017-04-24-training/</link>
+      <pubDate>Mon, 24 Apr 2017 17:20:00 +0700</pubDate>
+      
+      <guid>https://blog.nkagami.me/posts/training/2017-04-24-training/</guid>
+      <description>Hôm nay bài khá lằng nhằng, mình sẽ cố gắng chữa thật nhiều bước.
+Tóm tắt đề bài Heap on Trees, NAIPC 2017, bài D Cho một cây \(N\) đỉnh, mỗi nút có một số \(A_i\). Tìm tập con các nút lớn nhất thỏa mãn nếu \(i\) là tổ tiên của \(j\) và \(i\), \(j\) đều được chọn thì \(A_i &amp;gt; A_j\).
+Giới hạn \(1 \le N \le 10^5\), \(1 \le A_i \le 10^9\)</description>
+    </item>
+    
+    <item>
+      <title>2017/04/21 Training</title>
+      <link>https://blog.nkagami.me/posts/training/2017-04-21-training/</link>
+      <pubDate>Sun, 23 Apr 2017 08:11:00 +0700</pubDate>
+      
+      <guid>https://blog.nkagami.me/posts/training/2017-04-21-training/</guid>
+      <description>Tóm tắt đề bài SEQUENCE Cho dãy số A[1..N]. Mỗi lần xóa ta sẽ xóa tất cả các số mang một giá trị x nào đó. Hỏi dãy dài nhất có thể tạo ra được mà không tồn tại i &amp;lt; j &amp;lt; k thỏa mãn A[i] == A[k] &amp;amp;&amp;amp; A[i] != A[j]?
+Giới hạn 1 &amp;lt;= N &amp;lt;= 10^5, 1 &amp;lt;= A[i] &amp;lt;= 100
+AVTOGAME Cho xâu S. Mỗi bước ta có thể chọn một đoạn l &amp;lt; r sao cho S[l] == S[r] và xóa đoạn đó khỏi xâu.</description>
+    </item>
+    
+    <item>
+      <title>2017/04/20 Training</title>
+      <link>https://blog.nkagami.me/posts/training/2017-04-20-training/</link>
+      <pubDate>Fri, 21 Apr 2017 18:36:25 +0700</pubDate>
+      
+      <guid>https://blog.nkagami.me/posts/training/2017-04-20-training/</guid>
+      <description>Lưu ý: Mình đã tóm tắt đề bài ở trên, ai không muốn bị spoil thì đừng kéo xuống lời giải vội.
+Hôm nay có 5 bài của thầy Đông. Do mình không được nghe thầy chữa buổi chiều nên solution là của mình, mặc dù 99% là đúng nhưng không đảm bảo. Thực chất bài không phải là khó quá.
+Tóm tắt đề bài ACM Có N đội, mỗi đội có 11 chỉ số A[i][1.</description>
+    </item>
+    
+    <item>
+      <title>2017/04/19 Training</title>
+      <link>https://blog.nkagami.me/posts/training/2017-04-19-training/</link>
+      <pubDate>Wed, 19 Apr 2017 15:00:00 +0700</pubDate>
+      
+      <guid>https://blog.nkagami.me/posts/training/2017-04-19-training/</guid>
+      <description>Thầy Phương cho 3 bài của FARIO 2017. Bài 1 đã làm rồi, bài 3 là bài approximate nên mình chỉ chữa bài 2.
+Pyramid Cake Tóm tắt đề bài Cho một chiếc hộp có đáy chữ nhật M x N, vị trí (i, j) có độ cao là H[i][j]. Ta dựng một chiếc bánh nhiều tần thỏa mãn:
+ Các tầng là các hình chữ nhật chứa đỉnh (1,1) Tầng trên phải nằm bên trong mặt phẳng của tầng dưới Không ô nào cao hơn vị trí tương ứng của hộp Thể tích bánh là lớn nhất.</description>
+    </item>
+    
+    <item>
+      <title>2017/04/18 Training</title>
+      <link>https://blog.nkagami.me/posts/training/2017-04-18-training/</link>
+      <pubDate>Tue, 18 Apr 2017 14:22:18 +0700</pubDate>
+      
+      <guid>https://blog.nkagami.me/posts/training/2017-04-18-training/</guid>
+      <description>Hôm nay Hạnh dạy. Nói chung như mọi lần Hạnh dạy, bài thì hay nhưng có vẻ như Hạnh vẫn tốn rất nhiều thời gian giảng bài. Mình thực sự không muốn nghe cho lắm vì vẫn muốn nghĩ bài một mình, sau đó có reference của Hạnh để improve solution thì vẫn thích hơn.
+Stretching Streamers (NAIPC 2017, bài C) Tóm tắt đề bài Có N điểm viết trên một đường tròn, điểm thứ i chứa số nguyên dương A[i].</description>
+    </item>
+    
+  </channel>
+</rss>

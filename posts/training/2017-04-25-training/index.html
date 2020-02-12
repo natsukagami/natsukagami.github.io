@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <title>2017/04/25 Training // Kagami Notes</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.64.1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Natsu Kagami" />
+    <meta name="description"
+        content="" />
+    <link rel="stylesheet" href="https://blog.nkagami.me/css/main.min.61bb32028587f24ca28522d8d197970c7ef33284e5fffb45a75fcbbb2dbc4dcb.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2017/04/25 Training"/>
+<meta name="twitter:description" content="Hôm nay có khá nhiều bài trí tuệ.
+Tóm tắt đề bài wash Cho \(N\) máy giặt và \(M\) máy sấy chạy song song, thời gian giặt là \(A[1..N]\), sấy là \(B[1..M]\) cho từng máy. Tìm thời gian nhỏ nhất để giặt xong \(L\) quần áo.
+Giới hạn \(1 \le N, M \le 10^5\), \(1 \le L \le 10^6\), \(1 \le A[i], B[i] \le 10^9\).
+mars Cho \(N\) nhà kho với sức chứa \(C[1."/>
+
+    <meta property="og:title" content="2017/04/25 Training" />
+<meta property="og:description" content="Hôm nay có khá nhiều bài trí tuệ.
+Tóm tắt đề bài wash Cho \(N\) máy giặt và \(M\) máy sấy chạy song song, thời gian giặt là \(A[1..N]\), sấy là \(B[1..M]\) cho từng máy. Tìm thời gian nhỏ nhất để giặt xong \(L\) quần áo.
+Giới hạn \(1 \le N, M \le 10^5\), \(1 \le L \le 10^6\), \(1 \le A[i], B[i] \le 10^9\).
+mars Cho \(N\) nhà kho với sức chứa \(C[1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.nkagami.me/posts/training/2017-04-25-training/" />
+<meta property="article:published_time" content="2017-04-25T20:00:00+07:00" />
+<meta property="article:modified_time" content="2017-04-25T20:00:00+07:00" />
+
+
+</head>
+
+<body>
+    <header class="app-header">
+        <a href="https://blog.nkagami.me"><img class="app-header-avatar"
+                src="https://avatars2.githubusercontent.com/u/9061737"
+                alt="Natsu Kagami" /></a>
+        <h1>Kagami Notes</h1>
+        <p>osu! player, (programming) language enthusiast. I tryhard everything.
+        </p>
+        <div class="app-header-social">
+            
+            <a target="_blank" href="https://github.com/natsukagami"
+                rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+            
+            <a target="_blank" href="https://mstdn.jp/natsukagami"
+                rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-link">
+  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg></a>
+            
+        </div>
+    </header>
+    <main class="app-container">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">2017/04/25 Training</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Apr 25, 2017
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          10 min read
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="https://blog.nkagami.me/tags/training/">training</a><a class="tag" href="https://blog.nkagami.me/tags/apio/">apio</a><a class="tag" href="https://blog.nkagami.me/tags/vietnamese/">vietnamese</a></div></div>
+    </header>
+    <div class="post-content">
+      <p>Hôm nay có khá nhiều bài trí tuệ.</p>
+<h1 id="tóm-tắt-đề-bài">Tóm tắt đề bài</h1>
+<h2 id="wash">wash</h2>
+<p>Cho \(N\) máy giặt và \(M\) máy sấy chạy song song,
+thời gian giặt là \(A[1..N]\), sấy là \(B[1..M]\) cho
+từng máy. Tìm thời gian nhỏ nhất để giặt xong
+\(L\) quần áo.</p>
+<h4 id="giới-hạn">Giới hạn</h4>
+<p>\(1 \le N, M \le 10^5\), \(1 \le L \le 10^6\),
+\(1 \le A[i], B[i] \le 10^9\).</p>
+<h2 id="mars">mars</h2>
+<p>Cho \(N\) nhà kho với sức chứa \(C[1..N]\), ban
+đầu các nhà kho rỗng. Trong ngày thứ \(i\)
+(\(1 \le i \le D\)), nhà kho \(j\) nhận thêm
+\(A[i][j]\) món hàng, đồng thời bạn được chuyển
+tổng cộng \(d[i]\) món hàng ra khỏi các nhà kho.
+Việc chuyển ra được thực hiện sau khi nhận
+hàng. Hỏi sau \(N\) ngày liệu có thể chuyển
+tất cả hàng hóa đã nhận không?</p>
+<h4 id="giới-hạn-1">Giới hạn</h4>
+<p>\(1 \le N, D \le 30\),
+\(1 \le C[i], A[i][j], d[i] \le 10^6\)</p>
+<h2 id="government">government</h2>
+<p>Cho \(N\) điểm, điểm \(i\) có trọng số \(A[i]\).
+Tìm cách đặt các điểm vào các tọa độ nguyên
+của đoạn thẳng \([1..M]\) (mỗi tọa độ chứa
+không quá 1 điểm) để tối đa hóa:
+\[\sum\limits_{i = 1}^N \sum\limits_{j = i + 1}
+^N |x_i - x_j| \times A[i] \times A[j]\]</p>
+<p>Với \(x_i\) là tọa độ điểm \(i\).</p>
+<h4 id="giới-hạn-2">Giới hạn</h4>
+<p>\(1 \le M \le 10^6\), \(1 \le N \le 1000\),
+\(1 \le A[i] \le 100\).</p>
+<h2 id="permutation">permutation</h2>
+<p>Xét một hoán vị \(P\), gọi \(R[i]\) là bán kính của
+\(P_i\) nếu \(R[i]\) là số lớn nhất thỏa mãn:</p>
+<ul>
+<li>\(1 \le i - R[i]\) và \(i + R[i] \le N\)</li>
+<li>\(P_j &lt; P_i\) với mọi \(i - R[i] \le j &lt; i\)</li>
+<li>\(P_j &lt; P_i\) với mọi \(i &lt; j \le i + R[i]\)</li>
+</ul>
+<p>Cho số \(N\) và dãy \(R[1..N]\), đếm số hoán vị
+\(P\) độ dài \(N\) có bán kính của \(P_i\) là \(R[i]\)
+với mọi \(1 \le i \le N\).</p>
+<h4 id="giới-hạn-3">Giới hạn</h4>
+<p>\(1 \le N \le 1000\).</p>
+<h1 id="lời-giải">Lời giải</h1>
+<h2 id="wash-1">wash</h2>
+<h3 id="tham-lam-trên-một-máy">Tham lam trên một máy</h3>
+<p>Giả sử bài toán chỉ có một loại máy (máy giặt
+chẳng hạn, phơi thôi sấy làm gì tốn điện), ta
+có thể sử dụng thuật toán tham lam: Với mỗi
+bước ta chọn máy giặt mà có <strong>thời điểm hoàn
+thành đồ tiếp theo</strong> (không phải đồ máy đó
+đang giặt - nếu có) là nhỏ nhất.</p>
+<p>Không khó để chứng minh thuật toán này là tối
+ưu. Việc cài đặt cũng không khó khăn, chỉ
+cần sử dụng 1 <code>priority_queue</code>.</p>
+<p>Độ phức tạp là \(O(L \log N)\).</p>
+<p>Mạnh hơn thế, thuật toán này cho ta không
+chỉ đáp án tối ưu, mà từng phần tử cũng tối
+ưu: <strong>Không thể giặt đồ thứ \(i\) xong
+trước thời điểm \(T[i]\).</strong></p>
+<h3 id="chặt-nhị-phân-kết-quả">Chặt nhị phân kết quả</h3>
+<p>Theo tính chất bài toán, ta có thể chặt nhị
+phân kết quả. Bài toán trở thành kiểm tra,
+liệu trong thời gian \(X\) có thể giặt và
+sấy \(L\) quần áo không?</p>
+<p>Để kiểm tra, đầu tiên ta sẽ tham lam theo thuật
+toán trên để có tập thời gian giặt xong của
+từng đồ, \(T[i]\).</p>
+<p>Sau đó, ta &ldquo;lật ngược&rdquo; trục trời gian lại,
+xuất phát từ thời điểm \(L\) và thực hiện tính
+tập thời gian sấy \(V[i]\), <em>cũng bằng thuật
+tham lam trên</em>. Tại sao thuật tham lam vẫn
+đúng? Tại vì, với mỗi máy, ta chỉ cần đảo
+ngược thứ tự sấy các đồ của máy đó là tổng
+thời gian vẫn không đổi, các đồ được sấy
+đúng thứ tự xuôi trục thời gian.</p>
+<p>Việc cuối cùng là dựng lên cặp ghép \(T[i]\) - \(V[i]\)
+sao cho \(i\) ghép với \(j\) thì \(T[i] + V[j] &lt; X\).
+Ta có thể tưởng tượng là giặt mất \(T[i]\),
+đợi đến \(X - V[j]\) rồi sấy mất \(V[j]\).</p>
+<p>Hiển nhiên cách ghép tối ưu nhất là ghép \(T[i]\)
+nhỏ nhất với \(V[j]\) lớn nhất, nhỏ nhì với lớn
+nhì và vân vân&hellip;</p>
+<p>Ta có thuật toán \(O(L \log N \log 10^{15})\),
+chưa đủ mạnh.</p>
+<h3 id="khử-chặt-nhị-phân">Khử chặt nhị phân</h3>
+<p>Ta nhận thấy việc tính mảng \(T[i]\) và \(V[i]\)
+không liên quan đến việc chặt nhị phân, vì
+thế thực chất việc chặt nhị phân của ta
+chỉ là tìm giá trị max của việc ghép cặp.</p>
+<p>Như vậy, không cần chặt nhị phân, ta chỉ
+cần tìm 2 mảng trên, thực hiện ghép cặp
+rồi tìm giá trị max.</p>
+<p>Độ phức tạp là \(O(L \log N)\).</p>
+<h2 id="mars-1">mars</h2>
+<h3 id="luồng">Luồng</h3>
+<p>Ta có thể để ý, đề bài gồm một số đầu vào,
+một số đầu ra và yêu cầu kiểm tra xem
+có thể truyền từ đầu vào sang đầu ra không.
+Đây chính là đặc điểm của bài toán luồng
+cực đại - vì thế đây là bài luồng cơ bản.</p>
+<p>Ngoài ra, giới hạn nhỏ của đề bài cũng
+ủng hộ ý tưởng luồng.</p>
+<h3 id="dựng-luồng-như-thế-nào">Dựng luồng như thế nào?</h3>
+<ul>
+<li>Với mỗi ngày ta chỉ có thể giữ lại \(C_i\)
+đơn vị ở nhà kho \(i\) =&gt; Ta sẽ cần phải
+dựng đỉnh quản lí \(V[i][j]\) quản lí nhà
+kho \(i\) trong ngày \(j\), từ \(V[i][j]\) đi
+đến \(V[i][j + 1]\) với capacity \(C_i\).</li>
+<li>Trong ngày \(i\) chỉ được chuyển \(D_i\)
+đơn vị =&gt; Ta dựng đỉnh \(Q[i]\) quản lí
+lượng chuyển ra trong ngày \(i\). Từ \(Q[i]\)
+đến đích có capacity \(D_i\), từ các
+\(V[i][j]\) đến \(Q[j]\) có capacity vô tận.</li>
+<li>Kho \(j\) ngày \(i\) tăng thêm \(A[i][j]\) đơn
+vị =&gt; từ nguồn vào \(V[i][j]\) có capacity
+\(A[i][j]\).</li>
+<li>Chuyển vào trước khi chuyển ra:
+để xử lí phần này ta cần tách \(V[i][j]\)
+thành \(V_in[i][j]\) và \(V_out[i][j]\),
+từ \(V_out[i][j - 1]\) vào \(V_in[i][j]\)
+như trên, \(V_out[i][j]\) vào \(Q[j]\) như
+trên và \(V_in[i][j]\) vào \(V_out[i][j]\)
+có capacity \(C_i\).</li>
+</ul>
+<p>Sau đó ta tìm luồng cực đại và kiểm tra
+nó có bằng tổng \(A[i][j]\) không.</p>
+<p>Độ phức tạp là <code>O(luồng 2000 đỉnh 2000 cạnh)</code>.</p>
+<h2 id="government-1">government</h2>
+<h3 id="biến-đổi-công-thức">Biến đổi công thức</h3>
+<p>Ta có thể hiểu công thức chính là khoảng cách
+có trọng số của từng cặp. Sử dụng công thức
+này có điểm bất lợi là có quá nhiều biến.
+Ta sẽ biến đổi công thức một chút.</p>
+<p>Giả sử các điểm \(1..N\) đã được xếp từ trái
+sang phải, đáp số sẽ là
+\[ \sum\limits_{i = 1}^{N - 1}(x_{i + 1} - x_i)
+(\sum\limits_{j = 1}^i A[j])
+(\sum\limits_{k = i + 1}^N A[k])\]</p>
+<p>Với mỗi đoạn liên tiếp, số lần nó bị tính
+vào đáp số sẽ là tổng trọng số những điểm
+bến trái nó nhân với tổng trọng số những
+điểm bên phải.</p>
+<h3 id="dồn-về-2-bên">Dồn về 2 bên</h3>
+<p>Giả sử ta đã có thứ tự các số \(A[i]\), vậy
+đặt chúng vào đâu thì hợp lí nhất?</p>
+<p>Dựa theo công thức phía trên, ta có:</p>
+<ul>
+<li>Tổng các \((x_{i + 1} - x_i)\) không quá \(M\).
+Vì ta cần tối đa hóa nên ta coi tổng là
+\(M\) luôn.</li>
+<li>Vị trí có phần tích \(A[i]\) lớn nhất là
+khi tổng bên trái và bên phải gần nhau nhất.
+Gọi vị trí này là \((x_{l + 1} - x_l)\).</li>
+</ul>
+<p>Từ đây ta suy ra luôn có thể tối đa hóa đáp
+án bằng cách tối đa hóa đoạn \(l\), tức cho
+\((x_{l + 1} - x_l) = M - N + 1\) và các đoạn
+còn lại là 1. Nói cách khác, ta sẽ dồn tập
+điểm về 2 bên sao cho tổng trọng số của
+chúng gần nhau nhất, tức \(l\) lớn nhất
+thỏa mãn tổng \(A[1..l - 1]\) bé hơn nửa tổng.</p>
+<h3 id="thứ-tự-của-từng-bên">Thứ tự của từng bên</h3>
+<p>Giả sử ta biết tập con của từng bên, làm
+sao để tìm thứ tự sắp xếp của chúng?</p>
+<p>Xét tập bên trái \(A[1..k]\).
+Dễ dàng nhìn
+thấy phần đáp số của các đoạn trong tập
+chính là
+\[A[1] \times (S - A[1]) +
+(A[1] + A[2]) \times (S - A[1] - A[2]) + &hellip; +
+(A[1] + &hellip; + A[k - 1]) \times (S + A[k])\]</p>
+<p>Ta nhận thấy \(A[1]\), \(A[1] + A[2]\), &hellip;
+đều sẽ nhỏ hơn số hạng còn lại tương ứng
+(theo nhận xét phía trên), vì vậy để
+tổng các tích này max, thì \(A[1]\), \(A[1] + A[2]\),
+&hellip;, \(A[1] + &hellip; + A[k - 1]\) đều phải
+lớn nhất có thể. Vậy dãy \(A[1..K]\) phải được
+sắp xếp giảm dần.</p>
+<p>Tương tự ta sẽ chứng minh được dãy bên phải
+phải được sắp xếp <strong>tăng</strong> dần.</p>
+<h3 id="quy-hoạch-động">Quy hoạch động</h3>
+<p>Khi đã biết sắp xếp các phần tử, ta đã có
+thứ tự quy hoạch động: ta sẽ thêm dần các
+phần tử vào bên trái hoặc bên phải, theo
+thứ tự \(A[i]\) giảm dần.</p>
+<p>Để có thể vận dụng công thức tính phần giữa,
+trong hàm qhđ ta cần lưu lại tổng của 1 bên.</p>
+<p>Ta có \(f[i][j]\) là tổng đáp số của 2 tập, sao
+cho tập bên trái có tổng là \(j\), cả 2 tập
+gồm các phần tử từ 1 đến \(i\), lớn nhất.
+Ta chuyển trạng thái từ \(f[i][j]\) bằng cách
+chọn \(i + 1\) vào tập trái hay phải:</p>
+<ul>
+<li>Sang trái: chuyển sang \(f[i + 1][j + A[i + 1]]\),
+tổng tăng thêm \(j \times (S - j)\).</li>
+<li>Sang phải: chuyển sang \(f[i + 1][j]\), tổng
+tăng thêm: \((S[i] - j) * (S - S[i] + j)\), với
+\(S[i]\) là tổng \(A[1..i]\).</li>
+</ul>
+<p>Đáp số sẽ là
+\[ \max\limits_{i = 0}^{S}(f[N][i] + (M - N + 1)
+\times i \times (S - i))\]</p>
+<p>Độ phức tạp là \(O(N^2 * A[i])\).</p>
+<h2 id="permutation-1">permutation</h2>
+<h3 id="vị-trí-đặt-số-n">Vị trí đặt số \(N\)</h3>
+<p>Xét dãy \(R_i\). Ta nhận thấy số \(N\) có thể đặt
+ở \(i\) khi và chỉ khi:</p>
+<ul>
+<li>\(R_i\) phủ đến 1 hoặc đến \(N\).</li>
+<li>Không có \(R_j\) nào phủ \(i\).</li>
+</ul>
+<p>Giả sử ta có một vị trí thỏa mãn \(x\). Nếu
+đặt \(x\) ở \(N\), ta nhận thấy không có \(j &lt; x\)
+nào mà \(R_j\) phủ qua \(x\), cũng như không
+có \(j &gt; x\) nào thỏa mãn. Vì thế \(R[1..x - 1]\)
+và \(R[x + 1..N]\) trở thành 2 bài toán riêng
+biệt.</p>
+<p>Ta có thể giải riêng 2 bài toán này, nhân
+số cách với nhau, cùng với số cách chọn
+\(x - 1\) số trong \(N - 1\) số cho tập bên trái
+(và các số còn lại trong tập bên phải),
+tức \(C^{x - 1}_{N - 1}\).</p>
+<h3 id="quy-hoạch-động-1">Quy hoạch động</h3>
+<p>Gọi \(f[i][j]\) là số cách điền các số hoán vị
+thỏa mãn \(R[i..j]\). Ta có:</p>
+<ul>
+<li>\(x\) được gọi là thỏa mãn \(i..j\) nếu:
+<ul>
+<li>\(i \le x \le j\)</li>
+<li>\(R_x\) phủ \(i\) hoặc phủ \(j\)</li>
+<li>Không tồn tại \(i \le k \le j\), \(k \neq x\)
+mà \(R_k\) phủ \(x\).</li>
+</ul>
+</li>
+<li>Ta định nghĩa đoạn đúng:
+<ul>
+<li>\(R[1..N]\) là đoạn đúng nếu không có
+2 cặp nào phủ nhau.</li>
+<li>Đoạn rỗng là đoạn đúng.</li>
+<li>Nếu \(R[i..j]\) đúng và \(x\) thỏa mãn
+\(i..j\) thì \(R[i..x-1]\) và \(R[x+1..j]\)
+là đoạn đúng.</li>
+</ul>
+</li>
+<li>\(f[i][j] = 1\) nếu \(R[i..j]\) là đoạn đúng
+và \(i = j\) hoặc \(i = j + 1\).</li>
+<li>\(f[i][j] = \sum\limits_{x \text{ t/m } i..j}
+f[i][x - 1] \times f[x + 1][j] \times C^{x - 1}_{N - 1}\)</li>
+</ul>
+<p>Đáp số là \(f[1][N]\). Độ phức tạp là \(O(N^3)\),
+do với mỗi đoạn ta cần tìm \(x\) thỏa mãn.</p>
+<p>Ta sẽ tối ưu việc lựa chọn này.</p>
+<h3 id="số-lượng-x-thỏa-mãn">Số lượng \(x\) thỏa mãn</h3>
+<p>Xét đoạn \(i..j\). Gọi \(L[i][j]\) là \(k \le j\) lớn
+nhất thỏa mãn \(R[k]\) phủ \(i\), \(R[i][j]\)
+là \(k \ge i\) nhỏ nhất thỏa mãn \(R[k]\) phủ \(j\).
+Hiển nhiên \(L[i][j]\) phủ tất cả các số
+phủ \(i\) đứng trước nó, \(R[i][j]\) phủ tất
+cả các số phủ \(j\) đứng sau nó. Vậy chỉ có
+\(L[i][j]\) hoặc \(R[i][j]\) có thể thỏa mãn.</p>
+<p>Ta có thể tính được 2 mảng này trong
+\(O(N^2)\), việc còn lại là kiểm tra tính
+thỏa mãn của 2 phần tử này.</p>
+<h3 id="kiểm-tra-thỏa-mãn">Kiểm tra thỏa mãn</h3>
+<p>Ta còn điều kiện thỏa mãn: Không có phần
+tử nào cùng đoạn phủ nó. Ta có thể dựng mảng
+tính như sau:</p>
+<ul>
+<li>\(S[i][j] = 1\) nếu \(i\) phủ \(j\) và 0 nếu không.</li>
+<li>Ta có thể for trâu từng số và đánh dấu, tổng
+độ phức tạp sẽ là \(O(N^2 \log N)\) do tính chất
+của bán kính.</li>
+<li>Khi kiểm tra ta cần tính tổng \(S[ x ][i..j]\).
+Ta có thể sử dụng mảng tổng dồn để lấy tổng
+trong \(O(1)\).</li>
+</ul>
+<p>Như vậy ta có thuật toán \(O(N^2 \log N)\).</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+    <footer><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+    integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+    integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+    integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>thầy Phương on Kagami Notes</title>
+    <link>https://blog.nkagami.me/tags/th%E1%BA%A7y-ph%C6%B0%C6%A1ng/</link>
+    <description>Recent content in thầy Phương on Kagami Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 03 May 2017 21:00:00 +0700</lastBuildDate>
+    
+	<atom:link href="https://blog.nkagami.me/tags/th%E1%BA%A7y-ph%C6%B0%C6%A1ng/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2017-05-03 Training</title>
+      <link>https://blog.nkagami.me/posts/training/2017-05-03-training/</link>
+      <pubDate>Wed, 03 May 2017 21:00:00 +0700</pubDate>
+      
+      <guid>https://blog.nkagami.me/posts/training/2017-05-03-training/</guid>
+      <description>Hôm nay bài không phải là khó.
+Tóm tắt đề bài ballmachine Cho một cây \(N\) đỉnh có gốc, mỗi đỉnh chứa tối đa 1 quả bóng. Quả bóng từ cha sẽ rơi xuống nút con nếu có thể. Nếu có nhiều nút con thỏa mãn, chọn nút con có cây con chứa nút có số thứ tự nhỏ nhất. Thực hiện \(Q\) truy vấn 1 trong 2 loại:
+ Lần lượt cho \(k\) quả bóng vào đỉnh gốc.</description>
+    </item>
+    
+    <item>
+      <title>2017/04/19 Training</title>
+      <link>https://blog.nkagami.me/posts/training/2017-04-19-training/</link>
+      <pubDate>Wed, 19 Apr 2017 15:00:00 +0700</pubDate>
+      
+      <guid>https://blog.nkagami.me/posts/training/2017-04-19-training/</guid>
+      <description>Thầy Phương cho 3 bài của FARIO 2017. Bài 1 đã làm rồi, bài 3 là bài approximate nên mình chỉ chữa bài 2.
+Pyramid Cake Tóm tắt đề bài Cho một chiếc hộp có đáy chữ nhật M x N, vị trí (i, j) có độ cao là H[i][j]. Ta dựng một chiếc bánh nhiều tần thỏa mãn:
+ Các tầng là các hình chữ nhật chứa đỉnh (1,1) Tầng trên phải nằm bên trong mặt phẳng của tầng dưới Không ô nào cao hơn vị trí tương ứng của hộp Thể tích bánh là lớn nhất.</description>
+    </item>
+    
+  </channel>
+</rss>

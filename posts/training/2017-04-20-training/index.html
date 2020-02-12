@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <title>2017/04/20 Training // Kagami Notes</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.64.1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Natsu Kagami" />
+    <meta name="description"
+        content="" />
+    <link rel="stylesheet" href="https://blog.nkagami.me/css/main.min.61bb32028587f24ca28522d8d197970c7ef33284e5fffb45a75fcbbb2dbc4dcb.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2017/04/20 Training"/>
+<meta name="twitter:description" content="Lưu ý: Mình đã tóm tắt đề bài ở trên, ai không muốn bị spoil thì đừng kéo xuống lời giải vội.
+Hôm nay có 5 bài của thầy Đông. Do mình không được nghe thầy chữa buổi chiều nên solution là của mình, mặc dù 99% là đúng nhưng không đảm bảo. Thực chất bài không phải là khó quá.
+Tóm tắt đề bài ACM Có N đội, mỗi đội có 11 chỉ số A[i][1."/>
+
+    <meta property="og:title" content="2017/04/20 Training" />
+<meta property="og:description" content="Lưu ý: Mình đã tóm tắt đề bài ở trên, ai không muốn bị spoil thì đừng kéo xuống lời giải vội.
+Hôm nay có 5 bài của thầy Đông. Do mình không được nghe thầy chữa buổi chiều nên solution là của mình, mặc dù 99% là đúng nhưng không đảm bảo. Thực chất bài không phải là khó quá.
+Tóm tắt đề bài ACM Có N đội, mỗi đội có 11 chỉ số A[i][1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.nkagami.me/posts/training/2017-04-20-training/" />
+<meta property="article:published_time" content="2017-04-21T18:36:25+07:00" />
+<meta property="article:modified_time" content="2017-04-21T18:36:25+07:00" />
+
+
+</head>
+
+<body>
+    <header class="app-header">
+        <a href="https://blog.nkagami.me"><img class="app-header-avatar"
+                src="https://avatars2.githubusercontent.com/u/9061737"
+                alt="Natsu Kagami" /></a>
+        <h1>Kagami Notes</h1>
+        <p>osu! player, (programming) language enthusiast. I tryhard everything.
+        </p>
+        <div class="app-header-social">
+            
+            <a target="_blank" href="https://github.com/natsukagami"
+                rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+            
+            <a target="_blank" href="https://mstdn.jp/natsukagami"
+                rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-link">
+  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg></a>
+            
+        </div>
+    </header>
+    <main class="app-container">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">2017/04/20 Training</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Apr 21, 2017
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          13 min read
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="https://blog.nkagami.me/tags/training/">training</a><a class="tag" href="https://blog.nkagami.me/tags/apio/">apio</a><a class="tag" href="https://blog.nkagami.me/tags/vietnamese/">vietnamese</a></div></div>
+    </header>
+    <div class="post-content">
+      <p><strong>Lưu ý</strong>: Mình đã tóm tắt đề bài ở trên, ai không muốn bị spoil thì đừng
+kéo xuống lời giải vội.</p>
+<p>Hôm nay có 5 bài của thầy Đông. Do mình không được nghe thầy chữa buổi chiều nên solution là của mình, mặc dù 99% là đúng nhưng không đảm bảo.
+Thực chất bài không phải là khó quá.</p>
+<h1 id="tóm-tắt-đề-bài">Tóm tắt đề bài</h1>
+<h2 id="acm">ACM</h2>
+<p>Có <code>N</code> đội, mỗi đội có 11 chỉ số <code>A[i][1..11]</code>. Chọn 3 đội sao cho <code>sum[i = 1..11][max(A[x, y, z][i])]</code> (tổng của max chỉ số từng loại của 3 đội) là lớn nhất.</p>
+<h4 id="giới-hạn">Giới hạn</h4>
+<p><code>1 &lt;= N &lt;= 30000</code></p>
+<h2 id="domino-bài-toán-thứ-nhất">DOMINO (Bài toán thứ nhất)</h2>
+<p>Cho một bảng <code>M x N</code> với <code>K</code> ô cấm.
+Điền 0 hoặc 1 vào các ô không bị cấm sao cho
+với ô <code>(i, j)</code>:</p>
+<ul>
+<li>Nếu <code>i + j</code> lẻ, thì ô <code>(i, j)</code> không nhỏ
+hơn các ô không bị cấm xung quanh.</li>
+<li>Nếu <code>i + j</code> chẵn, thì <code>(i, j)</code> không lớn
+hơn các ô không bị cấm xung quanh.</li>
+</ul>
+<h4 id="giới-hạn-1">Giới hạn</h4>
+<p><code>1 &lt;= M, N &lt;= 16</code></p>
+<h2 id="domino-bài-toán-thứ-hai">DOMINO (Bài toán thứ hai)</h2>
+<p>Lần này không có ô cấm. Điều kiện như bài toán thứ nhất.</p>
+<h4 id="giới-hạn-2">Giới hạn</h4>
+<p><code>1 &lt;= N &lt;= 8</code>, <code>1 &lt;= M &lt;= 10^6</code></p>
+<h2 id="games">GAMES</h2>
+<p>Cho một dãy bit <code>N</code> phần tử chưa xác định
+và <code>M</code> điều kiện có dạng
+xor của <code>A[l..r]</code> là 0 hay 1. Tìm vị trí <code>x</code> đầu tiên
+mà điều kiện <code>x</code> mâu thuẫn với các điều kiện trên.</p>
+<h4 id="giới-hạn-3">Giới hạn</h4>
+<p><code>1 &lt;= N &lt;= 10^9</code>, <code>1 &lt;= M &lt;= 10^5</code></p>
+<h2 id="hanoi">HANOI</h2>
+<p>Cho thuật toán giải bài toán tháp Hà Nội:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">HanoiTower</span>(height, From, Temp, To):
+  <span style="color:#66d9ef">if</span> height <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+    <span style="color:#75715e"># Move one from `From` to `To`</span>
+    <span style="color:#66d9ef">return</span>
+  HanoiTower(height <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>, From, To, Temp)
+  HanoiTower(<span style="color:#ae81ff">1</span>, From, Temp, To)
+  HanoiTower(height <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>, Temp, From, To)
+
+<span style="color:#75715e"># Call the function</span>
+HanoiTower(N, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">A</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">B</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">C</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><ul>
+<li>Tìm trạng thái của 3 tháp sau <code>P</code> lần gọi hàm.</li>
+<li>Cho trạng thái của 3 tháp, tính số bước đã gọi hàm
+<code>P</code>, hoặc in <code>-1</code> nếu không tồn tại trạng thái đó khi giải.</li>
+</ul>
+<h4 id="giới-hạn-4">Giới hạn</h4>
+<p><code>1 &lt;= N &lt;= 100</code>. Lưu ý <code>P</code> có thể là số lớn.</p>
+<h2 id="wg">WG</h2>
+<p>Cho một xâu <code>P</code> và một tập xâu <code>S[1..N]</code>. Dựng xâu <code>T</code> như sau:</p>
+<ul>
+<li>Đầu tiên chọn một xâu trong tập <code>S[]</code> và thêm vào <code>T</code></li>
+<li>Sau đó, tìm xâu <code>S[i]</code> bất kì thỏa mãn <code>S[0] == T.back()</code> rồi thêm <code>S[i][1..]</code> vào.</li>
+</ul>
+<p>Hỏi xâu <code>T</code> ngắn nhất chứa dãy con không liên tiếp <code>P</code> là gì?</p>
+<h4 id="giới-hạn-5">Giới hạn</h4>
+<p><code>1 &lt;= |P| &lt;= 250, 1 &lt;= |S[i]| &lt;= 10, 1 &lt;= N &lt;= 1000</code></p>
+<h1 id="lời-giải">Lời giải</h1>
+<h2 id="acm-1">ACM</h2>
+<h3 id="tóm-tắt-đề-bài-1">Tóm tắt đề bài</h3>
+<p>Có <code>N</code> đội, mỗi đội có 11 chỉ số <code>A[i][1..11]</code>. Chọn 3 đội sao cho <code>sum[i = 1..11][max(A[x, y, z][i])]</code> (tổng của max chỉ số từng loại của 3 đội) là lớn nhất.</p>
+<h4 id="giới-hạn-6">Giới hạn</h4>
+<p><code>1 &lt;= N &lt;= 30000</code></p>
+<h3 id="phức-tạp-hóa-bài-toán">&ldquo;Phức tạp hóa&rdquo; bài toán</h3>
+<p>Rất khó để thực hiện việc chọn
+nếu mình sử dụng việc lấy max của
+từng chỉ số. Vì thế ta có thể
+thay đổi bài toán thành <strong>chọn 3 đội
+rồi mỗi chỉ số lấy của một đội</strong>.
+Ta có thể thấy khi có quản lí đơn giản hơn:
+chỉ cần mỗi đội một bitmask lựa chọn chỉ số.</p>
+<p>Hiển nhiên khi đã xét tất cả trường hợp
+thì trường hợp tốt nhất luôn là lấy max.</p>
+<h3 id="ghép-bitmask">Ghép bitmask</h3>
+<p>Giả sử ta đã chọn 3 đội <code>i</code>, <code>j</code> và <code>k</code>.
+Ta sẽ gán lần lượt 3 mask <code>x</code>, <code>y</code>, <code>z</code> cho 3 đội
+này. Các mask sẽ thỏa mãn:</p>
+<ul>
+<li>Đôi một rời rạc (<code>x &amp; y == 0</code>, <code>y &amp; z == 0</code>, <code>z &amp; x == 0</code>)</li>
+<li>Ghép lại thì có đầy đủ (<code>x | y | z == (1 &lt;&lt; 11) - 1</code>)</li>
+<li>Tổng chỉ số tương ứng lớn nhất.</li>
+</ul>
+<p>Ta có thể thấy, thực chất ta không cần quan tâm
+các đội được chọn là đội nào.
+Với mask <code>x</code> được chọn trước, ta chỉ cần tính xem
+trong các đội thì đội nào có tổng tương ứng mask <code>x</code>
+là lớn nhất.
+Việc 2 mask <code>x</code> và <code>y</code> bị chọn trùng đội không quan trọng:
+Ta có thể coi như khi đó có 1 người được chọn với mask <code>0</code>.</p>
+<p>Ta có thể tính trước <code>max[x]</code> với mask <code>x</code> trong <code>O(N * 2^11)</code>.</p>
+<h3 id="chọn-3-phần-tử">Chọn 3 phần tử</h3>
+<p>Trước tiên, ta có thể thấy nếu chỉ chọn 2 phần tử, ta
+có thể for tất cả cặp mask, kiểm tra trong <code>O((2^11)^2)</code>.
+Hiển nhiên do 2 mask đều chỉ có 11 bit nên khi <code>or</code> lại với
+nhau (ghép bộ) thì mask mới vẫn chỉ có 11 bit. Vậy để chọn
+3 phần tử, ta có thể tiếp tục ghép cặp tập đã or với tập <code>max[x]</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> two[<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">11</span>];
+<span style="color:#66d9ef">int</span> three[<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">11</span>];
+
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">11</span>); <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">11</span>); <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>(i <span style="color:#f92672">&amp;</span> j)) <span style="color:#75715e">// không có phần tử trùng
+</span><span style="color:#75715e"></span>      two[i <span style="color:#f92672">|</span> j] <span style="color:#f92672">=</span> max(two[i <span style="color:#f92672">|</span> j], max[i] <span style="color:#f92672">+</span> max[j]);
+  }
+}
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">11</span>); <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">11</span>); <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>(i <span style="color:#f92672">&amp;</span> j)) <span style="color:#75715e">// không có phần tử trùng
+</span><span style="color:#75715e"></span>      three[i <span style="color:#f92672">|</span> j] <span style="color:#f92672">=</span> max(three[i <span style="color:#f92672">|</span> j], two[i] <span style="color:#f92672">+</span> max[j]);
+  }
+}
+</code></pre></div><p>Đáp số chính là <code>three[(1 &lt;&lt; 11) - 1]</code>.
+Độ phức tạp sẽ là <code>O((2 ^ 11) ^ 2)</code>.</p>
+<h2 id="domino-bài-toán-thứ-nhất-1">DOMINO (Bài toán thứ nhất)</h2>
+<h3 id="tóm-tắt-đề-bài-2">Tóm tắt đề bài</h3>
+<p>Cho một bảng <code>M x N</code> với <code>K</code> ô cấm.
+Điền 0 hoặc 1 vào các ô không bị cấm sao cho
+với ô <code>(i, j)</code>:</p>
+<ul>
+<li>Nếu <code>i + j</code> lẻ, thì ô <code>(i, j)</code> không nhỏ
+hơn các ô không bị cấm xung quanh.</li>
+<li>Nếu <code>i + j</code> chẵn, thì <code>(i, j)</code> không lớn
+hơn các ô không bị cấm xung quanh.</li>
+</ul>
+<h4 id="giới-hạn-7">Giới hạn</h4>
+<p><code>1 &lt;= M, N &lt;= 16</code></p>
+<h3 id="quy-hoạch-động">Quy hoạch động</h3>
+<p>Thực chất đây là một bài toán quy hoạch
+động bitmask cơ bản. Nhận xét rằng với mỗi ô
+ta chỉ cần để ý bit ô bên trái và bên trên nó để
+có thể xét điều kiện thỏa mãn.</p>
+<p>Khi quy hoạch động ta đi từng ô theo từng cột,
+trên xuống dưới trái qua phải.
+Gọi <code>f[i][j][mask]</code> là số cách lát kể từ
+ô <code>(i, j)</code> đến cuối cùng, với <code>mask</code> là trạng thái
+<code>N</code> ô cuối cùng đã đến trước <code>(i, j)</code> (tức các ô <code>(i - 1, j)</code>,
+<code>(i - 1, j + 1)</code>, &hellip;, <code>(i, j - 1)</code>). Xem hính dưới:</p>
+<p><img src="/images/20170420_domino.png" alt="Bài Domino"></p>
+<p>Hình thể hiện trạng thái khi đã đến ô <code>(i, j)</code>. Ô màu xanh lá
+là các ô đã lát, ô màu vàng thể hiện mask đang bị quản lí bởi
+bit tương ứng trong mask, ô màu xanh dương thể hiện ô sắp điền,
+ô màu đỏ thể hiện các ô chưa lát.</p>
+<p>Để chuyển trạng thái ta xác định bit của ô <code>(i, j)</code>, nếu nó thỏa mãn
+điều kiện với ô trái và trên thì gọi đến trạng thái tiếp theo (<code>f[i][j + 1][mask mới]</code>
+hoặc <code>f[i + 1][1][mask mới]</code> nếu đó là ô cuối của cột).</p>
+<h4 id="chuyển-mask-như-nào">Chuyển mask như nào?</h4>
+<p>Ta để ý trên hình, bit <code>3</code>, kể từ ô tiếp theo, không cần biết đến nữa.
+Ta có thể xóa bit này và đẩy lên, cho bit của <code>(i, j)</code> vào cuối. Như
+vậy trạng thái của mình luôn có <code>N</code> bit.</p>
+<p>Độ phức tạp là <code>O(N * M * 2^N)</code>.</p>
+<h3 id="cài-đặt-như-nào">Cài đặt như nào?</h3>
+<p>Nên gọi đệ quy có nhớ.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> f[<span style="color:#ae81ff">20</span>][<span style="color:#ae81ff">20</span>][<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">16</span>];
+<span style="color:#66d9ef">bool</span> visited[<span style="color:#ae81ff">20</span>][<span style="color:#ae81ff">20</span>][<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">16</span>];
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">cal</span>(<span style="color:#66d9ef">int</span> i, <span style="color:#66d9ef">int</span> j, <span style="color:#66d9ef">int</span> mask) {
+  <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">&gt;</span> M) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>; <span style="color:#75715e">// trường hợp biên
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (visited[i][j][mask]) <span style="color:#75715e">// đã tính
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> f[i][j][mask];
+  visited[i][j][mask] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> ch <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; ch <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span>; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>ch) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#75715e">/*kiểm tra điều kiện đặt bit ch ở (i, j)*/</span>) {
+      f[i][j][mask] <span style="color:#f92672">+</span><span style="color:#f92672">=</span> cal(i <span style="color:#f92672">+</span> (j <span style="color:#f92672">=</span><span style="color:#f92672">=</span> N), j <span style="color:#f92672">%</span> N <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, (mask <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">&amp;</span> ((<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> N) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> ch);
+    }
+  }
+  <span style="color:#66d9ef">return</span> f[i][j][mask];
+}
+
+<span style="color:#75715e">// x &amp; ((1 &lt;&lt; N) - 1) để lấy x % (1 &lt;&lt; N), N bit cuối của x.
+</span><span style="color:#75715e"></span><span style="color:#75715e">// (x &lt;&lt; 1) == x * 2, đẩy các bit sang phải 1 đơn vị.
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> ans <span style="color:#f92672">=</span> cal(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>);
+</code></pre></div><h2 id="domino-bài-toán-thứ-hai-1">DOMINO (Bài toán thứ hai)</h2>
+<p>Lần này không có ô cấm. Điều kiện như bài toán thứ nhất.</p>
+<h4 id="giới-hạn-8">Giới hạn</h4>
+<p><code>1 &lt;= N &lt;= 8</code>, <code>1 &lt;= M &lt;= 10^6</code></p>
+<h3 id="nhân-ma-trận">Nhân ma trận</h3>
+<p>Lần này không có ô cấm, nên với mỗi hàng ta chỉ cần quan
+tâm mask của nó là gì. Từ đây ta có thể nghĩ đến việc nhân
+ma trận.</p>
+<p>Giới hạn <code>N</code> nhỏ, <code>M</code> lớn cũng mang đến cho ta gợi ý này.</p>
+<h3 id="số-trạng-thái">Số trạng thái</h3>
+<p><code>O((2 ^ N)^3 * log(M))</code> chưa thể thỏa mãn bài toán.
+Ta phân tích thêm một chút: với mỗi cột, ta có thể loại ra
+các trạng thái không thỏa mãn các điều kiện giữa 2 ô liên tiếp
+trên cùng cột.</p>
+<p>Việc thử nghiệm cho thấy với <code>N = 8</code> cũng chỉ có <strong>55</strong> trạng thái,
+có thể nhân ma trận.</p>
+<h3 id="điều-kiện-theo-i--j">Điều kiện theo <code>i + j</code></h3>
+<p>Khi chuyển từ cột <code>2i</code> sang cột <code>2i + 1</code>,
+điều kiện bị thay đổi: thứ tự các ô trong
+cột đang từ <em>lẻ, chẵn, lẻ, &hellip;</em> thành <em>chẵn, lẻ, chẵn,&hellip;</em>
+Điều này làm cho việc chuyển trạng thái không thể
+thực hiện đơn thuần.</p>
+<p>Ta có thể sửa điều này bằng cách thêm 1 bit cho
+trạng thái của cột, chỉ xem đây là trạng thái cho cột lẻ
+hay chẵn.</p>
+<p>Bảng chuyển đổi của mình sẽ chỉ cho phép chuyển từ cột
+lẻ sang chẵn và ngược lại.</p>
+<p>Để đơn giản từ giờ ta gọi số trạng thái là <code>P</code> (<code>P &lt;= 110</code>).</p>
+<h3 id="ma-trận-gốc-và-đáp-số">Ma trận gốc và đáp số</h3>
+<p>Hiển nhiên ta trận gốc là một ma trận <code>1 x P</code>, trong đó
+các ô thể hiện trạng thái cột lẻ sẽ là <code>1</code>. Ta nhân ma trận
+gốc với bảng chuyển đổi đã lũy thừa <code>M - 1</code>, nhận được ma
+trận đáp số <code>1 x P</code>. Đáp án chính là tổng các phần tử trong
+ma trận.</p>
+<p>Độ phức tạp là <code>O(P ^ 3 * log(M))</code>.</p>
+<h2 id="games-1">GAMES</h2>
+<h3 id="tóm-tắt-đề-bài-3">Tóm tắt đề bài</h3>
+<p>Cho một dãy bit <code>N</code> phần tử chưa xác định
+và <code>M</code> điều kiện có dạng
+xor của <code>A[l..r]</code> là 0 hay 1. Tìm vị trí <code>x</code> đầu tiên
+mà điều kiện <code>x</code> mâu thuẫn với các điều kiện trên.</p>
+<h4 id="giới-hạn-9">Giới hạn</h4>
+<p><code>1 &lt;= N &lt;= 10^9</code>, <code>1 &lt;= M &lt;= 10^5</code></p>
+<h3 id="chặt-nhị-phân">Chặt nhị phân</h3>
+<p>Để tìm vị trí đầu tiên mâu thuẫn, ta chặt nhị phân <code>x</code>
+để tìm vị trí xa nhất mà vẫn tồn tại một dãy thỏa mãn
+các điều kiện từ 1 đến <code>x</code>.</p>
+<p>Bài toán trở thành kiểm tra xem có một dãy tồn tại không.</p>
+<h3 id="tính-chất-mảng-dồn">Tính chất mảng dồn</h3>
+<p>Nếu ta xét mảng dồn <code>S[1..N]</code>, thì điều kiện tổng xor
+<code>l..r</code> bằng 0 hay 1 tương đương với <code>S[l - 1]</code> với <code>S[r]</code>
+bằng nhau hay khác nhau.</p>
+<p>Ngoài ra, <code>S[i]</code> có thể nhận được bất kí giá trị nào
+không phụ thuộc vào <code>S[i - 1]</code> nên ta có thể thoải mái
+gán một giá trị bất kì, nhưng chỉ <strong>một</strong> mà thôi.</p>
+<p>Bài toán trở thành, liệu có thể gán dãy <code>S[1..N]</code> thỏa
+mãn các điều kiện các nhau không?</p>
+<h3 id="2-giá-trị-cho-1-biến">2 giá trị cho 1 biến</h3>
+<p>Ta có thể coi mảng <code>S[]</code> như một đồ thị <code>N</code> đỉnh. Gộp
+các đỉnh cùng giá trị, ta thấy việc gán giá trị 0-1 cho
+các đỉnh còn lại giống như tô màu 2 phía.</p>
+<p>Như vậy, ta có thể kiểm tra xem đồ thị có phải 2 phía không.</p>
+<p>Độ phức tạp sẽ là <code>O(M + N)</code>.</p>
+<h3 id="giảm-số-lượng-đỉnh">Giảm số lượng đỉnh</h3>
+<p>Có tận <code>10^9</code> đỉnh, tuy nhiên chỉ có <code>10^5</code> cạnh. Vì thế
+chỉ có tối đa <code>2 * 10^5</code> đỉnh có bậc khác 0, ta chỉ cần
+quan tâm tới các đỉnh này.</p>
+<p>Độ phức tạp chỉ còn <code>O(M)</code>, mang lại thuật toán <code>O(M * log(M))</code>.</p>
+<h2 id="hanoi-1">HANOI</h2>
+<h3 id="tóm-tắt-đề-bài-4">Tóm tắt đề bài</h3>
+<p>Cho thuật toán giải bài toán tháp Hà Nội:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">HanoiTower</span>(height, From, Temp, To):
+  <span style="color:#66d9ef">if</span> height <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+    <span style="color:#75715e"># Move one from `From` to `To`</span>
+    <span style="color:#66d9ef">return</span>
+  HanoiTower(height <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>, From, To, Temp)
+  HanoiTower(<span style="color:#ae81ff">1</span>, From, Temp, To)
+  HanoiTower(height <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>, Temp, From, To)
+
+<span style="color:#75715e"># Call the function</span>
+HanoiTower(N, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">A</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">B</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">C</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><ul>
+<li>Tìm trạng thái của 3 tháp sau <code>P</code> lần gọi hàm.</li>
+<li>Cho trạng thái của 3 tháp, tính số bước đã gọi hàm
+<code>P</code>, hoặc in <code>-1</code> nếu không tồn tại trạng thái đó khi giải.</li>
+</ul>
+<h4 id="giới-hạn-10">Giới hạn</h4>
+<p><code>1 &lt;= N &lt;= 100</code>. Lưu ý <code>P</code> có thể là số lớn.</p>
+<h3 id="các-bước-của-thuật-toán">Các bước của thuật toán</h3>
+<p>Ta có thể tóm tắt thuật toán trong 3 bước:</p>
+<ul>
+<li>Chuyển tháp <code>N - 1</code> từ A sang B dùng C làm đệm</li>
+<li>Chuyển đĩa <code>N</code> từ A sang C</li>
+<li>Chuyển tháp <code>N - 1</code> từ B sang C dùng A làm đệm</li>
+</ul>
+<p>Từ thuật toán, ta có thể xác định mình đang ở bước nào
+bằng cách xét vị trí của đĩa <code>N</code>.</p>
+<ul>
+<li>Nếu <code>N</code> còn ở <code>A</code> thì ta ở bước 1.</li>
+<li>Nếu không ta ở bước 2 hoặc 3.</li>
+</ul>
+<p>Sau khi xác định được vị trí của <code>N</code>, ta có thể bỏ nó đi
+và đệ quy xuống bước dưới, coi như ta đang giải bài toán
+chuyển tháp <code>N - 1</code>.</p>
+<h3 id="tìm-trạng-thái-từ-p">Tìm trạng thái từ <code>P</code></h3>
+<p>Ta biết để chuyển tháp <code>x</code> sẽ mất <code>2^x - 1</code> bước,
+nên khi xét vị trí đĩa <code>N</code> ta có thể xác định xem ta
+đang ở bước mấy của việc chuyển tháp <code>N</code>:</p>
+<ul>
+<li>Nếu <code>P &lt; 2^x</code> thì ta đang ở bước 1.</li>
+<li>Nếu <code>P = 2^x</code> thì ta đang ở bước 2.</li>
+<li>Nếu <code>P &gt; 2^x</code> thì ta đang ở lượt <code>P - 2^x</code> của bước 3.</li>
+</ul>
+<p>Tùy theo bước ta xác định vị trí của đĩa <code>N</code> rồi đệ
+quy xuống bước tương ứng. Độ phức tạp là <code>O(N)</code>.
+Code khá giống bò trên BST.</p>
+<h3 id="tìm-p-từ-trạng-thái">Tìm <code>P</code> từ trạng thái</h3>
+<p>Việc tìm <code>P</code> không khác gì tìm trạng thái. Khi xét tháp
+<code>N</code>, ta kiểm tra xem mình ở bước nào tùy theo vị trí của
+đĩa <code>N</code>:</p>
+<ul>
+<li>Nếu <code>N</code> ở A, thì ta ở bước 1. Đệ quy vào bước 1.</li>
+<li>Nếu <code>N</code> ở C, ta ở bước 2 hoặc 3. Cộng <code>P</code> thêm <code>2^x</code> (cho
+bước 1+2) rồi đệ quy vào 3.</li>
+</ul>
+<p>Độ phức tạp cũng là <code>O(N)</code>.</p>
+<h2 id="wg-1">WG</h2>
+<h3 id="tóm-tắt-đề-bài-5">Tóm tắt đề bài</h3>
+<p>Cho một xâu <code>P</code> và một tập xâu <code>S[1..N]</code>. Dựng xâu <code>T</code> như sau:</p>
+<ul>
+<li>Đầu tiên chọn một xâu trong tập <code>S[]</code> và thêm vào <code>T</code></li>
+<li>Sau đó, tìm xâu <code>S[i]</code> bất kì thỏa mãn <code>S[0] == T.back()</code> rồi thêm <code>S[i][1..]</code> vào.</li>
+</ul>
+<p>Hỏi xâu <code>T</code> ngắn nhất chứa dãy con không liên tiếp <code>P</code> là gì?</p>
+<h4 id="giới-hạn-11">Giới hạn</h4>
+<p><code>1 &lt;= |P| &lt;= 250, 1 &lt;= |S[i]| &lt;= 10, 1 &lt;= N &lt;= 1000</code></p>
+<h3 id="tham-lam-dựng-xâu">Tham lam dựng xâu</h3>
+<p>Khi đã có xâu <code>T</code> có thể lấy ra được dãy con là prefix <code>x</code> của <code>P</code>,
+ta có thể xác định số lượng kí tự ghép thêm khi thêm xâu <code>S[i]</code>
+bằng cách đi từ trái sang phải, tham lam kí tự tiếp theo cần ghép.</p>
+<p>Từ đó ta tính trước được mảng <code>nx[i][j]</code>, khi thêm xâu <code>i</code> với <code>j</code>
+kí tự đã ghép thì trạng thái mới là bao nhiêu. Độ phức tạp sẽ là
+<code>O(N * |P| * |S[i]|)</code>.</p>
+<h3 id="quy-hoạch-động-1">Quy hoạch động</h3>
+<p>Ta có thể quy hoạch động <code>f[i][j]</code> là độ dài xâu <code>T</code> ngắn nhất sao
+cho xâu cuối cùng là <code>i</code> và đã ghép được <code>j</code> kí tự đầu tiên của <code>P</code>.
+Ta chọn thêm một xâu <code>S[k]</code> mới và chuyển trạng thái sang <code>f[k][nx[k][j]]</code>.
+Điều kiện là <code>S[i].back() == S[k][0]</code> và <code>nx[k][j] != j</code>.</p>
+<p>Độ phức tạp sẽ là <code>O(N^2 * |P|)</code>, chưa thỏa mãn bài toán.</p>
+<h3 id="kí-tự-cuối">Kí tự cuối</h3>
+<p>Thực chất ta không cần lưu chiều <code>i</code> là xâu cuối cùng, vì ta chỉ
+cần quan tâm đến kí tự cuối cùng của <code>T</code>, nên thay vào đó ta có
+thể chỉ lưu <code>i</code> là kí tự cuối cùng.</p>
+<p>Độ phức tạp giảm xuống còn <code>O(26 * |P| * N)</code>, thỏa mãn bài toán.</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+    <footer><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+    integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+    integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+    integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+</footer>
+</body>
+
+</html>

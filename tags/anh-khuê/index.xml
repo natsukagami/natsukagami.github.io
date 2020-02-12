@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>anh Khuê on Kagami Notes</title>
+    <link>https://blog.nkagami.me/tags/anh-khu%C3%AA/</link>
+    <description>Recent content in anh Khuê on Kagami Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 28 Apr 2017 20:00:00 +0700</lastBuildDate>
+    
+	<atom:link href="https://blog.nkagami.me/tags/anh-khu%C3%AA/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2017/04/28 Training</title>
+      <link>https://blog.nkagami.me/posts/training/2017-04-28-training/</link>
+      <pubDate>Fri, 28 Apr 2017 20:00:00 +0700</pubDate>
+      
+      <guid>https://blog.nkagami.me/posts/training/2017-04-28-training/</guid>
+      <description>Hôm nay có hai phần: bài thầy Hoàng và bài anh Khuê. Cả 2 đều cần một sự tay to nhất định.
+Tóm tắt đề bài select (thầy Hoàng) Cho dãy \(S\) gồm các kí tự d và x. 2 người lần lượt chơi, mỗi lượt bốc 1 kí tự, kí tự này phải đứng cạnh 1 vị trí đã bị chọn trước đó (trừ nước đầu tiên được chọn thoải mái).</description>
+    </item>
+    
+  </channel>
+</rss>

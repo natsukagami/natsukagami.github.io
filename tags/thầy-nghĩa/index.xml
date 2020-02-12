@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>thầy Nghĩa on Kagami Notes</title>
+    <link>https://blog.nkagami.me/tags/th%E1%BA%A7y-ngh%C4%A9a/</link>
+    <description>Recent content in thầy Nghĩa on Kagami Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 23 Apr 2017 08:11:00 +0700</lastBuildDate>
+    
+	<atom:link href="https://blog.nkagami.me/tags/th%E1%BA%A7y-ngh%C4%A9a/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2017/04/21 Training</title>
+      <link>https://blog.nkagami.me/posts/training/2017-04-21-training/</link>
+      <pubDate>Sun, 23 Apr 2017 08:11:00 +0700</pubDate>
+      
+      <guid>https://blog.nkagami.me/posts/training/2017-04-21-training/</guid>
+      <description>Tóm tắt đề bài SEQUENCE Cho dãy số A[1..N]. Mỗi lần xóa ta sẽ xóa tất cả các số mang một giá trị x nào đó. Hỏi dãy dài nhất có thể tạo ra được mà không tồn tại i &amp;lt; j &amp;lt; k thỏa mãn A[i] == A[k] &amp;amp;&amp;amp; A[i] != A[j]?
+Giới hạn 1 &amp;lt;= N &amp;lt;= 10^5, 1 &amp;lt;= A[i] &amp;lt;= 100
+AVTOGAME Cho xâu S. Mỗi bước ta có thể chọn một đoạn l &amp;lt; r sao cho S[l] == S[r] và xóa đoạn đó khỏi xâu.</description>
+    </item>
+    
+  </channel>
+</rss>

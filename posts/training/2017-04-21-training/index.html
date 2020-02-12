@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <title>2017/04/21 Training // Kagami Notes</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.64.1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Natsu Kagami" />
+    <meta name="description"
+        content="" />
+    <link rel="stylesheet" href="https://blog.nkagami.me/css/main.min.61bb32028587f24ca28522d8d197970c7ef33284e5fffb45a75fcbbb2dbc4dcb.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2017/04/21 Training"/>
+<meta name="twitter:description" content="Tóm tắt đề bài SEQUENCE Cho dãy số A[1..N]. Mỗi lần xóa ta sẽ xóa tất cả các số mang một giá trị x nào đó. Hỏi dãy dài nhất có thể tạo ra được mà không tồn tại i &lt; j &lt; k thỏa mãn A[i] == A[k] &amp;&amp; A[i] != A[j]?
+Giới hạn 1 &lt;= N &lt;= 10^5, 1 &lt;= A[i] &lt;= 100
+AVTOGAME Cho xâu S. Mỗi bước ta có thể chọn một đoạn l &lt; r sao cho S[l] == S[r] và xóa đoạn đó khỏi xâu."/>
+
+    <meta property="og:title" content="2017/04/21 Training" />
+<meta property="og:description" content="Tóm tắt đề bài SEQUENCE Cho dãy số A[1..N]. Mỗi lần xóa ta sẽ xóa tất cả các số mang một giá trị x nào đó. Hỏi dãy dài nhất có thể tạo ra được mà không tồn tại i &lt; j &lt; k thỏa mãn A[i] == A[k] &amp;&amp; A[i] != A[j]?
+Giới hạn 1 &lt;= N &lt;= 10^5, 1 &lt;= A[i] &lt;= 100
+AVTOGAME Cho xâu S. Mỗi bước ta có thể chọn một đoạn l &lt; r sao cho S[l] == S[r] và xóa đoạn đó khỏi xâu." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.nkagami.me/posts/training/2017-04-21-training/" />
+<meta property="article:published_time" content="2017-04-23T08:11:00+07:00" />
+<meta property="article:modified_time" content="2017-04-23T08:11:00+07:00" />
+
+
+</head>
+
+<body>
+    <header class="app-header">
+        <a href="https://blog.nkagami.me"><img class="app-header-avatar"
+                src="https://avatars2.githubusercontent.com/u/9061737"
+                alt="Natsu Kagami" /></a>
+        <h1>Kagami Notes</h1>
+        <p>osu! player, (programming) language enthusiast. I tryhard everything.
+        </p>
+        <div class="app-header-social">
+            
+            <a target="_blank" href="https://github.com/natsukagami"
+                rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+            
+            <a target="_blank" href="https://mstdn.jp/natsukagami"
+                rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-link">
+  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg></a>
+            
+        </div>
+    </header>
+    <main class="app-container">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">2017/04/21 Training</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Apr 23, 2017
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          9 min read
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="https://blog.nkagami.me/tags/training/">training</a><a class="tag" href="https://blog.nkagami.me/tags/apio/">apio</a><a class="tag" href="https://blog.nkagami.me/tags/vietnamese/">vietnamese</a></div></div>
+    </header>
+    <div class="post-content">
+      <h1 id="tóm-tắt-đề-bài">Tóm tắt đề bài</h1>
+<h2 id="sequence">SEQUENCE</h2>
+<p>Cho dãy số <code>A[1..N]</code>. Mỗi lần xóa ta sẽ xóa
+tất cả các số mang một giá trị <code>x</code> nào đó.
+Hỏi dãy dài nhất có thể tạo ra được mà không
+tồn tại <code>i &lt; j &lt; k</code> thỏa mãn
+<code>A[i] == A[k] &amp;&amp; A[i] != A[j]</code>?</p>
+<h4 id="giới-hạn">Giới hạn</h4>
+<p><code>1 &lt;= N &lt;= 10^5</code>, <code>1 &lt;= A[i] &lt;= 100</code></p>
+<h2 id="avtogame">AVTOGAME</h2>
+<p>Cho xâu <code>S</code>. Mỗi bước ta có thể chọn một đoạn
+<code>l &lt; r</code> sao cho <code>S[l] == S[r]</code> và xóa đoạn đó
+khỏi xâu. Hỏi xâu ngắn nhất và dài nhất có thể
+tạo được (mà không thể xóa được tiếp) là bao
+nhiêu?</p>
+<h4 id="giới-hạn-1">Giới hạn</h4>
+<p>10 test, <code>1 &lt;= |S| &lt;= 100</code>, <code>'a' &lt;= S[i] &lt;= 'p'</code></p>
+<h2 id="diskgame">DISKGAME</h2>
+<p>Cho một đĩa gồm <code>N</code> tầng xoay, mỗi tầng có <code>K</code>
+nấc xoay như hình dưới.</p>
+<p><img src="/images/diskgame_exp.png" alt="Một đĩa có 3 tầng, mỗi tầng có 8 nấc"></p>
+<p>Mỗi bước ta được xoay 1 tầng sang trái hoặc phải
+1 nấc. Hỏi số bước nhỏ nhất để tạo ra 1 cột có
+các số bằng nhau là bao nhiêu?</p>
+<p><img src="/images/diskgame_sol.png" alt="Một cách giải hình trên"></p>
+<h4 id="giới-hạn-2">Giới hạn</h4>
+<p><code>1 &lt;= N, K &lt;= 2000</code></p>
+<h1 id="lời-giải">Lời giải</h1>
+<h2 id="sequence-1">SEQUENCE</h2>
+<h3 id="điều-kiện-của-dãy-số">Điều kiện của dãy số</h3>
+<p>Ta có thể thấy, 2 số <code>x</code> và <code>y</code> không được cùng
+tồn tại trong đáp án nếu số <code>x</code> bị &ldquo;kẹp giữa&rdquo; số
+<code>y</code> hoặc ngược lại. Ta cũng có thể dễ dàng
+chứng minh một dãy không tồn tại cặp <code>x, y</code>
+nào như vậy là một dãy thỏa mãn.</p>
+<h4 id="ví-dụ">Ví dụ</h4>
+<p><code>1, 2, 1, 3, 1, 4</code> không thỏa mãn vì số <code>2</code> bị
+kẹp giữa 2 lần số <code>1</code>.</p>
+<p>Bài toán của ta trở thành đi tìm một dãy không
+có 2 số nào &ldquo;kẹp&rdquo; nhau.</p>
+<h3 id="đầu-và-đuôi">Đầu và đuôi</h3>
+<p>Xét ví dụ ở trên, ta có thể thấy <code>2</code> bị kẹp
+giữa bởi 2 số <code>1</code> ở vị trí 1 và 3. Ta cũng có
+thể nói <code>2</code> bị kẹp giữa bởi 2 số <code>1</code> ở 1 và 5.</p>
+<p>Giả sử <code>x</code> kẹp giữa <code>y</code> ở 2 vị trí <code>a &lt;= b</code>,
+ta cũng có thể nói <code>x</code> kẹp ở 2 vị trí <code>first[x] &lt;= a</code>
+và <code>b &lt;= last[x]</code> (2 lần xuất hiện đầu và cuối
+của <code>x</code>). Như vậy điều kiện để <code>x</code> kẹp giữa <code>y</code>
+chỉ là tồn tại <code>y</code> nằm giữa 2 vị trí xa nhau nhất
+chứa <code>x</code>.</p>
+<p>Đi xa hơn, ta có thể thấy xét trên trục 1 chiều,
+tồn tại cặp <code>x</code>, <code>y</code> kẹp nhau khi và chỉ khi 2 đoạn
+<code>(first[x], last[x])</code> và <code>(first[y], last[y])</code>
+giao nhau.</p>
+<h3 id="quy-hoạch-động">Quy hoạch động</h3>
+<p>Như vậy, ta chỉ cần tìm 1 tập số sao cho tập
+<code>(first[x], last[x])</code> của các số không giao nhau.
+Đây là bài toán quy hoạch động cơ bản, có thể thực
+hiện quy hoạch động trong
+<code>O(N + M)</code> với <code>M</code> là số phần tử khác nhau.</p>
+<p>Gọi <code>f[i]</code> là số đoạn thẳng nhiều nhất ta có
+thể chọn trong khoảng <code>1..i</code>. Từ đây, ta có 2
+lựa chọn:</p>
+<ul>
+<li>Thêm khoảng không, cập nhật <code>f[i]</code> cho <code>f[i + 1]</code>.</li>
+<li>Thêm một đoạn <code>(i + 1..j)</code>. Ta duyệt tất cả các
+đoạn thẳng có đầu mút trái là <code>i + 1</code> và cập nhật
+<code>f[i] + 1</code> cho <code>f[j]</code>.</li>
+</ul>
+<p>Đáp số là <code>f[N]</code>.</p>
+<h2 id="avtogame-1">AVTOGAME</h2>
+<h3 id="có-thể-xóa-1-đoạn">Có thể xóa 1 đoạn?</h3>
+<p>Hiển nhiên các đoạn ta xóa sẽ không giao nhau,
+nên chỉ có 2 khả năng xảy ra để xóa đoạn <code>[a &lt; b]</code>:</p>
+<ul>
+<li>Nếu <code>S[a] == S[b]</code> ta xóa cả đoạn trong 1 bước.</li>
+<li>Chọn 1 vị trí <code>a &lt; k &lt; b - 1</code>, xóa đoạn <code>a..k</code>
+rồi xóa đoạn <code>k+1..b</code>.</li>
+</ul>
+<p>Dựa vào nhận xét này, ta dễ dàng dựng nên mảng
+<code>canErase[l][r]</code> (có thể xóa đoạn <code>l..r</code> không?)
+trong <code>O(N^3)</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> l <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; l <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> N; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>l) {
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> r <span style="color:#f92672">=</span> l <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; r <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> N; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>r) {
+    <span style="color:#66d9ef">if</span> (S[l] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> S[r]) canErase[l][r] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> l <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; k <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span> r; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>k) {
+      canErase[l][r] <span style="color:#f92672">=</span> canErase[l][r] <span style="color:#f92672">|</span><span style="color:#f92672">|</span> (canErase[l][k] <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> canErase[k <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>][r]);
+    }
+  }
+}
+</code></pre></div><h3 id="chi-phí-xóa-hết-nhỏ-nhất">Chi phí xóa hết nhỏ nhất</h3>
+<p>Thay vì giải bài toán xâu ngắn nhất còn lại,
+ta sẽ thay đổi bài toán bằng cách cho phép một
+kiểu xóa nữa: xóa <strong>1 kí tự</strong> với chi phí 1.
+Sau đó ta đi tìm chi phí nhỏ nhất để xóa
+cả dãy. Ta có thể thấy tính chất các bước
+xóa rời nhau không thay đổi.</p>
+<p>Hiển nhiên chi phí sẽ bằng đáp án, vì ta không
+bao giờ xóa đơn lẻ 2 kí tự giống nhau.</p>
+<p>Để giải được bài toán này, ta cải tiến thuật
+toán kiểm tra tính xóa được phía trên, thành
+chi phí nhỏ nhất để xóa đoạn <code>l..r</code>. Hiển
+nhiên <code>cost[i][i] = 1</code> vì chỉ có 1 kí tự. Với
+đoạn <code>l..r</code> ta có 2 cách xóa:</p>
+<ul>
+<li>Nếu <code>S[l] == S[r]</code> ta xóa cả đoạn với chi
+phí 0.</li>
+<li>Chọn <code>l &lt;= k &lt; r</code> rồi xóa 2 đoạn <code>l..k</code> và
+<code>k + 1..r</code> với tổng chi phí
+<code>cost[l][k] + cost[k + 1][r]</code>.</li>
+</ul>
+<p>Đáp số là <code>cost[1][N]</code>, độ phức tạp là <code>O(N^3)</code>.</p>
+<h3 id="các-kí-tự-còn-lại">Các kí tự còn lại</h3>
+<p>Để giải được bài toán dãy còn lại dài nhất,
+ta cần phải thấy tính chất của dãy còn lại.
+Tính chất khá đơn giản: không tồn tại 2 kí
+tự giống nhau trong xâu. Như vậy, ta cần
+nhặt ra 1 tập kí tự khác nhau sao cho các phần
+ở giữa có thể xóa được.</p>
+<p>Điều kiện chỉ có 16 kí tự khác nhau cho ta
+một gợi ý: sử dụng bitmask để quản lí các
+kí tự đã lấy.</p>
+<h3 id="quy-hoạch-động-1">Quy hoạch động</h3>
+<p>Gọi <code>bool f[i][mask]</code> là tính khả thi của
+việc chọn ra tập kí tự thỏa mãn <code>mask</code> trong đoạn
+<code>1..i</code> và xóa hết các kí tự còn lại, trong đó
+kí tự cuối ta chọn chính là <code>S[i]</code>. Ta có 2 lựa
+chọn:</p>
+<ul>
+<li>Chọn cả kí tự <code>S[i - 1]</code>, với điều kiện
+<code>S[i - 1] != S[i]</code> và <code>mask</code> có <code>S[i - 1]</code>. Ta
+lùi về trạng thái <code>f[i - 1][mask ^ S[i]]</code>.</li>
+<li>Chọn một vị trí <code>j &lt; i</code> và lấy kí tự này là
+kí tự đứng ngay trước <code>S[i]</code>. Điều kiện là
+<code>S[j] != S[i]</code>, <code>mask</code> có <code>S[j]</code> và <code>j + 1..i - 1</code>
+xóa được. Ta lùi về trạng thái <code>f[j][mask ^ S[i]]</code>.</li>
+</ul>
+<p>Độ phức tạp sẽ là <code>O(N^2 * 2^16)</code>, chưa thể
+thỏa mãn bài toán. Ta cần một chút cải tiến để
+xóa bớt <code>N</code>.</p>
+<h3 id="nhảy-chọn-và-xóa">Nhảy, chọn và xóa</h3>
+<p>Ta sẽ chỉnh sửa hàm quy hoạch động một chút: xóa
+bỏ điều kiện <code>S[i]</code> là kí tự cuối cùng chọn.
+Thay vào đó, ta &ldquo;nhảy&rdquo; từng bước, chọn hoặc sử
+dụng duy nhất một phép xóa. Cụ thể, từ trạng thái
+<code>f[i][mask]</code>, ta có:</p>
+<ul>
+<li><code>S[i]</code> là kí tự được chọn. Điều kiện là <code>mask</code>
+chứa <code>S[i]</code>. Lùi về <code>f[i - 1][mask ^ S[i]]</code>.</li>
+<li><code>S[i]</code> là kí tự cuối cùng bị xóa. Vậy ta cần
+một vị trí <code>j &lt; i</code> sao cho <code>S[i] == S[j]</code>, và lùi
+về <code>f[j - 1][mask]</code>.</li>
+</ul>
+<p>Thoáng qua, vẫn là <code>O(N^2 * 2^16)</code>. Làm sao để
+cải tiến? Ta thấy, trong trường hợp 2, điều kiện
+duy nhất là <code>S[j] == S[i]</code>, mà chỉ có 16 loại kí tự,
+vậy ta hoàn toàn có thể lưu lại tất cả các trường
+hợp <code>f[j - 1][mask]</code> với mỗi lọai <code>S[j]</code> khác nhau.</p>
+<p>Gọi <code>g[i][mask]</code> là tổng kết tất cả các trường hợp
+<code>f[j][mask]</code> thỏa mãn <code>S[j + 1] == i</code>. Ta có thể
+vừa đi vừa cập nhật <code>g[S[i + 1]][mask]</code>, đồng thời
+trong trường hợp 2 ta chỉ cần lấy giá trị của
+<code>g[S[i]][mask]</code> trong <code>O(1)</code>.</p>
+<p>Độ phức tạp giảm xuống còn <code>O(N * 2^16)</code>,
+thỏa mãn bài toán.</p>
+<h2 id="diskgame-1">DISKGAME</h2>
+<h3 id="chi-phí-xoay-của-1-đĩa">Chi phí xoay của 1 đĩa</h3>
+<p>Hãy phân tích chi phí xoay của 1 đĩa để có
+số <code>n</code> ở vị trí <code>p</code>. Hiển nhiên chi phí là
+<code>min(|x - p|)</code> với <code>x</code> là các vị trí xuất hiện
+của <code>n</code> trong đĩa.</p>
+<p>Thực chất ta chỉ cần xét đến 2 vị trí gần nhất
+bên trái và bên phải của <code>p</code>. Ta tạm gọi là
+<code>x</code> và <code>y</code> (để đơn giản ta coi <code>x &lt;= p &lt;= y</code>).
+Chi phí sẽ là <code>min(p - x, y - p)</code>. Dễ dàng nhận
+thấy <code>p - x</code> là hàm tăng 1 đơn vị, <code>y - p</code> là
+hàm giảm 1 đơn vị với <code>x &lt;= p &lt;= y</code>. min của
+2 hàm này sẽ là &ldquo;núi&rdquo; góc 45 độ có chóp ở trung
+điểm của <code>x</code> và <code>y</code> (hoặc có chóp ngang nếu trung
+điểm không nguyên).</p>
+<p>Nếu ta xét tất cả các cặp vị trí liên tiếp của
+số, thì chi phí sẽ là nhiều &ldquo;ngọn núi&rdquo; như vậy.</p>
+<p>Ta có thể thấy chi phí là một hàm như hình dưới,
+cho dãy <code>1 2 3 1 2 3 5 1 5</code> với <code>n = 1</code>. Lưu ý
+đoạn <code>8, 9, 1</code> cũng là 1 &ldquo;ngọn núi&rdquo;, vì thực chất
+đĩa là hình tròn.</p>
+<p><img src="/images/diskgame_func.png" alt="Hàm chi phí"></p>
+<p>Ta có thể cắt hàm thành các đường chéo tăng và
+giảm 45 độ để đơn giản hóa việc tính toán chi
+phí cho tất cả các đĩa.</p>
+<p>Tổng cộng 1 đĩa sẽ bị cắt thành <code>2K</code> đường chéo.</p>
+<h3 id="tính-tổng-chi-phí-cho-mọi-đĩa">Tính tổng chi phí cho mọi đĩa</h3>
+<p>Với mỗi vị trí <code>p</code> và một số <code>n</code>, ta cần tính
+tổng chi phí xoay với mọi đĩa trong <code>O(1)</code>.
+Biết chúng là tổng các đường chéo, làm sao
+để tính nhanh?</p>
+<p>Ta sẽ vận dụng tính chất chúng đều có dạng <code>x + b</code>
+hoặc <code>-x + b</code> và sử dụng đường quét để tính
+với mỗi <code>n</code>.</p>
+<p>Ta thấy, khi có <code>k</code> đoạn <code>x + b[i]</code>, chi phí là
+<code>kx + sum(b[i])</code> với bước tăng là <code>k</code>.
+Vì vậy thực chất với mỗi vị
+trí ta chỉ cần biết số đoạn tăng và tổng phần
+hằng số của chúng. Ta hoàn toàn có thể làm
+điều này khi quét bằng cách xét 2 đầu mút đầu
+(thêm đoạn) và cuối (xóa đoạn) sau đó xử lí
+từ trái sang phải.</p>
+<p>Điều tương tự cũng đúng với hàm giảm.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> b[N <span style="color:#f92672">*</span> K <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>]; <span style="color:#75715e">// tất cả b[i] của các đường tăng
+</span><span style="color:#75715e"></span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> add[K <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>], remove[K <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>]; <span style="color:#75715e">// các mốc thêm xóa
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addSegment</span>(<span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> r, <span style="color:#66d9ef">int</span> id) {
+  <span style="color:#75715e">// thêm đoạn [l..r] = x + b[id]
+</span><span style="color:#75715e"></span>  add[l].push_back(id);
+  remove[r <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>].push_back(id);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">scan</span>() {
+  <span style="color:#66d9ef">int</span> value <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, cnt <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> K; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span> p: add[i]) {
+      value <span style="color:#f92672">+</span><span style="color:#f92672">=</span> b[p] <span style="color:#f92672">+</span> i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#75715e">// giá trị của i trước đó
+</span><span style="color:#75715e"></span>      <span style="color:#f92672">+</span><span style="color:#f92672">+</span>cnt;
+    }
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span> p: remove[i]) {
+      value <span style="color:#f92672">-</span><span style="color:#f92672">=</span> b[p] <span style="color:#f92672">+</span> i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
+      <span style="color:#f92672">-</span><span style="color:#f92672">-</span>cnt;
+    }
+    value <span style="color:#f92672">+</span><span style="color:#f92672">=</span> cnt;
+    <span style="color:#75715e">// value là tổng ở vị trí i
+</span><span style="color:#75715e"></span>  }
+}
+</code></pre></div><p>Ta có thể thấy độ phức tạp với mỗi <code>n</code> là <code>O(K + số đoạn của n)</code>.
+Vì thế tổng độ phức tạp là <code>O(K^2 + NK)</code>, do có <code>2NK</code> đoạn tất cả.</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+    <footer><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+    integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+    integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+    integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+</footer>
+</body>
+
+</html>

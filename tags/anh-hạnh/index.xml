@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>anh Hạnh on Kagami Notes</title>
+    <link>https://blog.nkagami.me/tags/anh-h%E1%BA%A1nh/</link>
+    <description>Recent content in anh Hạnh on Kagami Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 Apr 2017 17:20:00 +0700</lastBuildDate>
+    
+	<atom:link href="https://blog.nkagami.me/tags/anh-h%E1%BA%A1nh/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2017/04/24 Training</title>
+      <link>https://blog.nkagami.me/posts/training/2017-04-24-training/</link>
+      <pubDate>Mon, 24 Apr 2017 17:20:00 +0700</pubDate>
+      
+      <guid>https://blog.nkagami.me/posts/training/2017-04-24-training/</guid>
+      <description>Hôm nay bài khá lằng nhằng, mình sẽ cố gắng chữa thật nhiều bước.
+Tóm tắt đề bài Heap on Trees, NAIPC 2017, bài D Cho một cây \(N\) đỉnh, mỗi nút có một số \(A_i\). Tìm tập con các nút lớn nhất thỏa mãn nếu \(i\) là tổ tiên của \(j\) và \(i\), \(j\) đều được chọn thì \(A_i &amp;gt; A_j\).
+Giới hạn \(1 \le N \le 10^5\), \(1 \le A_i \le 10^9\)</description>
+    </item>
+    
+    <item>
+      <title>2017/04/18 Training</title>
+      <link>https://blog.nkagami.me/posts/training/2017-04-18-training/</link>
+      <pubDate>Tue, 18 Apr 2017 14:22:18 +0700</pubDate>
+      
+      <guid>https://blog.nkagami.me/posts/training/2017-04-18-training/</guid>
+      <description>Hôm nay Hạnh dạy. Nói chung như mọi lần Hạnh dạy, bài thì hay nhưng có vẻ như Hạnh vẫn tốn rất nhiều thời gian giảng bài. Mình thực sự không muốn nghe cho lắm vì vẫn muốn nghĩ bài một mình, sau đó có reference của Hạnh để improve solution thì vẫn thích hơn.
+Stretching Streamers (NAIPC 2017, bài C) Tóm tắt đề bài Có N điểm viết trên một đường tròn, điểm thứ i chứa số nguyên dương A[i].</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>editorial on Kagami Notes</title>
+    <link>https://blog.nkagami.me/tags/editorial/</link>
+    <description>Recent content in editorial on Kagami Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Jul 2017 17:00:00 +0700</lastBuildDate>
+    
+	<atom:link href="https://blog.nkagami.me/tags/editorial/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HSGSO 2017 Editorial</title>
+      <link>https://blog.nkagami.me/posts/hsgso-2017-editorial/</link>
+      <pubDate>Sat, 01 Jul 2017 17:00:00 +0700</pubDate>
+      
+      <guid>https://blog.nkagami.me/posts/hsgso-2017-editorial/</guid>
+      <description>Đây chắc là một trong những bài viết được chờ đợi nhất sau kì thi HSGSO 2017 vừa rồi. Ngoài chữa bài, mình sẽ đưa ra một số thống kê về đề và lượng người giải được!
+Phần chữa bài được thực hiện bởi mình và bạn Nguyễn Đinh Quang Minh. Nếu có câu hỏi gì bạn có thể hỏi mình hoặc Minh qua facebook.
+Đề bài Các bạn có thể tải về đề bài tại đây.</description>
+    </item>
+    
+    <item>
+      <title>HSGSO 2016 Editorial</title>
+      <link>https://blog.nkagami.me/posts/hsgso-2016-editorial/</link>
+      <pubDate>Mon, 01 May 2017 17:00:00 +0700</pubDate>
+      
+      <guid>https://blog.nkagami.me/posts/hsgso-2016-editorial/</guid>
+      <description>Trong năm vừa rồi có kha khá nhiều bạn hỏi mình cũng như các bạn khác trong BTC HSGSO 2016 (môn Tin) về solution của contest. Vì hồi đó không có thời gian (thực ra là lười) nên bọn mình chưa có dịp chữa bài. Lần này mình quyết định làm cho chót.
+Đề bài Các bạn có thể tải đề bài gốc tại đây.
+Lời giải Mục lục  color domino gift letter-o paren polylines socket zigzag  color Author: Nguyễn Đinh Quang Minh</description>
+    </item>
+    
+  </channel>
+</rss>

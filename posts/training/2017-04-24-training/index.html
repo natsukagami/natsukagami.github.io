@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <title>2017/04/24 Training // Kagami Notes</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.64.1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Natsu Kagami" />
+    <meta name="description"
+        content="" />
+    <link rel="stylesheet" href="https://blog.nkagami.me/css/main.min.61bb32028587f24ca28522d8d197970c7ef33284e5fffb45a75fcbbb2dbc4dcb.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2017/04/24 Training"/>
+<meta name="twitter:description" content="Hôm nay bài khá lằng nhằng, mình sẽ cố gắng chữa thật nhiều bước.
+Tóm tắt đề bài Heap on Trees, NAIPC 2017, bài D Cho một cây \(N\) đỉnh, mỗi nút có một số \(A_i\). Tìm tập con các nút lớn nhất thỏa mãn nếu \(i\) là tổ tiên của \(j\) và \(i\), \(j\) đều được chọn thì \(A_i &gt; A_j\).
+Giới hạn \(1 \le N \le 10^5\), \(1 \le A_i \le 10^9\)"/>
+
+    <meta property="og:title" content="2017/04/24 Training" />
+<meta property="og:description" content="Hôm nay bài khá lằng nhằng, mình sẽ cố gắng chữa thật nhiều bước.
+Tóm tắt đề bài Heap on Trees, NAIPC 2017, bài D Cho một cây \(N\) đỉnh, mỗi nút có một số \(A_i\). Tìm tập con các nút lớn nhất thỏa mãn nếu \(i\) là tổ tiên của \(j\) và \(i\), \(j\) đều được chọn thì \(A_i &gt; A_j\).
+Giới hạn \(1 \le N \le 10^5\), \(1 \le A_i \le 10^9\)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.nkagami.me/posts/training/2017-04-24-training/" />
+<meta property="article:published_time" content="2017-04-24T17:20:00+07:00" />
+<meta property="article:modified_time" content="2017-04-24T17:20:00+07:00" />
+
+
+</head>
+
+<body>
+    <header class="app-header">
+        <a href="https://blog.nkagami.me"><img class="app-header-avatar"
+                src="https://avatars2.githubusercontent.com/u/9061737"
+                alt="Natsu Kagami" /></a>
+        <h1>Kagami Notes</h1>
+        <p>osu! player, (programming) language enthusiast. I tryhard everything.
+        </p>
+        <div class="app-header-social">
+            
+            <a target="_blank" href="https://github.com/natsukagami"
+                rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+            
+            <a target="_blank" href="https://mstdn.jp/natsukagami"
+                rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-link">
+  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg></a>
+            
+        </div>
+    </header>
+    <main class="app-container">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">2017/04/24 Training</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Apr 24, 2017
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          12 min read
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="https://blog.nkagami.me/tags/training/">training</a><a class="tag" href="https://blog.nkagami.me/tags/apio/">apio</a><a class="tag" href="https://blog.nkagami.me/tags/vietnamese/">vietnamese</a></div></div>
+    </header>
+    <div class="post-content">
+      <p>Hôm nay bài khá lằng nhằng, mình sẽ cố gắng chữa thật nhiều bước.</p>
+<h1 id="tóm-tắt-đề-bài">Tóm tắt đề bài</h1>
+<h2 id="heap-on-trees-naipc-2017-bài-dhttpsnaipc17kattiscomproblemsheapstrees"><a href="https://naipc17.kattis.com/problems/heapstrees">Heap on Trees, NAIPC 2017, bài D</a></h2>
+<p>Cho một cây \(N\) đỉnh, mỗi nút có một số \(A_i\).
+Tìm tập con các nút lớn nhất thỏa mãn nếu \(i\) là tổ tiên của \(j\) và \(i\), \(j\) đều được chọn thì \(A_i &gt; A_j\).</p>
+<h4 id="giới-hạn">Giới hạn</h4>
+<p>\(1 \le N \le 10^5\), \(1 \le A_i \le 10^9\)</p>
+<h2 id="pieces-of-parentheses-naipc-2017-bài-ahttpsnaipc17kattiscomproblemspiecesofparentheses"><a href="https://naipc17.kattis.com/problems/piecesofparentheses">Pieces of Parentheses, NAIPC 2017, bài A</a></h2>
+<p>Cho \(N\) dãy ngoặc (không nhất thiết đúng), chọn
+ra một tập con các dãy ngoặc sao cho có thể ghép
+lại thành dãy ngoặc đúng dài nhất.</p>
+<h4 id="giới-hạn-1">Giới hạn</h4>
+<p>\(1 \le N \le 300\), \(1 \le |S_i| \le 300\)</p>
+<h2 id="problem-buyer-ccpc-2016-2017-finals-bài-ehttpcodeforcescomgym101206attachmentsdownload5010ccpc-20162017-finals-enpdf"><a href="http://codeforces.com/gym/101206/attachments/download/5010/ccpc-20162017-finals-en.pdf">Problem Buyer, CCPC 2016-2017 Finals, bài E</a></h2>
+<p>Trên trục tọa độ cho \(N\) điểm \(C_i\) và \(M\) đoạn
+thẳng \([A_i, B_i]\). Tìm \(K\) nhỏ nhất sao cho với
+mọi tập con độ lớn \(K\) của tập đoạn thẳng ta luôn
+tìm được cặp ghép hoàn hảo của tập điểm với đoạn
+thỏa mãn:</p>
+<ul>
+<li>Mỗi điểm ghép với đúng 1 đoạn thẳng</li>
+<li>Mỗi đoạn thẳng ghép với tối đa 1 điểm</li>
+<li>Nếu \(C_i\) ghép với \([A_j, B_j]\) thì
+\(A_j \le C_i \le B_j\).</li>
+</ul>
+<h4 id="giới-hạn-2">Giới hạn</h4>
+<p>\(1 \le N, M \le 10^5\),
+\(1 \le A_i \le B_i \le 10^9\),
+\(1 \le C_i \le 10^9\).</p>
+<h1 id="lời-giải">Lời giải</h1>
+<h2 id="heap-on-trees">Heap on Trees</h2>
+<h3 id="xác-định-phương-hướng">Xác định phương hướng</h3>
+<p>Ta bắt đầu với một hàm quy hoạch động &ldquo;trâu&rdquo;
+chưa cần thiết thỏa mãn giới hạn.
+Gọi \(F[v][j]\) là số đỉnh lớn nhất ta có thể
+chọn ở cây con gốc \(v\) với giới hạn các số là
+\(j\).
+Dễ dàng nhận thấy để tính \(F[v][j]\), ta lần
+lượt tính tổng \(F[u][j]\) với \(u\) là con của \(v\).
+Ngoài ra nếu \(A[v] \le j\) ta có một cách chọn
+là \(A[v]\) cùng với tổng các \(F[u][A[v] - 1]\).
+\[F[v][j] = \max(\sum\limits_{u \in child[v]}
+{F[u][j]}, (A[v] \le j) \times
+(1 + \sum\limits_
+{u \in child[v]}{F[u][A[v] - 1]}))\]
+Đáp số chính là \(F[root][inf]\).</p>
+<p>Sau khi nén số, ta có hàm quy hoạch động \(O(n^2)\).
+Ta sẽ tập trung vào cải tiến hàm quy hoạch động
+này.</p>
+<h3 id="số-giá-trị-khác-nhau">Số giá trị khác nhau</h3>
+<p>Xét một lá \(v\). Hiển nhiên \(F[v][j]\) chỉ có 2
+giá trị khác nhau với mọi \(j\): <strong>0</strong> khi \(A[v]
+&lt; j\) và <strong>1</strong> nếu ngược lại.</p>
+<p>Khi cộng 2 hàm có 2 miền giá trị, ta sẽ
+được một hàm có 3 miền giá trị. Tổng quát hơn,
+khi cộng 2 hàm có \(x\) và \(y\) miền giá trị,
+ta được một hàm có \(x + y - 1\) miền giá trị.</p>
+<p>Nếu ta coi \(F\) mỗi lá là một hàm có 2 miền giá trị,
+thì một cây con gốc \(v\) sẽ có \(F\) là một hàm có
+\(size[v] + 1\) miền giá trị, với \(size[v]\) là kích
+cỡ của cây con gốc \(v\).</p>
+<p>Ngoài ra, xét các vị trí thay đổi giá trị của
+các hàm. Ta nhận thấy khi cộng 2 hàm có \(x\) và \(y\)
+miền giá trị, ta nhận được một hàm có \(x + y - 1\)
+miền giá trị, trong đó các mốc chính là các mốc
+thay đổi giá trị của 1 trong 2 hàm số hạng.
+Như vậy, trong hàm \(F[v]\), các điểm mốc chính là
+các giá trị \(A[u]\) với \(u\) là nút trong cây con
+gốc \(v\).</p>
+<p>Như vậy, từ một đỉnh \(v\), ta có thể dựng hàm \(F[u]\)
+với \(u = parent[v]\) bằng cách &ldquo;gộp&rdquo; giá trị hàm
+\(F[v]\) vào \(F[u]\).</p>
+<h3 id="gộp-hàm">Gộp hàm</h3>
+<p>Giả sử ta có \(F[v]\) với \(k\) mốc giá trị \(X_1, X_2,
+&hellip;, X_k\), ta phải gộp vào hàm \(F[u]\) (\(u\) là
+cha của \(v\)). Theo đúng công thức quy hoạch động,
+giá trị của \(F[v][X_i]\) sẽ được cộng vào các
+\(F[u][p]\) thỏa mãn \(X_i \le p &lt; X_{i + 1}\), hay
+\(X_i \le p \le N\) nếu \(i = k\).</p>
+<p>Tất nhiên, hàm \(F[u]\) cũng sẽ có các mốc \(Y_1, Y_2,
+&hellip;, Y_l\) (\(X \subseteq Y\)). Nếu coi \(F[u]\) như
+một IT, ta có thể update bằng cách:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> left <span style="color:#f92672">=</span> lower_bound(Y.begin(), Y.end(), X[i]) <span style="color:#f92672">-</span> Y.begin();
+<span style="color:#66d9ef">int</span> right <span style="color:#f92672">=</span> lower_bound(Y.begin(), Y.end(), X[i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>]) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> Y.begin();
+F[u].add(left, right, F[v][X[i]]); <span style="color:#75715e">// Thêm F[v][X[i]] vào đoạn [left..right]
+</span></code></pre></div><p>Sau đó ta cần cập nhật trường hợp chọn \(u\).
+Tất nhiên khi chọn \(u\), tổng đáp số của cây con
+gốc \(u\) sẽ là \(ans = (\max\limits_{i = 1}^{i &lt; A[u]}{F[u][i]}) + 1\).
+Ta cần gán <code>f[u][i] = max(f[u][i], ans)</code> với mọi
+\(i \ge A[u]\). Tuy nhiên, do \(F[u]\) là hàm tăng,
+thực chất ta chỉ cần cộng **1** vào các vị trí từ
+\(A[u]\) đến trước vị trí \(x\) có \(F[u][x] = ans\).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> ans <span style="color:#f92672">=</span> F[u].get(A[u] <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>); <span style="color:#75715e">// hàm tăng
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> right <span style="color:#f92672">=</span> F[u].lower_bound(ans) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
+F[u].add(A[u], right, <span style="color:#ae81ff">1</span>);
+</code></pre></div><p>Các bước gộp hàm đã hoàn chỉnh. Tuy nhiên,
+độ phức tạp vẫn chưa thay đổi. Ta cần một
+bước tiếp theo: thuật toán gộp set (hay gộp
+IT).</p>
+<h3 id="thuật-toán-tập-lớn---bé">Thuật toán tập lớn - bé</h3>
+<p>Xét bài toán: Cho \(N\) tập hợp, lúc đầu mỗi tập
+hợp có 1 phần tử. Để chuyển các
+phần tử từ tập hợp \(A\) sang tập hợp \(B\), ta mất
+chi phí \(|A|\). Xử lí các truy vấn ghép tập hợp.</p>
+<p>Cách giải bài toán rất đơn giản: với mỗi truy
+vấn ta chỉ cần chuyển tất cả phần tử từ tập
+nhỏ hơn vào tập lớn hơn, và tổng chi phí sẽ là
+\(O(N\log{N})\). Tại sao?</p>
+<p>Gọi \(s(p)\) là độ lớn của tập hợp chứa phần tử
+\(p\). Mỗi lần ta chuyển phần tử \(p\) từ tập \(X\)
+sang tập \(Y\) (\(|X| \le |Y|\)), \(s(p)\) tăng ít
+nhất gấp đôi. Tuy vậy, \(s(p)\) không thể vượt
+quá \(N\) do chỉ có tổng cộng \(N\) phần tử. Vì
+thế \(p\) không thể bị chuyển quá \(\log{N}\) lần.
+Mỗi phần tử không bị chuyển quá \(\log{N}\)
+lần, nên tổng chi phí vận chuyển không thể
+quá \(N\log{N}\).</p>
+<h3 id="áp-dụng-vào-bài-toán-ban-đầu">Áp dụng vào bài toán ban đầu</h3>
+<p>Để ý khi ta gộp \(F[v]\) vào \(F[u]\), chi phí
+là \(size[v] \times \log{N}\) và \(size[u]\)
+tăng thêm \(size[v]\), giống với việc gộp set.
+Vì vậy ta có thể cải tiến thuật toán như sau.
+Giả sử ta đã tính xong mọi \(F[v]\) với \(v\) là
+con của \(u\):</p>
+<ul>
+<li>Gán \(F[u] = F[v_1]\) (đây là phép gán con trỏ \(O(1)\)).</li>
+<li>Với mỗi \(v\) tiếp theo:
+<ul>
+<li>Nếu \(size[u] &lt; size[v_i]\), tráo \(F[u]\) và \(F[v_i]\)
+(phép tráo con trỏ \(O(1)\)).</li>
+<li>Cập nhật \(F[v_i]\) vào \(F[u]\).</li>
+</ul>
+</li>
+<li>Cập nhật đáp số khi chọn \(u\) như trên.</li>
+</ul>
+<p>Ta sẽ có thuật toán \(O(N\log^2{N})\). Tuy vậy, do
+vẫn sử dụng IT nên bộ nhớ của ta vẫn có thể lên
+đến \(O(N^2)\).</p>
+<h3 id="it-bộ-nhớ-động">IT bộ nhớ động</h3>
+<p>Việc biết trước kích thước tối đa và vị trí các
+phần tử của IT cho phép ta dựng lên cây IT
+chỉ với \(\min(2N, \log{N} * size)\) nút. Việc
+dựng nên IT này khá đơn giản, ta chỉ cần
+thay vì sử dụng \(2i\) và \(2i + 1\) là con của \(i\),
+ta lưu 2 con trỏ chỉ đến 2 nút trái và phải,
+và chỉ cấp phát bộ nhớ nếu cập nhật đến.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">node</span> {
+  <span style="color:#66d9ef">int</span> val, sum; <span style="color:#75715e">// dữ liệu của IT
+</span><span style="color:#75715e"></span>  node <span style="color:#f92672">*</span>l, <span style="color:#f92672">*</span>r; <span style="color:#75715e">// 2 con của IT*
+</span><span style="color:#75715e"></span>  node() { l <span style="color:#f92672">=</span> r <span style="color:#f92672">=</span> NULL; val <span style="color:#f92672">=</span> sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; }
+};
+
+<span style="color:#75715e">#</span><span style="color:#75715e">define mid ((l + r) &gt;&gt; 1)</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">update</span>(node <span style="color:#f92672">&amp;</span><span style="color:#f92672">*</span>v, <span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> r, <span style="color:#66d9ef">int</span> i, <span style="color:#66d9ef">int</span> j, <span style="color:#66d9ef">int</span> val) {
+  <span style="color:#66d9ef">if</span> (l <span style="color:#f92672">&gt;</span> j <span style="color:#f92672">|</span><span style="color:#f92672">|</span> r <span style="color:#f92672">&lt;</span> i) <span style="color:#66d9ef">return</span>; <span style="color:#75715e">// không dùng
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (v <span style="color:#f92672">=</span><span style="color:#f92672">=</span> NULL) v <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> node(); <span style="color:#75715e">// chưa có v, cấp phát
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> l <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> r <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> j) {
+    v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>val <span style="color:#f92672">+</span><span style="color:#f92672">=</span> val; v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>sum <span style="color:#f92672">+</span><span style="color:#f92672">=</span> val;
+    <span style="color:#66d9ef">return</span>;
+  }
+  <span style="color:#75715e">// gọi đến bản gốc của con trỏ, chỉnh sửa trực tiếp
+</span><span style="color:#75715e"></span>  update(v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>l, l, mid, i, j, val);
+  update(v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>r, mid <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, r, i, j, val);
+  v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>val <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">if</span> (v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>l <span style="color:#f92672">!</span><span style="color:#f92672">=</span> NULL) v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>val <span style="color:#f92672">=</span> max(v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>l<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>val <span style="color:#f92672">+</span> v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>sum, v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>val);
+  <span style="color:#66d9ef">if</span> (v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>r <span style="color:#f92672">!</span><span style="color:#f92672">=</span> NULL) v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>val <span style="color:#f92672">=</span> max(v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>r<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>val <span style="color:#f92672">+</span> v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>sum, v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>val);
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">get</span>(node <span style="color:#f92672">*</span>v, <span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> r, <span style="color:#66d9ef">int</span> pos) {
+  <span style="color:#66d9ef">if</span> (v <span style="color:#f92672">=</span><span style="color:#f92672">=</span> NULL) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// chưa cấp phát, chứng tỏ không có giá trị gì
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (l <span style="color:#f92672">&gt;</span> pos <span style="color:#f92672">|</span><span style="color:#f92672">|</span> r <span style="color:#f92672">&lt;</span> pos) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">if</span> (l <span style="color:#f92672">=</span><span style="color:#f92672">=</span> r) <span style="color:#66d9ef">return</span> v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>val;
+  <span style="color:#66d9ef">return</span> max(get(v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>l, l, mid, pos), get(v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>r, mid <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, r, pos)) <span style="color:#f92672">+</span> v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>sum;
+}
+<span style="color:#75715e">#</span><span style="color:#75715e">undef mid</span><span style="color:#75715e">
+</span></code></pre></div><p>Do luôn chỉ có tổng cộng \(N\) mốc trên tất cả IT
+nên tổng bộ nhớ không quá \(O(N\log{N})\).</p>
+<p>Ngoài ra để đảm bảo điều này ta cũng cần thực
+hiện xóa nút để giải phóng bộ nhớ. Ta có thể
+thực hiện điều này sau khi chuyển xong.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">clear</span>(node <span style="color:#f92672">&amp;</span><span style="color:#f92672">*</span>v) {
+  <span style="color:#66d9ef">if</span> (v <span style="color:#f92672">=</span><span style="color:#f92672">=</span> NULL) <span style="color:#66d9ef">return</span>;
+  clear(v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>l); clear(v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>r);
+  <span style="color:#66d9ef">delete</span> v;
+}
+</code></pre></div><h2 id="pieces-of-parentheses">Pieces of Parentheses</h2>
+<h3 id="thứ-tự-quy-hoạch-động">Thứ tự quy hoạch động</h3>
+<p>Thông thường để giải các bài ngoặc ta sẽ sử dụng
+quy hoạch động. Tuy nhiên, theo đề bài thì ta
+phải chọn một tập con có thứ tự, tức ta không
+có một thứ tự gốc để dựng hàm quy hoạch động.</p>
+<p>Ý tưởng của ta sẽ là đi tìm một thứ tự để chạy
+phép qhđ.</p>
+<h3 id="biểu-diễn-dãy-ngoặc">Biểu diễn dãy ngoặc</h3>
+<p>Điều kiện một dãy ngoặc đúng là</p>
+<ul>
+<li>Số mở ngoặc bằng số đóng ngoặc</li>
+<li>Tại mọi thời điểm, số mở ngoặc không ít hơn
+số đóng ngoặc. Nói cách khác, nếu thay <code>(</code>
+thành 1 và <code>)</code> thành -1 thì tổng dồn luôn
+không âm.</li>
+</ul>
+<p>Như vậy, thực chất với mỗi dãy ngoặc con, ta
+chỉ cần lưu lại 3 thông số: độ dài, vị trí
+có tổng dồn nhỏ nhất và tổng dồn cuối.
+Ta gọi 3 giá trị này là \(S_i\), \(A_i\) và \(B_i\).</p>
+<p>Để tạo ra dãy ngoặc đúng từ các dãy ngoặc con
+thì:</p>
+<ul>
+<li>\(\sum\limits_{i = 1}^{k}B[i] = 0\)</li>
+<li>Với mọi \(i\), \((\sum\limits_{j = 1}^{j &lt; i}
+B[j]) + A[i] \ge 0\)</li>
+<li>Tổng \(S_i\) là lớn nhất có thể.</li>
+</ul>
+<h3 id="phân-loại-dãy-ngoặc">Phân loại dãy ngoặc</h3>
+<p>Để đơn giản hóa việc sắp xếp thứ tự, ta có
+thể nghĩ đến việc phân loại các dãy ngoặc.
+Trong bài này ta sẽ phân thành 3 loại:</p>
+<ul>
+<li>\(A[i] \ge 0\). Hiển nhiên \(B[i] \ge 0\).
+Với các loại dãy ngoặc này đặt ở vị trí nào
+cũng thỏa mãn, vì vậy ta luôn đặt chúng ở
+đầu để tối đa hóa tổng \(B[j]\). Thứ tự từng
+thành phần là không quan trọng.</li>
+<li>\(A[i] &lt; 0\) và \(B[i] \ge 0\). Hiển nhiên
+\(A[i]\) càng nhỏ càng nên đặt phía sau, bởi
+càng đứng sau thì tổng \(B[j]\) càng lớn,
+càng dễ thỏa mãn \(A[i]\). Ta đặt các dãy ngoặc
+loại này sau loại trên, sắp xếp các phần tử
+theo thứ tự \(A[i]\) giảm dần.</li>
+<li>\(A[i] &lt; 0\) và \(B[i] &lt; 0\). Đây là loại phức
+tạp nhất, ta sẽ cần một nhận xét để sắp xếp
+loại ngoặc này. Hiện giờ ta chỉ biết ta sẽ
+xếp chúng sau cùng.</li>
+</ul>
+<h3 id="ai--0-và-bi--0">\(A[i] &lt; 0\) và \(B[i] &lt; 0\)</h3>
+<p>Giả sử ta có một dãy ngoặc đúng chứa \(i\) và
+\(i + 1\) là 2 phần tử loại 3 liên tiếp trong
+dãy. Điều kiện sau là thỏa mãn:</p>
+<ul>
+<li>\(S + A[i] \ge 0\), với \(S\) là tổng các \(B[j]\)
+đứng trước.</li>
+<li>\(S + B[i] + A[i + 1] \ge 0\).</li>
+</ul>
+<p>Từ đây ta có thể suy ra \(S + A[i + 1] \ge 0\)
+do \(B[i] &lt; 0\).</p>
+<p>Nếu \(B[i + 1] + A[i] \ge B[i] + A[i + 1]\), ta
+hoàn toàn có thể đổi chỗ \(i\) và \(i + 1\) bởi
+khi đó \(S + B[i + 1] + A[i] \ge S + B[i] + A[i + 1] \ge 0\),
+cả 2 điều kiện đều thỏa mãn.</p>
+<p>Từ đó ta chứng minh được đáp án luôn tồn tại
+sao cho với mọi cặp \(i, j\) loại 3 ta đều có
+\(B[j] + A[i] \le B[i] + A[j]\), hay nói cách
+khác, \(A[i] - B[i] \le A[j] - B[j]\).</p>
+<p>Như vậy, ta có thể sắp xếp các dãy ngoặc loại
+3 theo thứ tự \(A[i] - B[i]\) tăng dần mà vẫn
+đảm bảo tìm được đáp án tối ưu.</p>
+<h3 id="công-thức-qhđ">Công thức qhđ</h3>
+<p>Khi đã có thứ tự, ta dựng công thức qhđ đơn
+giản: gọi \(f[i][j]\) là dãy ngoặc dài nhất
+ghép được từ các đoạn từ 1 đến \(i\) mà có
+bậc là \(j\). Ta chuyển trạng thái như sau:</p>
+<ul>
+<li>Không thêm đoạn \(i + 1\), chuyển đến \(f[i + 1][j]\).</li>
+<li>Thêm đoạn \(i + 1\), điều kiện là \(j + A[i + 1] \ge 0\),
+chuyển trạng thái đến \(f[i + 1][j + B[i + 1]]\), tăng
+thêm \(S[i + 1]\) đơn vị.</li>
+</ul>
+<p>Ban đầu \(f[0][0] = 0\), đáp số là \(f[N][0]\).</p>
+<p>Độ phức tạp là \(O(N^2 * |S|)\), thỏa mãn bài toán.</p>
+<h2 id="problem-buyer">Problem Buyer</h2>
+<h3 id="thuật-toán-tham-lam">Thuật toán tham lam</h3>
+<p>Trước tiên ta cần phải biết thuật toán tham
+lam để tìm cặp ghép. Thuật toán như sau:</p>
+<ul>
+<li>Sắp xếp \(C_i\) tăng dần.</li>
+<li>Giữ một <code>priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt; &gt;</code></li>
+<li>Duyệt từ 1 đến \(N\), khi đến \(i\) ta thêm hết các đoạn
+có \(L_x \le C_i\) vào queue.</li>
+<li>Tim phần tử trong queue có \(R_x\) nhỏ nhất mà \(\ge C_i\).
+Nếu có, ghép và xóa khỏi queue. Nếu không, không tồn tại
+cặp ghép đầy đủ.</li>
+</ul>
+<h3 id="tạo-ra-tập-sai">Tạo ra tập sai</h3>
+<p>Thay vì đi tìm \(K\) nhỏ nhất sao cho mọi tập đều ghép
+được, ta sẽ đi tìm \(K&rsquo;\) lớn nhất mà tồn tại 1 tập
+không ghép được. Đáp số sẽ là \(K&rsquo; + 1\).</p>
+<h3 id="vị-trí-fail">Vị trí fail</h3>
+<p>Dựa theo thuật toán tham lam, ta nhận thấy chỉ
+cần ở 1 bước mà queue rỗng thì thuật toán sẽ
+fail. Như vậy, khi xác định được vị trí fail
+ta có thể dựng dãy bằng cách lấy tất cả các
+phần tử trừ các phần tử đứng trong queue hiện
+tại khi mô phỏng thuật toán.</p>
+<p>Dễ dàng chứng minh đấy là cách tối ưu nhất để
+làm một bước \(i\) xác định nào đó fail. Như
+vậy, thuật toán của ta chỉ là mô phỏng lại
+thuật tham lam, mỗi bước ta xác định số
+phần tử phải xóa đi để bước đó fail (chính là
+số phần tử trong queue lúc đó), và tìm vị
+trí cần xóa ít phần tử nhất.</p>
+<p>Đáp số sẽ là \(N - x\) với \(x\) là số phần tử
+bị xóa nhỏ nhất.
+Độ phức tạp là \(O(N \log{N})\).</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+    <footer><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+    integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+    integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+    integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+</footer>
+</body>
+
+</html>
