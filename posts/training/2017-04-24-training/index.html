@@ -4,7 +4,7 @@
 <head>
     <title>2017/04/24 Training // Kagami Notes</title>
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.64.1" />
+    <meta name="generator" content="Hugo 0.87.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Natsu Kagami" />
     <meta name="description"
@@ -23,9 +23,10 @@ Giới hạn \(1 \le N \le 10^5\), \(1 \le A_i \le 10^9\)"/>
 Tóm tắt đề bài Heap on Trees, NAIPC 2017, bài D Cho một cây \(N\) đỉnh, mỗi nút có một số \(A_i\). Tìm tập con các nút lớn nhất thỏa mãn nếu \(i\) là tổ tiên của \(j\) và \(i\), \(j\) đều được chọn thì \(A_i &gt; A_j\).
 Giới hạn \(1 \le N \le 10^5\), \(1 \le A_i \le 10^9\)" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.nkagami.me/posts/training/2017-04-24-training/" />
+<meta property="og:url" content="https://blog.nkagami.me/posts/training/2017-04-24-training/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2017-04-24T17:20:00+07:00" />
 <meta property="article:modified_time" content="2017-04-24T17:20:00+07:00" />
+
 
 
 </head>
@@ -163,7 +164,7 @@ giá trị của \(F[v][X_i]\) sẽ được cộng vào các
 <p>Tất nhiên, hàm \(F[u]\) cũng sẽ có các mốc \(Y_1, Y_2,
 &hellip;, Y_l\) (\(X \subseteq Y\)). Nếu coi \(F[u]\) như
 một IT, ta có thể update bằng cách:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> left <span style="color:#f92672">=</span> lower_bound(Y.begin(), Y.end(), X[i]) <span style="color:#f92672">-</span> Y.begin();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> left <span style="color:#f92672">=</span> lower_bound(Y.begin(), Y.end(), X[i]) <span style="color:#f92672">-</span> Y.begin();
 <span style="color:#66d9ef">int</span> right <span style="color:#f92672">=</span> lower_bound(Y.begin(), Y.end(), X[i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>]) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> Y.begin();
 F[u].add(left, right, F[v][X[i]]); <span style="color:#75715e">// Thêm F[v][X[i]] vào đoạn [left..right]
 </span></code></pre></div><p>Sau đó ta cần cập nhật trường hợp chọn \(u\).
@@ -173,7 +174,7 @@ Ta cần gán <code>f[u][i] = max(f[u][i], ans)</code> với mọi
 \(i \ge A[u]\). Tuy nhiên, do \(F[u]\) là hàm tăng,
 thực chất ta chỉ cần cộng **1** vào các vị trí từ
 \(A[u]\) đến trước vị trí \(x\) có \(F[u][x] = ans\).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> ans <span style="color:#f92672">=</span> F[u].get(A[u] <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>); <span style="color:#75715e">// hàm tăng
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> ans <span style="color:#f92672">=</span> F[u].get(A[u] <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>); <span style="color:#75715e">// hàm tăng
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> right <span style="color:#f92672">=</span> F[u].lower_bound(ans) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
 F[u].add(A[u], right, <span style="color:#ae81ff">1</span>);
 </code></pre></div><p>Các bước gộp hàm đã hoàn chỉnh. Tuy nhiên,
@@ -227,43 +228,43 @@ dựng nên IT này khá đơn giản, ta chỉ cần
 thay vì sử dụng \(2i\) và \(2i + 1\) là con của \(i\),
 ta lưu 2 con trỏ chỉ đến 2 nút trái và phải,
 và chỉ cấp phát bộ nhớ nếu cập nhật đến.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">node</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">node</span> {
   <span style="color:#66d9ef">int</span> val, sum; <span style="color:#75715e">// dữ liệu của IT
 </span><span style="color:#75715e"></span>  node <span style="color:#f92672">*</span>l, <span style="color:#f92672">*</span>r; <span style="color:#75715e">// 2 con của IT*
 </span><span style="color:#75715e"></span>  node() { l <span style="color:#f92672">=</span> r <span style="color:#f92672">=</span> NULL; val <span style="color:#f92672">=</span> sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; }
 };
 
-<span style="color:#75715e">#</span><span style="color:#75715e">define mid ((l + r) &gt;&gt; 1)</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">update</span>(node <span style="color:#f92672">&amp;</span><span style="color:#f92672">*</span>v, <span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> r, <span style="color:#66d9ef">int</span> i, <span style="color:#66d9ef">int</span> j, <span style="color:#66d9ef">int</span> val) {
-  <span style="color:#66d9ef">if</span> (l <span style="color:#f92672">&gt;</span> j <span style="color:#f92672">|</span><span style="color:#f92672">|</span> r <span style="color:#f92672">&lt;</span> i) <span style="color:#66d9ef">return</span>; <span style="color:#75715e">// không dùng
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (v <span style="color:#f92672">=</span><span style="color:#f92672">=</span> NULL) v <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> node(); <span style="color:#75715e">// chưa có v, cấp phát
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> l <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> r <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> j) {
-    v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>val <span style="color:#f92672">+</span><span style="color:#f92672">=</span> val; v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>sum <span style="color:#f92672">+</span><span style="color:#f92672">=</span> val;
+<span style="color:#75715e">#define mid ((l + r) &gt;&gt; 1)
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">update</span>(node <span style="color:#f92672">&amp;*</span>v, <span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> r, <span style="color:#66d9ef">int</span> i, <span style="color:#66d9ef">int</span> j, <span style="color:#66d9ef">int</span> val) {
+  <span style="color:#66d9ef">if</span> (l <span style="color:#f92672">&gt;</span> j <span style="color:#f92672">||</span> r <span style="color:#f92672">&lt;</span> i) <span style="color:#66d9ef">return</span>; <span style="color:#75715e">// không dùng
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (v <span style="color:#f92672">==</span> NULL) v <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> node(); <span style="color:#75715e">// chưa có v, cấp phát
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">&lt;=</span> l <span style="color:#f92672">&amp;&amp;</span> r <span style="color:#f92672">&lt;=</span> j) {
+    v<span style="color:#f92672">-&gt;</span>val <span style="color:#f92672">+=</span> val; v<span style="color:#f92672">-&gt;</span>sum <span style="color:#f92672">+=</span> val;
     <span style="color:#66d9ef">return</span>;
   }
   <span style="color:#75715e">// gọi đến bản gốc của con trỏ, chỉnh sửa trực tiếp
-</span><span style="color:#75715e"></span>  update(v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>l, l, mid, i, j, val);
-  update(v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>r, mid <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, r, i, j, val);
-  v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>val <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-  <span style="color:#66d9ef">if</span> (v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>l <span style="color:#f92672">!</span><span style="color:#f92672">=</span> NULL) v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>val <span style="color:#f92672">=</span> max(v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>l<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>val <span style="color:#f92672">+</span> v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>sum, v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>val);
-  <span style="color:#66d9ef">if</span> (v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>r <span style="color:#f92672">!</span><span style="color:#f92672">=</span> NULL) v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>val <span style="color:#f92672">=</span> max(v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>r<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>val <span style="color:#f92672">+</span> v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>sum, v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>val);
+</span><span style="color:#75715e"></span>  update(v<span style="color:#f92672">-&gt;</span>l, l, mid, i, j, val);
+  update(v<span style="color:#f92672">-&gt;</span>r, mid <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, r, i, j, val);
+  v<span style="color:#f92672">-&gt;</span>val <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">if</span> (v<span style="color:#f92672">-&gt;</span>l <span style="color:#f92672">!=</span> NULL) v<span style="color:#f92672">-&gt;</span>val <span style="color:#f92672">=</span> max(v<span style="color:#f92672">-&gt;</span>l<span style="color:#f92672">-&gt;</span>val <span style="color:#f92672">+</span> v<span style="color:#f92672">-&gt;</span>sum, v<span style="color:#f92672">-&gt;</span>val);
+  <span style="color:#66d9ef">if</span> (v<span style="color:#f92672">-&gt;</span>r <span style="color:#f92672">!=</span> NULL) v<span style="color:#f92672">-&gt;</span>val <span style="color:#f92672">=</span> max(v<span style="color:#f92672">-&gt;</span>r<span style="color:#f92672">-&gt;</span>val <span style="color:#f92672">+</span> v<span style="color:#f92672">-&gt;</span>sum, v<span style="color:#f92672">-&gt;</span>val);
 }
 
 <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">get</span>(node <span style="color:#f92672">*</span>v, <span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> r, <span style="color:#66d9ef">int</span> pos) {
-  <span style="color:#66d9ef">if</span> (v <span style="color:#f92672">=</span><span style="color:#f92672">=</span> NULL) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// chưa cấp phát, chứng tỏ không có giá trị gì
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (l <span style="color:#f92672">&gt;</span> pos <span style="color:#f92672">|</span><span style="color:#f92672">|</span> r <span style="color:#f92672">&lt;</span> pos) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-  <span style="color:#66d9ef">if</span> (l <span style="color:#f92672">=</span><span style="color:#f92672">=</span> r) <span style="color:#66d9ef">return</span> v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>val;
-  <span style="color:#66d9ef">return</span> max(get(v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>l, l, mid, pos), get(v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>r, mid <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, r, pos)) <span style="color:#f92672">+</span> v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>sum;
+  <span style="color:#66d9ef">if</span> (v <span style="color:#f92672">==</span> NULL) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// chưa cấp phát, chứng tỏ không có giá trị gì
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (l <span style="color:#f92672">&gt;</span> pos <span style="color:#f92672">||</span> r <span style="color:#f92672">&lt;</span> pos) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">if</span> (l <span style="color:#f92672">==</span> r) <span style="color:#66d9ef">return</span> v<span style="color:#f92672">-&gt;</span>val;
+  <span style="color:#66d9ef">return</span> max(get(v<span style="color:#f92672">-&gt;</span>l, l, mid, pos), get(v<span style="color:#f92672">-&gt;</span>r, mid <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, r, pos)) <span style="color:#f92672">+</span> v<span style="color:#f92672">-&gt;</span>sum;
 }
-<span style="color:#75715e">#</span><span style="color:#75715e">undef mid</span><span style="color:#75715e">
+<span style="color:#75715e">#undef mid
 </span></code></pre></div><p>Do luôn chỉ có tổng cộng \(N\) mốc trên tất cả IT
 nên tổng bộ nhớ không quá \(O(N\log{N})\).</p>
 <p>Ngoài ra để đảm bảo điều này ta cũng cần thực
 hiện xóa nút để giải phóng bộ nhớ. Ta có thể
 thực hiện điều này sau khi chuyển xong.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">clear</span>(node <span style="color:#f92672">&amp;</span><span style="color:#f92672">*</span>v) {
-  <span style="color:#66d9ef">if</span> (v <span style="color:#f92672">=</span><span style="color:#f92672">=</span> NULL) <span style="color:#66d9ef">return</span>;
-  clear(v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>l); clear(v<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>r);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">clear</span>(node <span style="color:#f92672">&amp;*</span>v) {
+  <span style="color:#66d9ef">if</span> (v <span style="color:#f92672">==</span> NULL) <span style="color:#66d9ef">return</span>;
+  clear(v<span style="color:#f92672">-&gt;</span>l); clear(v<span style="color:#f92672">-&gt;</span>r);
   <span style="color:#66d9ef">delete</span> v;
 }
 </code></pre></div><h2 id="pieces-of-parentheses">Pieces of Parentheses</h2>
@@ -366,8 +367,8 @@ cặp ghép đầy đủ.</li>
 </ul>
 <h3 id="tạo-ra-tập-sai">Tạo ra tập sai</h3>
 <p>Thay vì đi tìm \(K\) nhỏ nhất sao cho mọi tập đều ghép
-được, ta sẽ đi tìm \(K&rsquo;\) lớn nhất mà tồn tại 1 tập
-không ghép được. Đáp số sẽ là \(K&rsquo; + 1\).</p>
+được, ta sẽ đi tìm \(K'\) lớn nhất mà tồn tại 1 tập
+không ghép được. Đáp số sẽ là \(K' + 1\).</p>
 <h3 id="vị-trí-fail">Vị trí fail</h3>
 <p>Dựa theo thuật toán tham lam, ta nhận thấy chỉ
 cần ở 1 bước mà queue rỗng thì thuật toán sẽ

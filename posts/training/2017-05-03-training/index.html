@@ -4,7 +4,7 @@
 <head>
     <title>2017-05-03 Training // Kagami Notes</title>
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.64.1" />
+    <meta name="generator" content="Hugo 0.87.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Natsu Kagami" />
     <meta name="description"
@@ -23,9 +23,10 @@ Tóm tắt đề bài ballmachine Cho một cây \(N\) đỉnh có gốc, mỗi 
 Tóm tắt đề bài ballmachine Cho một cây \(N\) đỉnh có gốc, mỗi đỉnh chứa tối đa 1 quả bóng. Quả bóng từ cha sẽ rơi xuống nút con nếu có thể. Nếu có nhiều nút con thỏa mãn, chọn nút con có cây con chứa nút có số thứ tự nhỏ nhất. Thực hiện \(Q\) truy vấn 1 trong 2 loại:
  Lần lượt cho \(k\) quả bóng vào đỉnh gốc." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.nkagami.me/posts/training/2017-05-03-training/" />
+<meta property="og:url" content="https://blog.nkagami.me/posts/training/2017-05-03-training/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2017-05-03T21:00:00+07:00" />
 <meta property="article:modified_time" content="2017-05-03T21:00:00+07:00" />
+
 
 
 </head>
@@ -191,17 +192,17 @@ sau đó kiểm tra xem tổ tiên ta chặt có chứa
 bóng hay không. Ta có thể dễ dàng cài đặt
 thuật toán này bằng nhảy 2 mũ, với độ phức tạp
 \(O(\log N)\).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// par[v][i] là cha 2 mũ i của v
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// par[v][i] là cha 2 mũ i của v
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> len <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, cur <span style="color:#f92672">=</span> v;
-<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">17</span>; i <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#f92672">-</span><span style="color:#f92672">-</span>i) {
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">17</span>; i <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#f92672">--</span>i) {
 	<span style="color:#75715e">// 2^17 + 2^16 + ... + 1 = 2^18 - 1 &gt; 1e5
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> (par[cur][i] <span style="color:#f92672">!</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> ball[par[cur][i]]) {
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> (par[cur][i] <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> ball[par[cur][i]]) {
 		<span style="color:#75715e">// ^ cha này tồn tại  ^ có bóng
-</span><span style="color:#75715e"></span>		len <span style="color:#f92672">+</span><span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> i); cur <span style="color:#f92672">=</span> par[cur][i];
+</span><span style="color:#75715e"></span>		len <span style="color:#f92672">+=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> i); cur <span style="color:#f92672">=</span> par[cur][i];
 		<span style="color:#75715e">// ^ khoảng cách tăng 2^i
 </span><span style="color:#75715e"></span>	}
 }
-printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, len); <span style="color:#75715e">// khoảng cách chính là số bóng rơi
+printf(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, len); <span style="color:#75715e">// khoảng cách chính là số bóng rơi
 </span><span style="color:#75715e"></span>removeBall(cur); <span style="color:#75715e">// xóa bóng ở cur
 </span></code></pre></div><p>Như vậy ta có thuật toán \(O(N \log N + Q \log N)\).
 Phần \(N \log N\) bị tạo ra do việc tính cha 2 mũ.</p>

@@ -4,7 +4,7 @@
 <head>
     <title>2017/04/28 Training // Kagami Notes</title>
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.64.1" />
+    <meta name="generator" content="Hugo 0.87.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Natsu Kagami" />
     <meta name="description"
@@ -21,9 +21,10 @@ Tóm tắt đề bài select (thầy Hoàng) Cho dãy \(S\) gồm các kí tự 
 <meta property="og:description" content="Hôm nay có hai phần: bài thầy Hoàng và bài anh Khuê. Cả 2 đều cần một sự tay to nhất định.
 Tóm tắt đề bài select (thầy Hoàng) Cho dãy \(S\) gồm các kí tự d và x. 2 người lần lượt chơi, mỗi lượt bốc 1 kí tự, kí tự này phải đứng cạnh 1 vị trí đã bị chọn trước đó (trừ nước đầu tiên được chọn thoải mái)." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.nkagami.me/posts/training/2017-04-28-training/" />
+<meta property="og:url" content="https://blog.nkagami.me/posts/training/2017-04-28-training/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2017-04-28T20:00:00+07:00" />
 <meta property="article:modified_time" content="2017-04-28T20:00:00+07:00" />
+
 
 
 </head>
@@ -201,13 +202,13 @@ cộng vị trí hắn chọn nếu nó màu đỏ,
 sao cho tổng ấy lớn nhất có thể. Nói
 cách khác ta có:
 \[ f[l][r] = \max(f[l - 1][r] +
-(\text{S[l - 1] == &lsquo;d&rsquo;}), f[l][r + 1] +
-(\text{S[r + 1] == &lsquo;d&rsquo;}))\]</li>
+(\text{S[l - 1] == &rsquo;d'}), f[l][r + 1] +
+(\text{S[r + 1] == &rsquo;d'}))\]</li>
 <li>Ngược lại, người đi sau sẽ muốn lựa
 chọn của mình là nhỏ nhất có thể, tức:
 \[ f[l][r] = \min(f[l - 1][r] -
-(\text{S[l - 1] == &lsquo;d&rsquo;}), f[l][r + 1] -
-(\text{S[r + 1] == &lsquo;d&rsquo;}))\]
+(\text{S[l - 1] == &rsquo;d'}), f[l][r + 1] -
+(\text{S[r + 1] == &rsquo;d'}))\]
 Lưu ý dấu <code>-</code>, bởi ta đang tối ưu hiệu
 người đi trước trừ người đi sau.</li>
 </ul>
@@ -316,10 +317,10 @@ thái:</p>
 quan sát để hạ độ phức tạp.</p>
 <h3 id="nhảy-xuống-on2">Nhảy xuống \(O(N^2)\)</h3>
 <p>Khi xét \(f[i][j]\), ta có thể thấy nếu
-\(k \le k&rsquo;\) và \(A[i] = B[k] = B[k&rsquo;]\) thì
-\(f[i + 1][k] \ge f[i + 1][k&rsquo;]\). Chứng minh
+\(k \le k'\) và \(A[i] = B[k] = B[k']\) thì
+\(f[i + 1][k] \ge f[i + 1][k']\). Chứng minh
 rất đơn giản: \(B[k + 1..N]\) dài hơn
-\(B[k&rsquo; + 1..N]\), mà điều kiện ghép không đổi.</p>
+\(B[k' + 1..N]\), mà điều kiện ghép không đổi.</p>
 <p>Vì vậy, thực chất ta chỉ cần tìm \(k\) nhỏ
 nhất thỏa mãn \(k \ge j + 1\) và \(A[i] = B[k]\)
 để cập nhật vào \(f[i][j]\). Việc này có thể
