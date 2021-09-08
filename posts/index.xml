@@ -6,7 +6,17 @@
     <description>Recent content in Posts on Kagami Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Aug 2021 00:30:00 +0900</lastBuildDate><atom:link href="https://blog.nkagami.me/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Sep 2021 17:00:00 +0900</lastBuildDate><atom:link href="https://blog.nkagami.me/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Brief on Blame Calculus</title>
+      <link>https://blog.nkagami.me/posts/brief-on-blame-calculus/</link>
+      <pubDate>Wed, 08 Sep 2021 17:00:00 +0900</pubDate>
+      
+      <guid>https://blog.nkagami.me/posts/brief-on-blame-calculus/</guid>
+      <description>A Brief on Blame Calculus This is a short overview of Philip Wadler and Robert Bruce Findler. 2009. Well-Typed Programs Can’t Be Blamed. In Programming Languages and Systems (Lecture Notes in Computer Science), Springer, Berlin, Heidelberg, 1–16. DOI:https://doi.org/10.1007/978-3-642-00590-9_1.
+1. What is Blame Calculus and what is it for? Blame calculus is an extension of a mixed-typed lambda calculus (i.e. containing both typed terms and untyped terms working on the catch-all type Dyn).</description>
+    </item>
+    
     <item>
       <title>CSS Sticky is Fun</title>
       <link>https://blog.nkagami.me/posts/css-sticky/</link>

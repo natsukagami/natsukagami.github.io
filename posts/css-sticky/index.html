@@ -4,7 +4,7 @@
 <head>
     <title>CSS Sticky is Fun // Kagami Notes</title>
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.87.0" />
+    <meta name="generator" content="Hugo 0.85.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Natsu Kagami" />
     <meta name="description"
@@ -88,7 +88,7 @@ Let&rsquo;s make a Sticky card header! In a moment I had a bright idea of keepin
 <p>In a moment I had a bright idea of keeping that <code>Problems</code> header on top of the card, inside the view while it is being scrolled.</p>
 <p>This made sense: the navigation bar is right to the right (!) of the header, so it should be accessible from any scrolling. OK, so how about making it sticky?</p>
 <p>Here&rsquo;s the basic layout of the page:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">body</span>:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">body</span>:
 	<span style="color:#f92672">nav#topBar.sticky.top-0.h-14</span>:
 		<span style="color:#ae81ff">...</span> <span style="color:#75715e"># the basic top bar</span>
 	<span style="color:#f92672">main.mt-14.relative</span>:
@@ -106,14 +106,14 @@ Let&rsquo;s make a Sticky card header! In a moment I had a bright idea of keepin
 <p>So what we&rsquo;ve done here is just sticking the card header to under the top bar. Not what we wanted.</p>
 <p>We want to make a &ldquo;scrolling ancestor&rdquo; out of the <code>main</code> element, since it&rsquo;s what we want the card header to stick to. OK, let&rsquo;s do it.
 Note that the simplest way to make something a &ldquo;scrolling ancestor&rdquo; is just to stick an overflow value to it:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#f92672">- main.mt-14.relative:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#f92672">- main.mt-14.relative:
 </span><span style="color:#f92672"></span><span style="color:#a6e22e">+ main.mt-14.relative.overflow-auto:
 </span></code></pre></div><p>Is it working yet?</p>
 <h2 id="why-wouldnt-you-scroll">Why wouldn&rsquo;t you scroll?</h2>
 <p>Unfortunately we&rsquo;ve come closer, but not yet done. Now that we&rsquo;ve locked the card header to the top of <code>main</code>, we&rsquo;ve actually made the behavior worse: <em>the header now scrolls away with the <code>main</code> element</em>.</p>
 <p>Why is this happening? Note that, when we scroll the page, it&rsquo;s not the <code>main</code> element that was scrolling: it&rsquo;s actually <code>body</code>. This does not interact with the logic of <code>sticky</code>, so we are just scrolling over the element now.</p>
 <p>To fix this, we will need to completely <strong>move the scrolling from <code>body</code> to <code>main</code></strong>. This can be done by limiting the height of <code>main</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#f92672">- main.mt-14.relative.overflow-auto:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#f92672">- main.mt-14.relative.overflow-auto:
 </span><span style="color:#f92672"></span><span style="color:#a6e22e">+ main.mt-14.relative.overflow-auto.max-h-screen
 </span></code></pre></div><p>Is it working yet?</p>
 <video width=100% controls autoplay>

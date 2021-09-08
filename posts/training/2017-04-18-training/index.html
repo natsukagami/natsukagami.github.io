@@ -4,7 +4,7 @@
 <head>
     <title>2017/04/18 Training // Kagami Notes</title>
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.87.0" />
+    <meta name="generator" content="Hugo 0.85.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Natsu Kagami" />
     <meta name="description"
@@ -102,7 +102,7 @@ Stretching Streamers (NAIPC 2017, bài C) Tóm tắt đề bài Có N điểm vi
 <p>Từ các nhận xét trên, ta có công thức quy hoạch động sau:</p>
 <p>Gọi <code>f[l][r]</code> là số cách dựng cây với các đỉnh thuộc đoạn <code>l..r</code>. Hiển nhiên <code>f[i][i] = 1</code>.</p>
 <p>Ta có</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> l <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; k <span style="color:#f92672">&lt;=</span> r; <span style="color:#f92672">++</span>k)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> l <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; k <span style="color:#f92672">&lt;=</span> r; <span style="color:#f92672">++</span>k)
   <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> st <span style="color:#f92672">=</span> l <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; st <span style="color:#f92672">&lt;=</span> k; <span style="color:#f92672">++</span>st)
     f[l][r] <span style="color:#f92672">+=</span> f[l][st <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> f[st][k] <span style="color:#f92672">*</span> f[k][r];
 </code></pre></div><p>Việc chọn tập <code>X[]</code> cho <code>[l..r]</code> giống với việc từ đoạn <code>[l..st - 1]</code> đã dựng cây, ta thêm đoạn <code>[st..r]</code> bằng cách nối <code>(l, k)</code> (<code>st &lt;= k &lt;= r</code>) rồi dựng 2 cây như trên. Do đó công thức qhđ này hoàn toàn chính xác. Đáp số sẽ là <code>f[1][N]</code>. Tuy nhiên độ phức tạp là <code>O(N^4)</code>, chưa đủ để thỏa mãn đề bài.</p>
@@ -110,7 +110,7 @@ Stretching Streamers (NAIPC 2017, bài C) Tóm tắt đề bài Có N điểm vi
 <p>Việc chọn đoạn yêu cầu 2 bước, xác định <code>X[i]</code> và đoạn <code>st..r</code>. Liệu ta có thể giảm thiểu số cách lựa chọn không?</p>
 <p>Thực chất ta hoàn toàn có thể tách 2 bước này thành 2 công đoạn chọn đoạn, đầu tiên chọn <code>st..X[i]</code> thỏa mãn có cạnh <code>(l, X[i])</code> và chọn đoạn <code>X[i]..r</code>. Như vậy ta có thể chọn 2 đoạn so le, mỗi lần chuyển trạng thái chỉ mất <code>O(N)</code>.</p>
 <p>Ta sửa lại công thức qhđ thành <code>f[i][j][k]</code>, thêm <code>k</code> là bước hiện tại của chúng ta (<code>0</code> - chọn nửa đoạn đầu - hay <code>1</code> - đã chọn xong). Công thức trở thành:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> l <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; k <span style="color:#f92672">&lt;=</span> r; <span style="color:#f92672">++</span>k) {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> l <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; k <span style="color:#f92672">&lt;=</span> r; <span style="color:#f92672">++</span>k) {
   <span style="color:#66d9ef">if</span> (__gcd(l, r) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>) <span style="color:#75715e">// có cạnh từ l đến k
 </span><span style="color:#75715e"></span>    f[l][r][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+=</span> f[l][k <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> f[k][r][<span style="color:#ae81ff">1</span>];
   <span style="color:#66d9ef">if</span> (__gcd(l, k) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>)

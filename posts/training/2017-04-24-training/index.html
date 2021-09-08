@@ -4,7 +4,7 @@
 <head>
     <title>2017/04/24 Training // Kagami Notes</title>
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.87.0" />
+    <meta name="generator" content="Hugo 0.85.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Natsu Kagami" />
     <meta name="description"
@@ -164,7 +164,7 @@ giá trị của \(F[v][X_i]\) sẽ được cộng vào các
 <p>Tất nhiên, hàm \(F[u]\) cũng sẽ có các mốc \(Y_1, Y_2,
 &hellip;, Y_l\) (\(X \subseteq Y\)). Nếu coi \(F[u]\) như
 một IT, ta có thể update bằng cách:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> left <span style="color:#f92672">=</span> lower_bound(Y.begin(), Y.end(), X[i]) <span style="color:#f92672">-</span> Y.begin();
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> left <span style="color:#f92672">=</span> lower_bound(Y.begin(), Y.end(), X[i]) <span style="color:#f92672">-</span> Y.begin();
 <span style="color:#66d9ef">int</span> right <span style="color:#f92672">=</span> lower_bound(Y.begin(), Y.end(), X[i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>]) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> Y.begin();
 F[u].add(left, right, F[v][X[i]]); <span style="color:#75715e">// Thêm F[v][X[i]] vào đoạn [left..right]
 </span></code></pre></div><p>Sau đó ta cần cập nhật trường hợp chọn \(u\).
@@ -174,7 +174,7 @@ Ta cần gán <code>f[u][i] = max(f[u][i], ans)</code> với mọi
 \(i \ge A[u]\). Tuy nhiên, do \(F[u]\) là hàm tăng,
 thực chất ta chỉ cần cộng **1** vào các vị trí từ
 \(A[u]\) đến trước vị trí \(x\) có \(F[u][x] = ans\).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> ans <span style="color:#f92672">=</span> F[u].get(A[u] <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>); <span style="color:#75715e">// hàm tăng
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> ans <span style="color:#f92672">=</span> F[u].get(A[u] <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>); <span style="color:#75715e">// hàm tăng
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> right <span style="color:#f92672">=</span> F[u].lower_bound(ans) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
 F[u].add(A[u], right, <span style="color:#ae81ff">1</span>);
 </code></pre></div><p>Các bước gộp hàm đã hoàn chỉnh. Tuy nhiên,
@@ -228,7 +228,7 @@ dựng nên IT này khá đơn giản, ta chỉ cần
 thay vì sử dụng \(2i\) và \(2i + 1\) là con của \(i\),
 ta lưu 2 con trỏ chỉ đến 2 nút trái và phải,
 và chỉ cấp phát bộ nhớ nếu cập nhật đến.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">node</span> {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">node</span> {
   <span style="color:#66d9ef">int</span> val, sum; <span style="color:#75715e">// dữ liệu của IT
 </span><span style="color:#75715e"></span>  node <span style="color:#f92672">*</span>l, <span style="color:#f92672">*</span>r; <span style="color:#75715e">// 2 con của IT*
 </span><span style="color:#75715e"></span>  node() { l <span style="color:#f92672">=</span> r <span style="color:#f92672">=</span> NULL; val <span style="color:#f92672">=</span> sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; }
@@ -262,7 +262,7 @@ nên tổng bộ nhớ không quá \(O(N\log{N})\).</p>
 <p>Ngoài ra để đảm bảo điều này ta cũng cần thực
 hiện xóa nút để giải phóng bộ nhớ. Ta có thể
 thực hiện điều này sau khi chuyển xong.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">clear</span>(node <span style="color:#f92672">&amp;*</span>v) {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">clear</span>(node <span style="color:#f92672">&amp;*</span>v) {
   <span style="color:#66d9ef">if</span> (v <span style="color:#f92672">==</span> NULL) <span style="color:#66d9ef">return</span>;
   clear(v<span style="color:#f92672">-&gt;</span>l); clear(v<span style="color:#f92672">-&gt;</span>r);
   <span style="color:#66d9ef">delete</span> v;

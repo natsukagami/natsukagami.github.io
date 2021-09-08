@@ -4,7 +4,7 @@
 <head>
     <title>2017/04/21 Training // Kagami Notes</title>
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.87.0" />
+    <meta name="generator" content="Hugo 0.85.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Natsu Kagami" />
     <meta name="description"
@@ -164,7 +164,7 @@ rồi xóa đoạn <code>k+1..b</code>.</li>
 <p>Dựa vào nhận xét này, ta dễ dàng dựng nên mảng
 <code>canErase[l][r]</code> (có thể xóa đoạn <code>l..r</code> không?)
 trong <code>O(N^3)</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> l <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; l <span style="color:#f92672">&lt;=</span> N; <span style="color:#f92672">++</span>l) {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> l <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; l <span style="color:#f92672">&lt;=</span> N; <span style="color:#f92672">++</span>l) {
   <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> r <span style="color:#f92672">=</span> l <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; r <span style="color:#f92672">&lt;=</span> N; <span style="color:#f92672">++</span>r) {
     <span style="color:#66d9ef">if</span> (S[l] <span style="color:#f92672">==</span> S[r]) canErase[l][r] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
     <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> l <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; k <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span> r; <span style="color:#f92672">++</span>k) {
@@ -290,7 +290,7 @@ hằng số của chúng. Ta hoàn toàn có thể làm
 (thêm đoạn) và cuối (xóa đoạn) sau đó xử lí
 từ trái sang phải.</p>
 <p>Điều tương tự cũng đúng với hàm giảm.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> b[N <span style="color:#f92672">*</span> K <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>]; <span style="color:#75715e">// tất cả b[i] của các đường tăng
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> b[N <span style="color:#f92672">*</span> K <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>]; <span style="color:#75715e">// tất cả b[i] của các đường tăng
 </span><span style="color:#75715e"></span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> add[K <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>], remove[K <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>]; <span style="color:#75715e">// các mốc thêm xóa
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addSegment</span>(<span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> r, <span style="color:#66d9ef">int</span> id) {
