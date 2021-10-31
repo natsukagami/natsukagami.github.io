@@ -6,11 +6,11 @@
     <description>Recent content in nix on Kagami Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 31 Oct 2020 03:00:00 -0500</lastBuildDate><atom:link href="https://blog.nkagami.me/tags/nix/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Oct 2021 03:00:00 -0500</lastBuildDate><atom:link href="https://blog.nkagami.me/tags/nix/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Moving my DigitalOcean node to Nix (Chapter 1...)</title>
       <link>https://blog.nkagami.me/posts/moving-my-digitalocean-node-to-nix/</link>
-      <pubDate>Sat, 31 Oct 2020 03:00:00 -0500</pubDate>
+      <pubDate>Sun, 31 Oct 2021 03:00:00 -0500</pubDate>
       
       <guid>https://blog.nkagami.me/posts/moving-my-digitalocean-node-to-nix/</guid>
       <description>Lately I have been switching my primary Linux PC from Arch Linux to NixOS, a Linux distribution with a functional twist: completely stateless configuration. It&amp;rsquo;s been quite a pleasant ride, and Nix the expression language, though a bit lacking in friendly documentation, is actually not that hard to get used to (&amp;hellip; but the nixpkgs.lib functions are not!)
