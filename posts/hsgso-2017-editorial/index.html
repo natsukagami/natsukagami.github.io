@@ -4,7 +4,7 @@
 <head>
     <title>HSGSO 2017 Editorial // Kagami Notes</title>
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.85.0" />
+    <meta name="generator" content="Hugo 0.88.1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Natsu Kagami" />
     <meta name="description"
@@ -254,7 +254,7 @@ Bây giờ khi có một người \(D\) nào đó, ta có thể biết \(x_D\) �
 <h3 id="dựng-tối-ưu">Dựng tối ưu!</h3>
 <p>Gọi \(x\) là số nút có bậc lớn hơn 1 (tức không phải lá). Ta sẽ chứng minh nếu \(N \ge 2\) thì đáp số là \(x + 1\).</p>
 <p>Thật vậy, ta gọi tập đỉnh không phải lá là \(A_1, A_2, &hellip;, A_x\). Trước tiên, dựng tập cạnh như sau:</p>
-<pre><code>lá - A[1] - A[2] - ... - A[x] - lá
+<pre tabindex="0"><code>lá - A[1] - A[2] - ... - A[x] - lá
 </code></pre><p>Dễ dàng nhận thấy tổng bậc còn lại của các đỉnh không phải lá là \((2N - 2) - (N - x) - 2x = N - x - 2\), số lá còn lại là \(N - x - 2\). Như vậy ta có thể thêm lá vào các bậc còn thiếu của từng đỉnh. Cây đã dựng xong! Đường đi dài nhất trên cây này chắc chắn là \(x + 1\).</p>
 <p>Không khó để chứng minh đáp số không thể lớn hơn \(x + 1\) (đường đi đơn không thể đi qua 3 lá). Vì vậy \(x + 1\) là đáp án tối ưu.</p>
 <h3 id="phân-bố-điểm">Phân bố điểm</h3>

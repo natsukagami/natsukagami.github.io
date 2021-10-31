@@ -4,7 +4,7 @@
 <head>
     <title>2017/04/19 Training // Kagami Notes</title>
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.85.0" />
+    <meta name="generator" content="Hugo 0.88.1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Natsu Kagami" />
     <meta name="description"
@@ -99,7 +99,7 @@ Pyramid Cake Tóm tắt đề bài Cho một chiếc hộp có đáy chữ nhậ
 <p>Tại sao ta chỉ cần quan tâm số tầng mà không phải độ cao? Hiển nhiên, với tầng <code>(i, j)</code> ta biết độ cao của tầng đó (nếu tính cả các tầng dưới nó) sẽ là <code>M[i][j] = min(H[i'][j'])</code> với <code>i' &lt;= i, j' &lt;= j</code>.</p>
 <p>Khi nén tầng như vậy, ta có thể coi như tầng sau luôn nhỏ hơn tầng dưới, làm cho tập trạng thái không có chu trình và ta có thể quy hoạch động được.</p>
 <p>Gọi <code>f[i][j]</code> là diện tích lớn nhất của hình có tầng dưới cùng là <code>(i, j)</code>. Hiển nhiên ta sẽ đặt tầng dưới cùng độ dày <code>M[i][j]</code>. Sau đó, ta chọn một tầng nhỏ hơn để qhđ:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> cur <span style="color:#f92672">=</span> M[i][j] <span style="color:#f92672">*</span> i <span style="color:#f92672">*</span> j; <span style="color:#75715e">// Diện tích phần đáy
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> cur <span style="color:#f92672">=</span> M[i][j] <span style="color:#f92672">*</span> i <span style="color:#f92672">*</span> j; <span style="color:#75715e">// Diện tích phần đáy
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; k <span style="color:#f92672">&lt;=</span> i; <span style="color:#f92672">++</span>k)
 	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> l <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; l <span style="color:#f92672">&lt;=</span> j; <span style="color:#f92672">++</span>l)
 		<span style="color:#66d9ef">if</span> (k <span style="color:#f92672">!=</span> i <span style="color:#f92672">||</span> l <span style="color:#f92672">!=</span> j)
