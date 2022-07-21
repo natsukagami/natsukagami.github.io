@@ -26,7 +26,7 @@ Phần chữa bài được thực hiện bởi mình và bạn Nguyễn Đinh Q
       <guid>https://blog.nkagami.me/posts/training/2017-05-03-training/</guid>
       <description>Hôm nay bài không phải là khó.
 Tóm tắt đề bài ballmachine Cho một cây \(N\) đỉnh có gốc, mỗi đỉnh chứa tối đa 1 quả bóng. Quả bóng từ cha sẽ rơi xuống nút con nếu có thể. Nếu có nhiều nút con thỏa mãn, chọn nút con có cây con chứa nút có số thứ tự nhỏ nhất. Thực hiện \(Q\) truy vấn 1 trong 2 loại:
- Lần lượt cho \(k\) quả bóng vào đỉnh gốc.</description>
+Lần lượt cho \(k\) quả bóng vào đỉnh gốc.</description>
     </item>
     
     <item>
@@ -37,7 +37,7 @@ Tóm tắt đề bài ballmachine Cho một cây \(N\) đỉnh có gốc, mỗi 
       <guid>https://blog.nkagami.me/posts/hsgso-2016-editorial/</guid>
       <description>Trong năm vừa rồi có kha khá nhiều bạn hỏi mình cũng như các bạn khác trong BTC HSGSO 2016 (môn Tin) về solution của contest. Vì hồi đó không có thời gian (thực ra là lười) nên bọn mình chưa có dịp chữa bài. Lần này mình quyết định làm cho chót.
 Đề bài Các bạn có thể tải đề bài gốc tại đây.
-Lời giải Mục lục  color domino gift letter-o paren polylines socket zigzag  color Author: Nguyễn Đinh Quang Minh</description>
+Lời giải Mục lục color domino gift letter-o paren polylines socket zigzag color Author: Nguyễn Đinh Quang Minh</description>
     </item>
     
     <item>
@@ -103,7 +103,7 @@ Tóm tắt đề bài ACM Có N đội, mỗi đội có 11 chỉ số A[i][1.</
       <guid>https://blog.nkagami.me/posts/training/2017-04-19-training/</guid>
       <description>Thầy Phương cho 3 bài của FARIO 2017. Bài 1 đã làm rồi, bài 3 là bài approximate nên mình chỉ chữa bài 2.
 Pyramid Cake Tóm tắt đề bài Cho một chiếc hộp có đáy chữ nhật M x N, vị trí (i, j) có độ cao là H[i][j]. Ta dựng một chiếc bánh nhiều tần thỏa mãn:
- Các tầng là các hình chữ nhật chứa đỉnh (1,1) Tầng trên phải nằm bên trong mặt phẳng của tầng dưới Không ô nào cao hơn vị trí tương ứng của hộp Thể tích bánh là lớn nhất.</description>
+Các tầng là các hình chữ nhật chứa đỉnh (1,1) Tầng trên phải nằm bên trong mặt phẳng của tầng dưới Không ô nào cao hơn vị trí tương ứng của hộp Thể tích bánh là lớn nhất.</description>
     </item>
     
     <item>

@@ -15,7 +15,7 @@
       <guid>https://blog.nkagami.me/posts/training/2017-05-03-training/</guid>
       <description>Hôm nay bài không phải là khó.
 Tóm tắt đề bài ballmachine Cho một cây \(N\) đỉnh có gốc, mỗi đỉnh chứa tối đa 1 quả bóng. Quả bóng từ cha sẽ rơi xuống nút con nếu có thể. Nếu có nhiều nút con thỏa mãn, chọn nút con có cây con chứa nút có số thứ tự nhỏ nhất. Thực hiện \(Q\) truy vấn 1 trong 2 loại:
- Lần lượt cho \(k\) quả bóng vào đỉnh gốc.</description>
+Lần lượt cho \(k\) quả bóng vào đỉnh gốc.</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@ Tóm tắt đề bài ballmachine Cho một cây \(N\) đỉnh có gốc, mỗi 
       <guid>https://blog.nkagami.me/posts/training/2017-04-19-training/</guid>
       <description>Thầy Phương cho 3 bài của FARIO 2017. Bài 1 đã làm rồi, bài 3 là bài approximate nên mình chỉ chữa bài 2.
 Pyramid Cake Tóm tắt đề bài Cho một chiếc hộp có đáy chữ nhật M x N, vị trí (i, j) có độ cao là H[i][j]. Ta dựng một chiếc bánh nhiều tần thỏa mãn:
- Các tầng là các hình chữ nhật chứa đỉnh (1,1) Tầng trên phải nằm bên trong mặt phẳng của tầng dưới Không ô nào cao hơn vị trí tương ứng của hộp Thể tích bánh là lớn nhất.</description>
+Các tầng là các hình chữ nhật chứa đỉnh (1,1) Tầng trên phải nằm bên trong mặt phẳng của tầng dưới Không ô nào cao hơn vị trí tương ứng của hộp Thể tích bánh là lớn nhất.</description>
     </item>
     
   </channel>

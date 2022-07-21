@@ -4,7 +4,7 @@
 <head>
     <title>2017/04/20 Training // Kagami Notes</title>
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Natsu Kagami" />
     <meta name="description"
@@ -116,17 +116,17 @@ mà điều kiện <code>x</code> mâu thuẫn với các điều kiện trên.<
 <p><code>1 &lt;= N &lt;= 10^9</code>, <code>1 &lt;= M &lt;= 10^5</code></p>
 <h2 id="hanoi">HANOI</h2>
 <p>Cho thuật toán giải bài toán tháp Hà Nội:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">HanoiTower</span>(height, From, Temp, To):
-  <span style="color:#66d9ef">if</span> height <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
-    <span style="color:#75715e"># Move one from `From` to `To`</span>
-    <span style="color:#66d9ef">return</span>
-  HanoiTower(height <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>, From, To, Temp)
-  HanoiTower(<span style="color:#ae81ff">1</span>, From, Temp, To)
-  HanoiTower(height <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>, Temp, From, To)
-
-<span style="color:#75715e"># Call the function</span>
-HanoiTower(N, <span style="color:#e6db74">&#39;A&#39;</span>, <span style="color:#e6db74">&#39;B&#39;</span>, <span style="color:#e6db74">&#39;C&#39;</span>)
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">HanoiTower</span>(height, From, Temp, To):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> height <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Move one from `From` to `To`</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>  HanoiTower(height <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>, From, To, Temp)
+</span></span><span style="display:flex;"><span>  HanoiTower(<span style="color:#ae81ff">1</span>, From, Temp, To)
+</span></span><span style="display:flex;"><span>  HanoiTower(height <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>, Temp, From, To)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Call the function</span>
+</span></span><span style="display:flex;"><span>HanoiTower(N, <span style="color:#e6db74">&#39;A&#39;</span>, <span style="color:#e6db74">&#39;B&#39;</span>, <span style="color:#e6db74">&#39;C&#39;</span>)
+</span></span></code></pre></div><ul>
 <li>Tìm trạng thái của 3 tháp sau <code>P</code> lần gọi hàm.</li>
 <li>Cho trạng thái của 3 tháp, tính số bước đã gọi hàm
 <code>P</code>, hoặc in <code>-1</code> nếu không tồn tại trạng thái đó khi giải.</li>
@@ -181,22 +181,22 @@ có thể for tất cả cặp mask, kiểm tra trong <code>O((2^11)^2)</code>.
 Hiển nhiên do 2 mask đều chỉ có 11 bit nên khi <code>or</code> lại với
 nhau (ghép bộ) thì mask mới vẫn chỉ có 11 bit. Vậy để chọn
 3 phần tử, ta có thể tiếp tục ghép cặp tập đã or với tập <code>max[x]</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> two[<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">11</span>];
-<span style="color:#66d9ef">int</span> three[<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">11</span>];
-
-<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">11</span>); <span style="color:#f92672">++</span>i) {
-  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">11</span>); <span style="color:#f92672">++</span>j) {
-    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>(i <span style="color:#f92672">&amp;</span> j)) <span style="color:#75715e">// không có phần tử trùng
-</span><span style="color:#75715e"></span>      two[i <span style="color:#f92672">|</span> j] <span style="color:#f92672">=</span> max(two[i <span style="color:#f92672">|</span> j], max[i] <span style="color:#f92672">+</span> max[j]);
-  }
-}
-<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">11</span>); <span style="color:#f92672">++</span>i) {
-  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">11</span>); <span style="color:#f92672">++</span>j) {
-    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>(i <span style="color:#f92672">&amp;</span> j)) <span style="color:#75715e">// không có phần tử trùng
-</span><span style="color:#75715e"></span>      three[i <span style="color:#f92672">|</span> j] <span style="color:#f92672">=</span> max(three[i <span style="color:#f92672">|</span> j], two[i] <span style="color:#f92672">+</span> max[j]);
-  }
-}
-</code></pre></div><p>Đáp số chính là <code>three[(1 &lt;&lt; 11) - 1]</code>.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> two[<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">11</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> three[<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">11</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">11</span>); <span style="color:#f92672">++</span>i) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">11</span>); <span style="color:#f92672">++</span>j) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>(i <span style="color:#f92672">&amp;</span> j)) <span style="color:#75715e">// không có phần tử trùng
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      two[i <span style="color:#f92672">|</span> j] <span style="color:#f92672">=</span> max(two[i <span style="color:#f92672">|</span> j], max[i] <span style="color:#f92672">+</span> max[j]);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">11</span>); <span style="color:#f92672">++</span>i) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">11</span>); <span style="color:#f92672">++</span>j) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>(i <span style="color:#f92672">&amp;</span> j)) <span style="color:#75715e">// không có phần tử trùng
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      three[i <span style="color:#f92672">|</span> j] <span style="color:#f92672">=</span> max(three[i <span style="color:#f92672">|</span> j], two[i] <span style="color:#f92672">+</span> max[j]);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Đáp số chính là <code>three[(1 &lt;&lt; 11) - 1]</code>.
 Độ phức tạp sẽ là <code>O((2 ^ 11) ^ 2)</code>.</p>
 <h2 id="domino-bài-toán-thứ-nhất-1">DOMINO (Bài toán thứ nhất)</h2>
 <h3 id="tóm-tắt-đề-bài-2">Tóm tắt đề bài</h3>
@@ -237,27 +237,27 @@ vậy trạng thái của mình luôn có <code>N</code> bit.</p>
 <p>Độ phức tạp là <code>O(N * M * 2^N)</code>.</p>
 <h3 id="cài-đặt-như-nào">Cài đặt như nào?</h3>
 <p>Nên gọi đệ quy có nhớ.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> f[<span style="color:#ae81ff">20</span>][<span style="color:#ae81ff">20</span>][<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">16</span>];
-<span style="color:#66d9ef">bool</span> visited[<span style="color:#ae81ff">20</span>][<span style="color:#ae81ff">20</span>][<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">16</span>];
-
-<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">cal</span>(<span style="color:#66d9ef">int</span> i, <span style="color:#66d9ef">int</span> j, <span style="color:#66d9ef">int</span> mask) {
-  <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">&gt;</span> M) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>; <span style="color:#75715e">// trường hợp biên
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (visited[i][j][mask]) <span style="color:#75715e">// đã tính
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> f[i][j][mask];
-  visited[i][j][mask] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
-  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> ch <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; ch <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span>; <span style="color:#f92672">++</span>ch) {
-    <span style="color:#66d9ef">if</span> (<span style="color:#75715e">/*kiểm tra điều kiện đặt bit ch ở (i, j)*/</span>) {
-      f[i][j][mask] <span style="color:#f92672">+=</span> cal(i <span style="color:#f92672">+</span> (j <span style="color:#f92672">==</span> N), j <span style="color:#f92672">%</span> N <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, (mask <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">&amp;</span> ((<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> N) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> ch);
-    }
-  }
-  <span style="color:#66d9ef">return</span> f[i][j][mask];
-}
-
-<span style="color:#75715e">// x &amp; ((1 &lt;&lt; N) - 1) để lấy x % (1 &lt;&lt; N), N bit cuối của x.
-</span><span style="color:#75715e">// (x &lt;&lt; 1) == x * 2, đẩy các bit sang phải 1 đơn vị.
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">int</span> ans <span style="color:#f92672">=</span> cal(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>);
-</code></pre></div><h2 id="domino-bài-toán-thứ-hai-1">DOMINO (Bài toán thứ hai)</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> f[<span style="color:#ae81ff">20</span>][<span style="color:#ae81ff">20</span>][<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">16</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> visited[<span style="color:#ae81ff">20</span>][<span style="color:#ae81ff">20</span>][<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">16</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">cal</span>(<span style="color:#66d9ef">int</span> i, <span style="color:#66d9ef">int</span> j, <span style="color:#66d9ef">int</span> mask) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">&gt;</span> M) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>; <span style="color:#75715e">// trường hợp biên
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (visited[i][j][mask]) <span style="color:#75715e">// đã tính
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> f[i][j][mask];
+</span></span><span style="display:flex;"><span>  visited[i][j][mask] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> ch <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; ch <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span>; <span style="color:#f92672">++</span>ch) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#75715e">/*kiểm tra điều kiện đặt bit ch ở (i, j)*/</span>) {
+</span></span><span style="display:flex;"><span>      f[i][j][mask] <span style="color:#f92672">+=</span> cal(i <span style="color:#f92672">+</span> (j <span style="color:#f92672">==</span> N), j <span style="color:#f92672">%</span> N <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, (mask <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">&amp;</span> ((<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> N) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> ch);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> f[i][j][mask];
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// x &amp; ((1 &lt;&lt; N) - 1) để lấy x % (1 &lt;&lt; N), N bit cuối của x.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// (x &lt;&lt; 1) == x * 2, đẩy các bit sang phải 1 đơn vị.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> ans <span style="color:#f92672">=</span> cal(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>);
+</span></span></code></pre></div><h2 id="domino-bài-toán-thứ-hai-1">DOMINO (Bài toán thứ hai)</h2>
 <p>Lần này không có ô cấm. Điều kiện như bài toán thứ nhất.</p>
 <h4 id="giới-hạn-8">Giới hạn</h4>
 <p><code>1 &lt;= N &lt;= 8</code>, <code>1 &lt;= M &lt;= 10^6</code></p>
@@ -328,17 +328,17 @@ quan tâm tới các đỉnh này.</p>
 <h2 id="hanoi-1">HANOI</h2>
 <h3 id="tóm-tắt-đề-bài-4">Tóm tắt đề bài</h3>
 <p>Cho thuật toán giải bài toán tháp Hà Nội:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">HanoiTower</span>(height, From, Temp, To):
-  <span style="color:#66d9ef">if</span> height <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
-    <span style="color:#75715e"># Move one from `From` to `To`</span>
-    <span style="color:#66d9ef">return</span>
-  HanoiTower(height <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>, From, To, Temp)
-  HanoiTower(<span style="color:#ae81ff">1</span>, From, Temp, To)
-  HanoiTower(height <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>, Temp, From, To)
-
-<span style="color:#75715e"># Call the function</span>
-HanoiTower(N, <span style="color:#e6db74">&#39;A&#39;</span>, <span style="color:#e6db74">&#39;B&#39;</span>, <span style="color:#e6db74">&#39;C&#39;</span>)
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">HanoiTower</span>(height, From, Temp, To):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> height <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Move one from `From` to `To`</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>  HanoiTower(height <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>, From, To, Temp)
+</span></span><span style="display:flex;"><span>  HanoiTower(<span style="color:#ae81ff">1</span>, From, Temp, To)
+</span></span><span style="display:flex;"><span>  HanoiTower(height <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>, Temp, From, To)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Call the function</span>
+</span></span><span style="display:flex;"><span>HanoiTower(N, <span style="color:#e6db74">&#39;A&#39;</span>, <span style="color:#e6db74">&#39;B&#39;</span>, <span style="color:#e6db74">&#39;C&#39;</span>)
+</span></span></code></pre></div><ul>
 <li>Tìm trạng thái của 3 tháp sau <code>P</code> lần gọi hàm.</li>
 <li>Cho trạng thái của 3 tháp, tính số bước đã gọi hàm
 <code>P</code>, hoặc in <code>-1</code> nếu không tồn tại trạng thái đó khi giải.</li>
